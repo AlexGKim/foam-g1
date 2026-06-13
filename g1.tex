@@ -350,8 +350,9 @@ our scope.
 
 The scalar variance $\sigma_\ell^2(D)$ (Eq.~\eqref{eq:NgPerlmanVar})
 characterizes the amplitude of foam-induced path-length fluctuations along
-a single ray; here we describe how those fluctuations are correlated
-across time (temporal decorrelation).
+a single ray; here we describe how correlations
+in those fluctuations are described
+across time (temporal decorrelation) in this article.
 
 The temporal evolution of spacetime foam --- an aspect not specified by
 Eq.~\eqref{eq:NgPerlmanVar} --- determines how the arrival-time jitter
@@ -379,6 +380,22 @@ Equivalently,
   \label{eq:pathcov1ray}
 \end{equation}
 
+Strictly, no physical source is pointlike: the observed light samples the
+foam over the finite emitting region and along the full propagation path, so
+the underlying foam correlation is spatio-temporal, $C(\mathbf{r},\tau)$,
+rather than purely temporal.  We therefore read $C_\alpha(\tau;D)$ as an
+\emph{effective} temporal correlation obtained by coarse-graining
+$C(\mathbf{r},\tau)$ over the source's emitting four-volume and propagation
+path, with $\tau$ parametrizing the residual temporal decorrelation that
+survives this spatial averaging.  The reduction to a purely temporal
+$C_\alpha$ is exact under the assumption that the spatio-temporal
+correlation approximately factorizes,
+$C(\mathbf{r},\tau)\approx C_{\rm sp}(\mathbf{r})\,C_\alpha(\tau)$, with the
+spatial factor $C_{\rm sp}(\mathbf{r})$ absorbed into the normalization.  We
+flag this factorization as an assumption rather than a derived result, since
+the spatial correlation structure over cosmological path lengths is not
+constrained by the present treatment.
+
 The timescale $\tau_{\rm foam}$ is an additional free parameter of the
 foam model, not fixed by the $\alpha$-model variance relation alone.
 In the standard phenomenological framework~\cite{AmelinoCamelia2013,Ng2003},
@@ -387,12 +404,14 @@ independently adopts a new configuration on timescale
 $\tau_P \equiv \ell_P/c \approx 5\times10^{-44}$~s; the integrated
 path-length jitter $\delta\ell_{\rm tot}(t)$ --- a sum of
 $\sim D/\ell_P$ independent contributions --- likewise decorrelates on
-timescale $\tau_{\rm foam}\sim\tau_P$.  With $C_\alpha(\tau)\approx 0$
-for all nonzero accessible lags, the foam is fully decorrelated on any
-observable timescale --- the most optimistic scenario for detection ---
-and for any astrophysical source considered here
-($\tau_c/\tau_{\rm foam}\gtrsim 10^{22}$ even at $37$\,MeV) the
-analysis sits deep within the dynamical regime.  Models with long-range
+timescale $\tau_{\rm foam}\sim\tau_P$.  Because
+$\tau_{\rm foam}\ll\tau_c$ for any astrophysical source considered here
+($\tau_c/\tau_{\rm foam}\gtrsim 10^{22}$ even at $37$\,MeV),
+$C_\alpha(\tau)$ has decayed to $\approx 0$ over the entire lag range on
+which the coherence function has support; the foam is thus fully
+decorrelated on every timescale relevant to the observed spectrum --- the
+most optimistic scenario for detection --- and the analysis sits deep within
+the dynamical regime.  Models with long-range
 \emph{temporal} correlations --- the temporal analogue of the
 long-range \emph{transverse} spatial correlations of
 Ref.~\cite{LeeZurekChen2024} that evade interferometric imaging bounds
