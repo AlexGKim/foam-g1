@@ -332,9 +332,10 @@ are modeled.
 
 We adopt throughout the eikonal phase-screen reduction --- the
 geometric-optics limit of the wave equation in $n(\tau,r)$ --- in which
-$\sigma_\phi^2$ is the eikonal phase variance of $n$ and $C_\alpha(\tau)$,
-$\sigma_\Delta^2(\tau)$ (Secs.~\ref{sec:Calpha_origin}--\ref{sec:differential_jitter})
-its mutual-coherence and phase-structure functions, the standard description
+$\sigma_\phi^2$ is the eikonal phase variance of $n$, $C_\alpha(\tau)$ its
+mutual-coherence function, $\sigma_\Delta^2(\tau)$ the delay structure
+function, and $D_\phi(\tau)$ (Sec.~\ref{sec:differential_jitter}) the phase
+structure function, the standard description
 of wave propagation through a random, time-varying refractive
 medium~\cite{Ishimaru1978,Flatte1979,Rickett1990}.  The reduction has a
 definite range of validity: with $\tau_{\rm foam}\sim\ell_{\rm P}/c$ and foam
@@ -488,32 +489,63 @@ corrections being negligible; the spectroscopic observables below ---
 line broadening, peak suppression, and the CMB core/pedestal split ---
 all follow from it.
 
-From the foam path-length variance $\sigma_\ell^2(D_C)$ and carrier
-frequency $\omega_0$, we define $\sigma_\phi^2 \equiv
-\tfrac{1}{2}\omega_0^2\cdot(2\sigma_\ell^2/c^2) = (\omega_0\sigma_\ell/c)^2$
-as the asymptotic phase variance --- the value
-$\tfrac{1}{2}\omega_0^2\sigma_\Delta^2(\tau)$ approaches as
-$C_\alpha(\tau;D)\to 0$.  In the dynamical-foam limit $\sigma_\phi^2$ is
-set by the Ng--Perlman path-length variance~\eqref{eq:NgPerlmanVar}
-accumulated along the line-of-sight comoving distance $D_C$ to the
-source~\cite{NgPerlman2022}.  Substituting $\sigma_\Delta^2(\tau) =
-(2\sigma_\ell^2/c^2)[1-C_\alpha(\tau;D)]$ from
-Eq.~\eqref{eq:diffVarExt}, Eq.~\eqref{eq:gaussian_jitter} takes the compact form
+The foam phase is not accumulated at a single frequency.  As established in
+Eq.~\eqref{eq:dphi_los}, the photon traverses each comoving shell at redshift
+$z'$ with local wavenumber $k_{\rm local}(z')=(2\pi/\lambda_{\rm obs})(1+z')$,
+so the observed phase is the line-of-sight accumulation of the achromatic
+path excess against this shell-varying wavenumber.  The quantity governing
+the suppression is therefore the differential phase structure function
 \begin{equation}
-  \mathcal{F}_{\rm foam}(\tau) = e^{-\sigma_\phi^2[1-C_\alpha(\tau;D)]}.
+  D_\phi(\tau) \equiv \big\langle [\,\delta\phi(t+\tau)-\delta\phi(t)\,]^2\big\rangle,
+  \label{eq:Dphi_def}
+\end{equation}
+with the $(1+z')$ weighting residing inside $\delta\phi$, so that
+$D_\phi(\tau)$ is redshift-weighted by construction and requires no
+after-the-fact promotion of the carrier frequency.
+
+Provided the temporal decorrelation is shell-independent --- a common foam
+timescale $\tau_{\rm foam}$ along the whole path, so that the chromatic
+$(1+z')^2$ weighting is a pure path/amplitude effect while the temporal shape
+$[1-C_\alpha(\tau;D)]$ is achromatic --- the weighting separates from the lag
+dependence and the structure function reduces to
+\begin{equation}
+  D_\phi(\tau) = \left(\frac{2\pi}{\lambda_{\rm eff}}\right)^{\!2} c^{2}\,
+                 \sigma_\Delta^2(\tau)
+              = 2\sigma_\phi^2\,[1-C_\alpha(\tau;D)],
+  \label{eq:Dphi_reduce}
+\end{equation}
+where $\sigma_\Delta^2(\tau)=(2\sigma_\ell^2/c^2)[1-C_\alpha(\tau;D)]$ is the
+achromatic differential-delay variance of Eq.~\eqref{eq:diffVarExt} and
+$\sigma_\phi^2=(2\pi/\lambda_{\rm eff})^2\sigma_\ell^2(D_C)$ is the asymptotic
+phase variance of Eq.~\eqref{eq:sigmaphi_cosmo}.  The operative wavenumber is
+$2\pi c/\lambda_{\rm eff}$, not the bare carrier $\omega_0$; the latter is
+recovered only in the $z'\to0$ limit, where
+$\lambda_{\rm eff}\to\lambda_{\rm obs}$.  In the dynamical-foam limit
+$\sigma_\phi^2$ is set by the Ng--Perlman path-length
+variance~\eqref{eq:NgPerlmanVar} accumulated along the line-of-sight comoving
+distance $D_C$ to the source~\cite{NgPerlman2022}.
+
+The foam suppression factor of Eq.~\eqref{eq:gaussian_jitter} then takes the
+compact form
+\begin{equation}
+  \mathcal{F}_{\rm foam}(\tau) = e^{-D_\phi(\tau)/2}
+                               = e^{-\sigma_\phi^2[1-C_\alpha(\tau;D)]},
   \label{eq:Ffoam}
 \end{equation}
-At $\tau\to\infty$: $\mathcal{F}_{\rm foam}(\infty)$ equals
-$e^{-\sigma_\phi^2}$ in the dynamical limit ($C_\alpha\to 0$) and
-approaches unity for quasi-static foam ($C_\alpha\approx 1$).
-Because the foam phase is $\phi=\omega_0\,\delta t$ --- the \emph{observed}
-carrier $\omega_0=2\pi c/\lambda_{\rm obs}$ times the \emph{observed}
-arrival-time delay $\delta t$ --- the suppression $e^{-\sigma_\phi^2}$ is
-manifestly observer-frame and carries no \emph{additional} cosmological
-prefactor of its own.  The redshift weighting enters $\sigma_\phi^2$
-through the effective wavelength $\lambda_{\rm eff}$, defined in
-Section~\ref{sec:metric_origin} from the $(1+z')^2$-weighted accumulation
-of the rest-frame per-shell contributions:
+with $\mathcal{F}_{\rm foam}(0)=1$.  At $\tau\to\infty$:
+$\mathcal{F}_{\rm foam}(\infty)$ equals $e^{-\sigma_\phi^2}$ in the dynamical
+limit ($C_\alpha\to 0$) and approaches unity for quasi-static foam
+($C_\alpha\approx 1$).  Because the foam phase registered at the observer is
+$\phi=\omega_0\,\delta t$ --- the observer-frame endpoint of the shell
+accumulation, the observed carrier $\omega_0=2\pi c/\lambda_{\rm obs}$ times
+the observed arrival-time delay $\delta t$ --- the suppression
+$e^{-\sigma_\phi^2}$ is manifestly observer-frame and carries no
+\emph{additional} cosmological prefactor of its own; the redshift weighting
+enters solely through $\lambda_{\rm eff}$ in $\sigma_\phi^2$, the accumulated
+variance built from the per-shell wavenumbers $2\pi c/\lambda_{\rm eff}$
+rather than the single endpoint $\omega_0$.  This $(1+z')^2$-weighted
+accumulation of the rest-frame per-shell contributions, defined in
+Section~\ref{sec:metric_origin}, is
 \begin{equation}
   \sigma_\phi^2
   \;=\; \left(\frac{2\pi}{\lambda_{\rm obs}}\right)^{\!2}\!\!
@@ -523,22 +555,28 @@ of the rest-frame per-shell contributions:
   \lambda_{\rm eff}\equiv\frac{\lambda_{\rm obs}}{\sqrt{\langle(1+z')^2\rangle_{D_C}}},
   \label{eq:sigmaphi_cosmo}
 \end{equation}
-with $A_\alpha=1$.  How this weighting is anchored to the Ng--Perlman
-amplitude $A$ is immaterial for $\alpha=1/2$ and diverges only at high
-redshift, so the choice does not affect the GRB but becomes material for
-the CMB (Section~\ref{sec:CMB_phasevar}, Table~\ref{tab:prescription},
-Appendix~\ref{app:prescription}).
+with $A_\alpha=1$.
 
-The three foam variances are one
-quantity in different dress: the geometric $\sigma_\ell(D_C)$, the differential
-arrival-time jitter
-$\sigma_\Delta=\sqrt{2}\,\sigma_\ell\sqrt{\langle(1+z')^2\rangle}/c$
-(Eq.~\eqref{eq:diffVarExt}), and the phase
-$\sigma_\phi=(2\pi/\lambda_{\rm eff})\,\sigma_\ell$.  The ratio
+The three foam quantities are one perturbation in different dress,
+distinguished by which carry the chromatic weighting.  The geometric
+path-length fluctuation $\sigma_\ell(D_C)$ and the differential arrival-time
+jitter $\sigma_\Delta(\tau)=\sqrt{2}\,\sigma_\ell\sqrt{1-C_\alpha(\tau;D)}/c$
+(Eq.~\eqref{eq:diffVarExt}) are achromatic and unweighted, because
+$\Delta(\tau)$ is a pure time delay carrying no wavelength.  The phase enters
+chromatically: $\sigma_\phi=(2\pi/\lambda_{\rm eff})\,\sigma_\ell$, and the
+phase structure function $D_\phi(\tau)$ above is its lag-dependent extension.
+The ratio
 $\lambda_{\rm obs}/\lambda_{\rm eff}=\sqrt{\langle(1+z')^2\rangle_{D_C}}$ is
-purely cosmological: $\approx1.1$ for the GRB ($z=0.151$, a negligible shift
-that leaves the line-width bound at $\alpha\gtrsim0.63$) and $\sim10^{2}$ for
-the CMB ($z_{\rm LS}\approx1090$), where the high-$z$ path dominates.
+purely cosmological and enters the phase channel alone --- the arrival-time
+jitter $\sigma_\Delta$, being achromatic, is unaffected --- giving
+$\approx1.1$ for the GRB ($z=0.151$, a negligible shift that leaves the
+line-width bound at $\alpha\gtrsim0.63$) and $\sim10^{2}$ for the CMB
+($z_{\rm LS}\approx1090$), where the high-$z$ path dominates.  How this
+weighting is anchored to the Ng--Perlman amplitude $A$ is immaterial for
+$\alpha=1/2$ and diverges only at high redshift, so the choice does not
+affect the GRB but becomes material for the CMB
+(Section~\ref{sec:CMB_phasevar}, Table~\ref{tab:prescription},
+Appendix~\ref{app:prescription}).
 
 % ==============================================================
 \section{First-Order Coherence }
@@ -598,8 +636,8 @@ completing the square gives the exact closed form
   &= \frac{\tau_G}{\sqrt{\tau_G^2+\sigma_\Delta^2(\tau)}}\,
      \exp\!\left[\,-\,i\,\omega_0\tau\,
        \frac{\tau_G^2}{\tau_G^2+\sigma_\Delta^2(\tau)}\right] \notag\\
-  &\quad\times \exp\!\left[\,-\,\frac{\tau^2+\omega_0^2\,
-       \tau_G^2\,\sigma_\Delta^2(\tau)}
+  &\quad\times \exp\!\left[\,-\,\frac{\tau^2+
+       \tau_G^2\,D_\phi(\tau)}
        {2\bigl[\tau_G^2+\sigma_\Delta^2(\tau)\bigr]}\right].
   \label{eq:g1obs_gauss}
 \end{align}
@@ -609,8 +647,12 @@ carrier, $\nu_0^{\rm eff} = \nu_0\,\tau_G^2/[\tau_G^2+\sigma_\Delta^2(\tau)]$;
 (ii) a wider Gaussian decay of $g^{(1)}_{\rm obs}(\tau)$ in lag (decay
 scale $\sqrt{\tau_G^2+\sigma_\Delta^2(\tau)}$ vs.\ $\tau_G$);
 and (iii) a global amplitude suppression by the factor
-$\exp\!\left[-\omega_0^2\tau_G^2\sigma_\Delta^2/\{2(\tau_G^2+\sigma_\Delta^2)\}\right]$.
-Normalization $g^{(1)}_{\rm obs}(0)=1$ holds because $\sigma_\Delta(0)=0$.
+$\exp\!\left[-\tau_G^2 D_\phi(\tau)/\{2(\tau_G^2+\sigma_\Delta^2)\}\right]$,
+set by the differential phase structure function
+$D_\phi(\tau)$ of Eq.~\eqref{eq:Dphi_reduce} --- carrying the effective
+wavenumber $2\pi c/\lambda_{\rm eff}$, not the bare carrier $\omega_0$.
+Normalization $g^{(1)}_{\rm obs}(0)=1$ holds because $\sigma_\Delta(0)=0$
+(hence $D_\phi(0)=0$).
 The narrowband limit $\tau_G\to\infty$ of
 Eq.~\eqref{eq:g1obs_gauss} reduces to a pure phase-modulated
 oscillation, which is the single-mode building block from which the
