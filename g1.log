@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.24)  29 MAY 2026 19:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.24)  13 JUN 2026 22:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**g1.tex
+**g1
 (./g1.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -405,37 +405,38 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 )
 (./aas_macros.sty)
 Class revtex4-2 Info: Unrecognized LaTeX tabular. Please update this document c
-lass! (Proceeding with fingers crossed.) on input line 12.
-Class revtex4-2 Info: cite was not loaded (OK!) on input line 12.
-Class revtex4-2 Info: mcite was not loaded (OK!) on input line 12.
-Class revtex4-2 Info: multicol was not loaded (OK!) on input line 12.
+lass! (Proceeding with fingers crossed.) on input line 17.
+Class revtex4-2 Info: cite was not loaded (OK!) on input line 17.
+Class revtex4-2 Info: mcite was not loaded (OK!) on input line 17.
+Class revtex4-2 Info: multicol was not loaded (OK!) on input line 17.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count298
 \l__pdf_internal_box=\box68
 )
-No file g1.aux.
+(./g1.aux)
 \openout1 = `g1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+
 (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count299
@@ -458,708 +459,109 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 12.
+Package hyperref Info: Link coloring OFF on input line 17.
+
+(./g1.out) (./g1.out)
 \@outlinefile=\write4
 \openout4 = `g1.out'.
 
-Class revtex4-2 Info: Taking \maketitle back from hyperref on input line 12.
+Class revtex4-2 Info: Taking \maketitle back from hyperref on input line 17.
 \openout3 = `g1Notes.bib'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 29.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 34.
 
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 29.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 34.
 
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-
-Package natbib Warning: Citation `Wheeler1955' on page 1 undefined on input lin
-e 62.
-
-
-Package natbib Warning: Citation `Hawking1978' on page 1 undefined on input lin
-e 65.
-
-
-Package natbib Warning: Citation `Carlip2023' on page 1 undefined on input line
- 72.
-
-
-Package natbib Warning: Citation `NgPerlman2022' on page 1 undefined on input l
-ine 72.
-
-
-Package natbib Warning: Citation `Ng2001' on page 1 undefined on input line 75.
-
-
-
-Package natbib Warning: Citation `Ng2003' on page 1 undefined on input line 75.
-
-
-
-Package natbib Warning: Citation `NgPerlman2022' on page 1 undefined on input l
-ine 75.
-
-
-Package natbib Warning: Citation `LieuHillman2003' on page 1 undefined on input
- line 98.
-
-
-Package natbib Warning: Citation `NgPerlman2022' on page 1 undefined on input l
-ine 103.
-
-
-Package natbib Warning: Citation `Christiansen2011' on page 1 undefined on inpu
-t line 103.
-
-
-Package natbib Warning: Citation `Perlman2015' on page 1 undefined on input lin
-e 103.
-
-
-Package natbib Warning: Citation `LeeZurekChen2024' on page 1 undefined on inpu
-t line 105.
-
-[1{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-
-Package natbib Warning: Citation `Steinbring2023' on page 2 undefined on input 
-line 108.
-
-
-Package natbib Warning: Citation `SteinbringNg2026' on page 2 undefined on inpu
-t line 109.
-
-
-Package natbib Warning: Citation `Steinbring2023' on page 2 undefined on input 
-line 112.
-
-
-Package natbib Warning: Citation `SteinbringNg2026' on page 2 undefined on inpu
-t line 116.
-
-
-LaTeX Warning: Reference `sec:model' on page 2 undefined on input line 138.
-
-
-LaTeX Warning: Reference `sec:g1' on page 2 undefined on input line 141.
-
-
-LaTeX Warning: Reference `sec:spec' on page 2 undefined on input line 144.
-
-
-LaTeX Warning: Reference `sec:sources' on page 2 undefined on input line 148.
-
-
-LaTeX Warning: Reference `sec:grb221009a' on page 2 undefined on input line 149
-.
-
-
-LaTeX Warning: Reference `sec:CMB' on page 2 undefined on input line 150.
-
-
-LaTeX Warning: Reference `sec:conclusions' on page 2 undefined on input line 15
-1.
-
-
-LaTeX Warning: Reference `eq:jitter' on page 2 undefined on input line 179.
-
-
-LaTeX Warning: Reference `eq:NgPerlmanVar' on page 2 undefined on input line 19
-6.
-
-
-LaTeX Warning: Reference `eq:NgPerlmanVar' on page 2 undefined on input line 20
-2.
-
-[2]
-
-Package natbib Warning: Citation `AmelinoCamelia2013' on page 3 undefined on in
-put line 229.
-
-
-Package natbib Warning: Citation `Ng2003' on page 3 undefined on input line 229
-.
-
-
-Package natbib Warning: Citation `LeeZurekChen2024' on page 3 undefined on inpu
-t line 243.
-
-
-LaTeX Warning: Reference `sec:grb221009a' on page 3 undefined on input line 247
-.
-
-
-LaTeX Warning: Reference `sec:CMB' on page 3 undefined on input line 248.
-
-
-LaTeX Warning: Reference `eq:pathcov1ray' on page 3 undefined on input line 267
-.
-
-
-LaTeX Warning: Reference `eq:diffVarExt' on page 3 undefined on input line 290.
-
-
-
-LaTeX Warning: Reference `eq:NgPerlmanVar' on page 3 undefined on input line 31
-7.
-
-
-Package natbib Warning: Citation `NgPerlman2022' on page 3 undefined on input l
-ine 318.
-
-[3]
-
-LaTeX Warning: Reference `eq:diffVarExt' on page 4 undefined on input line 326.
-
-
-
-LaTeX Warning: Reference `eq:gaussian_jitter' on page 4 undefined on input line
- 326.
-
-
-LaTeX Warning: Reference `eq:sigmaphi' on page 4 undefined on input line 334.
-
-
-LaTeX Warning: Reference `eq:sigmaphi' on page 4 undefined on input line 348.
-
-
-LaTeX Warning: Reference `eq:sigmaphi' on page 4 undefined on input line 362.
-
-
-LaTeX Warning: Reference `sec:CMB' on page 4 undefined on input line 363.
+) [1{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
+ [3] [4]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 529.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 371.
+(hyperref)                removing `superscript' on input line 529.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 371.
+(hyperref)                removing `math shift' on input line 529.
 
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 371.
-
-
-LaTeX Warning: Reference `eq:Eobs' on page 4 undefined on input line 379.
-
-
-LaTeX Warning: Reference `eq:g1def' on page 4 undefined on input line 389.
-
-
-Package natbib Warning: Citation `YQZhang2024' on page 4 undefined on input lin
-e 404.
-
-
-LaTeX Warning: Reference `eq:g1obs' on page 4 undefined on input line 417.
-
-[4]
-
-LaTeX Warning: Reference `eq:g1obs_gauss' on page 5 undefined on input line 438
-.
-
-
-LaTeX Warning: Reference `sec:CMB_derivation' on page 5 undefined on input line
- 440.
-
-
-LaTeX Warning: Reference `eq:g1obs' on page 5 undefined on input line 451.
-
-
-LaTeX Warning: Reference `eq:g1obs_gauss' on page 5 undefined on input line 452
-.
-
-
-LaTeX Warning: Reference `eq:WK_obs' on page 5 undefined on input line 474.
-
-
-LaTeX Warning: Reference `sec:CMB_derivation' on page 5 undefined on input line
- 478.
-
-
-LaTeX Warning: Reference `sec:closedforms' on page 5 undefined on input line 48
-1.
-
-
-LaTeX Warning: Reference `eq:g1obs_gauss' on page 5 undefined on input line 482
-.
-
-
-LaTeX Warning: Reference `sec:closedforms' on page 5 undefined on input line 49
-8.
-
-
-LaTeX Warning: Reference `eq:Ffoam' on page 5 undefined on input line 514.
-
-
-LaTeX Warning: Reference `sec:Calpha_origin' on page 5 undefined on input line 
-519.
-
-
-LaTeX Warning: Reference `eq:diffVarExt' on page 5 undefined on input line 526.
-
-
-[5]
-
-Package natbib Warning: Citation `NgPerlman2022' on page 6 undefined on input l
-ine 549.
-
-
-Package natbib Warning: Citation `NgPerlman2022' on page 6 undefined on input l
-ine 559.
-
-
-LaTeX Warning: Reference `sec:grb221009a' on page 6 undefined on input line 560
-.
-
-
-Package natbib Warning: Citation `NgPerlman2022' on page 6 undefined on input l
-ine 564.
-
-
-Package natbib Warning: Citation `LieuHillman2003' on page 6 undefined on input
- line 564.
-
-
-Package natbib Warning: Citation `Christiansen2011' on page 6 undefined on inpu
-t line 564.
-
-
-Package natbib Warning: Citation `Perlman2015' on page 6 undefined on input lin
-e 564.
-
-
-LaTeX Warning: Reference `eq:Sobs_gauss' on page 6 undefined on input line 579.
-
-
+[5] [6] [7]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 588.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 755.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 1.66702pt
-(hyperref)                removed on input line 588.
-
-
-LaTeX Warning: Reference `eq:g1obs_gauss' on page 6 undefined on input line 595
-.
-
-
-LaTeX Warning: Reference `eq:robs_decomp' on page 6 undefined on input line 598
-.
-
-
-Package natbib Warning: Citation `Burns2023' on page 6 undefined on input line 
-605.
-
-
-Package natbib Warning: Citation `Ravasio2024' on page 6 undefined on input lin
-e 608.
-
-
-Package natbib Warning: Citation `YQZhang2024' on page 6 undefined on input lin
-e 608.
-
-
-LaTeX Warning: Reference `sec:model' on page 6 undefined on input line 625.
-
-
-Package natbib Warning: Citation `YQZhang2024' on page 6 undefined on input lin
-e 630.
-
-
-Package natbib Warning: Citation `Ravasio2024' on page 6 undefined on input lin
-e 654.
-
-
-Package natbib Warning: Citation `YQZhang2024' on page 6 undefined on input lin
-e 663.
-
-[6]
-
-LaTeX Warning: Reference `eq:Sobs_gauss' on page 7 undefined on input line 671.
-
-
-
-LaTeX Warning: Reference `eq:g1obs' on page 7 undefined on input line 689.
-
-
-LaTeX Warning: Reference `sec:closedforms' on page 7 undefined on input line 69
-1.
-
-
-LaTeX Warning: Reference `eq:robs_decomp' on page 7 undefined on input line 696
-.
-
-
-LaTeX Warning: Reference `sec:closedforms' on page 7 undefined on input line 70
-3.
-
-
-LaTeX Warning: Reference `eq:g1obs_gauss' on page 7 undefined on input line 704
-.
-
-
-LaTeX Warning: Reference `eq:sigmaphi' on page 7 undefined on input line 715.
-
-
-LaTeX Warning: Reference `eq:robs_decomp' on page 7 undefined on input line 716
-.
-
-
-LaTeX Warning: Reference `eq:robs_model' on page 7 undefined on input line 745.
-
-
-
-Package natbib Warning: Citation `Note1' on page 7 undefined on input line 754.
-
-
-[7{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
-}]
-
-LaTeX Warning: Reference `eq:rfoam_dyn' on page 8 undefined on input line 780.
-
-
-LaTeX Warning: Reference `eq:NgPerlmanVar' on page 8 undefined on input line 78
-3.
-
-
-LaTeX Warning: Reference `sec:closedforms' on page 8 undefined on input line 79
-7.
-
-
-LaTeX Warning: Reference `eq:g1obs_gauss' on page 8 undefined on input line 824
-.
-
-
-LaTeX Warning: Reference `eq:sigmaphi' on page 8 undefined on input line 878.
-
-
-LaTeX Warning: Reference `eq:sigmaphi_cosmo' on page 8 undefined on input line 
-894.
-
-
-LaTeX Warning: Reference `sec:differential_jitter' on page 8 undefined on input
- line 895.
-
-
-LaTeX Warning: Reference `sec:CMB_degeneracy' on page 8 undefined on input line
- 898.
-
-
-LaTeX Warning: Reference `eq:NgPerlmanVar' on page 8 undefined on input line 90
-1.
+(hyperref)                removed on input line 755.
 
 [8]
-
-LaTeX Warning: Reference `sec:differential_jitter' on page 9 undefined on input
- line 906.
-
-
-LaTeX Warning: Reference `eq:sigmaphi_cosmo' on page 9 undefined on input line 
-908.
+Overfull \hbox (3.20851pt too wide) in paragraph at lines 882--882
+\OT1/cmr/m/n/7 LHAASO 
+ []
 
 
-LaTeX Warning: Reference `sec:CMB_caveats' on page 9 undefined on input line 92
-8.
+Overfull \hbox (2.00015pt too wide) in paragraph at lines 882--882
+\OT1/cmr/m/n/7 corrected 
+ []
 
 
-LaTeX Warning: Reference `sec:CMB_degeneracy' on page 9 undefined on input line
- 930.
+Overfull \hbox (2.51462pt too wide) in paragraph at lines 882--882
+\OML/cmm/m/it/7 ^^[[] \OT1/cmr/m/n/7 = 
+ []
 
 
-LaTeX Warning: Reference `eq:WK_obs' on page 9 undefined on input line 938.
+Overfull \hbox (12.33406pt too wide) in paragraph at lines 882--882
+[]\OT1/cmr/m/n/7 (\OML/cmm/m/it/7 N[]=N\OT1/cmr/m/n/7 ) = 
+ []
 
 
-LaTeX Warning: Reference `eq:g1obs' on page 9 undefined on input line 939.
+Overfull \hbox (8.98628pt too wide) in paragraph at lines 907--907
+[]\OT1/cmr/m/n/7 Recompute 
+ []
 
 
-LaTeX Warning: Reference `sec:CMB_degeneracy' on page 9 undefined on input line
- 953.
+Overfull \hbox (3.20851pt too wide) in paragraph at lines 907--907
+\OT1/cmr/m/n/7 LHAASO 
+ []
 
 
-LaTeX Warning: Reference `eq:g1src_gauss' on page 9 undefined on input line 969
-.
+LaTeX Warning: Marginpar on page 9 moved.
 
-
-LaTeX Warning: Reference `eq:WK_obs' on page 9 undefined on input line 998.
-
-
-LaTeX Warning: Reference `sec:spec' on page 9 undefined on input line 1012.
-
-[9]
-
-LaTeX Warning: Reference `eq:diffVarExt' on page 10 undefined on input line 102
-7.
-
-
-LaTeX Warning: Reference `sec:CMB_degeneracy' on page 10 undefined on input lin
-e 1057.
-
-
-LaTeX Warning: Reference `sec:CMB_degeneracy' on page 10 undefined on input lin
-e 1064.
-
-
-LaTeX Warning: Reference `eq:CMB_spectrum' on page 10 undefined on input line 1
-084.
-
-
-LaTeX Warning: Reference `eq:Ffoam' on page 10 undefined on input line 1109.
-
-
-LaTeX Warning: Reference `sec:g1' on page 10 undefined on input line 1114.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1116.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mu' on input line 1116.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1116.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1116.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1116.
-
-
-Package natbib Warning: Citation `Fixsen1996' on page 10 undefined on input lin
-e 1123.
-
-
-LaTeX Warning: Reference `eq:NgPerlmanVar' on page 10 undefined on input line 1
-128.
-
-[10]
-
-LaTeX Warning: Reference `eq:dIdA' on page 11 undefined on input line 1142.
-
-
-LaTeX Warning: Reference `eq:Knufast' on page 11 undefined on input line 1145.
-
-
-Package natbib Warning: Citation `Fixsen1996' on page 11 undefined on input lin
-e 1168.
-
-
-LaTeX Warning: Reference `fig:cmb_snr' on page 11 undefined on input line 1201.
-
-
-<cmb_snr_alpha.pdf, id=126, 460.05528pt x 337.50089pt>
+[9] [10] [11] [12] [13]
+<cmb_snr_alpha.pdf, id=445, 462.18666pt x 337.50089pt>
 File: cmb_snr_alpha.pdf Graphic file (type pdf)
 <use cmb_snr_alpha.pdf>
-Package pdftex.def Info: cmb_snr_alpha.pdf  used on input line 1208.
-(pdftex.def)             Requested size: 418.20374pt x 306.81215pt.
+Package pdftex.def Info: cmb_snr_alpha.pdf  used on input line 1450.
+(pdftex.def)             Requested size: 418.20374pt x 305.4011pt.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: Reference `sec:CMB_derivation' on page 11 undefined on input lin
-e 1221.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1245.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1245.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1245.
-
-
-LaTeX Warning: Reference `sec:CMB_derivation' on page 11 undefined on input lin
-e 1252.
-
-[11]
-
-LaTeX Warning: Reference `eq:fisher_corr_matrix' on page 12 undefined on input 
-line 1267.
-
-
-Package natbib Warning: Citation `Fixsen2009' on page 12 undefined on input lin
-e 1282.
-
-
-LaTeX Warning: Reference `fig:cmb_bias' on page 12 undefined on input line 1309
-.
-
-[12 <./cmb_snr_alpha.pdf>]
-<cmb_bias_alpha.pdf, id=209, 460.35991pt x 337.50089pt>
-File: cmb_bias_alpha.pdf Graphic file (type pdf)
-<use cmb_bias_alpha.pdf>
-Package pdftex.def Info: cmb_bias_alpha.pdf  used on input line 1317.
-(pdftex.def)             Requested size: 418.20374pt x 306.601pt.
-
-
-Package natbib Warning: Citation `Fixsen2009' on page 13 undefined on input lin
-e 1328.
-
-
-LaTeX Warning: Reference `fig:cmb_snr' on page 13 undefined on input line 1328.
-
-
-
-Package natbib Warning: Citation `Fixsen2009' on page 13 undefined on input lin
-e 1328.
-
-
-LaTeX Warning: Reference `fig:cmb_snr' on page 13 undefined on input line 1328.
-
-
-
-Package natbib Warning: Citation `NgPerlman2022' on page 13 undefined on input 
-line 1356.
-
-[13 <./cmb_bias_alpha.pdf>]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 1359.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 1.66702pt
-(hyperref)                removed on input line 1359.
-
-
-LaTeX Warning: Reference `sec:grb221009a' on page 14 undefined on input line 13
-64.
-
-
-LaTeX Warning: Reference `sec:CMB_T0_bias' on page 14 undefined on input line 1
-367.
-
-
-LaTeX Warning: Reference `fig:cmb_bias' on page 14 undefined on input line 1367
-.
-
-
-LaTeX Warning: Reference `sec:closedforms' on page 14 undefined on input line 1
-384.
-
-
-LaTeX Warning: Reference `sec:CMB' on page 14 undefined on input line 1391.
-
-
-LaTeX Warning: Reference `sec:CMB_derivation' on page 14 undefined on input lin
-e 1392.
-
-
-LaTeX Warning: Reference `eq:Ffoam' on page 14 undefined on input line 1395.
-
-
-LaTeX Warning: Reference `eq:alpha_grb_dyn' on page 14 undefined on input line 
-1399.
-
-
-Package natbib Warning: Citation `McEnery2019' on page 14 undefined on input li
-ne 1415.
-
-
-Package natbib Warning: Citation `Caputo2022' on page 14 undefined on input lin
-e 1416.
-
-
-Package natbib Warning: Citation `DeAngelis2017' on page 14 undefined on input 
-line 1419.
-
-
-Package natbib Warning: Citation `AmelinoCamelia2013' on page 14 undefined on i
-nput line 1436.
-
-
-Package natbib Warning: Citation `LHAASO2024' on page 14 undefined on input lin
-e 1446.
-
-
-LaTeX Warning: Reference `eq:robs_model' on page 14 undefined on input line 145
-0.
-
-
-Package natbib Warning: Citation `Kogut2011' on page 14 undefined on input line
- 1457.
-
-
-LaTeX Warning: Reference `sec:CMB' on page 14 undefined on input line 1464.
-
-
-LaTeX Warning: Reference `fig:cmb_snr' on page 14 undefined on input line 1467.
-
-
-
-LaTeX Warning: Reference `eq:sigmaphi' on page 14 undefined on input line 1470.
-
-
-
-LaTeX Warning: Reference `eq:sigmaphi_cosmo' on page 14 undefined on input line
- 1473.
-
-
-LaTeX Warning: Reference `eq:sigmaphi_cosmo' on page 14 undefined on input line
- 1478.
-
-
-LaTeX Warning: Reference `eq:sigmaphi' on page 14 undefined on input line 1479.
-
-
-
-Package natbib Warning: Citation `Andre2014' on page 14 undefined on input line
- 1486.
-
-
-LaTeX Warning: Reference `sec:grb221009a' on page 14 undefined on input line 14
-89.
-
-[14]
-No file g1.bbl.
-
-Package natbib Warning: There were undefined citations.
-
-[15] (./g1.aux)
+[14] [15 <./cmb_snr_alpha.pdf>] [16] (./g1.bbl [17]) [18] [19] (./g1.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `g1.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `g1.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  1F2D112499E7843E05FCE95D076234D0;4787.
+Package rerunfilecheck Info: File `g1.out' has not changed.
+(rerunfilecheck)             Checksum: 4AE266B2FA1BF953ED13294878B8D2BE;6739.
  ) 
 Here is how much of TeX's memory you used:
- 12330 strings out of 474116
- 182530 string characters out of 5743682
+ 12559 strings out of 474116
+ 186162 string characters out of 5743682
  1958187 words of memory out of 5000000
- 34456 multiletter control sequences out of 15000+600000
- 569421 words of font info for 78 fonts, out of 8000000 for 9000
+ 34622 multiletter control sequences out of 15000+600000
+ 569086 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,14n,79p,810b,520s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,14n,79p,1282b,678s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
@@ -1183,18 +585,16 @@ t/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2024/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2024/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2024/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/
-public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2024/texmf-dist/fonts/ty
-pe1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/2024/texmf-dist/fonts
-/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/f
-onts/type1/public/cm-super/sfrm1000.pfb>
-Output written on g1.pdf (15 pages, 793534 bytes).
+/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2024/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type
+1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2024/texmf-dist/fonts/
+type1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/2024/texmf-dist/fon
+ts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on g1.pdf (19 pages, 675002 bytes).
 PDF statistics:
- 417 PDF objects out of 1000 (max. 8388607)
- 337 compressed objects within 4 object streams
- 85 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 784 PDF objects out of 1000 (max. 8388607)
+ 694 compressed objects within 7 object streams
+ 141 named destinations out of 1000 (max. 500000)
+ 262 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -170,10 +170,10 @@ This subsection lays out the phenomenological and physical basis for the
 foam model used throughout the paper.  We adopt the Ng--Perlman picture of
 spacetime foam as a source of stochastic, achromatic path-length
 fluctuations, and ground that picture in a linearized perturbation of the
-FLRW background.  The resulting kinematic relations fix two co-equal
-observables --- the achromatic arrival-time jitter $\delta t$ and the
-chromatic phase jitter $\sigma_\phi$ it induces --- together with the
-frequency shift $\delta\omega$, on which the temporal-correlation and
+FLRW background.  The resulting kinematic relations fix three co-equal
+projections of one perturbation --- the achromatic arrival-time jitter
+$\delta t$, the chromatic phase jitter $\sigma_\phi$ it induces, and the
+frequency shift $\delta\omega$ --- on which the temporal-correlation and
 differential-jitter framework developed below is built.
 
 We model the detected field as a stochastically time-warped version of the
@@ -187,7 +187,18 @@ complex Gaussian process (chaotic light, appropriate for the thermal and incoher
 non-thermal sources considered here, including GRB high-energy
 emission and the CMB) and $\delta t(t)$ is the foam-induced
 arrival-time jitter, a stationary stochastic process statistically independent
-of $E_{\rm src}$.  Here $t$ is the observer's time, with the deterministic
+of $E_{\rm src}$.  Following the prior foam literature, the source is taken
+to be a point source along a single line of sight, and $E_{\rm src}(t)$ is
+the complex field amplitude of that single spatial mode --- not a
+polarization mode.  Because the article works entirely at the level of
+first-order coherence, a spatially extended, incoherent source is recovered
+as the linear superposition of independent point sources; the superposition
+is linear in the first-order coherence precisely because the cross terms
+between mutually incoherent point sources vanish.  This is the
+spatial/angular counterpart of the incoherent narrowband-mode superposition
+used for the CMB in Section~\ref{sec:CMB_derivation}, and the transverse
+behavior of the foam across an extended source lies outside the scope of the
+present treatment.  Here $t$ is the observer's time, with the deterministic
 light-travel delay and cosmological time dilation absorbed into the argument
 of $E_{\rm src}$, so $\delta t(t)$ is the zero-mean foam fluctuation about
 the mean arrival time.  The jitter arises from cumulative path-length
@@ -197,11 +208,11 @@ fluctuations along the line of sight of propagation distance $D$:
   \label{eq:jitter}
 \end{equation}
 
-The vacuum $c$ in Eq.~\eqref{eq:jitter} reflects the standard Ng--Perlman
-treatment of foam as a small perturbation atop a flat (or FLRW) background,
-with photons traveling at $c$ along stochastically perturbed geodesics ---
-equivalently, propagation through an effective refractive index $n(\tau,r)$,
-with $\delta t=\tfrac1c\int(n-1)\,dr$.  The key result, established below, is
+The vacuum $c$ in Eq.~\eqref{eq:jitter} is equivalent to propagation through
+an effective refractive index $n(\tau,r)$, with $\delta t=\tfrac1c\int(n-1)\,dr$;
+the construction of $n(\tau,r)$ in Eqs.~\eqref{eq:foam_metric}--\eqref{eq:dt_metric}
+below shows constructively that $n-1$ is geometric and the prefactor is the
+vacuum $c$.  The key result, established there, is
 that this path-length shift --- and hence $\delta t$ itself --- is
 achromatic (frequency-independent).  To ground this claim, we treat the foam
 as a stochastic, time-dependent perturbation of a radial
@@ -239,35 +250,48 @@ identifying $\Delta\ell_{\rm tot}=-\tfrac12\!\int(h_{00}-h_{11})\,dr$ in
 Eq.~\eqref{eq:jitter}.  The integral runs over comoving radius, so
 $\Delta\ell_{\rm tot}$ is a comoving path-length fluctuation with variance
 $\sigma_\ell^2(D_C)=\langle\Delta\ell_{\rm tot}^2\rangle$ supplied by
-Eq.~\eqref{eq:NgPerlmanVar}.  The linearization is \emph{per cell}
-($|h_{ab}|\ll1$); the jitter accumulated over the $\sim D/\ell_{\rm P}$
-cells of Eq.~\eqref{eq:NgPerlmanVar} can nonetheless be large
-($\sigma_\phi^2\gtrsim1$; Sec.~\ref{sec:CMB_phasevar}).  The arrival-time
+Eq.~\eqref{eq:NgPerlmanVar}.
+The arrival-time
 jitter is thus fixed entirely by the metric and is achromatic: it is the
-same delay for every wavelength.  This is the first of two faces of the
-foam.  The observables, however, respond not to the delay itself but to
-the phase it imprints --- and the phase, as we now show, is chromatic.
+same delay for every wavelength.
 
 The phase jitter follows from the arrival-time jitter by the elementary
-relation between path and phase.  A photon of observed wavelength
-$\lambda_{\rm obs}$ that is delayed by the achromatic path fluctuation
-$\sigma_\ell$ accumulates a phase variance
-$\sigma_\phi=(2\pi/\lambda_{\rm eff})\,\sigma_\ell$, phase being wavenumber
-times path.  The achromaticity of $\delta t$ now does decisive work:
-because $\sigma_\ell$ carries no wavelength dependence, the entire
-chromatic content of $\sigma_\phi$ resides in the prefactor, giving the
-scaling $\sigma_\phi\propto1/\lambda_{\rm obs}$ that governs every
-observable in Sec.~\ref{sec:sources}.  The chromaticity of the phase is
-therefore not an independent assumption but a consequence of the
-achromaticity of the delay --- the two are locked together by phase
-$=$ wavenumber $\times$ path.  The cosmological line of sight enters
-through the effective wavelength
-$\lambda_{\rm eff}\equiv\lambda_{\rm obs}/\sqrt{\langle(1+z')^2\rangle}$,
-which carries the $(1+z')^2$ weighting of the per-shell contributions
-(Eq.~\eqref{eq:sigmaphi_cosmo}): each comoving shell at redshift $z'$
-contributes phase at its blueshifted local wavenumber, and the weighted
-accumulation along the line of sight defines $\lambda_{\rm eff}$.  The
-anchoring of this weighting is derived in Appendix~\ref{app:prescription}.
+relation between path and phase.  In each comoving shell at redshift
+$z'$, the photon's wavelength in the local rest frame is
+$\lambda'=\lambda_{\rm obs}/(1+z')$ --- shorter than the wavelength
+measured by the observer by the factor $(1+z')$ --- so phase accumulates
+there at the local wavenumber
+$k_{\rm local}(z')=2\pi/\lambda'=(2\pi/\lambda_{\rm obs})(1+z')$.  The
+accumulated foam phase is the line-of-sight integral of this local
+wavenumber against the achromatic path-excess density $n-1$ --- the
+per-unit-length integrand of Eq.~\eqref{eq:dt_metric},
+\begin{equation}
+  \delta\phi \;=\; \int_0^{D_C} k_{\rm local}\!\big(z'(r)\big)\,\big[n(\tau,r)-1\big]\,dr
+  \;=\; \frac{2\pi}{\lambda_{\rm obs}}\int_0^{D_C} \big(1+z'(r)\big)\,\big[n(\tau,r)-1\big]\,dr,
+  \label{eq:dphi_los}
+\end{equation}
+the phase analogue of the delay integral Eq.~\eqref{eq:dt_metric}.  Here the
+comoving radius $r$ parametrizes the line of sight and supplies the true
+line-of-sight measure $dr$, while the accumulated path excess
+$\delta\ell=\int(n-1)\,dr$ enters only through its rate of accumulation
+$d(\delta\ell)/dr=n-1$ along the ray.
+
+Squaring and accumulating the statistically independent per-shell
+contributions --- each weighted by $k_{\rm local}^2(z')\propto(1+z')^2$
+--- gives the phase variance
+\begin{equation}
+  \sigma_\phi^2 \;=\; \left(\frac{2\pi}{\lambda_{\rm obs}}\right)^{\!2}\!
+  \int (1+z')^2\,d\sigma_\ell^2(D_C)
+  \;=\; \left(\frac{2\pi}{\lambda_{\rm eff}}\right)^{\!2}\sigma_\ell^2(D_C),
+  \qquad
+  \lambda_{\rm eff}\equiv\frac{\lambda_{\rm obs}}{\sqrt{\langle(1+z')^2\rangle_{D_C}}},
+  \label{eq:sigmaphi2_los}
+\end{equation}
+the phase-pillar analogue of the delay variance $\sigma_\ell^2(D_C)$ of
+Eq.~\eqref{eq:NgPerlmanVar}, so that
+$\sigma_\phi=(2\pi/\lambda_{\rm eff})\,\sigma_\ell(D_C)$
+(Eq.~\eqref{eq:sigmaphi_cosmo}).  The anchoring of this weighting is
+derived in Appendix~\ref{app:prescription}.
 
 Arrival-time jitter and phase jitter are not two effects but two faces of
 one --- and there is a third.  All descend from the same metric
@@ -288,31 +312,38 @@ $-\omega_0[t-\delta t(t)]$, giving an instantaneous frequency
 $\omega_0\,(1-d\,\delta t/dt)$, i.e.\ Eq.~\eqref{eq:dwdt} --- equivalently,
 the leading-order perturbation of the geodesic frequency $\omega=-k_\mu
 u^\mu$ beyond the background redshift $\omega\propto a^{-1}$.  The three
-projections are one field seen three ways: a \emph{static} screen
-($d\,\delta t/dt=0$) shifts no frequency, whereas a time-varying one
-does, with $\langle\delta\omega\rangle=0$ and a variance that becomes the
-line broadening.  This is why the bounds rest on the dynamical regime
-(Section~\ref{sec:Calpha_origin}).  What the metric calculation fixes is
+projections are one field seen three ways, and the frequency shift is both a
+consequence of and the evidence for \emph{dynamical} foam.  A static screen
+($d\,\delta t/dt=0$) shifts no frequency and leaves the spectrum untouched;
+only a time-varying delay produces a frequency excursion, with
+$\langle\delta\omega\rangle=0$ and a variance set by the temporal structure
+of the jitter.  Here Section~\ref{sec:metric_origin} only announces this
+observable; the line broadening that its variance imprints on the observed
+coherence --- modifications (i)--(iii) --- is derived in
+Sec.~\ref{sec:closedforms} and Sec.~\ref{sec:spec}.  The quasi-static limit
+$\delta\omega\to0$ is the foil: the entire shape-distortion programme rests
+on the foam being dynamical, which is why the bounds assume the dynamical
+regime $\tau_{\rm foam}\ll\tau_c$ made precise in
+Section~\ref{sec:Calpha_origin} (with the quasi-static caveats deferred to
+Section~\ref{sec:conclusions}).  What the metric calculation fixes is
 this kinematic map; the amplitude and temporal structure of the
 correlations (Secs.~\ref{sec:Calpha_origin}--\ref{sec:differential_jitter})
 are modeled.
 
-Equations~\eqref{eq:foam_index}--\eqref{eq:dwdt} place the problem in the
-standard setting of wave propagation through a random, time-varying
-refractive medium~\cite{Ishimaru1978,Flatte1979,Rickett1990}, with
-$\sigma_\phi^2$ the eikonal phase variance of $n$ and $C_\alpha(\tau)$,
+We adopt throughout the eikonal phase-screen reduction --- the
+geometric-optics limit of the wave equation in $n(\tau,r)$ --- in which
+$\sigma_\phi^2$ is the eikonal phase variance of $n$ and $C_\alpha(\tau)$,
 $\sigma_\Delta^2(\tau)$ (Secs.~\ref{sec:Calpha_origin}--\ref{sec:differential_jitter})
-its mutual-coherence and phase-structure functions.  We adopt this eikonal
-phase-screen reduction throughout --- the geometric-optics limit of the wave
-equation in $n(\tau,r)$.
-
-With $\tau_{\rm foam}\sim\ell_{\rm P}/c$ and foam
+its mutual-coherence and phase-structure functions, the standard description
+of wave propagation through a random, time-varying refractive
+medium~\cite{Ishimaru1978,Flatte1979,Rickett1990}.  The reduction has a
+definite range of validity: with $\tau_{\rm foam}\sim\ell_{\rm P}/c$ and foam
 structure on scales $\ell_{\rm P}\ll\lambda$, the variation is strongly
 non-adiabatic, and a complete wave treatment would add diffractive and
-inelastic effects beyond this linear phase screen, not modeled here.  In
-particular, the achromaticity established above holds within this
-reduction; whether it survives a full sub-wavelength treatment
-($\ell_{\rm P}\ll\lambda$) is beyond our scope.
+inelastic effects beyond this linear phase screen, not modeled here.  The
+achromaticity established above holds within this reduction; whether it
+survives a full sub-wavelength treatment ($\ell_{\rm P}\ll\lambda$) is beyond
+our scope.
 
 \subsection{Temporal Decorrelation of Spacetime Foam}
 \label{sec:Calpha_origin}
@@ -460,10 +491,10 @@ Because the foam phase is $\phi=\omega_0\,\delta t$ --- the \emph{observed}
 carrier $\omega_0=2\pi c/\lambda_{\rm obs}$ times the \emph{observed}
 arrival-time delay $\delta t$ --- the suppression $e^{-\sigma_\phi^2}$ is
 manifestly observer-frame and carries no \emph{additional} cosmological
-prefactor of its own.  The redshift weighting enters $\sigma_\phi^2$ itself:
-each comoving shell at redshift $z'$ contributes phase at its blueshifted local
-wavenumber $k_{\rm local}=(2\pi/\lambda_{\rm obs})(1+z')$, so summing the
-independent shells along the line of sight,
+prefactor of its own.  The redshift weighting enters $\sigma_\phi^2$
+through the effective wavelength $\lambda_{\rm eff}$, defined in
+Section~\ref{sec:metric_origin} from the $(1+z')^2$-weighted accumulation
+of the rest-frame per-shell contributions:
 \begin{equation}
   \sigma_\phi^2
   \;=\; \left(\frac{2\pi}{\lambda_{\rm obs}}\right)^{\!2}\!\!
@@ -473,20 +504,11 @@ independent shells along the line of sight,
   \lambda_{\rm eff}\equiv\frac{\lambda_{\rm obs}}{\sqrt{\langle(1+z')^2\rangle_{D_C}}},
   \label{eq:sigmaphi_cosmo}
 \end{equation}
-with $A_\alpha=1$. The path-length statistics here are anchored
-\emph{differentially}: the amplitude $A$ is fixed at the level of the
-per-shell variance element, where the foam physics resides, and the
-$(1+z')^2$ weighting is applied directly to that element as it is integrated
-along the line of sight. We refer to this as the differential-primary (DP)
-anchoring; the alternative, in which the total-distance
-formula~\eqref{eq:NgPerlmanVar} is held fixed and differentiated to obtain
-the per-shell element, is the total-primary (TP) anchoring (see
-Appendix~\ref{app:prescription} for the full derivation of both,
-Eqs.~\eqref{eq:np-total}--\eqref{eq:diff-element}). The two anchorings are
-identical for $\alpha=1/2$ and diverge only
-at high redshift, so the choice is immaterial for the GRB but becomes
-material for the CMB (Section~\ref{sec:CMB_phasevar},
-Table~\ref{tab:prescription}).
+with $A_\alpha=1$.  How this weighting is anchored to the Ng--Perlman
+amplitude $A$ is immaterial for $\alpha=1/2$ and diverges only at high
+redshift, so the choice does not affect the GRB but becomes material for
+the CMB (Section~\ref{sec:CMB_phasevar}, Table~\ref{tab:prescription},
+Appendix~\ref{app:prescription}).
 
 The three foam variances are one
 quantity in different dress: the geometric $\sigma_\ell(D_C)$, the differential
@@ -1054,7 +1076,9 @@ $\lambda_{\rm eff}\approx\lambda_{\rm obs}/10^{2}$. The effective foam
 amplitude
 $A_{\rm eff}=\langle(1+z')^2\rangle_{D_C}\,A_\alpha D_{\rm C}^{2(1-\alpha)}\ell_P^{2\alpha}$
 used in Section~\ref{sec:CMB_degeneracy} carries this weighting under the
-differential-primary (DP) anchoring of Section~\ref{sec:differential_jitter}.
+$(1+z')^2$ prescription adopted in Section~\ref{sec:metric_origin} (the
+differential-primary, or DP, anchoring in the terminology of
+Appendix~\ref{app:prescription}).
 Near $\alpha=1/2$, where the headline CMB bound lies, $A_{\rm eff}$ is
 insensitive to the choice between the DP and total-primary (TP) anchorings;
 the anchoring dependence grows to the tens-of-percent level only for $\alpha$
@@ -1711,10 +1735,11 @@ We thank Robin Kaiser for helpful discussions that helped motivate this work.
 \section{Prescription Dependence of the Accumulated Phase Variance at High Redshift}
 \label{app:prescription}
 
-This appendix collects the derivation of the differential-primary (DP)
-anchoring adopted in Section~\ref{sec:differential_jitter}
-(Eqs.~\eqref{eq:np-total}--\eqref{eq:diff-element}) and tabulates the
-resulting prescription dependence underlying the $(1+z')^2$ weighting used in
+This appendix collects the derivation of the $(1+z')^2$ weighting adopted
+in Section~\ref{sec:metric_origin} --- the differential-primary, or DP,
+anchoring in the terminology introduced below
+(Eqs.~\eqref{eq:np-total}--\eqref{eq:diff-element}) --- and tabulates the
+resulting prescription dependence underlying the weighting used in
 Section~\ref{sec:CMB_phasevar} and the CMB foam suppression of
 Eq.~\eqref{eq:Ffoam_CMB} (Table~\ref{tab:prescription}).
 
@@ -1745,7 +1770,7 @@ distance $D$, one wavenumber $k$, and one amplitude $A$.
 
 Extending this prescription to a cosmological line of sight along an FLRW ray
 requires accumulating the variance shell-by-shell, with the local wavenumber
-in each shell blueshifted relative to the observer,
+in each shell larger than the observed wavenumber by the redshift factor,
 $k_{\rm local}(z') = (2\pi/\lambda_{\rm obs})(1+z')$. Phase is counted
 crest-by-crest in the local rest frame, so the differential variance element
 is weighted by $k_{\rm local}^2(z')$,
@@ -1758,8 +1783,8 @@ is weighted by $k_{\rm local}^2(z')$,
 with the path-length statistics anchored in comoving distance $D_C$. The
 factor $(1+z')^2$ (i.e. $p=2$) follows from retaining the comoving anchoring of
 the path element while applying the $k^2$ weighting per shell in the proper
-frame. Equation~\eqref{eq:diff-accum} is Eq.~\eqref{eq:sigmaphi_cosmo} of
-Section~\ref{sec:differential_jitter} written out shell by shell.
+frame. Equation~\eqref{eq:diff-accum} is Eq.~\eqref{eq:sigmaphi_cosmo}, defined in
+Section~\ref{sec:metric_origin}, written out shell by shell.
 
 At high redshift, Eq.~\eqref{eq:diff-accum} and Eq.~\eqref{eq:np-total} are
 \emph{not} the same prescription for $\alpha \neq 1/2$, even at fixed
@@ -1781,8 +1806,8 @@ defined from local Planck-cell physics in the shell rest frame, weighted by
 $k_{\rm local}^2$, and integrated via Eq.~\eqref{eq:diff-accum}. The amplitude
 $A$ is fixed at the differential level; the total-distance formula becomes a
 derived, redshift-dependent output that need not reproduce
-Eq.~\eqref{eq:np-total} for $\alpha\neq 1/2$. This is the anchoring adopted in
-Section~\ref{sec:differential_jitter}.
+Eq.~\eqref{eq:np-total} for $\alpha\neq 1/2$. This is the $(1+z')^2$
+weighting adopted in Section~\ref{sec:metric_origin}.
 
 \paragraph{Total-primary (TP).} The no-redshift limit is required to reproduce
 the calibrated total-distance formula~\eqref{eq:np-total} exactly, and the
