@@ -274,7 +274,16 @@ the phase analogue of the delay integral Eq.~\eqref{eq:dt_metric}.  Here the
 comoving radius $r$ parametrizes the line of sight and supplies the true
 line-of-sight measure $dr$, while the accumulated path excess
 $\delta\ell=\int(n-1)\,dr$ enters only through its rate of accumulation
-$d(\delta\ell)/dr=n-1$ along the ray.
+$d(\delta\ell)/dr=n-1$ along the ray.  The delay $\delta t$ and the phase
+$\delta\phi$ are the group (envelope) delay and the carrier phase of a single
+propagation, $E_{\rm obs}(t)=e^{-i\omega_0 t}\,e^{\,i\delta\phi(t)}\,
+A(t-\delta t)$ with $A$ the slow source envelope (derived in
+Appendix~\ref{app:derivation}); because $\delta\phi$ carries the per-shell
+$(1+z')$ weighting it is \emph{not} $\omega_0\,\delta t$.  The time-warp model
+$E_{\rm obs}(t)=E_{\rm src}(t-\delta t)$ of Eq.~\eqref{eq:Eobs} is the
+achromatic limit $\delta\phi\to\omega_0\,\delta t$ --- exact for the
+delay--frequency map of this subsection and restored to the chromatic form in
+Section~\ref{sec:g1}.
 
 Squaring and accumulating the statistically independent per-shell
 contributions --- each weighted by $k_{\rm local}^2(z')\propto(1+z')^2$
@@ -535,16 +544,15 @@ suppression factor Eq.~\eqref{eq:gaussian_jitter} takes the compact form
 with $\mathcal{F}_{\rm foam}(0)=1$.  At $\tau\to\infty$:
 $\mathcal{F}_{\rm foam}(\infty)$ equals $e^{-\sigma_\phi^2}$ in the dynamical
 limit ($C_\alpha\to 0$) and approaches unity for quasi-static foam
-($C_\alpha\approx 1$).  Because the foam phase registered at the observer is
-$\phi=\omega_0\,\delta t$ --- the observer-frame endpoint of the shell
-accumulation, the observed carrier $\omega_0=2\pi c/\lambda_{\rm obs}$ times
-the observed arrival-time delay $\delta t$ --- the suppression
-$e^{-\sigma_\phi^2}$ is manifestly observer-frame and carries no
-\emph{additional} cosmological prefactor of its own; the redshift weighting
-enters solely through $\lambda_{\rm eff}$ in $\sigma_\phi^2$
-(Eq.~\eqref{eq:sigmaphi_cosmo}), the $(1+z')^2$-weighted accumulation of the
-rest-frame per-shell contributions built from the per-shell wavenumbers
-$2\pi c/\lambda_{\rm eff}$ rather than the single endpoint $\omega_0$.
+($C_\alpha\approx 1$).  The accumulated foam phase is $\delta\phi$
+(Eq.~\eqref{eq:dphi_los}), built shell by shell at the local wavenumber
+$k_{\rm local}=(2\pi/\lambda_{\rm obs})(1+z')$ and \emph{not} the bare
+$\omega_0\,\delta t$; the suppression $e^{-\sigma_\phi^2}$ is nonetheless
+manifestly observer-frame and carries no \emph{additional} cosmological
+prefactor of its own, because the full redshift weighting already resides in
+$\sigma_\phi^2$ through $\lambda_{\rm eff}$ (Eq.~\eqref{eq:sigmaphi_cosmo}),
+the $(1+z')^2$-weighted accumulation of the per-shell contributions at
+$2\pi c/\lambda_{\rm eff}$.
 
 % ==============================================================
 \section{First-Order Coherence }
@@ -582,13 +590,13 @@ Eq.~\eqref{eq:Eobs}, so a carrier $e^{-i\omega_0\tau}$ would acquire only the
 single-frequency phase $\omega_0\Delta(\tau)$.  The per-shell blueshift of
 Section~\ref{sec:metric_origin} replaces this by the redshift-weighted
 differential phase $\Delta\delta\phi(\tau)$ of Eq.~\eqref{eq:Dphi_def}: writing
-$g^{(1)}_{\rm src}(\tau)=e^{-i\omega_0\tau}\,\tilde g(\tau)$ with slowly varying
-envelope $\tilde g$,
+$g^{(1)}_{\rm src}(\tau)=e^{-i\omega_0\tau}\,\gamma(\tau)$ with $\gamma$ the
+slowly varying envelope coherence,
 \begin{equation}
   g^{(1)}_{\rm obs}(\tau)
     = e^{-i\omega_0\tau}\,
       \big\langle e^{\,i\Delta\delta\phi(\tau)}\,
-                  \tilde g(\tau-\Delta(\tau))\big\rangle_{\delta t},
+                  \gamma(\tau-\Delta(\tau))\big\rangle_{\delta t},
   \label{eq:g1obs_phase}
 \end{equation}
 in which the envelope responds to the achromatic differential delay
@@ -1970,8 +1978,10 @@ This appendix derives the closed form~\eqref{eq:g1obs_gauss} from the
 propagation model, isolates the exact condition separating the achromatic
 ``time-warp'' convolution from the chromatic ``convolution-plus-suppression''
 result, treats the carrier--envelope cross-correlation explicitly rather than
-assuming it away, and validates the result against a direct Monte-Carlo
-simulation of the shell model.
+assuming it away, validates the result against a direct Monte-Carlo
+simulation of the shell model, and generalizes the single-carrier result to a
+broadband observed field by incoherent mode superposition
+(Appendix~\ref{app:der_broadband}).
 
 \subsection{Setup and propagation}
 \label{app:der_setup}
@@ -1979,7 +1989,9 @@ simulation of the shell model.
 Write the stationary, zero-mean source field in quasi-monochromatic form
 $E_{\rm src}(t)=e^{-i\omega_0 t}A(t)$, with $A(t)$ a slowly varying complex
 envelope (stationary complex Gaussian, coherence time $\tau_G$) and $\omega_0$
-the \emph{observed} carrier.  The intrinsic coherence is
+the \emph{observed} carrier (a per-mode device: a broadband field is recovered
+by incoherent superposition in Appendix~\ref{app:der_broadband}).  The
+intrinsic coherence is
 $g^{(1)}_{\rm src}(\tau)=e^{-i\omega_0\tau}\gamma(\tau)$ with
 $\gamma(\tau)=\langle A^*(t)A(t+\tau)\rangle/\langle|A|^2\rangle$, related to the
 source spectrum by Wiener--Khinchin.  Foam adds, in each comoving shell at
@@ -1995,8 +2007,8 @@ $(1+z')$, the honest propagation model keeps the two separate,
   E_{\rm obs}(t)=e^{-i\omega_0 t}\,e^{\,i\delta\phi(t)}\,A\!\big(t-\delta t(t)\big),
   \label{eq:app_Eobs}
 \end{equation}
-reducing to the pure time warp $E_{\rm src}(t-\delta t)$ only when
-$(1+z')\to{}$const.
+reducing to the achromatic time warp $E_{\rm src}(t-\delta t)$ of
+Eq.~\eqref{eq:Eobs} only when $(1+z')\to{}$const.
 
 \subsection{Jitter statistics}
 \label{app:der_stats}
@@ -2137,5 +2149,51 @@ Narrowband ($\tau_G=8$)                                          & $8\times10^{-
 \end{tabular}
 \end{ruledtabular}
 \end{table}
+
+\subsection{Broadband generalization}
+\label{app:der_broadband}
+
+The carrier $\omega_0$ above is a per-mode device, not a restriction.  A
+stationary broadband field is an incoherent superposition of narrowband modes:
+its spectral amplitudes are uncorrelated,
+$\langle\tilde E^*(\nu)\tilde E(\nu')\rangle=S_{\rm src}(\nu)\,\delta(\nu-\nu')$
+(the Wiener--Khinchin content of stationarity), so each frequency $\nu$ is an
+independent monochromatic mode of power $S_{\rm src}(\nu)\,d\nu$ carrying no
+envelope of its own.  Its foam factor is therefore the \emph{exact marginal} of
+Appendix~\ref{app:der_factor}, with no cross-term,
+\begin{equation}
+  \mathcal F_{\rm foam}(\tau;\nu)
+    =\big\langle e^{\,i\Delta\delta\phi_\nu(\tau)}\big\rangle
+    =e^{-\sigma_\phi^2(\nu)\,[1-C_\alpha(\tau)]},\qquad
+  \sigma_\phi^2(\nu)=\Big(\tfrac{2\pi\nu}{c}\Big)^2\langle(1+z')^2\rangle\,\sigma_\ell^2,
+  \label{eq:app_Ffoam_nu}
+\end{equation}
+the per-mode phase variance carrying the same $\langle(1+z')^2\rangle$ weighting
+as $\sigma_\phi^2$ (Eq.~\eqref{eq:sigmaphi_cosmo}) evaluated at the mode
+frequency.  Because all modes share the one achromatic delay $\delta t(t)$, the
+observed coherence and spectrum are the incoherent superpositions
+\begin{equation}
+  g^{(1)}_{\rm obs}(\tau)
+    =\frac{\int d\nu\,S_{\rm src}(\nu)\,e^{-i2\pi\nu\tau}\,
+            \mathcal F_{\rm foam}(\tau;\nu)}
+           {\int d\nu\,S_{\rm src}(\nu)},
+  \qquad
+  S_{\rm obs}(\nu)=e^{-\sigma_\phi^2(\nu)}\,S_{\rm src}(\nu)+\text{(pedestal)},
+  \label{eq:app_broadband}
+\end{equation}
+the spectrum following in the dynamical limit $C_\alpha\to0$ by
+Fourier-transforming the per-mode plateau (Eq.~\eqref{eq:WK_obs}); this is the
+broadband core-plus-pedestal spectrum~\eqref{eq:CMB_spectrum} derived for the
+CMB in Section~\ref{sec:CMB_derivation}, now seen to hold for any source
+profile.  The blackbody $S_{\rm src}=B_\nu(T_0)$ is the CMB case; a line of
+width $\sigma_\nu\ll\nu_0$ is the quasi-monochromatic case, where
+$\mathcal F_{\rm foam}(\tau;\nu)\to\mathcal F_{\rm foam}(\tau;\nu_0)$ factors
+out of Eq.~\eqref{eq:app_broadband} and returns
+$g^{(1)}_{\rm obs}\to\mathcal F_{\rm foam}(\tau;\nu_0)\,g^{(1)}_{\rm src}(\tau)$.
+The residual frequency dependence of $\sigma_\phi^2(\nu)\propto\nu^2$ across the
+line, together with the common $\delta t$ that convolves the envelope, is what
+the coherent closed form Eq.~\eqref{eq:g1obs_gauss} resums into its
+$\sigma_\Delta^2$ broadening and its $\bar\omega$-weighted carrier shift --- the
+narrow-line refinement of Eq.~\eqref{eq:app_broadband}.
 
 \end{document}
