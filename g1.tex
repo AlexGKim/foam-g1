@@ -1974,14 +1974,12 @@ Monte-Carlo Validation}
 \label{app:derivation}
 % ==============================================================
 
-This appendix derives the closed form~\eqref{eq:g1obs_gauss} from the
-propagation model, isolates the exact condition separating the achromatic
-``time-warp'' convolution from the chromatic ``convolution-plus-suppression''
-result, treats the carrier--envelope cross-correlation explicitly rather than
-assuming it away, validates the result against a direct Monte-Carlo
-simulation of the shell model, and generalizes the single-carrier result to a
-broadband observed field by incoherent mode superposition
-(Appendix~\ref{app:der_broadband}).
+This appendix sets up the propagation model and jitter statistics, gives the
+broadband observed coherence as an incoherent superposition of per-mode foam
+factors, then specializes to the coherent narrow line --- where the
+carrier--envelope cross-correlation is treated explicitly rather than assumed
+away --- to obtain the closed form~\eqref{eq:g1obs_gauss}, and validates it
+against a direct Monte-Carlo simulation of the shell model.
 
 \subsection{Setup and propagation}
 \label{app:der_setup}
@@ -1989,12 +1987,16 @@ broadband observed field by incoherent mode superposition
 Write the stationary, zero-mean source field in quasi-monochromatic form
 $E_{\rm src}(t)=e^{-i\omega_0 t}A(t)$, with $A(t)$ a slowly varying complex
 envelope (stationary complex Gaussian, coherence time $\tau_G$) and $\omega_0$
-the \emph{observed} carrier (a per-mode device: a broadband field is recovered
-by incoherent superposition in Appendix~\ref{app:der_broadband}).  The
-intrinsic coherence is
+the \emph{observed} carrier.  The intrinsic coherence is
 $g^{(1)}_{\rm src}(\tau)=e^{-i\omega_0\tau}\gamma(\tau)$ with
 $\gamma(\tau)=\langle A^*(t)A(t+\tau)\rangle/\langle|A|^2\rangle$, related to the
-source spectrum by Wiener--Khinchin.  Foam adds, in each comoving shell at
+source spectrum by Wiener--Khinchin.  Here $\gamma$ decays on the source
+coherence time $\tau_G$ --- a line of finite width $\sigma_\nu=1/2\pi\tau_G$,
+not a single frequency; the strictly monochromatic source is the
+$\tau_G\to\infty$ limit $\gamma\to{}$const, for which the foam reduces to a pure
+carrier-suppression factor with no envelope and no broadening.  A broadband
+field is an incoherent superposition of many such modes
+(Appendix~\ref{app:der_broadband}).  Foam adds, in each comoving shell at
 redshift $z'$, a stochastic achromatic geometric path excess $(n-1)\,dr$.  Two
 distinct quantities follow: an \emph{achromatic group delay} of the envelope,
 $\delta t(t)=\tfrac1c\int(n-1)\,dr$, and a \emph{chromatic carrier phase}
@@ -2036,9 +2038,63 @@ $\rho\neq0$: carrier phase and envelope delay are built from the same $w$, so
 they are correlated.  The foam is statistically independent of the source (it
 acts after emission), which justifies factoring the source and foam averages.
 
+\subsection{Broadband generalization}
+\label{app:der_broadband}
+
+The single carrier $\omega_0$ describes a narrow line; a general broadband field
+is an incoherent superposition of monochromatic modes.  A stationary field has
+uncorrelated spectral amplitudes,
+$\langle\tilde E^*(\nu)\tilde E(\nu')\rangle=S_{\rm src}(\nu)\,\delta(\nu-\nu')$
+(the Wiener--Khinchin content of stationarity), so each frequency $\nu$ is an
+independent mode of power $S_{\rm src}(\nu)\,d\nu$ carrying no envelope of its
+own.  Its foam factor is therefore the bare marginal characteristic function of
+the differential phase,
+\begin{equation}
+  \mathcal F_{\rm foam}(\tau;\nu)
+    =\big\langle e^{\,i\Delta\delta\phi_\nu(\tau)}\big\rangle
+    =e^{-D_\phi(\nu,\tau)/2}
+    =e^{-\sigma_\phi^2(\nu)\,[1-C_\alpha(\tau)]},\qquad
+  \sigma_\phi^2(\nu)=\Big(\tfrac{2\pi\nu}{c}\Big)^2\langle(1+z')^2\rangle\,\sigma_\ell^2,
+  \label{eq:app_Ffoam_nu}
+\end{equation}
+with $D_\phi(\nu,\tau)=2\sigma_\phi^2(\nu)[1-C_\alpha]$ the per-mode phase
+structure function (Eq.~\eqref{eq:app_moments} at the mode frequency), carrying
+the same $\langle(1+z')^2\rangle$ weighting as $\sigma_\phi^2$
+(Eq.~\eqref{eq:sigmaphi_cosmo}).  A single mode has no envelope, hence no
+carrier--envelope correlation and no cross-term.  Because all modes share the
+one achromatic delay $\delta t(t)$, the observed coherence and spectrum are the
+incoherent superpositions
+\begin{equation}
+  g^{(1)}_{\rm obs}(\tau)
+    =\frac{\int d\nu\,S_{\rm src}(\nu)\,e^{-i2\pi\nu\tau}\,
+            \mathcal F_{\rm foam}(\tau;\nu)}
+           {\int d\nu\,S_{\rm src}(\nu)},
+  \qquad
+  S_{\rm obs}(\nu)=e^{-\sigma_\phi^2(\nu)}\,S_{\rm src}(\nu)+\text{(pedestal)},
+  \label{eq:app_broadband}
+\end{equation}
+the spectrum following in the dynamical limit $C_\alpha\to0$ by
+Fourier-transforming the per-mode plateau (Eq.~\eqref{eq:WK_obs}); this is the
+broadband core-plus-pedestal spectrum~\eqref{eq:CMB_spectrum} derived for the
+CMB in Section~\ref{sec:CMB_derivation}, here for any source profile.  The
+blackbody $S_{\rm src}=B_\nu(T_0)$ is the CMB case.  A line of width
+$\sigma_\nu\ll\nu_0$ is the quasi-monochromatic case: to leading order
+$\mathcal F_{\rm foam}(\tau;\nu)\to\mathcal F_{\rm foam}(\tau;\nu_0)$ factors out
+and returns
+$g^{(1)}_{\rm obs}\to\mathcal F_{\rm foam}(\tau;\nu_0)\,g^{(1)}_{\rm src}(\tau)$;
+its first correction --- the residual $\sigma_\phi^2(\nu)\propto\nu^2$ variation
+across the line, with the common $\delta t$ that convolves the envelope --- is
+the carrier--envelope cross-term, resummed into the coherent narrow-line closed
+form Eq.~\eqref{eq:g1obs_gauss} derived below.
+
 \subsection{Exact coherence and the factorization}
 \label{app:der_factor}
 
+For a coherent narrow line --- carrier $\omega_0$ with a finite-bandwidth
+envelope $\gamma$, i.e.\ a superposition of modes spanning the linewidth --- the
+per-mode marginal of Appendix~\ref{app:der_broadband} is refined by the
+carrier--envelope correlation $\rho$ (Eq.~\eqref{eq:app_moments}), treated
+exactly as follows.
 Inserting Eq.~\eqref{eq:app_Eobs} into
 $g^{(1)}_{\rm obs}=\langle E_{\rm obs}^*(t)E_{\rm obs}(t{+}\tau)\rangle/
 \langle|E_{\rm obs}|^2\rangle$, averaging over the source at fixed foam
@@ -2097,7 +2153,9 @@ $e^{-D_\phi/2}$ but couples the envelope to the \emph{second} moment
 $\langle(1+z')^2\rangle$ rather than the first moment
 $\bar\omega\propto\langle1+z'\rangle$; the two agree iff $\mathrm{Var}(z')=0$,
 the discrepancy being precisely the $\bar\omega^2\sigma_\Delta^4$ term and the
-$\bar\omega$-weighted carrier shift in Eq.~\eqref{eq:g1obs_gauss}.
+$\bar\omega$-weighted carrier shift in Eq.~\eqref{eq:g1obs_gauss}.  Equation~\eqref{eq:g1obs_gauss}
+is thus the coherent narrow-line limit of the broadband
+spectrum~\eqref{eq:app_broadband}.
 
 \subsection{Monte-Carlo validation}
 \label{app:der_mc}
@@ -2149,51 +2207,5 @@ Narrowband ($\tau_G=8$)                                          & $8\times10^{-
 \end{tabular}
 \end{ruledtabular}
 \end{table}
-
-\subsection{Broadband generalization}
-\label{app:der_broadband}
-
-The carrier $\omega_0$ above is a per-mode device, not a restriction.  A
-stationary broadband field is an incoherent superposition of narrowband modes:
-its spectral amplitudes are uncorrelated,
-$\langle\tilde E^*(\nu)\tilde E(\nu')\rangle=S_{\rm src}(\nu)\,\delta(\nu-\nu')$
-(the Wiener--Khinchin content of stationarity), so each frequency $\nu$ is an
-independent monochromatic mode of power $S_{\rm src}(\nu)\,d\nu$ carrying no
-envelope of its own.  Its foam factor is therefore the \emph{exact marginal} of
-Appendix~\ref{app:der_factor}, with no cross-term,
-\begin{equation}
-  \mathcal F_{\rm foam}(\tau;\nu)
-    =\big\langle e^{\,i\Delta\delta\phi_\nu(\tau)}\big\rangle
-    =e^{-\sigma_\phi^2(\nu)\,[1-C_\alpha(\tau)]},\qquad
-  \sigma_\phi^2(\nu)=\Big(\tfrac{2\pi\nu}{c}\Big)^2\langle(1+z')^2\rangle\,\sigma_\ell^2,
-  \label{eq:app_Ffoam_nu}
-\end{equation}
-the per-mode phase variance carrying the same $\langle(1+z')^2\rangle$ weighting
-as $\sigma_\phi^2$ (Eq.~\eqref{eq:sigmaphi_cosmo}) evaluated at the mode
-frequency.  Because all modes share the one achromatic delay $\delta t(t)$, the
-observed coherence and spectrum are the incoherent superpositions
-\begin{equation}
-  g^{(1)}_{\rm obs}(\tau)
-    =\frac{\int d\nu\,S_{\rm src}(\nu)\,e^{-i2\pi\nu\tau}\,
-            \mathcal F_{\rm foam}(\tau;\nu)}
-           {\int d\nu\,S_{\rm src}(\nu)},
-  \qquad
-  S_{\rm obs}(\nu)=e^{-\sigma_\phi^2(\nu)}\,S_{\rm src}(\nu)+\text{(pedestal)},
-  \label{eq:app_broadband}
-\end{equation}
-the spectrum following in the dynamical limit $C_\alpha\to0$ by
-Fourier-transforming the per-mode plateau (Eq.~\eqref{eq:WK_obs}); this is the
-broadband core-plus-pedestal spectrum~\eqref{eq:CMB_spectrum} derived for the
-CMB in Section~\ref{sec:CMB_derivation}, now seen to hold for any source
-profile.  The blackbody $S_{\rm src}=B_\nu(T_0)$ is the CMB case; a line of
-width $\sigma_\nu\ll\nu_0$ is the quasi-monochromatic case, where
-$\mathcal F_{\rm foam}(\tau;\nu)\to\mathcal F_{\rm foam}(\tau;\nu_0)$ factors
-out of Eq.~\eqref{eq:app_broadband} and returns
-$g^{(1)}_{\rm obs}\to\mathcal F_{\rm foam}(\tau;\nu_0)\,g^{(1)}_{\rm src}(\tau)$.
-The residual frequency dependence of $\sigma_\phi^2(\nu)\propto\nu^2$ across the
-line, together with the common $\delta t$ that convolves the envelope, is what
-the coherent closed form Eq.~\eqref{eq:g1obs_gauss} resums into its
-$\sigma_\Delta^2$ broadening and its $\bar\omega$-weighted carrier shift --- the
-narrow-line refinement of Eq.~\eqref{eq:app_broadband}.
 
 \end{document}
