@@ -1980,6 +1980,14 @@ factors, then specializes to the coherent narrow line --- where the
 carrier--envelope cross-correlation is treated explicitly rather than assumed
 away --- to obtain the closed form~\eqref{eq:g1obs_gauss}, and validates it
 against a direct Monte-Carlo simulation of the shell model.
+Appendix~\ref{app:direct} gives an alternate, purely spectral-domain derivation
+for a general broadband source that bypasses the carrier--envelope step
+altogether; the two routes agree on the coherent-core suppression
+$e^{-\sigma_\phi^2(\nu)}$ but differ on the line broadening --- the achromatic
+group delay $\delta t$ here versus the $(1+z')$-weighted phase delay
+$\tau_\phi$ there, a factor $\langle(1+z')^2\rangle$ that is immaterial for
+GRB\,221009A but reflects an unresolved group-versus-phase-delay choice in the
+perturbed FLRW metric (Appendix~\ref{app:direct}).
 
 \subsection{Setup and propagation}
 \label{app:der_setup}
@@ -2207,5 +2215,110 @@ Narrowband ($\tau_G=8$)                                          & $8\times10^{-
 \end{tabular}
 \end{ruledtabular}
 \end{table}
+
+% ==============================================================
+\section{Direct Derivation of the Foam-Modified Coherence for a General Source}
+\label{app:direct}
+% ==============================================================
+
+This appendix is a candidate alternate to Appendix~\ref{app:derivation}: it
+obtains the observed coherence and spectrum for an arbitrary broadband source
+directly in the spectral domain, with no quasi-monochromatic carrier--envelope
+intermediate step.
+
+Let $E_{\rm src}(t)$ be a general stationary, zero-mean random field, with the
+spectral representation
+\begin{equation}
+  E_{\rm src}(t)=\int d\nu\,\tilde E(\nu)\,e^{-i2\pi\nu t},\qquad
+  \langle\tilde E^*(\nu)\tilde E(\nu')\rangle=S_{\rm src}(\nu)\,\delta(\nu-\nu'),
+  \label{eq:direct_src}
+\end{equation}
+the $\delta$-correlation of the spectral amplitudes being the Wiener--Khinchin
+content of stationarity; $g^{(1)}_{\rm src}(\tau)=\int S_{\rm src}(\nu)
+e^{-i2\pi\nu\tau}d\nu/\!\int S_{\rm src}(\nu)d\nu$.  No carrier or envelope is
+introduced.
+
+In the eikonal phase-screen reduction the foam multiplies the component at
+observed frequency $\nu$ by a stochastic phase $e^{i\varphi_\nu(t)}$, with
+$\varphi_\nu(t)=\tfrac{2\pi\nu}{c}\int(1+z')(n-1)\,dr$ the line-of-sight phase at
+the blueshifted local wavenumber (Eq.~\eqref{eq:dphi_los} at frequency $\nu$),
+\begin{equation}
+  E_{\rm obs}(t)=\int d\nu\,\tilde E(\nu)\,e^{-i2\pi\nu t}\,e^{\,i\varphi_\nu(t)}.
+  \label{eq:direct_Eobs}
+\end{equation}
+The phase is a sum over the $\sim D/\ell_P$ independent shells, hence Gaussian
+and zero-mean (CLT), with differential structure function
+\begin{equation}
+  D_\phi(\nu;\tau)\equiv\big\langle[\varphi_\nu(t{+}\tau)-\varphi_\nu(t)]^2\big\rangle
+    =2\sigma_\phi^2(\nu)\,[1-C_\alpha(\tau)],\quad
+  \sigma_\phi^2(\nu)=\Big(\tfrac{2\pi\nu}{c}\Big)^2\langle(1+z')^2\rangle\,\sigma_\ell^2,
+  \label{eq:direct_Dphi}
+\end{equation}
+the per-frequency phase variance of Eq.~\eqref{eq:sigmaphi_cosmo}.  The foam is
+statistically independent of the source.
+
+Forming the observed coherence and averaging over source and foam separately,
+\begin{align}
+  g^{(1)}_{\rm obs}(\tau)\,\langle|E_{\rm obs}|^2\rangle
+  &=\big\langle E_{\rm obs}^*(t)E_{\rm obs}(t{+}\tau)\big\rangle \notag\\
+  &=\!\int\!\!\int\! d\nu\,d\nu'\,
+     \langle\tilde E^*(\nu)\tilde E(\nu')\rangle\,
+     e^{\,i2\pi\nu t-i2\pi\nu'(t+\tau)}\,
+     \big\langle e^{-i\varphi_\nu(t)+i\varphi_{\nu'}(t+\tau)}\big\rangle_{\rm foam}.
+  \label{eq:direct_double}
+\end{align}
+The source $\delta$-correlation collapses $\nu'\!=\!\nu$ --- stationarity alone
+decouples the modes --- leaving the per-mode foam average
+$\langle e^{\,i[\varphi_\nu(t+\tau)-\varphi_\nu(t)]}\rangle=e^{-D_\phi(\nu;\tau)/2}$,
+a bare marginal characteristic function.  With $\langle|E_{\rm obs}|^2\rangle
+=\langle|E_{\rm src}|^2\rangle=\int S_{\rm src}(\nu)d\nu$ (the phase screen is
+unitary),
+\begin{equation}
+  \boxed{\;g^{(1)}_{\rm obs}(\tau)
+    =\frac{\int d\nu\,S_{\rm src}(\nu)\,e^{-i2\pi\nu\tau}\,
+            \mathcal F_{\rm foam}(\tau;\nu)}
+           {\int d\nu\,S_{\rm src}(\nu)},\qquad
+   \mathcal F_{\rm foam}(\tau;\nu)=e^{-\sigma_\phi^2(\nu)[1-C_\alpha(\tau)]}.\;}
+  \label{eq:direct_result}
+\end{equation}
+No carrier, envelope, or quasi-monochromatic step enters, and because the modes
+are decoupled by stationarity the foam factor is the per-mode marginal --- there
+is no carrier--envelope cross-term.
+
+The observed spectrum follows by Wiener--Khinchin (Eq.~\eqref{eq:WK_obs}).  In
+the dynamical limit $C_\alpha\to0$, $\mathcal F_{\rm foam}(\tau;\nu)\to
+e^{-\sigma_\phi^2(\nu)}$ outside $|\tau|\lesssim\tau_{\rm foam}$, whose transform
+is the coherent core $e^{-\sigma_\phi^2(\nu)}S_{\rm src}(\nu)$, while the
+short-lag residual transforms to a broad pedestal,
+\begin{equation}
+  S_{\rm obs}(\nu)=e^{-\sigma_\phi^2(\nu)}\,S_{\rm src}(\nu)+\text{(pedestal)},
+  \label{eq:direct_spectrum}
+\end{equation}
+the broadband core-plus-pedestal spectrum~\eqref{eq:CMB_spectrum}, here for any
+$S_{\rm src}$.  A blackbody $S_{\rm src}=B_\nu(T_0)$ gives the CMB spectrum
+(Section~\ref{sec:CMB_derivation}); a line of width $\sigma_\nu\ll\nu_0$ gives,
+to leading order, $g^{(1)}_{\rm obs}\to\mathcal F_{\rm foam}(\tau;\nu_0)\,
+g^{(1)}_{\rm src}(\tau)$, with the chromatic variation of
+$\sigma_\phi^2(\nu)\propto\nu^2$ across the line shifting its center (linear
+term) and changing its width (quadratic term).
+
+\emph{Relation to Appendix~\ref{app:derivation}.}  Both routes give the same
+coherent-core suppression $e^{-\sigma_\phi^2(\nu)}$.  They differ on the line
+\emph{broadening}.  Here the sole foam action is the per-frequency phase
+$\varphi_\nu\propto\nu$ (Eq.~\eqref{eq:dphi_los}) --- equivalently a pure delay
+by the $(1+z')$-weighted $\tau_\phi=\tfrac1c\int(1+z')(n-1)\,dr$ --- so the
+narrow-line width is set by the chromatic variation of $\sigma_\phi^2(\nu)$,
+i.e.\ by the weighted delay variance $\langle(1+z')^2\rangle\sigma_\Delta^2$.
+Appendix~\ref{app:derivation} instead separates an \emph{achromatic} group delay
+$\delta t$ (envelope broadening by the \emph{unweighted} $\sigma_\Delta^2$,
+Eq.~\eqref{eq:diffVarExt}) from the chromatic carrier phase, generating the
+carrier--envelope cross-term.  The two broadenings differ by a factor
+$\langle(1+z')^2\rangle$ ($\approx1.1$ for GRB\,221009A, immaterial; large for
+the CMB, where broadening is not the operative observable), reflecting whether
+the photon arrival/group delay is the achromatic $\delta t$ or the weighted
+$\tau_\phi$ --- the group-versus-phase delay in the perturbed FLRW metric (cf.\
+Appendix~\ref{app:prescription}).  This direct route, making no carrier--envelope
+split, produces no cross-term; the cross-term of Appendix~\ref{app:derivation}
+is the narrow-line image of the chromatic line-shape distortion above.
 
 \end{document}
