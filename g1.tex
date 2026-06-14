@@ -577,6 +577,29 @@ in Eq.~\eqref{eq:g1def} cancels), averaging over the jitter yields
       g^{(1)}_{\rm src}(\tau - \Delta)\,d\Delta.
   \label{eq:g1obs}
 \end{equation}
+Equation~\eqref{eq:g1obs} treats the foam as the pure achromatic time warp of
+Eq.~\eqref{eq:Eobs}, so a carrier $e^{-i\omega_0\tau}$ would acquire only the
+single-frequency phase $\omega_0\Delta(\tau)$.  The per-shell blueshift of
+Section~\ref{sec:metric_origin} replaces this by the redshift-weighted
+differential phase $\Delta\delta\phi(\tau)$ of Eq.~\eqref{eq:Dphi_def}: writing
+$g^{(1)}_{\rm src}(\tau)=e^{-i\omega_0\tau}\,\tilde g(\tau)$ with slowly varying
+envelope $\tilde g$,
+\begin{equation}
+  g^{(1)}_{\rm obs}(\tau)
+    = e^{-i\omega_0\tau}\,
+      \big\langle e^{\,i\Delta\delta\phi(\tau)}\,
+                  \tilde g(\tau-\Delta(\tau))\big\rangle_{\delta t},
+  \label{eq:g1obs_phase}
+\end{equation}
+in which the envelope responds to the achromatic differential delay
+$\Delta(\tau)$ (variance $\sigma_\Delta^2$) while the carrier is suppressed by
+the foam factor
+$\mathcal{F}_{\rm foam}(\tau)=\langle e^{i\Delta\delta\phi(\tau)}\rangle
+= e^{-D_\phi(\tau)/2}$ of Eq.~\eqref{eq:gaussian_jitter}, carrying the
+effective wavenumber $2\pi c/\lambda_{\rm eff}$ rather than the bare
+$\omega_0$.  The closed form of Section~\ref{sec:closedforms} evaluates
+Eq.~\eqref{eq:g1obs_phase} exactly, the broadening set by $\sigma_\Delta^2$ and
+the suppression by $D_\phi$.
 The observed first-order coherence is the intrinsic coherence function
 convolved with the Gaussian differential-jitter kernel.
 
@@ -597,28 +620,48 @@ Gaussian coherence decay time.  The carrier factor $e^{-i\omega_0\tau}$
 encodes the line's position in the spectrum and must be retained: dropping
 it would substitute a baseband Gaussian centered at $\nu=0$ for the physical
 line and would lose the dominant foam effect (line-peak suppression).
-Substituting into the jitter-convolution integral~\eqref{eq:g1obs} and
-completing the square gives the exact closed form
+Substituting into the jitter-convolution integral~\eqref{eq:g1obs_phase} and
+completing the square over the jointly-Gaussian pair
+$(\Delta,\Delta\delta\phi)$ (Appendix~\ref{app:derivation}) gives the exact
+closed form
 \begin{align}
   g^{(1)}_{\rm obs}(\tau)
   &= \frac{\tau_G}{\sqrt{\tau_G^2+\sigma_\Delta^2(\tau)}}\,
-     \exp\!\left[\,-\,i\,\omega_0\tau\,
-       \frac{\tau_G^2}{\tau_G^2+\sigma_\Delta^2(\tau)}\right] \notag\\
-  &\quad\times \exp\!\left[\,-\,\frac{\tau^2+
-       \tau_G^2\,D_\phi(\tau)}
-       {2\bigl[\tau_G^2+\sigma_\Delta^2(\tau)\bigr]}\right].
+     \exp\!\left[-\,i\omega_0\tau
+       +\frac{i\,\bar\omega\,\sigma_\Delta^2(\tau)\,\tau}
+              {\tau_G^2+\sigma_\Delta^2(\tau)}\right] \notag\\
+  &\quad\times \exp\!\left[-\,\frac{\tau^2}
+       {2\bigl[\tau_G^2+\sigma_\Delta^2(\tau)\bigr]}\right]
+     \exp\!\left[-\,\frac{D_\phi(\tau)}{2}
+       +\frac{\bar\omega^2\sigma_\Delta^4(\tau)}
+              {2\bigl[\tau_G^2+\sigma_\Delta^2(\tau)\bigr]}\right],
   \label{eq:g1obs_gauss}
 \end{align}
+with the mean effective carrier
+$\bar\omega\equiv\omega_0\langle1+z'\rangle_{D_C}$.
 The observed coherence is again a Gaussian-modulated oscillation, but
-with three foam-induced modifications: (i) a slight redshift of the
-carrier, $\nu_0^{\rm eff} = \nu_0\,\tau_G^2/[\tau_G^2+\sigma_\Delta^2(\tau)]$;
+with three foam-induced modifications: (i) a slight shift of the carrier,
+$\nu_0^{\rm eff} = \nu_0\bigl[1-\langle1+z'\rangle_{D_C}\,
+\sigma_\Delta^2(\tau)/(\tau_G^2+\sigma_\Delta^2(\tau))\bigr]$;
 (ii) a wider Gaussian decay of $g^{(1)}_{\rm obs}(\tau)$ in lag (decay
 scale $\sqrt{\tau_G^2+\sigma_\Delta^2(\tau)}$ vs.\ $\tau_G$);
-and (iii) a global amplitude suppression by the factor
-$\exp\!\left[-\tau_G^2 D_\phi(\tau)/\{2(\tau_G^2+\sigma_\Delta^2)\}\right]$,
-set by the differential phase structure function
-$D_\phi(\tau)$ of Eq.~\eqref{eq:Dphi_reduce} --- carrying the effective
-wavenumber $2\pi c/\lambda_{\rm eff}$, not the bare carrier $\omega_0$.
+and (iii) a global amplitude suppression set by the differential phase
+structure function $D_\phi(\tau)$ of Eq.~\eqref{eq:Dphi_reduce}, carrying the
+effective wavenumber $2\pi c/\lambda_{\rm eff}$, not the bare carrier
+$\omega_0$.  Two features deserve emphasis (derived in
+Appendix~\ref{app:derivation}).  First, the carrier suppression
+$\mathcal{F}_{\rm foam}=e^{-D_\phi/2}$ factors out \emph{exactly}: it is the
+marginal $\langle e^{i\Delta\delta\phi}\rangle$ and is untouched by the
+carrier--envelope correlation $\rho=\bar\omega\,\sigma_\Delta^2$.  Second,
+that correlation is the sole origin of the carrier shift~(i) and of the
+$\bar\omega^2\sigma_\Delta^4$ term in Eq.~\eqref{eq:g1obs_gauss}; the naive
+single-frequency replacement $\omega_0^2\sigma_\Delta^2\to D_\phi$ drops it,
+an error of order $\mathrm{Var}(z')\,\sigma_\Delta^2/\tau_G^2$ with
+$\mathrm{Var}(z')\equiv\langle(1+z')^2\rangle-\langle1+z'\rangle^2$
+(negligible for GRB\,221009A).  In the slowly-varying-envelope limit
+$\sigma_\Delta\ll\tau_G$ this correction vanishes and
+$g^{(1)}_{\rm obs}\to\mathcal{F}_{\rm foam}(\tau)\,g^{(1)}_{\rm src}(\tau)$,
+the pure multiplicative suppression on which the spectroscopic bounds rest.
 Normalization $g^{(1)}_{\rm obs}(0)=1$ holds because $\sigma_\Delta(0)=0$
 (hence $D_\phi(0)=0$).
 The narrowband limit $\tau_G\to\infty$ of
@@ -682,7 +725,10 @@ Gaussian core
   \label{eq:Sobs_gauss}
 \end{equation}
 with $\nu_0^{\rm eff}=\nu_0\tau_G^2/(\tau_G^2+\sigma_\Delta^2)$ and
-$\sigma_{\rm obs}=1/[2\pi\sqrt{\tau_G^2+\sigma_\Delta^2}]<\sigma_\nu$.
+$\sigma_{\rm obs}=1/[2\pi\sqrt{\tau_G^2+\sigma_\Delta^2}]<\sigma_\nu$, to
+leading order in $\sigma_\Delta^2/\tau_G^2$ (the carrier--envelope cross-term
+of Eq.~\eqref{eq:g1obs_gauss} contributes only at
+$O(\mathrm{Var}(z')\,\sigma_\Delta^2/\tau_G^2)$).
 The Gaussian's carrier shift, line narrowing, and peak suppression are
 the frequency-domain images of items~(i)--(iii) of
 Section~\ref{sec:closedforms}.
@@ -1913,5 +1959,183 @@ but it does limit how precisely a \emph{stronger}-foam scaling
 (Section~\ref{sec:CMB_phasevar}). The GRB entries remain at the percent level
 for all $\alpha$, confirming that the historical single-source bounds were
 insensitive to the anchoring choice.
+
+% ==============================================================
+\section{First-Principles Derivation of the Foam-Modified Coherence and Its
+Monte-Carlo Validation}
+\label{app:derivation}
+% ==============================================================
+
+This appendix derives the closed form~\eqref{eq:g1obs_gauss} from the
+propagation model, isolates the exact condition separating the achromatic
+``time-warp'' convolution from the chromatic ``convolution-plus-suppression''
+result, treats the carrier--envelope cross-correlation explicitly rather than
+assuming it away, and validates the result against a direct Monte-Carlo
+simulation of the shell model.
+
+\subsection{Setup and propagation}
+\label{app:der_setup}
+
+Write the stationary, zero-mean source field in quasi-monochromatic form
+$E_{\rm src}(t)=e^{-i\omega_0 t}A(t)$, with $A(t)$ a slowly varying complex
+envelope (stationary complex Gaussian, coherence time $\tau_G$) and $\omega_0$
+the \emph{observed} carrier.  The intrinsic coherence is
+$g^{(1)}_{\rm src}(\tau)=e^{-i\omega_0\tau}\gamma(\tau)$ with
+$\gamma(\tau)=\langle A^*(t)A(t+\tau)\rangle/\langle|A|^2\rangle$, related to the
+source spectrum by Wiener--Khinchin.  Foam adds, in each comoving shell at
+redshift $z'$, a stochastic achromatic geometric path excess $(n-1)\,dr$.  Two
+distinct quantities follow: an \emph{achromatic group delay} of the envelope,
+$\delta t(t)=\tfrac1c\int(n-1)\,dr$, and a \emph{chromatic carrier phase}
+accumulated at the locally blueshifted wavenumber
+$k_{\rm local}(z')=(\omega_0/c)(1+z')$, namely
+$\delta\phi(t)=\tfrac{\omega_0}{c}\int(1+z')(n-1)\,dr$.  Because
+$\delta\phi\neq\omega_0\,\delta t$ whenever the shells carry different
+$(1+z')$, the honest propagation model keeps the two separate,
+\begin{equation}
+  E_{\rm obs}(t)=e^{-i\omega_0 t}\,e^{\,i\delta\phi(t)}\,A\!\big(t-\delta t(t)\big),
+  \label{eq:app_Eobs}
+\end{equation}
+reducing to the pure time warp $E_{\rm src}(t-\delta t)$ only when
+$(1+z')\to{}$const.
+
+\subsection{Jitter statistics}
+\label{app:der_stats}
+
+Both $\delta t$ and $\delta\phi$ are linear functionals of the \emph{same}
+shell field $w\equiv(n-1)$, with weights $1/c$ and $(\omega_0/c)(1+z')$.  The
+differential delay $\Delta(\tau)=\delta t(t{+}\tau)-\delta t(t)$ and the
+differential phase $\Delta\delta\phi(\tau)=\delta\phi(t{+}\tau)-\delta\phi(t)$
+are therefore \emph{jointly} Gaussian and zero-mean by the central limit
+theorem over the $\sim D/\ell_P$ shells (exact for $\alpha=1/2$; a model
+assumption otherwise).  With statistically independent shells of differential
+variance density $d\sigma_\ell^2/dr$ and a common temporal decorrelation
+$C_\alpha(\tau)$, the second moments are
+\begin{equation}
+  \sigma_\Delta^2(\tau)=\frac{2\sigma_\ell^2}{c^2}[1-C_\alpha],\quad
+  D_\phi(\tau)=\omega_0^2\langle(1+z')^2\rangle\,\sigma_\Delta^2,\quad
+  \rho(\tau)=\omega_0\langle1+z'\rangle\,\sigma_\Delta^2\equiv\bar\omega\,\sigma_\Delta^2,
+  \label{eq:app_moments}
+\end{equation}
+with path averages $\langle f\rangle\equiv\int f\,d\sigma_\ell^2/\sigma_\ell^2$,
+$\lambda_{\rm eff}=\lambda_{\rm obs}/\sqrt{\langle(1+z')^2\rangle}$ so that
+$D_\phi=(2\pi/\lambda_{\rm eff})^2c^2\sigma_\Delta^2$, and mean effective
+carrier $\bar\omega=\omega_0\langle1+z'\rangle$.  The cross-covariance
+$\rho\neq0$: carrier phase and envelope delay are built from the same $w$, so
+they are correlated.  The foam is statistically independent of the source (it
+acts after emission), which justifies factoring the source and foam averages.
+
+\subsection{Exact coherence and the factorization}
+\label{app:der_factor}
+
+Inserting Eq.~\eqref{eq:app_Eobs} into
+$g^{(1)}_{\rm obs}=\langle E_{\rm obs}^*(t)E_{\rm obs}(t{+}\tau)\rangle/
+\langle|E_{\rm obs}|^2\rangle$, averaging over the source at fixed foam
+(stationarity makes the result depend only on $\tau-\Delta(\tau)$) and then
+over the foam, gives the exact relation
+\begin{equation}
+  g^{(1)}_{\rm obs}(\tau)=e^{-i\omega_0\tau}\,
+    \big\langle e^{\,i\Delta\delta\phi(\tau)}\,\gamma\!\big(\tau-\Delta(\tau)\big)\big\rangle,
+  \label{eq:app_exact}
+\end{equation}
+which is Eq.~\eqref{eq:g1obs_phase}.  The carrier suppression sits in
+$e^{i\Delta\delta\phi}$, the envelope broadening in $\gamma(\tau-\Delta)$, and
+the two are correlated.  For jointly-Gaussian zero-mean $(X,Y)$ the identity
+\begin{equation}
+  \big\langle e^{iX}f(Y)\big\rangle
+    =e^{-\langle X^2\rangle/2}\,\big\langle f\!\big(Y+i\langle XY\rangle\big)\big\rangle
+  \label{eq:app_identity}
+\end{equation}
+(verified on $f=e^{ikY}$ and extended by superposition), applied with
+$X=\Delta\delta\phi$, $Y=\Delta$, $f(Y)=\gamma(\tau-Y)$, yields the master form
+\begin{equation}
+  g^{(1)}_{\rm obs}(\tau)=e^{-i\omega_0\tau}\,
+    \underbrace{e^{-D_\phi(\tau)/2}}_{\mathcal F_{\rm foam}(\tau)}\,
+    \big\langle\gamma\!\big(\tau-i\rho(\tau)-\Delta(\tau)\big)\big\rangle .
+  \label{eq:app_master}
+\end{equation}
+Three consequences follow.  (a) The suppression
+$\mathcal F_{\rm foam}=e^{-D_\phi/2}$ factors out \emph{exactly}; the
+cross-term cannot alter it.  (b) The naive factorization
+$\langle e^{i\Delta\delta\phi}\gamma(\tau-\Delta)\rangle
+=\langle e^{i\Delta\delta\phi}\rangle\langle\gamma(\tau-\Delta)\rangle$
+is false unless $\rho=0$; the cross-term survives as the \emph{complex shift}
+$-i\rho$ of the envelope argument, modifying the line shape (center shift and
+width correction) but never the suppression.  The clean product
+$g^{(1)}_{\rm obs}=\mathcal F_{\rm foam}\,g^{(1)}_{\rm src}$ holds only in the
+slowly-varying-envelope limit $\sigma_\Delta,\bar\omega\sigma_\Delta^2\ll\tau_G$,
+where $\gamma(\tau-i\rho-\Delta)\to\gamma(\tau)$.  (c) In the achromatic limit
+$\mathrm{Var}(z')\equiv\langle(1+z')^2\rangle-\langle1+z'\rangle^2\to0$, one has
+$\Delta\delta\phi\to\bar\omega\,\Delta$ deterministically and
+Eq.~\eqref{eq:app_master} collapses to the pure Gaussian convolution
+$\int\mathcal N(\Delta;0,\sigma_\Delta^2)\,g^{(1)}_{\rm src}(\tau-\Delta)\,d\Delta$
+at carrier $\bar\omega$, with no separate suppression.
+
+\subsection{Gaussian closed form}
+\label{app:der_closed}
+
+For $\gamma(\tau)=e^{-\tau^2/2\tau_G^2}$ the remaining average in
+Eq.~\eqref{eq:app_master} is one Gaussian convolution evaluated at the complex
+point $a=\tau-i\rho$,
+$\langle e^{-(a-\Delta)^2/2\tau_G^2}\rangle
+=\tau_G(\tau_G^2+\sigma_\Delta^2)^{-1/2}\,e^{-a^2/2(\tau_G^2+\sigma_\Delta^2)}$,
+which on expanding $a^2=\tau^2-2i\rho\tau-\rho^2$ reproduces
+Eq.~\eqref{eq:g1obs_gauss}.  The single-frequency convolution with the
+substitution $\omega_0^2\sigma_\Delta^2\to D_\phi$ recovers the suppression
+$e^{-D_\phi/2}$ but couples the envelope to the \emph{second} moment
+$\langle(1+z')^2\rangle$ rather than the first moment
+$\bar\omega\propto\langle1+z'\rangle$; the two agree iff $\mathrm{Var}(z')=0$,
+the discrepancy being precisely the $\bar\omega^2\sigma_\Delta^4$ term and the
+$\bar\omega$-weighted carrier shift in Eq.~\eqref{eq:g1obs_gauss}.
+
+\subsection{Monte-Carlo validation}
+\label{app:der_mc}
+
+Equations~\eqref{eq:app_master}--\eqref{eq:g1obs_gauss} are validated by
+simulating the shell model directly, using none of the analytic identities
+above.  Each realization draws independent per-shell differential jitters
+$\delta w_s\sim\mathcal N(0,q_s)$ over $N$ shells of redshift $z'_s$ and forms
+$\Delta=\tfrac1c\sum_s\delta w_s$ and
+$\Delta\delta\phi=\tfrac{\omega_0}{c}\sum_s(1+z'_s)\,\delta w_s$; the baseband
+coherence
+$B(\tau)\equiv g^{(1)}_{\rm obs}(\tau)\,e^{i\omega_0\tau}
+=\langle e^{i\Delta\delta\phi}\gamma(\tau-\Delta)\rangle$ is averaged over
+$4\times10^6$ realizations on a grid of lags.  With $\omega_0=c=\tau_G=1$,
+$\sigma_\Delta^2=0.30$, and $z'$ spread over $[0,3]$
+($\langle1+z'\rangle=2.51$, $\mathrm{Var}(z')=0.78$), the simulation reproduces
+the analytic moments~\eqref{eq:app_moments} to machine precision
+($\rho=\bar\omega\sigma_\Delta^2$ and $D_\phi=\omega_0^2\langle(1+z')^2\rangle
+\sigma_\Delta^2$), gives a sample kurtosis of $\Delta\delta\phi$ of $3.00$
+(confirming joint Gaussianity), and yields
+$\langle e^{i\Delta\delta\phi}\rangle=0.3459$ versus $e^{-D_\phi/2}=0.3458$
+(confirming the exact factorization of $\mathcal F_{\rm foam}$).
+Table~\ref{tab:mc} reports the maximum deviation of $B(\tau)$ over
+$\tau\in[-3,3]\tau_G$ from the closed form~\eqref{eq:g1obs_gauss}, the naive
+factorized form $\mathcal F_{\rm foam}\langle\gamma(\tau-\Delta)\rangle$, and
+the single-frequency substitution, in three regimes; the Monte-Carlo noise
+floor is $\approx2.5\times10^{-4}$.  The closed form matches to noise in every
+regime, while the factorized and single-frequency forms fail at moderate foam
+and recover only as $\sigma_\Delta/\tau_G\to0$ --- exactly the condition
+isolated in Appendix~\ref{app:der_factor}.  (In the achromatic case
+$\mathrm{Var}(z')=0$ the single-frequency form still errs, because its carrier
+shift uses $\omega_0$ where the correct $\bar\omega=\omega_0\langle1+z'\rangle$
+belongs.)
+
+\begin{table}
+\caption{Maximum $|B(\tau)-\text{model}|$ over $\tau\in[-3,3]\tau_G$ from a
+$4\times10^6$-realization shell-model Monte Carlo (noise floor
+$\approx2.5\times10^{-4}$).  CF: closed form~\eqref{eq:g1obs_gauss};
+FAC: naive $\mathcal F_{\rm foam}\langle\gamma(\tau-\Delta)\rangle$;
+SF: single-frequency substitution $\omega_0^2\sigma_\Delta^2\to D_\phi$.}
+\label{tab:mc}
+\begin{ruledtabular}
+\begin{tabular}{lccc}
+ & CF & FAC & SF \\
+\hline
+Chromatic ($\sigma_\Delta/\tau_G=0.55$, $\mathrm{Var}\,z'=0.78$) & $7\times10^{-4}$ & $0.14$  & $0.092$  \\
+Achromatic ($\mathrm{Var}\,z'=0$)                                & $6\times10^{-4}$ & $0.16$  & $0.10$   \\
+Narrowband ($\tau_G=8$)                                          & $8\times10^{-4}$ & $0.012$ & $0.0075$ \\
+\end{tabular}
+\end{ruledtabular}
+\end{table}
 
 \end{document}
