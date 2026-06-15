@@ -51,7 +51,11 @@ _DCg = _DH * integrate.cumulative_trapezoid(
     1.0/np.sqrt(_Om*(1+_zg)**3 + _OL + _Or*(1+_zg)**4), _zg, initial=0.0) * _Mpc
 _pz2 = (1.0 + _zg)**2
 
+UNWEIGHTED = True   # revert to bare Ng-Perlman: no (1+z')^2 enhancement (ENH=1)
+
 def ENH(a):
+    if UNWEIGHTED:
+        return 1.0
     u = np.power(_DCg, 2 - 2*a)
     return np.trapezoid(_pz2, u) / u[-1]
 
@@ -126,7 +130,7 @@ print("FOAM THRESHOLD  (anchored to paper FIRAS alpha>=0.55; physical no-pedesta
 print("="*88)
 tmpl = 'NO-PEDESTAL (physical)'
 R_firas = results[(tmpl, 'FIRAS            (60-600 GHz)')][3]
-alpha_anchor = 0.55   # FIRAS no-pedestal threshold, (1+z')^2 weighted (App. prescription)
+alpha_anchor = 0.517  # FIRAS no-pedestal threshold, UNWEIGHTED bare Ng-Perlman (ENH=1)
 
 def alpha_threshold(sigma_A):
     return brentq(lambda a: A_eff_of_alpha(a) - sigma_A, 0.45, 0.75)

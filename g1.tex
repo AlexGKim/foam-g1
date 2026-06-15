@@ -41,10 +41,10 @@ Applied to the MeV emission lines of GRB\,221009A in the dynamical-foam
 limit ($\tau_{\rm foam}\ll\tau_c$) we obtain $\alpha \gtrsim 0.63$.
 For the broadband CMB the foam induces an $e^{-\sigma_\phi^2(\nu)}$ deficit
 ($\sigma_\phi^2 \propto \nu^2$) with a low-frequency pedestal; a fit to
-the COBE/FIRAS monopole spectrum reaches $\alpha \gtrsim 0.55$
+the COBE/FIRAS monopole spectrum reaches $\alpha \gtrsim 0.52$
 ($95\%$ CL) under the physical Planck-scale pedestal
 kernel, and next-generation spectrometers (PIXIE, SuperPIXIE,
-Voyage~2050) are forecast to reach only $\alpha\gtrsim 0.58$--$0.59$,
+Voyage~2050) are forecast to reach $\alpha\gtrsim 0.54$--$0.55$,
 the bound saturating logarithmically as the foam deficit is nearly
 degenerate with a temperature shift. None of these bounds exclude
 the holographic value $\alpha = 2/3$, which would require a confirmed
@@ -256,18 +256,15 @@ jitter is thus fixed entirely by the metric and is achromatic: it is the
 same delay for every wavelength.
 
 The phase jitter follows from the arrival-time jitter by the elementary
-relation between path and phase.  In each comoving shell at redshift
-$z'$, the photon's wavelength in the local rest frame is
-$\lambda'=\lambda_{\rm obs}/(1+z')$ --- shorter than the wavelength
-measured by the observer by the factor $(1+z')$ --- so phase accumulates
-there at the local wavenumber
-$k_{\rm local}(z')=2\pi/\lambda'=(2\pi/\lambda_{\rm obs})(1+z')$.  The
-accumulated foam phase is the line-of-sight integral of this local
-wavenumber against the achromatic path-excess density $n-1$ --- the
-per-unit-length integrand of Eq.~\eqref{eq:dt_metric},
+relation between path and phase.  The foam is a single achromatic
+path-length fluctuation $\delta\ell=\int(n-1)\,dr$, which the carrier reads
+as a phase through the observer-frame wavenumber $2\pi/\lambda_{\rm obs}$.
+The accumulated foam phase is therefore the line-of-sight integral of the
+achromatic path-excess density $n-1$ --- the per-unit-length integrand of
+Eq.~\eqref{eq:dt_metric} --- at the bare carrier wavenumber,
 \begin{equation}
-  \delta\phi \;=\; \int_0^{D_C} k_{\rm local}\!\big(z'(r)\big)\,\big[n(\tau,r)-1\big]\,dr
-  \;=\; \frac{2\pi}{\lambda_{\rm obs}}\int_0^{D_C} \big(1+z'(r)\big)\,\big[n(\tau,r)-1\big]\,dr,
+  \delta\phi \;=\; \frac{2\pi}{\lambda_{\rm obs}}\int_0^{D_C}\big[n(\tau,r)-1\big]\,dr
+             \;=\; \omega_0\,\delta t,
   \label{eq:dphi_los}
 \end{equation}
 the phase analogue of the delay integral Eq.~\eqref{eq:dt_metric}.  Here the
@@ -278,28 +275,22 @@ $d(\delta\ell)/dr=n-1$ along the ray.  The delay $\delta t$ and the phase
 $\delta\phi$ are the group (envelope) delay and the carrier phase of a single
 propagation, $E_{\rm obs}(t)=e^{-i\omega_0 t}\,e^{\,i\delta\phi(t)}\,
 A(t-\delta t)$ with $A$ the slow source envelope (derived in
-Appendix~\ref{app:derivation}); because $\delta\phi$ carries the per-shell
-$(1+z')$ weighting it is \emph{not} $\omega_0\,\delta t$.  The time-warp model
-$E_{\rm obs}(t)=E_{\rm src}(t-\delta t)$ of Eq.~\eqref{eq:Eobs} is the
-achromatic limit $\delta\phi\to\omega_0\,\delta t$ --- exact for the
-delay--frequency map of this subsection and restored to the chromatic form in
-Section~\ref{sec:g1}.
+Appendix~\ref{app:derivation}); the foam is a single achromatic path-length
+fluctuation, so $\delta\phi=\omega_0\,\delta t$ identically.  The time-warp model
+$E_{\rm obs}(t)=E_{\rm src}(t-\delta t)$ of Eq.~\eqref{eq:Eobs} carries this same
+carrier phase, exact for the delay--frequency map of this subsection and
+in Section~\ref{sec:g1}.
 
 Squaring and accumulating the statistically independent per-shell
-contributions --- each weighted by $k_{\rm local}^2(z')\propto(1+z')^2$
---- gives the phase variance
+contributions gives the phase variance
 \begin{equation}
-  \sigma_\phi^2 \;=\; \left(\frac{2\pi}{\lambda_{\rm obs}}\right)^{\!2}\!
-  \int (1+z')^2\,d\sigma_\ell^2(D_C)
-  \;=\; \left(\frac{2\pi}{\lambda_{\rm eff}}\right)^{\!2}\sigma_\ell^2(D_C),
-  \qquad
-  \lambda_{\rm eff}\equiv\frac{\lambda_{\rm obs}}{\sqrt{\langle(1+z')^2\rangle_{D_C}}},
+  \sigma_\phi^2 \;=\; \left(\frac{2\pi}{\lambda_{\rm obs}}\right)^{\!2}
+  \sigma_\ell^2(D_C),
   \label{eq:sigmaphi_cosmo}
 \end{equation}
 the phase-pillar analogue of the delay variance $\sigma_\ell^2(D_C)$ of
 Eq.~\eqref{eq:NgPerlmanVar} (with $A_\alpha=1$), so that
-$\sigma_\phi=(2\pi/\lambda_{\rm eff})\,\sigma_\ell(D_C)$.  The anchoring of
-this weighting is derived in Appendix~\ref{app:prescription}.
+$\sigma_\phi=(2\pi/\lambda_{\rm obs})\,\sigma_\ell(D_C)$.
 
 Arrival-time jitter and phase jitter are not two effects but two faces of
 one --- and there is a third.  All descend from the same metric
@@ -480,10 +471,9 @@ and the equality of per-cell variances is a model assumption rather than a
 direct CLT consequence; Gaussianity is adopted as the minimal assumption
 consistent with the $\alpha$-model.
 
-The foam phase is not accumulated at a single frequency: it is the
-line-of-sight accumulation of the achromatic path excess against the
-shell-varying local wavenumber
-$k_{\rm local}(z')=(2\pi/\lambda_{\rm obs})(1+z')$ (Eq.~\eqref{eq:dphi_los}).
+The foam phase is the line-of-sight accumulation of the achromatic path
+excess at the observed wavenumber
+$k=2\pi/\lambda_{\rm obs}=\omega_0/c$ (Eq.~\eqref{eq:dphi_los}).
 The suppression is therefore governed by the differential foam phase
 $\Delta\delta\phi(\tau)\equiv\delta\phi(t+\tau)-\delta\phi(t)$ through its
 variance, the differential phase structure function
@@ -492,9 +482,8 @@ variance, the differential phase structure function
              = \big\langle [\,\delta\phi(t+\tau)-\delta\phi(t)\,]^2\big\rangle,
   \label{eq:Dphi_def}
 \end{equation}
-with the $(1+z')$ weighting residing inside $\delta\phi$, so that
-$D_\phi(\tau)$ is redshift-weighted by construction and requires no
-after-the-fact promotion of the carrier frequency.
+so that $D_\phi(\tau)=\omega_0^2\,\sigma_\Delta^2(\tau)$, the carrier frequency
+squared times the differential-delay variance.
 
 The characteristic function of $\Delta\delta\phi(\tau)$ defines a foam
 suppression factor applicable to any source profile.  Since
@@ -514,23 +503,19 @@ line broadening, peak suppression, and the CMB core/pedestal split ---
 all follow from it.
 
 Provided the temporal decorrelation is shell-independent --- a common foam
-timescale $\tau_{\rm foam}$ along the whole path, so that the chromatic
-$(1+z')^2$ weighting is a pure path/amplitude effect while the temporal shape
-$[1-C_\alpha(\tau;D)]$ is achromatic --- the weighting separates from the lag
-dependence and the structure function reduces to
+timescale $\tau_{\rm foam}$ along the whole path, so that the temporal shape
+$[1-C_\alpha(\tau;D)]$ is achromatic --- the structure function reduces to
 \begin{equation}
-  D_\phi(\tau) = \left(\frac{2\pi}{\lambda_{\rm eff}}\right)^{\!2} c^{2}\,
+  D_\phi(\tau) = \left(\frac{2\pi}{\lambda_{\rm obs}}\right)^{\!2} c^{2}\,
                  \sigma_\Delta^2(\tau)
               = 2\sigma_\phi^2\,[1-C_\alpha(\tau;D)],
   \label{eq:Dphi_reduce}
 \end{equation}
 where $\sigma_\Delta^2(\tau)=(2\sigma_\ell^2/c^2)[1-C_\alpha(\tau;D)]$ is the
 achromatic differential-delay variance of Eq.~\eqref{eq:diffVarExt} and
-$\sigma_\phi^2=(2\pi/\lambda_{\rm eff})^2\sigma_\ell^2(D_C)$ is the asymptotic
+$\sigma_\phi^2=(2\pi/\lambda_{\rm obs})^2\sigma_\ell^2(D_C)$ is the asymptotic
 phase variance of Eq.~\eqref{eq:sigmaphi_cosmo}.  The operative wavenumber is
-$2\pi c/\lambda_{\rm eff}$, not the bare carrier $\omega_0$; the latter is
-recovered only in the $z'\to0$ limit, where
-$\lambda_{\rm eff}\to\lambda_{\rm obs}$.  In the dynamical-foam limit
+the carrier $\omega_0=2\pi c/\lambda_{\rm obs}$.  In the dynamical-foam limit
 $\sigma_\phi^2$ is set by the Ng--Perlman path-length
 variance~\eqref{eq:NgPerlmanVar} accumulated along the line-of-sight comoving
 distance $D_C$ to the source~\cite{NgPerlman2022}.
@@ -544,15 +529,11 @@ suppression factor Eq.~\eqref{eq:gaussian_jitter} takes the compact form
 with $\mathcal{F}_{\rm foam}(0)=1$.  At $\tau\to\infty$:
 $\mathcal{F}_{\rm foam}(\infty)$ equals $e^{-\sigma_\phi^2}$ in the dynamical
 limit ($C_\alpha\to 0$) and approaches unity for quasi-static foam
-($C_\alpha\approx 1$).  The accumulated foam phase is $\delta\phi$
-(Eq.~\eqref{eq:dphi_los}), built shell by shell at the local wavenumber
-$k_{\rm local}=(2\pi/\lambda_{\rm obs})(1+z')$ and \emph{not} the bare
-$\omega_0\,\delta t$; the suppression $e^{-\sigma_\phi^2}$ is nonetheless
-manifestly observer-frame and carries no \emph{additional} cosmological
-prefactor of its own, because the full redshift weighting already resides in
-$\sigma_\phi^2$ through $\lambda_{\rm eff}$ (Eq.~\eqref{eq:sigmaphi_cosmo}),
-the $(1+z')^2$-weighted accumulation of the per-shell contributions at
-$2\pi c/\lambda_{\rm eff}$.
+($C_\alpha\approx 1$).  The accumulated foam phase is $\delta\phi=\omega_0\,
+\delta t$ (Eq.~\eqref{eq:dphi_los}); the suppression $e^{-\sigma_\phi^2}$ is
+manifestly observer-frame, with
+$\sigma_\phi=(2\pi/\lambda_{\rm obs})\,\sigma_\ell(D_C)$
+(Eq.~\eqref{eq:sigmaphi_cosmo}).
 
 % ==============================================================
 \section{First-Order Coherence }
@@ -604,8 +585,8 @@ $\Delta(\tau)$ (variance $\sigma_\Delta^2$) while the carrier is suppressed by
 the foam factor
 $\mathcal{F}_{\rm foam}(\tau)=\langle e^{i\Delta\delta\phi(\tau)}\rangle
 = e^{-D_\phi(\tau)/2}$ of Eq.~\eqref{eq:gaussian_jitter}, carrying the
-effective wavenumber $2\pi c/\lambda_{\rm eff}$ rather than the bare
-$\omega_0$.  The closed form of Section~\ref{sec:closedforms} evaluates
+carrier $\omega_0$ since $\Delta\delta\phi=\omega_0\Delta$.  The closed form of
+Section~\ref{sec:closedforms} evaluates
 Eq.~\eqref{eq:g1obs_phase} exactly, the broadening set by $\sigma_\Delta^2$ and
 the suppression by $D_\phi$.
 The observed first-order coherence is the intrinsic coherence function
@@ -629,47 +610,37 @@ encodes the line's position in the spectrum and must be retained: dropping
 it would substitute a baseband Gaussian centered at $\nu=0$ for the physical
 line and would lose the dominant foam effect (line-peak suppression).
 Substituting into the jitter-convolution integral~\eqref{eq:g1obs_phase} and
-completing the square over the jointly-Gaussian pair
-$(\Delta,\Delta\delta\phi)$ (Appendix~\ref{app:derivation}) gives the exact
-closed form
+completing the square over the Gaussian delay $\Delta$ (Appendix~\ref{app:derivation})
+gives the exact closed form
 \begin{align}
   g^{(1)}_{\rm obs}(\tau)
   &= \frac{\tau_G}{\sqrt{\tau_G^2+\sigma_\Delta^2(\tau)}}\,
      \exp\!\left[-\,i\omega_0\tau
-       +\frac{i\,\bar\omega\,\sigma_\Delta^2(\tau)\,\tau}
+       +\frac{i\,\omega_0\,\sigma_\Delta^2(\tau)\,\tau}
               {\tau_G^2+\sigma_\Delta^2(\tau)}\right] \notag\\
   &\quad\times \exp\!\left[-\,\frac{\tau^2}
        {2\bigl[\tau_G^2+\sigma_\Delta^2(\tau)\bigr]}\right]
      \exp\!\left[-\,\frac{D_\phi(\tau)}{2}
-       +\frac{\bar\omega^2\sigma_\Delta^4(\tau)}
-              {2\bigl[\tau_G^2+\sigma_\Delta^2(\tau)\bigr]}\right],
+       +\frac{\omega_0^2\sigma_\Delta^4(\tau)}
+              {2\bigl[\tau_G^2+\sigma_\Delta^2(\tau)\bigr]}\right].
   \label{eq:g1obs_gauss}
 \end{align}
-with the mean effective carrier
-$\bar\omega\equiv\omega_0\langle1+z'\rangle_{D_C}$.
 The observed coherence is again a Gaussian-modulated oscillation, but
 with three foam-induced modifications: (i) a slight shift of the carrier,
-$\nu_0^{\rm eff} = \nu_0\bigl[1-\langle1+z'\rangle_{D_C}\,
+$\nu_0^{\rm eff} = \nu_0\bigl[1-
 \sigma_\Delta^2(\tau)/(\tau_G^2+\sigma_\Delta^2(\tau))\bigr]$;
 (ii) a wider Gaussian decay of $g^{(1)}_{\rm obs}(\tau)$ in lag (decay
 scale $\sqrt{\tau_G^2+\sigma_\Delta^2(\tau)}$ vs.\ $\tau_G$);
 and (iii) a global amplitude suppression set by the differential phase
-structure function $D_\phi(\tau)$ of Eq.~\eqref{eq:Dphi_reduce}, carrying the
-effective wavenumber $2\pi c/\lambda_{\rm eff}$, not the bare carrier
-$\omega_0$.  Two features deserve emphasis (derived in
-Appendix~\ref{app:derivation}).  First, the carrier suppression
-$\mathcal{F}_{\rm foam}=e^{-D_\phi/2}$ factors out \emph{exactly}: it is the
-marginal $\langle e^{i\Delta\delta\phi}\rangle$ and is untouched by the
-carrier--envelope correlation $\rho=\bar\omega\,\sigma_\Delta^2$.  Second,
-that correlation is the sole origin of the carrier shift~(i) and of the
-$\bar\omega^2\sigma_\Delta^4$ term in Eq.~\eqref{eq:g1obs_gauss}; the naive
-single-frequency replacement $\omega_0^2\sigma_\Delta^2\to D_\phi$ drops it,
-an error of order $\mathrm{Var}(z')\,\sigma_\Delta^2/\tau_G^2$ with
-$\mathrm{Var}(z')\equiv\langle(1+z')^2\rangle-\langle1+z'\rangle^2$
-(negligible for GRB\,221009A).  In the slowly-varying-envelope limit
-$\sigma_\Delta\ll\tau_G$ this correction vanishes and
-$g^{(1)}_{\rm obs}\to\mathcal{F}_{\rm foam}(\tau)\,g^{(1)}_{\rm src}(\tau)$,
-the pure multiplicative suppression on which the spectroscopic bounds rest.
+structure function $D_\phi(\tau)=\omega_0^2\sigma_\Delta^2(\tau)$ of
+Eq.~\eqref{eq:Dphi_reduce}, at the carrier $\omega_0$.  Because carrier and
+envelope share the single achromatic delay, the substitution
+$D_\phi=\omega_0^2\sigma_\Delta^2$ is exact: there is no carrier--envelope
+cross-term, and the carrier suppression
+$\mathcal{F}_{\rm foam}=e^{-D_\phi/2}$ factors out cleanly,
+$g^{(1)}_{\rm obs}\to\mathcal{F}_{\rm foam}(\tau)\,g^{(1)}_{\rm src}(\tau)$ in
+the slowly-varying-envelope limit $\sigma_\Delta\ll\tau_G$ --- the pure
+multiplicative suppression on which the spectroscopic bounds rest.
 Normalization $g^{(1)}_{\rm obs}(0)=1$ holds because $\sigma_\Delta(0)=0$
 (hence $D_\phi(0)=0$).
 The narrowband limit $\tau_G\to\infty$ of
@@ -733,10 +704,9 @@ Gaussian core
   \label{eq:Sobs_gauss}
 \end{equation}
 with $\nu_0^{\rm eff}=\nu_0\tau_G^2/(\tau_G^2+\sigma_\Delta^2)$ and
-$\sigma_{\rm obs}=1/[2\pi\sqrt{\tau_G^2+\sigma_\Delta^2}]<\sigma_\nu$, to
-leading order in $\sigma_\Delta^2/\tau_G^2$ (the carrier--envelope cross-term
-of Eq.~\eqref{eq:g1obs_gauss} contributes only at
-$O(\mathrm{Var}(z')\,\sigma_\Delta^2/\tau_G^2)$).
+$\sigma_{\rm obs}=1/[2\pi\sqrt{\tau_G^2+\sigma_\Delta^2}]<\sigma_\nu$; the
+result is exact for the single-carrier Gaussian source of
+Eq.~\eqref{eq:g1obs_gauss}.
 The Gaussian's carrier shift, line narrowing, and peak suppression are
 the frequency-domain images of items~(i)--(iii) of
 Section~\ref{sec:closedforms}.
@@ -1153,22 +1123,10 @@ sensitivity.
 CMB photons travel from the last-scattering surface at comoving distance
 $D_{\rm C}= 13.87\,{\rm Gpc}$ (Planck\,2018 flat-$\Lambda$CDM cosmology~\cite{Aghanim2020};
 $H_0 = 67.36$\,km\,s$^{-1}$\,Mpc$^{-1}$, $\Omega_m=0.315$).  The foam phase
-variance follows Eq.~\eqref{eq:sigmaphi_cosmo}, with the $(1+z')^2$ weighting
-evaluated to $\langle(1+z')^2\rangle_{D_C}\approx10^{4}$ at $z_{\rm LS}$, i.e.
-$\lambda_{\rm eff}\approx\lambda_{\rm obs}/10^{2}$. The effective foam
-amplitude
-$A_{\rm eff}=\langle(1+z')^2\rangle_{D_C}\,A_\alpha D_{\rm C}^{2(1-\alpha)}\ell_P^{2\alpha}$
-used in Section~\ref{sec:CMB_degeneracy} carries this weighting under the
-$(1+z')^2$ prescription adopted in Section~\ref{sec:metric_origin} (the
-differential-primary, or DP, anchoring in the terminology of
-Appendix~\ref{app:prescription}).
-Near $\alpha=1/2$, where the headline CMB bound lies, $A_{\rm eff}$ is
-insensitive to the choice between the DP and total-primary (TP) anchorings;
-the anchoring dependence grows to the tens-of-percent level only for $\alpha$
-well away from $1/2$, and does not affect the quoted bound but would limit
-the precision of any future bound on a stronger foam scaling ($\alpha\gtrsim
-2/3$) (full breakdown in Table~\ref{tab:prescription}, Appendix~\ref{app:prescription}).
-It enters as
+variance follows Eq.~\eqref{eq:sigmaphi_cosmo} at the observed wavelength
+$\lambda_{\rm obs}$.  The effective foam amplitude
+$A_{\rm eff}=A_\alpha D_{\rm C}^{2(1-\alpha)}\ell_P^{2\alpha}$
+used in Section~\ref{sec:CMB_degeneracy} enters as
 \begin{equation}
   \sigma_\phi^2(\nu)
     = \left(\frac{2\pi\nu}{c}\right)^{\!2}\! A_{\rm eff},
@@ -1180,16 +1138,16 @@ At $\nu=150$\,GHz this gives
 \begin{equation}
   \sigma_\phi^2(150\,{\rm GHz})\approx
   \begin{cases}
-    9\times10^{2}  & \alpha=1/2\ \text{(random walk)},\\[2pt]
-    2\times10^{-18}      & \alpha=2/3\ \text{(holographic)}.
+    7\times10^{-2}  & \alpha=1/2\ \text{(random walk)},\\[2pt]
+    2\times10^{-22}      & \alpha=2/3\ \text{(holographic)}.
   \end{cases}
   \label{eq:sigma_phi_CMB_values}
 \end{equation}
 The strong $\nu^2$ dependence concentrates foam effects at high
-frequency; for $\alpha=1/2$ the $(1+z')^2$-weighted variance exceeds unity
-across the entire FIRAS band, and the linearised template holds only for
-$\alpha\gtrsim0.53$, where $\sigma_\phi^2(\nu)<1$ through the band
-(Section~\ref{sec:CMB_degeneracy}).
+frequency; for $\alpha=1/2$ the variance approaches unity at the top of the
+FIRAS band ($\sigma_\phi^2\approx1.2$ at $639$\,GHz), and the linearised
+template holds for $\alpha\gtrsim0.50$, where $\sigma_\phi^2(\nu)\lesssim1$
+through the band (Section~\ref{sec:CMB_degeneracy}).
 
 \subsubsection{Foam-modified CMB spectrum}
 \label{sec:CMB_derivation}
@@ -1431,10 +1389,10 @@ $95\%$; $\chi^2/\nu=1.24$) and a foam amplitude consistent with zero,
   A_{\rm eff}=(-2.4\pm5.3)\times10^{-11}\,{\rm m}^2 .
   \label{eq:Aeff_firas}
 \end{equation}
-Inverting $A_{\rm eff}=\langle(1+z')^2\rangle_{D_C}\,A_\alpha D_C^{2(1-\alpha)}\ell_P^{2\alpha}$
+Inverting $A_{\rm eff}=A_\alpha D_C^{2(1-\alpha)}\ell_P^{2\alpha}$
 at $A_\alpha=1$, the one-sided $95\%$ upper limit
 $A_{\rm eff}<1.645\,\sigma(A_{\rm eff})=8.7\times10^{-11}\,{\rm m}^2$ gives the lower bound
-$\alpha\gtrsim 0.55$ (collected with the forecasts below
+$\alpha\gtrsim 0.52$ (collected with the forecasts below
 in Table~\ref{tab:thresholds}).
 The one direction that could still break the
 foam--$T_0$ degeneracy is deep into the Wien/sub-mm regime, where the
@@ -1445,12 +1403,12 @@ breaking the degeneracy there.  The linearised template
 $\Delta I_\nu\approx\sigma_\phi^2(\nu)\,[\text{template}]$, valid for
 $\sigma_\phi^2\ll1$, holds across the FIRAS band at the headline
 threshold ($\sigma_\phi^2$ exceeds unity only for stronger foam,
-$\alpha\lesssim0.53$; Section~\ref{sec:CMB_phasevar}): replacing the
+$\alpha\lesssim0.50$; Section~\ref{sec:CMB_phasevar}): replacing the
 deficit $-\sigma_\phi^2 B_\nu$ by the saturated form
 $-(1-e^{-\sigma_\phi^2})B_\nu$ changes the integrated in-band amplitude
-by $\approx13\%$ at $\alpha=0.53$ but by $<1\%$ at $\alpha\gtrsim0.55$
+by $\approx13\%$ at $\alpha=0.50$ but by $<1\%$ at $\alpha\gtrsim0.52$
 ($\Delta\alpha\sim3\times10^{-5}$), so the bound is unaffected;
-nonlinearity matters only for stronger foam ($\alpha\lesssim0.53$),
+nonlinearity matters only for stronger foam ($\alpha\lesssim0.50$),
 where it may also help break the foam--$\mu$ degeneracy.
 
 That same near-degeneracy has two consequences for the CMB temperature
@@ -1468,8 +1426,8 @@ $\Delta T_0 = b_{T_0}A_{\rm eff}$ with
 $b_{T_0}\approx -1.5\times10^7\,{\rm K\,m^{-2}}$; for $A_\alpha=1$ this
 is only $\approx 3\times10^{-18}$\,K at the holographic $\alpha=2/3$ and
 vanishes as $\alpha\to1$ (where the comoving foam variance ceases to grow
-with distance; Appendix~\ref{app:prescription}), reaching $\sigma(T_0)$ only
-at $\alpha\approx 0.55$ where the foam is already a many-$\sigma$
+with distance), reaching $\sigma(T_0)$ only
+at $\alpha\approx 0.52$ where the foam is already a many-$\sigma$
 signal.  Both effects therefore matter only for foam near FIRAS
 detectability; the recovered $T_0$ is immune to any foam consistent
 with the GRB bound $\alpha\gtrsim 0.63$.
@@ -1482,7 +1440,7 @@ same no-pedestal templates through a Fisher matrix.  Calibrated to
 FIRAS with a flat per-channel noise $\sigma_\nu=0.01$\,MJy/sr (a
 band-averaged stand-in for the measured errors), the Fisher forecast
 gives $\sigma(A_{\rm eff})=2.2\times10^{-11}\,{\rm m}^2$ and the same
-$\alpha\gtrsim 0.55$, reproducing the data fit; the conditional value
+$\alpha\gtrsim 0.52$, reproducing the data fit; the conditional value
 $\sigma(A_{\rm eff})|_{\mu,y\,\text{fixed}}=8.2\times10^{-13}\,{\rm
 m}^2$ shows that marginalizing over the distortions costs a factor
 $\sim 27$ through the foam--$T_0$ collinearity.  The fiducial
@@ -1513,17 +1471,17 @@ non-detection therefore excludes small $\alpha$.  FIRAS is from the data fit
 (Section~\ref{sec:CMB_degeneracy}); PIXIE, SuperPIXIE, and Voyage~2050
 from the Fisher forecast scaled by their published
 $\mu$-sensitivities~\cite{Chluba2021}.  The three forecast
-entries ($0.578$, $0.583$, $0.587$) round to $0.58$ (Voyage to $0.59$);
+entries ($0.545$, $0.549$, $0.554$) round to $0.54$--$0.55$;
 the thresholds increase monotonically.}
 \label{tab:thresholds}
 \begin{ruledtabular}
 \begin{tabular}{lc}
  & lower bound \\
 \hline
-FIRAS        & $\alpha\gtrsim 0.55$ \\
-PIXIE        & $\alpha\gtrsim 0.58$ \\
-SuperPIXIE   & $\alpha\gtrsim 0.58$ \\
-Voyage~2050  & $\alpha\gtrsim 0.59$ \\
+FIRAS        & $\alpha\gtrsim 0.52$ \\
+PIXIE        & $\alpha\gtrsim 0.54$ \\
+SuperPIXIE   & $\alpha\gtrsim 0.55$ \\
+Voyage~2050  & $\alpha\gtrsim 0.55$ \\
 \end{tabular}
 \end{ruledtabular}
 \end{table}
@@ -1538,7 +1496,7 @@ Red curves: conditional SNR ($\mu,y$ held fixed), which is $\sim 27\times$ highe
 Line styles denote the instrument: solid FIRAS, dashed PIXIE,
 dash-dotted SuperPIXIE, dotted Voyage~2050, with forecast
 $\mu$-sensitivities scaled relative to FIRAS \cite{Chluba2021}.
-The marginal lower bounds (SNR\,$=1.645$, one-sided $95\%$ CL) cluster at $\alpha\approx 0.55$--$0.59$,
+The marginal lower bounds (SNR\,$=1.645$, one-sided $95\%$ CL) cluster at $\alpha\approx 0.52$--$0.55$,
 illustrating the logarithmic saturation of the bound with sensitivity.
 The dotted horizontal line marks SNR\,$=1.645$ (one-sided $95\%$ CL); vertical dashed lines mark the
 spectroscopic lower bound from GRB\,221009A ($\alpha\gtrsim 0.63$) and the
@@ -1588,7 +1546,7 @@ replaces, the amplitude is in fact \emph{better} constrained,
 \end{equation}
 a factor $\sim 6$ marginalization penalty driven by the foam--$\mu$
 collinearity, and the threshold \emph{tightens} slightly to
-$\alpha\gtrsim 0.56$.  The $\mu$-aligned in-band pedestal therefore does
+$\alpha\gtrsim 0.53$.  The $\mu$-aligned in-band pedestal therefore does
 not loosen the bound: the factor $N\approx 13$ between the
 two amplitude uncertainties is compressed by the logarithmic Ng--Perlman
 relation $\sigma_\ell^2 = D_C^{2(1-\alpha)}\ell_P^{2\alpha}$ into a
@@ -1603,8 +1561,8 @@ no-pedestal case, where the limiting degeneracy is with $T_0$ rather
 than $\mu$, even fixing $\mu$ barely helps.  Either way, the worked
 example of Section~\ref{sec:CMB_derivation} shows that any
 exponential-class $C_\alpha$ with Planck-scale $\tau_{\rm foam}$ lies
-in the no-pedestal regime, so the physical $\alpha\gtrsim 0.55$ is the
-headline and the $\mu$-aligned $\alpha\gtrsim 0.56$ merely confirms its
+in the no-pedestal regime, so the physical $\alpha\gtrsim 0.52$ is the
+headline and the $\mu$-aligned $\alpha\gtrsim 0.53$ merely confirms its
 robustness.
 
 The proposed PIXIE satellite~\cite{Kogut2011} --- a fully cryogenic
@@ -1615,7 +1573,7 @@ $|y|\lesssim10^{-9}$ and entering the regime of guaranteed $\Lambda$CDM
 spectral signals from Silk damping and reionization.
 Propagating this gain through the Fisher-matrix scaling derived above,
 the marginal foam detection threshold shifts from
-$\alpha\gtrsim0.55$ (FIRAS) to approximately $\alpha\gtrsim0.58$
+$\alpha\gtrsim0.52$ (FIRAS) to approximately $\alpha\gtrsim0.54$
 (PIXIE; Table~\ref{tab:thresholds}), narrowing the gap with the
 spectroscopic lower bound $\alpha\gtrsim0.63$ from GRB\,221009A
 (Fig.~\ref{fig:cmb_snr}).  All thresholds are quoted for the physical
@@ -1625,17 +1583,17 @@ $\Delta\alpha=\ln10/[2\ln(D_C/\ell_P)]\approx0.008$ --- so the
 $\sim\!3$-decade FIRAS$\to$PIXIE gain accounts for the $\approx0.03$
 step, whereas PIXIE$\to$Voyage~2050 (under a decade combined) adds only
 $\approx0.009$; the thresholds saturate monotonically (the three forecast
-entries round $0.578$, $0.583$, $0.587$ to $0.58$, Voyage to $0.59$).
+entries round $0.545$, $0.549$, $0.554$ to $0.54$--$0.55$).
 The limiting degeneracy --- with a temperature shift for the
 no-pedestal deficit --- persists on the linearized template, but
 PIXIE's extension to $6$\,THz accesses the nonlinear regime
-$\sigma_\phi^2\gg1$ for $\alpha\lesssim0.55$ --- at higher $\alpha$ than
-the FIRAS-band crossing $\alpha\lesssim0.53$
+$\sigma_\phi^2\gg1$ for $\alpha\lesssim0.52$ --- at higher $\alpha$ than
+the FIRAS-band crossing $\alpha\lesssim0.50$
 (Section~\ref{sec:CMB_degeneracy}), since the wider $6$\,THz band pushes
 the $\sigma_\phi^2=1$ boundary upward --- where the foam deficit
 diverges markedly from both the blackbody and $\mu$-distortion shapes
 and the degeneracy may be substantially reduced.  The
-$\alpha\gtrsim0.55$ projection may therefore understate the reach: if
+$\alpha\gtrsim0.54$ projection may therefore understate the reach: if
 the nonlinear template effectively breaks this degeneracy at PIXIE
 sensitivity, the true threshold could be significantly more stringent.
 
@@ -1643,7 +1601,7 @@ Extending the same Fisher analysis to the $10$\,GHz--$3$\,THz bands of
 the SuperPIXIE and Voyage~2050 concepts~\cite{Chluba2021} --- with
 forecast distortion sensitivities
 $\sigma(\mu)\approx 7.7\times10^{-9}$ and $2.2\times10^{-9}$ ---
-shifts the marginal threshold only to $\alpha\gtrsim 0.58$--$0.59$
+shifts the marginal threshold only to $\alpha\gtrsim 0.55$
 (Table~\ref{tab:thresholds}), barely beyond the
 PIXIE projection.  The reason is structural rather than instrumental:
 in the physically realized no-pedestal limit the foam deficit
@@ -1663,8 +1621,8 @@ $\Delta\alpha\lesssim 0.04$, this sets a firm ceiling: as an
 independent broadband probe --- absolute calibrated photometry, no
 source-profile assumption, and a different systematic-error budget from
 spectroscopy --- spectral-distortion photometry yields an independent
-lower bound ($\alpha\gtrsim 0.55$ from FIRAS, rising to at most
-$\alpha\gtrsim 0.59$ for next-generation photometry) that cannot, by
+lower bound ($\alpha\gtrsim 0.52$ from FIRAS, rising to at most
+$\alpha\gtrsim 0.55$ for next-generation photometry) that cannot, by
 sensitivity or bandwidth alone, match the stronger GRB spectroscopic
 bound $\alpha\gtrsim 0.63$ or reach the holographic value $\alpha=2/3$.  The two channels therefore
 probe the same exponent through different sources, observables, and
@@ -1684,9 +1642,9 @@ suppressed by $e^{-\sigma_\phi^2}$ and an incoherent pedestal, yielding
 a shape-distortion bound on the Ng--Perlman exponent $\alpha$.  The MeV
 emission lines of GRB\,221009A give $\alpha\gtrsim 0.63$ (one-sided
 $95\%$ CL), while a fit to the COBE/FIRAS monopole gives
-$\alpha\gtrsim 0.55$ ($95\%$ CL); next-generation
-spectrometers (PIXIE, SuperPIXIE, Voyage~2050) reach only
-$\alpha\gtrsim 0.58$--$0.59$, the bound saturating logarithmically
+$\alpha\gtrsim 0.52$ ($95\%$ CL); next-generation
+spectrometers (PIXIE, SuperPIXIE, Voyage~2050) reach
+$\alpha\gtrsim 0.54$--$0.55$, the bound saturating logarithmically
 because the foam deficit is nearly degenerate with a temperature shift.
 None of these bounds exclude the holographic value $\alpha=2/3$.
 
@@ -1773,8 +1731,7 @@ $C_\alpha(\tau)$, which still awaits a first-principles derivation from
 a quantum-gravity model. The amplitude $A$ itself is in the same position:
 it is calibrated phenomenologically rather than derived from a
 fluctuation-dissipation or holographic-entropy argument at the Planck-cell
-level, and such a derivation would settle which of the DP/TP anchorings of
-Appendix~\ref{app:prescription} is fundamental.
+level.
 
 The multi-epoch $r_{\rm obs}$ dataset constrains any propagation
 effect that broadens an emission line in proportion to a power of
@@ -1815,510 +1772,61 @@ We thank Robin Kaiser for helpful discussions that helped motivate this work.
 \bibliography{../references}
 \appendix
 
-\section{Prescription Dependence of the Accumulated Phase Variance at High Redshift}
-\label{app:prescription}
-
-This appendix collects the derivation of the $(1+z')^2$ weighting adopted
-in Section~\ref{sec:metric_origin} --- the differential-primary, or DP,
-anchoring in the terminology introduced below
-(Eqs.~\eqref{eq:np-total}--\eqref{eq:diff-element}) --- and tabulates the
-resulting prescription dependence underlying the weighting used in
-Section~\ref{sec:CMB_phasevar} and the CMB foam suppression of
-Eq.~\eqref{eq:Ffoam_CMB} (Table~\ref{tab:prescription}).
-
-Throughout this article we adopt the Ng--Perlman convention in which
-\emph{comoving} distance is the distance measure for the path-length
-statistics, including the differential variance elements below. The per-shell
-element $\delta\ell^2(D_C)$ carries no explicit redshift dependence; the
-redshift weighting enters only through the local wavenumber. This convention is
-held fixed throughout. The two anchorings distinguished below share this
-comoving measure, yet the redshift weighting still forces different $A$
-normalizations for $\alpha\neq1/2$.
-
-\subsection{The two anchorings of the Ng--Perlman convention}
-
-The Ng--Perlman prescription for the accumulated phase variance is calibrated
-at the level of the \emph{total} line-of-sight distance,
-\begin{equation}
-  \sigma_\phi^2(D)
-  = A\left(\frac{D}{\ell_P}\right)^{2-2\alpha} k^2 \ell_P^2 ,
-  \label{eq:np-total}
-\end{equation}
-where $A$ is a dimensionless amplitude, $\alpha$ is the foam exponent
-($\alpha=1/2$ for the random-walk model, $\alpha=2/3$ for the holographic
-model, $\alpha=1$ for the most conservative scaling), and $k=2\pi/\lambda$ is
-the wavenumber of the propagating radiation. In a flat, static geometry with a
-single source distance, Eq.~\eqref{eq:np-total} is unambiguous: there is one
-distance $D$, one wavenumber $k$, and one amplitude $A$.
-
-Extending this prescription to a cosmological line of sight along an FLRW ray
-requires accumulating the variance shell-by-shell, with the local wavenumber
-in each shell larger than the observed wavenumber by the redshift factor,
-$k_{\rm local}(z') = (2\pi/\lambda_{\rm obs})(1+z')$. Phase is counted
-crest-by-crest in the local rest frame, so the differential variance element
-is weighted by $k_{\rm local}^2(z')$,
-\begin{equation}
-  \sigma_\phi^2(\text{obs})
-  = \left(\frac{2\pi}{\lambda_{\rm obs}}\right)^2
-    \int (1+z')^2 \, d\sigma_\ell^2(D_C),
-  \label{eq:diff-accum}
-\end{equation}
-with the path-length statistics anchored in comoving distance $D_C$. The
-factor $(1+z')^2$ (i.e. $p=2$) follows from retaining the comoving anchoring of
-the path element while applying the $k^2$ weighting per shell in the proper
-frame. Equation~\eqref{eq:diff-accum} is Eq.~\eqref{eq:sigmaphi_cosmo}, defined in
-Section~\ref{sec:metric_origin}, written out shell by shell.
-
-At high redshift, Eq.~\eqref{eq:diff-accum} and Eq.~\eqref{eq:np-total} are
-\emph{not} the same prescription for $\alpha \neq 1/2$, even at fixed
-amplitude $A$. The total-distance formula~\eqref{eq:np-total} is a nonlinear
-(power-law) function of $D$, so its differential element,
-\begin{equation}
-  \frac{d\sigma_\ell^2}{dD_C}
-  \propto (2-2\alpha)\left(\frac{D_C}{\ell_P}\right)^{1-2\alpha},
-  \label{eq:diff-element}
-\end{equation}
-is not the integrand of a naive linear accumulation. Re-integrating
-Eq.~\eqref{eq:diff-element} with the $(1+z')^2$ weighting inserted does not
-return Eq.~\eqref{eq:np-total} in the no-redshift limit unless $\alpha=1/2$,
-where the variance is linear in $D$ and differentiation commutes trivially with
-accumulation. There are accordingly two distinct anchorings:
-
-\paragraph{Differential-primary (DP).} The per-shell variance element is
-defined from local Planck-cell physics in the shell rest frame, weighted by
-$k_{\rm local}^2$, and integrated via Eq.~\eqref{eq:diff-accum}. The amplitude
-$A$ is fixed at the differential level; the total-distance formula becomes a
-derived, redshift-dependent output that need not reproduce
-Eq.~\eqref{eq:np-total} for $\alpha\neq 1/2$. This is the $(1+z')^2$
-weighting adopted in Section~\ref{sec:metric_origin}.
-
-\paragraph{Total-primary (TP).} The no-redshift limit is required to reproduce
-the calibrated total-distance formula~\eqref{eq:np-total} exactly, and the
-differential element is defined as $d/dD_C$ of that formula,
-Eq.~\eqref{eq:diff-element}, with the redshift weighting attached afterward.
-This preserves continuity with the literature's calibration of $A$ but carries
-the $(2-2\alpha)$ prefactor and the $(D_C/\ell_P)^{1-2\alpha}$ shape into the
-high-$z$ weighting. We retain it here only as the comparison point for
-Table~\ref{tab:prescription}.
-
-\subsection{Where the DP and TP anchorings agree}
-
-For $\alpha=1/2$ the DP and TP anchorings coincide identically. For
-$\alpha\neq1/2$ they diverge, but the divergence is negligible in every regime
-previously tested. Low-redshift and single-source geometries (e.g.\ GRB
-phase-coherence bounds) satisfy two conditions simultaneously: the integration
-range is short enough that the $(1+z')^2$ weighting is $\approx 1$, and the
-power-law nonlinearity in Eq.~\eqref{eq:np-total} is mild over that range. Both
-conditions fail maximally for the CMB at $z\approx1100$: the $(1+z')^2$ weight
-is dominated entirely by the high-$z$ end of the integral, and the
-$(D_C/\ell_P)^{2-2\alpha}$ nonlinearity is probed over its full dynamic range.
-The CMB is therefore the first observable for which the choice between the
-DP and TP anchorings produces a materially different bound on the foam
-amplitude, quantified next.
-
-\subsection{Quantifying the prescription dependence}
-
-If the DP and TP anchorings are forced to share the same total variance
-$\sigma_\phi^2(D)$ for a given observable, they require different amplitudes $A$;
-the fractional difference $\Delta A / A$ measures the prescription dependence
-of the inferred bound. Table~\ref{tab:prescription} is the quantitative basis
-for the $(1+z')^2$ weighting used in Section~\ref{sec:CMB_phasevar} and for
-the CMB foam suppression of Eq.~\eqref{eq:Ffoam_CMB}.
-
-\begin{table}[h]
-\caption{Fractional prescription dependence
-$\Delta A/A\equiv(A_{\rm DP}-A_{\rm TP})/A_{\rm TP}$ of the calibrated foam
-amplitude, evaluated under the constraint that the differential-primary (DP)
-and total-primary (TP) anchorings reproduce the \emph{same} observed phase
-variance $\sigma_\phi^2$ for each source.  TP weights the differential
-$d[(D_C/\ell_P)^{2-2\alpha}]$ of the calibrated total
-formula~\eqref{eq:np-total} by $(1+z')^2$; DP weights a uniform
-per-comoving-shell element (normalized to the same total) by $(1+z')^2$; the
-two coincide identically at $\alpha=1/2$ and in the $z\to0$ limit.  Fiducial
-cosmology: flat Planck~2018 ($\Omega_m=0.315$,
-$H_0=67.36$\,km\,s$^{-1}$\,Mpc$^{-1}$)~\cite{Aghanim2020}, with $D_C$ evaluated
-to $z=0.151$ (GRB\,221009A) and $z_{\rm LS}=1089.8$ (CMB).  The GRB row stays
-at the percent level, confirming the historical invisibility of the anchoring
-ambiguity; the CMB row reaches tens of percent at the holographic $\alpha=2/3$
-and is fully degenerate ($-100\%$) at $\alpha=1$, where the total-primary
-differential vanishes --- the CMB amplitude is prescription-limited, not
-data-limited.}
-\label{tab:prescription}
-\begin{ruledtabular}
-\begin{tabular}{lccc}
- & $\alpha=1/2$ & $\alpha=2/3$ & $\alpha=1$ \\
-\hline
-GRB\,221009A ($z=0.151$)      & $0$ & $-2.8\%$ & $-13.5\%$ \\
-CMB ($z_{\rm LS}\approx1090$) & $0$ & $-33\%$  & $-100\%$ \\
-\end{tabular}
-\end{ruledtabular}
-\end{table}
-
-The headline bounds sit near $\alpha=1/2$, where the DP and TP anchorings
-agree: inverting the FIRAS amplitude (Section~\ref{sec:CMB_degeneracy}) under
-the two anchorings gives $\alpha_{\rm DP}=0.5506$ and $\alpha_{\rm TP}=0.5503$,
-identical to better than $\Delta\alpha<10^{-3}$. The prescription dependence
-grows only as $\alpha$ departs from $1/2$, reaching the tens-of-percent level
-for the CMB at $\alpha=2/3$ and full degeneracy at $\alpha=1$
-(Table~\ref{tab:prescription}); it therefore does not move the quoted CMB
-bound $\alpha\gtrsim0.55$,
-but it does limit how precisely a \emph{stronger}-foam scaling
-($\alpha\gtrsim2/3$) could be inferred from a future high-redshift detection
-(Section~\ref{sec:CMB_phasevar}). The GRB entries remain at the percent level
-for all $\alpha$, confirming that the historical single-source bounds were
-insensitive to the anchoring choice.
-
-% ==============================================================
-\section{First-Principles Derivation of the Foam-Modified Coherence and Its
-Monte-Carlo Validation}
+\section{Derivation of the Foam-Modified Coherence}
 \label{app:derivation}
-% ==============================================================
 
-This appendix sets up the propagation model and jitter statistics, gives the
-broadband observed coherence as an incoherent superposition of per-mode foam
-factors, then specializes to the coherent narrow line --- where the
-carrier--envelope cross-correlation is treated explicitly rather than assumed
-away --- to obtain the closed form~\eqref{eq:g1obs_gauss}, and validates it
-against a direct Monte-Carlo simulation of the shell model.
-Appendix~\ref{app:direct} gives an alternate, purely spectral-domain derivation
-for a general broadband source that bypasses the carrier--envelope step
-altogether; the two routes agree on the coherent-core suppression
-$e^{-\sigma_\phi^2(\nu)}$ but differ on the line broadening --- the achromatic
-group delay $\delta t$ here versus the $(1+z')$-weighted phase delay
-$\tau_\phi$ there, a factor $\langle(1+z')^2\rangle$ that is immaterial for
-GRB\,221009A but reflects an unresolved group-versus-phase-delay choice in the
-perturbed FLRW metric (Appendix~\ref{app:direct}).
+This appendix derives the foam-modified coherence and spectrum directly in the spectral domain for an arbitrary broadband source, recovers the Gaussian-line closed form~\eqref{eq:g1obs_gauss} as the narrow-line limit, and validates the result against a direct Monte-Carlo simulation of the shell model. The foam is a single achromatic path-length fluctuation $\delta t=\delta\ell/c$, so the carrier phase is $\delta\phi=\omega_0\,\delta t$; carrier and envelope share one delay and there is no carrier--envelope cross-term.
 
-\subsection{Setup and propagation}
-\label{app:der_setup}
-
-Write the stationary, zero-mean source field in quasi-monochromatic form
-$E_{\rm src}(t)=e^{-i\omega_0 t}A(t)$, with $A(t)$ a slowly varying complex
-envelope (stationary complex Gaussian, coherence time $\tau_G$) and $\omega_0$
-the \emph{observed} carrier.  The intrinsic coherence is
-$g^{(1)}_{\rm src}(\tau)=e^{-i\omega_0\tau}\gamma(\tau)$ with
-$\gamma(\tau)=\langle A^*(t)A(t+\tau)\rangle/\langle|A|^2\rangle$, related to the
-source spectrum by Wiener--Khinchin.  Here $\gamma$ decays on the source
-coherence time $\tau_G$ --- a line of finite width $\sigma_\nu=1/2\pi\tau_G$,
-not a single frequency; the strictly monochromatic source is the
-$\tau_G\to\infty$ limit $\gamma\to{}$const, for which the foam reduces to a pure
-carrier-suppression factor with no envelope and no broadening.  A broadband
-field is an incoherent superposition of many such modes
-(Appendix~\ref{app:der_broadband}).  Foam adds, in each comoving shell at
-redshift $z'$, a stochastic achromatic geometric path excess $(n-1)\,dr$.  Two
-distinct quantities follow: an \emph{achromatic group delay} of the envelope,
-$\delta t(t)=\tfrac1c\int(n-1)\,dr$, and a \emph{chromatic carrier phase}
-accumulated at the locally blueshifted wavenumber
-$k_{\rm local}(z')=(\omega_0/c)(1+z')$, namely
-$\delta\phi(t)=\tfrac{\omega_0}{c}\int(1+z')(n-1)\,dr$.  Because
-$\delta\phi\neq\omega_0\,\delta t$ whenever the shells carry different
-$(1+z')$, the honest propagation model keeps the two separate,
+\subsection*{Spectral-domain derivation}
+Let $E_{\rm src}(t)$ be a general stationary, zero-mean random field,
 \begin{equation}
-  E_{\rm obs}(t)=e^{-i\omega_0 t}\,e^{\,i\delta\phi(t)}\,A\!\big(t-\delta t(t)\big),
-  \label{eq:app_Eobs}
+  E_{\rm src}(t)=\int d\nu\,\tilde E(\nu)\,e^{-i2\pi\nu t},\qquad
+  \langle\tilde E^*(\nu)\tilde E(\nu')\rangle=S_{\rm src}(\nu)\,\delta(\nu-\nu'),
 \end{equation}
-reducing to the achromatic time warp $E_{\rm src}(t-\delta t)$ of
-Eq.~\eqref{eq:Eobs} only when $(1+z')\to{}$const.
-
-\subsection{Jitter statistics}
-\label{app:der_stats}
-
-Both $\delta t$ and $\delta\phi$ are linear functionals of the \emph{same}
-shell field $w\equiv(n-1)$, with weights $1/c$ and $(\omega_0/c)(1+z')$.  The
-differential delay $\Delta(\tau)=\delta t(t{+}\tau)-\delta t(t)$ and the
-differential phase $\Delta\delta\phi(\tau)=\delta\phi(t{+}\tau)-\delta\phi(t)$
-are therefore \emph{jointly} Gaussian and zero-mean by the central limit
-theorem over the $\sim D/\ell_P$ shells (exact for $\alpha=1/2$; a model
-assumption otherwise).  With statistically independent shells of differential
-variance density $d\sigma_\ell^2/dr$ and a common temporal decorrelation
-$C_\alpha(\tau)$, the second moments are
+the $\delta$-correlation being the Wiener--Khinchin content of stationarity; $g^{(1)}_{\rm src}(\tau)=\int S_{\rm src}(\nu)e^{-i2\pi\nu\tau}d\nu/\!\int S_{\rm src}(\nu)d\nu$. In the eikonal phase-screen reduction the foam multiplies the component at observed frequency $\nu$ by $e^{i\varphi_\nu(t)}$, with $\varphi_\nu(t)=\tfrac{2\pi\nu}{c}\int(n-1)\,dr=2\pi\nu\,\delta t(t)$,
 \begin{equation}
-  \sigma_\Delta^2(\tau)=\frac{2\sigma_\ell^2}{c^2}[1-C_\alpha],\quad
-  D_\phi(\tau)=\omega_0^2\langle(1+z')^2\rangle\,\sigma_\Delta^2,\quad
-  \rho(\tau)=\omega_0\langle1+z'\rangle\,\sigma_\Delta^2\equiv\bar\omega\,\sigma_\Delta^2,
-  \label{eq:app_moments}
+  E_{\rm obs}(t)=\int d\nu\,\tilde E(\nu)\,e^{-i2\pi\nu t}\,e^{\,i\varphi_\nu(t)}.
 \end{equation}
-with path averages $\langle f\rangle\equiv\int f\,d\sigma_\ell^2/\sigma_\ell^2$,
-$\lambda_{\rm eff}=\lambda_{\rm obs}/\sqrt{\langle(1+z')^2\rangle}$ so that
-$D_\phi=(2\pi/\lambda_{\rm eff})^2c^2\sigma_\Delta^2$, and mean effective
-carrier $\bar\omega=\omega_0\langle1+z'\rangle$.  The cross-covariance
-$\rho\neq0$: carrier phase and envelope delay are built from the same $w$, so
-they are correlated.  The foam is statistically independent of the source (it
-acts after emission), which justifies factoring the source and foam averages.
-
-\subsection{Broadband generalization}
-\label{app:der_broadband}
-
-The single carrier $\omega_0$ describes a narrow line; a general broadband field
-is an incoherent superposition of monochromatic modes.  A stationary field has
-uncorrelated spectral amplitudes,
-$\langle\tilde E^*(\nu)\tilde E(\nu')\rangle=S_{\rm src}(\nu)\,\delta(\nu-\nu')$
-(the Wiener--Khinchin content of stationarity), so each frequency $\nu$ is an
-independent mode of power $S_{\rm src}(\nu)\,d\nu$ carrying no envelope of its
-own.  Its foam factor is therefore the bare marginal characteristic function of
-the differential phase,
+The phase is a sum over the $\sim D/\ell_P$ independent shells, hence Gaussian and zero-mean (CLT), with
 \begin{equation}
-  \mathcal F_{\rm foam}(\tau;\nu)
-    =\big\langle e^{\,i\Delta\delta\phi_\nu(\tau)}\big\rangle
-    =e^{-D_\phi(\nu,\tau)/2}
-    =e^{-\sigma_\phi^2(\nu)\,[1-C_\alpha(\tau)]},\qquad
-  \sigma_\phi^2(\nu)=\Big(\tfrac{2\pi\nu}{c}\Big)^2\langle(1+z')^2\rangle\,\sigma_\ell^2,
-  \label{eq:app_Ffoam_nu}
+  D_\phi(\nu;\tau)\equiv\big\langle[\varphi_\nu(t{+}\tau)-\varphi_\nu(t)]^2\big\rangle
+    =2\sigma_\phi^2(\nu)\,[1-C_\alpha(\tau)],\quad
+  \sigma_\phi^2(\nu)=\Big(\tfrac{2\pi\nu}{c}\Big)^2\sigma_\ell^2,
 \end{equation}
-with $D_\phi(\nu,\tau)=2\sigma_\phi^2(\nu)[1-C_\alpha]$ the per-mode phase
-structure function (Eq.~\eqref{eq:app_moments} at the mode frequency), carrying
-the same $\langle(1+z')^2\rangle$ weighting as $\sigma_\phi^2$
-(Eq.~\eqref{eq:sigmaphi_cosmo}).  A single mode has no envelope, hence no
-carrier--envelope correlation and no cross-term.  Because all modes share the
-one achromatic delay $\delta t(t)$, the observed coherence and spectrum are the
-incoherent superpositions
+the per-frequency phase variance of Eq.~\eqref{eq:sigmaphi_cosmo}. The foam is statistically independent of the source. Forming the observed coherence and averaging over source and foam separately, the source $\delta$-correlation collapses $\nu'\!=\!\nu$, leaving the per-mode foam average $\langle e^{i[\varphi_\nu(t+\tau)-\varphi_\nu(t)]}\rangle=e^{-D_\phi(\nu;\tau)/2}$; with $\langle|E_{\rm obs}|^2\rangle=\langle|E_{\rm src}|^2\rangle$ (unitary screen),
 \begin{equation}
   g^{(1)}_{\rm obs}(\tau)
     =\frac{\int d\nu\,S_{\rm src}(\nu)\,e^{-i2\pi\nu\tau}\,
             \mathcal F_{\rm foam}(\tau;\nu)}
-           {\int d\nu\,S_{\rm src}(\nu)},
-  \qquad
+           {\int d\nu\,S_{\rm src}(\nu)},\qquad
+   \mathcal F_{\rm foam}(\tau;\nu)=e^{-\sigma_\phi^2(\nu)[1-C_\alpha(\tau)]}.
+  \label{eq:der_result}
+\end{equation}
+
+\subsection*{Spectrum and limiting cases}
+By Wiener--Khinchin (Eq.~\eqref{eq:WK_obs}), in the dynamical limit $C_\alpha\to0$,
+\begin{equation}
   S_{\rm obs}(\nu)=e^{-\sigma_\phi^2(\nu)}\,S_{\rm src}(\nu)+\text{(pedestal)},
-  \label{eq:app_broadband}
+  \label{eq:der_spectrum}
 \end{equation}
-the spectrum following in the dynamical limit $C_\alpha\to0$ by
-Fourier-transforming the per-mode plateau (Eq.~\eqref{eq:WK_obs}); this is the
-broadband core-plus-pedestal spectrum~\eqref{eq:CMB_spectrum} derived for the
-CMB in Section~\ref{sec:CMB_derivation}, here for any source profile.  The
-blackbody $S_{\rm src}=B_\nu(T_0)$ is the CMB case.  A line of width
-$\sigma_\nu\ll\nu_0$ is the quasi-monochromatic case: to leading order
-$\mathcal F_{\rm foam}(\tau;\nu)\to\mathcal F_{\rm foam}(\tau;\nu_0)$ factors out
-and returns
-$g^{(1)}_{\rm obs}\to\mathcal F_{\rm foam}(\tau;\nu_0)\,g^{(1)}_{\rm src}(\tau)$;
-its first correction --- the residual $\sigma_\phi^2(\nu)\propto\nu^2$ variation
-across the line, with the common $\delta t$ that convolves the envelope --- is
-the carrier--envelope cross-term, resummed into the coherent narrow-line closed
-form Eq.~\eqref{eq:g1obs_gauss} derived below.
+the broadband core-plus-pedestal spectrum~\eqref{eq:CMB_spectrum}, for any $S_{\rm src}$. A blackbody gives the CMB spectrum (Section~\ref{sec:CMB_derivation}). For the Gaussian source $g^{(1)}_{\rm src}(\tau)=e^{-i\omega_0\tau}e^{-\tau^2/2\tau_G^2}$ (Eq.~\eqref{eq:g1src_gauss}), Eq.~\eqref{eq:der_result} reproduces the closed form~\eqref{eq:g1obs_gauss}: carrier suppression $e^{-D_\phi/2}$, envelope broadening $\tau_G\to\sqrt{\tau_G^2+\sigma_\Delta^2}$ with $\sigma_\Delta^2=(2\sigma_\ell^2/c^2)[1-C_\alpha]$ (Eq.~\eqref{eq:diffVarExt}), at the single carrier $\omega_0$.
 
-\subsection{Exact coherence and the factorization}
-\label{app:der_factor}
-
-For a coherent narrow line --- carrier $\omega_0$ with a finite-bandwidth
-envelope $\gamma$, i.e.\ a superposition of modes spanning the linewidth --- the
-per-mode marginal of Appendix~\ref{app:der_broadband} is refined by the
-carrier--envelope correlation $\rho$ (Eq.~\eqref{eq:app_moments}), treated
-exactly as follows.
-Inserting Eq.~\eqref{eq:app_Eobs} into
-$g^{(1)}_{\rm obs}=\langle E_{\rm obs}^*(t)E_{\rm obs}(t{+}\tau)\rangle/
-\langle|E_{\rm obs}|^2\rangle$, averaging over the source at fixed foam
-(stationarity makes the result depend only on $\tau-\Delta(\tau)$) and then
-over the foam, gives the exact relation
-\begin{equation}
-  g^{(1)}_{\rm obs}(\tau)=e^{-i\omega_0\tau}\,
-    \big\langle e^{\,i\Delta\delta\phi(\tau)}\,\gamma\!\big(\tau-\Delta(\tau)\big)\big\rangle,
-  \label{eq:app_exact}
-\end{equation}
-which is Eq.~\eqref{eq:g1obs_phase}.  The carrier suppression sits in
-$e^{i\Delta\delta\phi}$, the envelope broadening in $\gamma(\tau-\Delta)$, and
-the two are correlated.  For jointly-Gaussian zero-mean $(X,Y)$ the identity
-\begin{equation}
-  \big\langle e^{iX}f(Y)\big\rangle
-    =e^{-\langle X^2\rangle/2}\,\big\langle f\!\big(Y+i\langle XY\rangle\big)\big\rangle
-  \label{eq:app_identity}
-\end{equation}
-(verified on $f=e^{ikY}$ and extended by superposition), applied with
-$X=\Delta\delta\phi$, $Y=\Delta$, $f(Y)=\gamma(\tau-Y)$, yields the master form
-\begin{equation}
-  g^{(1)}_{\rm obs}(\tau)=e^{-i\omega_0\tau}\,
-    \underbrace{e^{-D_\phi(\tau)/2}}_{\mathcal F_{\rm foam}(\tau)}\,
-    \big\langle\gamma\!\big(\tau-i\rho(\tau)-\Delta(\tau)\big)\big\rangle .
-  \label{eq:app_master}
-\end{equation}
-Three consequences follow.  (a) The suppression
-$\mathcal F_{\rm foam}=e^{-D_\phi/2}$ factors out \emph{exactly}; the
-cross-term cannot alter it.  (b) The naive factorization
-$\langle e^{i\Delta\delta\phi}\gamma(\tau-\Delta)\rangle
-=\langle e^{i\Delta\delta\phi}\rangle\langle\gamma(\tau-\Delta)\rangle$
-is false unless $\rho=0$; the cross-term survives as the \emph{complex shift}
-$-i\rho$ of the envelope argument, modifying the line shape (center shift and
-width correction) but never the suppression.  The clean product
-$g^{(1)}_{\rm obs}=\mathcal F_{\rm foam}\,g^{(1)}_{\rm src}$ holds only in the
-slowly-varying-envelope limit $\sigma_\Delta,\bar\omega\sigma_\Delta^2\ll\tau_G$,
-where $\gamma(\tau-i\rho-\Delta)\to\gamma(\tau)$.  (c) In the achromatic limit
-$\mathrm{Var}(z')\equiv\langle(1+z')^2\rangle-\langle1+z'\rangle^2\to0$, one has
-$\Delta\delta\phi\to\bar\omega\,\Delta$ deterministically and
-Eq.~\eqref{eq:app_master} collapses to the pure Gaussian convolution
-$\int\mathcal N(\Delta;0,\sigma_\Delta^2)\,g^{(1)}_{\rm src}(\tau-\Delta)\,d\Delta$
-at carrier $\bar\omega$, with no separate suppression.
-
-\subsection{Gaussian closed form}
-\label{app:der_closed}
-
-For $\gamma(\tau)=e^{-\tau^2/2\tau_G^2}$ the remaining average in
-Eq.~\eqref{eq:app_master} is one Gaussian convolution evaluated at the complex
-point $a=\tau-i\rho$,
-$\langle e^{-(a-\Delta)^2/2\tau_G^2}\rangle
-=\tau_G(\tau_G^2+\sigma_\Delta^2)^{-1/2}\,e^{-a^2/2(\tau_G^2+\sigma_\Delta^2)}$,
-which on expanding $a^2=\tau^2-2i\rho\tau-\rho^2$ reproduces
-Eq.~\eqref{eq:g1obs_gauss}.  The single-frequency convolution with the
-substitution $\omega_0^2\sigma_\Delta^2\to D_\phi$ recovers the suppression
-$e^{-D_\phi/2}$ but couples the envelope to the \emph{second} moment
-$\langle(1+z')^2\rangle$ rather than the first moment
-$\bar\omega\propto\langle1+z'\rangle$; the two agree iff $\mathrm{Var}(z')=0$,
-the discrepancy being precisely the $\bar\omega^2\sigma_\Delta^4$ term and the
-$\bar\omega$-weighted carrier shift in Eq.~\eqref{eq:g1obs_gauss}.  Equation~\eqref{eq:g1obs_gauss}
-is thus the coherent narrow-line limit of the broadband
-spectrum~\eqref{eq:app_broadband}.
-
-\subsection{Monte-Carlo validation}
-\label{app:der_mc}
-
-Equations~\eqref{eq:app_master}--\eqref{eq:g1obs_gauss} are validated by
-simulating the shell model directly, using none of the analytic identities
-above.  Each realization draws independent per-shell differential jitters
-$\delta w_s\sim\mathcal N(0,q_s)$ over $N$ shells of redshift $z'_s$ and forms
-$\Delta=\tfrac1c\sum_s\delta w_s$ and
-$\Delta\delta\phi=\tfrac{\omega_0}{c}\sum_s(1+z'_s)\,\delta w_s$; the baseband
-coherence
-$B(\tau)\equiv g^{(1)}_{\rm obs}(\tau)\,e^{i\omega_0\tau}
-=\langle e^{i\Delta\delta\phi}\gamma(\tau-\Delta)\rangle$ is averaged over
-$4\times10^6$ realizations on a grid of lags.  With $\omega_0=c=\tau_G=1$,
-$\sigma_\Delta^2=0.30$, and $z'$ spread over $[0,3]$
-($\langle1+z'\rangle=2.51$, $\mathrm{Var}(z')=0.78$), the simulation reproduces
-the analytic moments~\eqref{eq:app_moments} to machine precision
-($\rho=\bar\omega\sigma_\Delta^2$ and $D_\phi=\omega_0^2\langle(1+z')^2\rangle
-\sigma_\Delta^2$), gives a sample kurtosis of $\Delta\delta\phi$ of $3.00$
-(confirming joint Gaussianity), and yields
-$\langle e^{i\Delta\delta\phi}\rangle=0.3459$ versus $e^{-D_\phi/2}=0.3458$
-(confirming the exact factorization of $\mathcal F_{\rm foam}$).
-Table~\ref{tab:mc} reports the maximum deviation of $B(\tau)$ over
-$\tau\in[-3,3]\tau_G$ from the closed form~\eqref{eq:g1obs_gauss}, the naive
-factorized form $\mathcal F_{\rm foam}\langle\gamma(\tau-\Delta)\rangle$, and
-the single-frequency substitution, in three regimes; the Monte-Carlo noise
-floor is $\approx2.5\times10^{-4}$.  The closed form matches to noise in every
-regime, while the factorized and single-frequency forms fail at moderate foam
-and recover only as $\sigma_\Delta/\tau_G\to0$ --- exactly the condition
-isolated in Appendix~\ref{app:der_factor}.  (In the achromatic case
-$\mathrm{Var}(z')=0$ the single-frequency form still errs, because its carrier
-shift uses $\omega_0$ where the correct $\bar\omega=\omega_0\langle1+z'\rangle$
-belongs.)
+\subsection*{Monte-Carlo validation}
+The closed form~\eqref{eq:g1obs_gauss} is validated by simulating the shell model directly. Each realization draws $\Delta\sim\mathcal N(0,\sigma_\Delta^2)$ and forms the baseband coherence $B(\tau)=\langle e^{i\omega_0\Delta}\,e^{-(\tau-\Delta)^2/2\tau_G^2}\rangle$ over $4\times10^6$ realizations. With $\omega_0=c=\tau_G=1$, the simulation reproduces $\langle e^{i\omega_0\Delta}\rangle=e^{-\omega_0^2\sigma_\Delta^2/2}$ to machine precision and matches the closed form to Monte-Carlo noise; Table~\ref{tab:mc} reports the maximum deviation of $B(\tau)$ over $\tau\in[-3,3]\tau_G$ from the closed form (CF) and from the naive factorized form $\mathcal F_{\rm foam}\langle\gamma(\tau-\Delta)\rangle$ (FAC).
 
 \begin{table}
-\caption{Maximum $|B(\tau)-\text{model}|$ over $\tau\in[-3,3]\tau_G$ from a
-$4\times10^6$-realization shell-model Monte Carlo (noise floor
-$\approx2.5\times10^{-4}$).  CF: closed form~\eqref{eq:g1obs_gauss};
-FAC: naive $\mathcal F_{\rm foam}\langle\gamma(\tau-\Delta)\rangle$;
-SF: single-frequency substitution $\omega_0^2\sigma_\Delta^2\to D_\phi$.}
+\caption{Maximum $|B(\tau)-\text{model}|$ over $\tau\in[-3,3]\tau_G$ from a $4\times10^6$-realization Monte Carlo. CF: closed form~\eqref{eq:g1obs_gauss}; FAC: naive factorized form.}
 \label{tab:mc}
 \begin{ruledtabular}
-\begin{tabular}{lccc}
- & CF & FAC & SF \\
+\begin{tabular}{lcc}
+ & CF & FAC \\
 \hline
-Chromatic ($\sigma_\Delta/\tau_G=0.55$, $\mathrm{Var}\,z'=0.78$) & $7\times10^{-4}$ & $0.14$  & $0.092$  \\
-Achromatic ($\mathrm{Var}\,z'=0$)                                & $6\times10^{-4}$ & $0.16$  & $0.10$   \\
-Narrowband ($\tau_G=8$)                                          & $8\times10^{-4}$ & $0.012$ & $0.0075$ \\
+$\sigma_\Delta/\tau_G=0.55$ & $3\times10^{-4}$ & $0.12$ \\
+$\sigma_\Delta/\tau_G=0.77$ & $2\times10^{-4}$ & $0.18$ \\
+$\tau_G=8$ (narrowband)     & $4\times10^{-4}$ & $6\times10^{-4}$ \\
 \end{tabular}
 \end{ruledtabular}
 \end{table}
 
-% ==============================================================
-\section{Direct Derivation of the Foam-Modified Coherence for a General Source}
-\label{app:direct}
-% ==============================================================
-
-This appendix is a candidate alternate to Appendix~\ref{app:derivation}: it
-obtains the observed coherence and spectrum for an arbitrary broadband source
-directly in the spectral domain, with no quasi-monochromatic carrier--envelope
-intermediate step.
-
-Let $E_{\rm src}(t)$ be a general stationary, zero-mean random field, with the
-spectral representation
-\begin{equation}
-  E_{\rm src}(t)=\int d\nu\,\tilde E(\nu)\,e^{-i2\pi\nu t},\qquad
-  \langle\tilde E^*(\nu)\tilde E(\nu')\rangle=S_{\rm src}(\nu)\,\delta(\nu-\nu'),
-  \label{eq:direct_src}
-\end{equation}
-the $\delta$-correlation of the spectral amplitudes being the Wiener--Khinchin
-content of stationarity; $g^{(1)}_{\rm src}(\tau)=\int S_{\rm src}(\nu)
-e^{-i2\pi\nu\tau}d\nu/\!\int S_{\rm src}(\nu)d\nu$.  No carrier or envelope is
-introduced.
-
-In the eikonal phase-screen reduction the foam multiplies the component at
-observed frequency $\nu$ by a stochastic phase $e^{i\varphi_\nu(t)}$, with
-$\varphi_\nu(t)=\tfrac{2\pi\nu}{c}\int(1+z')(n-1)\,dr$ the line-of-sight phase at
-the blueshifted local wavenumber (Eq.~\eqref{eq:dphi_los} at frequency $\nu$),
-\begin{equation}
-  E_{\rm obs}(t)=\int d\nu\,\tilde E(\nu)\,e^{-i2\pi\nu t}\,e^{\,i\varphi_\nu(t)}.
-  \label{eq:direct_Eobs}
-\end{equation}
-The phase is a sum over the $\sim D/\ell_P$ independent shells, hence Gaussian
-and zero-mean (CLT), with differential structure function
-\begin{equation}
-  D_\phi(\nu;\tau)\equiv\big\langle[\varphi_\nu(t{+}\tau)-\varphi_\nu(t)]^2\big\rangle
-    =2\sigma_\phi^2(\nu)\,[1-C_\alpha(\tau)],\quad
-  \sigma_\phi^2(\nu)=\Big(\tfrac{2\pi\nu}{c}\Big)^2\langle(1+z')^2\rangle\,\sigma_\ell^2,
-  \label{eq:direct_Dphi}
-\end{equation}
-the per-frequency phase variance of Eq.~\eqref{eq:sigmaphi_cosmo}.  The foam is
-statistically independent of the source.
-
-Forming the observed coherence and averaging over source and foam separately,
-\begin{align}
-  g^{(1)}_{\rm obs}(\tau)\,\langle|E_{\rm obs}|^2\rangle
-  &=\big\langle E_{\rm obs}^*(t)E_{\rm obs}(t{+}\tau)\big\rangle \notag\\
-  &=\!\int\!\!\int\! d\nu\,d\nu'\,
-     \langle\tilde E^*(\nu)\tilde E(\nu')\rangle\,
-     e^{\,i2\pi\nu t-i2\pi\nu'(t+\tau)}\,
-     \big\langle e^{-i\varphi_\nu(t)+i\varphi_{\nu'}(t+\tau)}\big\rangle_{\rm foam}.
-  \label{eq:direct_double}
-\end{align}
-The source $\delta$-correlation collapses $\nu'\!=\!\nu$ --- stationarity alone
-decouples the modes --- leaving the per-mode foam average
-$\langle e^{\,i[\varphi_\nu(t+\tau)-\varphi_\nu(t)]}\rangle=e^{-D_\phi(\nu;\tau)/2}$,
-a bare marginal characteristic function.  With $\langle|E_{\rm obs}|^2\rangle
-=\langle|E_{\rm src}|^2\rangle=\int S_{\rm src}(\nu)d\nu$ (the phase screen is
-unitary),
-\begin{equation}
-  \boxed{\;g^{(1)}_{\rm obs}(\tau)
-    =\frac{\int d\nu\,S_{\rm src}(\nu)\,e^{-i2\pi\nu\tau}\,
-            \mathcal F_{\rm foam}(\tau;\nu)}
-           {\int d\nu\,S_{\rm src}(\nu)},\qquad
-   \mathcal F_{\rm foam}(\tau;\nu)=e^{-\sigma_\phi^2(\nu)[1-C_\alpha(\tau)]}.\;}
-  \label{eq:direct_result}
-\end{equation}
-No carrier, envelope, or quasi-monochromatic step enters, and because the modes
-are decoupled by stationarity the foam factor is the per-mode marginal --- there
-is no carrier--envelope cross-term.
-
-The observed spectrum follows by Wiener--Khinchin (Eq.~\eqref{eq:WK_obs}).  In
-the dynamical limit $C_\alpha\to0$, $\mathcal F_{\rm foam}(\tau;\nu)\to
-e^{-\sigma_\phi^2(\nu)}$ outside $|\tau|\lesssim\tau_{\rm foam}$, whose transform
-is the coherent core $e^{-\sigma_\phi^2(\nu)}S_{\rm src}(\nu)$, while the
-short-lag residual transforms to a broad pedestal,
-\begin{equation}
-  S_{\rm obs}(\nu)=e^{-\sigma_\phi^2(\nu)}\,S_{\rm src}(\nu)+\text{(pedestal)},
-  \label{eq:direct_spectrum}
-\end{equation}
-the broadband core-plus-pedestal spectrum~\eqref{eq:CMB_spectrum}, here for any
-$S_{\rm src}$.  A blackbody $S_{\rm src}=B_\nu(T_0)$ gives the CMB spectrum
-(Section~\ref{sec:CMB_derivation}); a line of width $\sigma_\nu\ll\nu_0$ gives,
-to leading order, $g^{(1)}_{\rm obs}\to\mathcal F_{\rm foam}(\tau;\nu_0)\,
-g^{(1)}_{\rm src}(\tau)$, with the chromatic variation of
-$\sigma_\phi^2(\nu)\propto\nu^2$ across the line shifting its center (linear
-term) and changing its width (quadratic term).
-
-\emph{Relation to Appendix~\ref{app:derivation}.}  Both routes give the same
-coherent-core suppression $e^{-\sigma_\phi^2(\nu)}$.  They differ on the line
-\emph{broadening}.  Here the sole foam action is the per-frequency phase
-$\varphi_\nu\propto\nu$ (Eq.~\eqref{eq:dphi_los}) --- equivalently a pure delay
-by the $(1+z')$-weighted $\tau_\phi=\tfrac1c\int(1+z')(n-1)\,dr$ --- so the
-narrow-line width is set by the chromatic variation of $\sigma_\phi^2(\nu)$,
-i.e.\ by the weighted delay variance $\langle(1+z')^2\rangle\sigma_\Delta^2$.
-Appendix~\ref{app:derivation} instead separates an \emph{achromatic} group delay
-$\delta t$ (envelope broadening by the \emph{unweighted} $\sigma_\Delta^2$,
-Eq.~\eqref{eq:diffVarExt}) from the chromatic carrier phase, generating the
-carrier--envelope cross-term.  The two broadenings differ by a factor
-$\langle(1+z')^2\rangle$ ($\approx1.1$ for GRB\,221009A, immaterial; large for
-the CMB, where broadening is not the operative observable), reflecting whether
-the photon arrival/group delay is the achromatic $\delta t$ or the weighted
-$\tau_\phi$ --- the group-versus-phase delay in the perturbed FLRW metric (cf.\
-Appendix~\ref{app:prescription}).  This direct route, making no carrier--envelope
-split, produces no cross-term; the cross-term of Appendix~\ref{app:derivation}
-is the narrow-line image of the chromatic line-shape distortion above.
 
 \end{document}
