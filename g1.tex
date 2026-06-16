@@ -329,14 +329,10 @@ this kinematic map; the amplitude and temporal structure of the
 correlations (Secs.~\ref{sec:Calpha_origin}--\ref{sec:differential_jitter})
 are modeled.
 
-We adopt throughout the eikonal phase-screen reduction --- the
-geometric-optics limit of the wave equation in $n(\tau,r)$ --- in which
-$\sigma_\phi^2$ is the eikonal phase variance of $n$, $C_\alpha(\tau)$ its
-mutual-coherence function, $\sigma_\Delta^2(\tau)$ the delay structure
-function, and $D_\phi(\tau)$ (Sec.~\ref{sec:differential_jitter}) the phase
-structure function, the standard description
-of wave propagation through a random, time-varying refractive
-medium~\cite{Ishimaru1978,Flatte1979,Rickett1990}.  The reduction has a
+We work in the eikonal (geometric-optics) limit of the wave equation in
+$n(\tau,r)$, in which the foam enters only through the achromatic phase
+$\delta\phi=\omega_0\,\delta t$ it imprints on the carrier
+(Eq.~\eqref{eq:dphi_los}).  This reduction has a
 definite range of validity: with $\tau_{\rm foam}\sim\ell_{\rm P}/c$ and foam
 structure on scales $\ell_{\rm P}\ll\lambda$, the variation is strongly
 non-adiabatic, and a complete wave treatment would add diffractive and
@@ -471,69 +467,11 @@ and the equality of per-cell variances is a model assumption rather than a
 direct CLT consequence; Gaussianity is adopted as the minimal assumption
 consistent with the $\alpha$-model.
 
-The foam phase is the line-of-sight accumulation of the achromatic path
-excess at the observed wavenumber
-$k=2\pi/\lambda_{\rm obs}=\omega_0/c$ (Eq.~\eqref{eq:dphi_los}).
-The suppression is therefore governed by the differential foam phase
-$\Delta\delta\phi(\tau)\equiv\delta\phi(t+\tau)-\delta\phi(t)$ through its
-variance, the differential phase structure function
-\begin{equation}
-  D_\phi(\tau) \equiv \big\langle [\Delta\delta\phi(\tau)]^2\big\rangle
-             = \big\langle [\,\delta\phi(t+\tau)-\delta\phi(t)\,]^2\big\rangle,
-  \label{eq:Dphi_def}
-\end{equation}
-so that $D_\phi(\tau)=\omega_0^2\,\sigma_\Delta^2(\tau)$, the carrier frequency
-squared times the differential-delay variance.
-
-The characteristic function of $\Delta\delta\phi(\tau)$ defines a foam
-suppression factor applicable to any source profile.  Since
-$\Delta\delta\phi(\tau)$ is Gaussian with zero mean (the same central-limit
-argument as for $\Delta(\tau)$, applied to the phase),
-\begin{equation}
-  \big\langle e^{i\Delta\delta\phi(\tau)}\big\rangle_{\delta t}
-  = e^{-D_\phi(\tau)/2}
-  \;\equiv\; \mathcal{F}_{\rm foam}(\tau),
-  \label{eq:gaussian_jitter}
-\end{equation}
-with $\mathcal{F}_{\rm foam}(0) = 1$.
-This foam suppression factor is the dominant term of the transfer
-function from intrinsic to observed coherence, the higher-cumulant
-corrections being negligible; the spectroscopic observables below ---
-line broadening, peak suppression, and the CMB core/pedestal split ---
-all follow from it.
-
-Provided the temporal decorrelation is shell-independent --- a common foam
-timescale $\tau_{\rm foam}$ along the whole path, so that the temporal shape
-$[1-C_\alpha(\tau;D)]$ is achromatic --- the structure function reduces to
-\begin{equation}
-  D_\phi(\tau) = \left(\frac{2\pi}{\lambda_{\rm obs}}\right)^{\!2} c^{2}\,
-                 \sigma_\Delta^2(\tau)
-              = 2\sigma_\phi^2\,[1-C_\alpha(\tau;D)],
-  \label{eq:Dphi_reduce}
-\end{equation}
-where $\sigma_\Delta^2(\tau)=(2\sigma_\ell^2/c^2)[1-C_\alpha(\tau;D)]$ is the
-achromatic differential-delay variance of Eq.~\eqref{eq:diffVarExt} and
-$\sigma_\phi^2=(2\pi/\lambda_{\rm obs})^2\sigma_\ell^2(D_C)$ is the asymptotic
-phase variance of Eq.~\eqref{eq:sigmaphi_cosmo}.  The operative wavenumber is
-the carrier $\omega_0=2\pi c/\lambda_{\rm obs}$.  In the dynamical-foam limit
-$\sigma_\phi^2$ is set by the Ng--Perlman path-length
-variance~\eqref{eq:NgPerlmanVar} accumulated along the line-of-sight comoving
-distance $D_C$ to the source~\cite{NgPerlman2022}.
-
-Substituting the shell-independent reduction Eq.~\eqref{eq:Dphi_reduce}, the
-suppression factor Eq.~\eqref{eq:gaussian_jitter} takes the compact form
-\begin{equation}
-  \mathcal{F}_{\rm foam}(\tau) = e^{-\sigma_\phi^2[1-C_\alpha(\tau;D)]},
-  \label{eq:Ffoam}
-\end{equation}
-with $\mathcal{F}_{\rm foam}(0)=1$.  At $\tau\to\infty$:
-$\mathcal{F}_{\rm foam}(\infty)$ equals $e^{-\sigma_\phi^2}$ in the dynamical
-limit ($C_\alpha\to 0$) and approaches unity for quasi-static foam
-($C_\alpha\approx 1$).  The accumulated foam phase is $\delta\phi=\omega_0\,
-\delta t$ (Eq.~\eqref{eq:dphi_los}); the suppression $e^{-\sigma_\phi^2}$ is
-manifestly observer-frame, with
-$\sigma_\phi=(2\pi/\lambda_{\rm obs})\,\sigma_\ell(D_C)$
-(Eq.~\eqref{eq:sigmaphi_cosmo}).
+The differential delay $\Delta(\tau)$ and its variance $\sigma_\Delta^2(\tau)$
+are the kinematic content of this subsection.  The carrier-phase suppression
+they imprint on the observed coherence --- the foam factor
+$\mathcal{F}_{\rm foam}(\tau)$ --- arises only when the carrier enters
+$g^{(1)}$, and is derived in Section~\ref{sec:g1}.
 
 % ==============================================================
 \section{First-Order Coherence }
@@ -566,31 +504,33 @@ in Eq.~\eqref{eq:g1def} cancels), averaging over the jitter yields
       g^{(1)}_{\rm src}(\tau - \Delta)\,d\Delta.
   \label{eq:g1obs}
 \end{equation}
-Equation~\eqref{eq:g1obs} treats the foam as the pure achromatic time warp of
-Eq.~\eqref{eq:Eobs}, so a carrier $e^{-i\omega_0\tau}$ would acquire only the
-single-frequency phase $\omega_0\Delta(\tau)$.  The per-shell blueshift of
-Section~\ref{sec:metric_origin} replaces this by the redshift-weighted
-differential phase $\Delta\delta\phi(\tau)$ of Eq.~\eqref{eq:Dphi_def}: writing
-$g^{(1)}_{\rm src}(\tau)=e^{-i\omega_0\tau}\,\gamma(\tau)$ with $\gamma$ the
-slowly varying envelope coherence,
+For a quasi-monochromatic source $g^{(1)}_{\rm src}(\tau)=e^{-i\omega_0\tau}\,
+\gamma(\tau)$ with $\gamma$ the slowly varying envelope coherence,
+Eq.~\eqref{eq:g1obs} reads
 \begin{equation}
   g^{(1)}_{\rm obs}(\tau)
     = e^{-i\omega_0\tau}\,
-      \big\langle e^{\,i\Delta\delta\phi(\tau)}\,
+      \big\langle e^{\,i\omega_0\Delta(\tau)}\,
                   \gamma(\tau-\Delta(\tau))\big\rangle_{\delta t},
-  \label{eq:g1obs_phase}
+  \label{eq:g1obs_carrier}
 \end{equation}
-in which the envelope responds to the achromatic differential delay
-$\Delta(\tau)$ (variance $\sigma_\Delta^2$) while the carrier is suppressed by
-the foam factor
-$\mathcal{F}_{\rm foam}(\tau)=\langle e^{i\Delta\delta\phi(\tau)}\rangle
-= e^{-D_\phi(\tau)/2}$ of Eq.~\eqref{eq:gaussian_jitter}, carrying the
-carrier $\omega_0$ since $\Delta\delta\phi=\omega_0\Delta$.  The closed form of
-Section~\ref{sec:closedforms} evaluates
-Eq.~\eqref{eq:g1obs_phase} exactly, the broadening set by $\sigma_\Delta^2$ and
-the suppression by $D_\phi$.
-The observed first-order coherence is the intrinsic coherence function
-convolved with the Gaussian differential-jitter kernel.
+the envelope responding to the achromatic differential delay $\Delta(\tau)$
+(variance $\sigma_\Delta^2$) and the carrier acquiring the phase
+$\omega_0\Delta(\tau)$.  The carrier suppression is the characteristic function
+of that phase,
+\begin{equation}
+  \mathcal{F}_{\rm foam}(\tau)\equiv\big\langle e^{\,i\omega_0\Delta(\tau)}\big\rangle_{\delta t}
+  = e^{-\omega_0^2\sigma_\Delta^2(\tau)/2}
+  = e^{-\sigma_\phi^2\,[1-C_\alpha(\tau;D)]},
+  \label{eq:Ffoam}
+\end{equation}
+with $\mathcal{F}_{\rm foam}(0)=1$, the differential phase variance
+$D_\phi(\tau)\equiv\omega_0^2\sigma_\Delta^2(\tau)=2\sigma_\phi^2[1-C_\alpha(\tau;D)]$,
+and $\sigma_\phi^2=(2\pi/\lambda_{\rm obs})^2\sigma_\ell^2(D_C)$
+(Eq.~\eqref{eq:sigmaphi_cosmo}); at $\tau\to\infty$ ($C_\alpha\to0$),
+$\mathcal{F}_{\rm foam}\to e^{-\sigma_\phi^2}$.  Thus the observed first-order
+coherence is the intrinsic coherence convolved with the Gaussian
+differential-jitter kernel.
 
 \subsection{Gaussian Source Profile}
 \label{sec:closedforms}
@@ -609,7 +549,7 @@ Gaussian coherence decay time.  The carrier factor $e^{-i\omega_0\tau}$
 encodes the line's position in the spectrum and must be retained: dropping
 it would substitute a baseband Gaussian centered at $\nu=0$ for the physical
 line and would lose the dominant foam effect (line-peak suppression).
-Substituting into the jitter-convolution integral~\eqref{eq:g1obs_phase} and
+Substituting into the jitter-convolution integral~\eqref{eq:g1obs_carrier} and
 completing the square over the Gaussian delay $\Delta$ (Appendix~\ref{app:derivation})
 gives the exact closed form
 \begin{align}
@@ -632,15 +572,15 @@ $\nu_0^{\rm eff} = \nu_0\bigl[1-
 (ii) a wider Gaussian decay of $g^{(1)}_{\rm obs}(\tau)$ in lag (decay
 scale $\sqrt{\tau_G^2+\sigma_\Delta^2(\tau)}$ vs.\ $\tau_G$);
 and (iii) a global amplitude suppression set by the differential phase
-structure function $D_\phi(\tau)=\omega_0^2\sigma_\Delta^2(\tau)$ of
-Eq.~\eqref{eq:Dphi_reduce}, at the carrier $\omega_0$.  Because carrier and
-envelope share the single achromatic delay, the substitution
-$D_\phi=\omega_0^2\sigma_\Delta^2$ is exact: there is no carrier--envelope
-cross-term, and the carrier suppression
+variance $D_\phi(\tau)=\omega_0^2\sigma_\Delta^2(\tau)$ (Eq.~\eqref{eq:Ffoam}),
+at the carrier $\omega_0$.  The marginal phase variance
+$D_\phi=\omega_0^2\sigma_\Delta^2$ is exact; the carrier shift~(i) and the
+$\omega_0^2\sigma_\Delta^4$ amplitude term are the carrier--envelope coupling,
+both of order $\sigma_\Delta^2/\tau_G^2$ and vanishing in the
+slowly-varying-envelope limit $\sigma_\Delta\ll\tau_G$, where
 $\mathcal{F}_{\rm foam}=e^{-D_\phi/2}$ factors out cleanly,
-$g^{(1)}_{\rm obs}\to\mathcal{F}_{\rm foam}(\tau)\,g^{(1)}_{\rm src}(\tau)$ in
-the slowly-varying-envelope limit $\sigma_\Delta\ll\tau_G$ --- the pure
-multiplicative suppression on which the spectroscopic bounds rest.
+$g^{(1)}_{\rm obs}\to\mathcal{F}_{\rm foam}(\tau)\,g^{(1)}_{\rm src}(\tau)$ ---
+the pure multiplicative suppression on which the spectroscopic bounds rest.
 Normalization $g^{(1)}_{\rm obs}(0)=1$ holds because $\sigma_\Delta(0)=0$
 (hence $D_\phi(0)=0$).
 The narrowband limit $\tau_G\to\infty$ of
@@ -1775,7 +1715,7 @@ We thank Robin Kaiser for helpful discussions that helped motivate this work.
 \section{Derivation of the Foam-Modified Coherence}
 \label{app:derivation}
 
-This appendix derives the foam-modified coherence and spectrum directly in the spectral domain for an arbitrary broadband source, recovers the Gaussian-line closed form~\eqref{eq:g1obs_gauss} as the narrow-line limit, and validates the result against a direct Monte-Carlo simulation of the shell model. The foam is a single achromatic path-length fluctuation $\delta t=\delta\ell/c$, so the carrier phase is $\delta\phi=\omega_0\,\delta t$; carrier and envelope share one delay and there is no carrier--envelope cross-term.
+This appendix derives the foam-modified coherence and spectrum directly in the spectral domain for an arbitrary broadband source, recovers the Gaussian-line closed form~\eqref{eq:g1obs_gauss} as the narrow-line limit, and validates the result against a direct Monte-Carlo simulation of the shell model. The foam is a single achromatic path-length fluctuation $\delta t=\delta\ell/c$, so the carrier phase is $\delta\phi=\omega_0\,\delta t$ and carrier and envelope share the one delay $\delta t$.
 
 \subsection*{Spectral-domain derivation}
 Let $E_{\rm src}(t)$ be a general stationary, zero-mean random field,
