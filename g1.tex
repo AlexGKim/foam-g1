@@ -160,7 +160,7 @@ observational directions.
 
 % ==============================================================
 % CLAUDE:END-PROTECT
-% xCLAUDE:PROTECT
+% CLAUDE:PROTECT
 \section{Spacetime Foam Model}
 \label{sec:model}
 % ==============================================================
@@ -270,7 +270,7 @@ path-length jitter $\Delta\ell_{\rm tot}(t)$ --- a sum of
 $\sim D/\ell_P$ independent contributions --- likewise decorrelates on
 timescale $\tau_{\rm foam}\sim\tau_P$.  This is the \emph{dynamical-foam}
 regime adopted throughout: $\tau_{\rm foam}$ is far shorter than any
-timescale on which the observed coherence has support, so
+timescale on which any observable coherence has support, so
 $C_\alpha(\tau)\to 0$ there.  By contrast, models with long-range
 \emph{temporal} correlations --- the temporal analogue of the long-range
 \emph{transverse} spatial correlations of Ref.~\cite{LeeZurekChen2024}
@@ -327,7 +327,7 @@ consistent with the $\alpha$-model.
 
 % ==============================================================
 % CLAUDE:END-PROTECT
-% CLAUDE:PROTECT
+%xCLAUDE:PROTECT
 \section{First-Order Coherence }
 \label{sec:g1}
 % ==============================================================
@@ -399,30 +399,11 @@ corresponds via the Wiener--Khinchin theorem to the coherence function
   \label{eq:g1src_gauss}
 \end{equation}
 where $\omega_0 \equiv 2\pi\nu_0$ and $\tau_G \equiv 1/(2\pi\sigma_\nu)$ is the
-Gaussian coherence decay time.  The carrier factor $e^{-i\omega_0\tau}$
-encodes the line's position in the spectrum and must be retained: dropping
-it would substitute a baseband Gaussian centered at $\nu=0$ for the physical
-line and would lose the dominant foam effect (line-peak suppression).
+Gaussian coherence decay time.
 Substituting the Gaussian profile~\eqref{eq:g1src_gauss} into the
-jitter-convolution integral~\eqref{eq:g1obs_carrier} gives, with
-$\sigma_\Delta^2\equiv\sigma_\Delta^2(\tau)$,
-\begin{equation}
-  g^{(1)}_{\rm obs}(\tau)=e^{-i\omega_0\tau}\!
-    \int_{-\infty}^{\infty}\frac{d\Delta}{\sqrt{2\pi\sigma_\Delta^2}}\,
-    \exp\!\left[-\frac{\Delta^2}{2\sigma_\Delta^2}+i\omega_0\Delta
-               -\frac{(\tau-\Delta)^2}{2\tau_G^2}\right].
-  \label{eq:g1obs_gauss_int}
-\end{equation}
-The exponent is quadratic in $\Delta$; writing it as
-$-A\,\Delta^2+B\,\Delta-\tau^2/2\tau_G^2$ with
-$A=(\tau_G^2+\sigma_\Delta^2)/(2\sigma_\Delta^2\tau_G^2)$ and
-$B=i\omega_0+\tau/\tau_G^2$, the Gaussian integral
-$\int e^{-A\Delta^2+B\Delta}\,d\Delta=\sqrt{\pi/A}\,e^{B^2/4A}$ produces the
-amplitude prefactor $\tau_G/\sqrt{\tau_G^2+\sigma_\Delta^2}$ together with the
-exponent $B^2/4A-\tau^2/2\tau_G^2$, whose imaginary, $\tau^2$, and $\omega_0^2$
-parts separate into a carrier shift, an envelope broadening, and an amplitude
-suppression to give the exact closed form (see also
-Appendix~\ref{app:derivation})
+jitter-convolution integral~\eqref{eq:g1obs_carrier} and evaluating the
+resulting Gaussian integral over $\Delta$ (with
+$\sigma_\Delta^2\equiv\sigma_\Delta^2(\tau)$) gives the exact closed form
 \begin{align}
   g^{(1)}_{\rm obs}(\tau)
   &= \frac{\tau_G}{\sqrt{\tau_G^2+\sigma_\Delta^2(\tau)}}\,
