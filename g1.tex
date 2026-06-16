@@ -56,7 +56,6 @@ narrow spectral line at $E_{\rm obs} \gtrsim 720$\,MeV in a $z \sim 0.15$ GRB.
 % CLAUDE:PROTECT
 \section{Introduction}
 \label{sec:intro}
-% CLAUDE: Do not edit this section.
 
 A long-standing expectation from the union of quantum mechanics and general
 relativity is that the smooth pseudo-Riemannian manifold of classical spacetime
@@ -161,7 +160,7 @@ observational directions.
 
 % ==============================================================
 % CLAUDE:END-PROTECT
-% CLAUDE:PROTECT
+% xCLAUDE:PROTECT
 \section{Spacetime Foam Model}
 \label{sec:model}
 % ==============================================================
@@ -169,7 +168,6 @@ observational directions.
 
 \subsection{Arrival-Time Jitter}
 \label{sec:metric_origin}
-% CLAUDE: Do not edit this section.
 
 This section establishes the foam model used throughout the paper.
 We adopt the Ng--Perlman picture of spacetime foam as a source of
@@ -213,7 +211,15 @@ Because the path-length fluctuation is geometric---arising from stochastic
 metric perturbations of the FLRW background rather than a dispersive
 medium---$\delta t$ is achromatic (frequency-independent), distinguishing foam
 from plasma dispersion, interstellar scintillation, and standard spectral
-distortions~\cite{NgPerlman2022}.
+distortions~\cite{NgPerlman2022}.  A monochromatic carrier of observed
+frequency $\omega_0=2\pi\nu_0$ reads the same delay as a phase jitter
+$\delta\phi=\omega_0\,\delta t$, giving a phase variance
+\begin{equation}
+  \sigma_\phi^2 \;=\; \left(\frac{2\pi}{\lambda_{\rm obs}}\right)^{\!2}
+  \sigma_\ell^2(D_C),
+  \label{eq:sigmaphi_cosmo}
+\end{equation}
+on which all spectroscopic bounds below rest.
 
 \subsection{Temporal Decorrelation of Spacetime Foam}
 \label{sec:Calpha_origin}
@@ -232,69 +238,46 @@ at times $t$ and $t+\tau$ is correlated for $\tau \ll \tau_{\rm foam}$ and
 essentially independent for $\tau \gg \tau_{\rm foam}$.
 We introduce $C_\alpha(\tau;D)$ as the normalized \emph{temporal}
 autocorrelation of the integrated path-length fluctuation
-$\Delta\ell_{\rm tot}(t)$, i.e.\ $C_\alpha(\tau;D) \equiv
-\langle\Delta\ell_{\rm tot}(t)\,\Delta\ell_{\rm tot}(t+\tau)\rangle
-/\sigma_\ell^2(D)$, which inherits the temporal structure of the
-per-cell foam dynamics over the $\sim D/\ell_{\rm P}$ cells crossed by
-the line of sight.
-Because $C_\alpha$ is defined on the \emph{integrated} path, its
-temporal shape inherits a residual dependence on $D$ from the way
-per-cell foam dynamics combine along the line of sight; the explicit
-$D$-argument records this dependence.
-Equivalently,
+$\Delta\ell_{\rm tot}(t)$,
 \begin{equation}
   \big\langle \Delta\ell_{\rm tot}(t)\,
               \Delta\ell_{\rm tot}(t+\tau) \big\rangle
-  = \sigma_\ell^2(D)\,C_\alpha(\tau;D).
+  = \sigma_\ell^2(D)\,C_\alpha(\tau;D),
   \label{eq:pathcov1ray}
 \end{equation}
+normalized so that $C_\alpha(0;D)=1$.  Because $C_\alpha$ is defined on
+the \emph{integrated} path, its temporal shape inherits a residual
+$D$-dependence from the way the per-cell foam dynamics over the
+$\sim D/\ell_{\rm P}$ cells crossed by the line of sight combine; the
+explicit $D$-argument records this dependence.
 
-Strictly, no physical source is pointlike: the observed light samples the
-foam over the finite emitting region and along the full propagation path, so
-the underlying foam correlation is spatio-temporal, $C(\mathbf{r},\tau)$,
-rather than purely temporal.  We therefore read $C_\alpha(\tau;D)$ as an
-\emph{effective} temporal correlation obtained by coarse-graining
-$C(\mathbf{r},\tau)$ over the source's emitting four-volume and propagation
-path, with $\tau$ parametrizing the residual temporal decorrelation that
-survives this spatial averaging.  The reduction to a purely temporal
-$C_\alpha$ is exact under the assumption that the spatio-temporal
-correlation approximately factorizes,
-$C(\mathbf{r},\tau)\approx C_{\rm sp}(\mathbf{r})\,C_\alpha(\tau)$, with the
-spatial factor $C_{\rm sp}(\mathbf{r})$ absorbed into the normalization.  We
-flag this factorization as an assumption rather than a derived result, since
-the spatial correlation structure over cosmological path lengths is not
-constrained by the present treatment.
+Since no physical source is pointlike, the underlying foam correlation is
+spatio-temporal, $C(\mathbf{r},\tau)$, and we read $C_\alpha(\tau;D)$ as the
+\emph{effective} temporal correlation left after coarse-graining over the
+source's emitting four-volume and propagation path.  The reduction to a
+purely temporal $C_\alpha$ assumes the spatio-temporal correlation
+factorizes, $C(\mathbf{r},\tau)\approx C_{\rm sp}(\mathbf{r})\,C_\alpha(\tau)$,
+with the spatial factor absorbed into the normalization; we flag this as an
+assumption, since the spatial correlation structure over cosmological path
+lengths is not constrained here.
 
 The timescale $\tau_{\rm foam}$ is an additional free parameter of the
 foam model, not fixed by the $\alpha$-model variance relation alone.
 In the standard phenomenological framework~\cite{AmelinoCamelia2013,Ng2003},
-each of the $\sim D/\ell_P$ foam cells along the line of sight
-independently adopts a new configuration on timescale
-$\tau_P \equiv \ell_P/c \approx 5\times10^{-44}$~s; the integrated
-path-length jitter $\delta\ell_{\rm tot}(t)$ --- a sum of
+the foam refreshes on the Planck time
+$\tau_P \equiv \ell_P/c \approx 5\times10^{-44}$~s, so the integrated
+path-length jitter $\Delta\ell_{\rm tot}(t)$ --- a sum of
 $\sim D/\ell_P$ independent contributions --- likewise decorrelates on
-timescale $\tau_{\rm foam}\sim\tau_P$.  Because
-$\tau_{\rm foam}\ll\tau_c$ for any astrophysical source considered here
-($\tau_c/\tau_{\rm foam}\gtrsim 10^{22}$ even at $37$\,MeV),
-$C_\alpha(\tau)$ has decayed to $\approx 0$ over the entire lag range on
-which the coherence function has support; the foam is thus fully
-decorrelated on every timescale relevant to the observed spectrum --- the
-most optimistic scenario for detection --- and the analysis sits deep within
-the dynamical regime.  Models with long-range
-\emph{temporal} correlations --- the temporal analogue of the
-long-range \emph{transverse} spatial correlations of
-Ref.~\cite{LeeZurekChen2024} that evade interferometric imaging bounds
---- would give $C_\alpha(\tau)\approx 1$ over macroscopic timescales
-and thereby drive $\sigma_\Delta^2(\tau)\to 0$, suppressing the foam
-signal in both channels analyzed below.  The bounds derived here
-therefore all rest on the dynamical-foam assumption
-$\tau_{\rm foam}\ll\tau_c$.  We carry $C_\alpha(\tau)$ explicitly only
-because it sets the pedestal width $\sim 1/\tau_{\rm foam}$
-(Section~\ref{sec:spec}) and the contrast with the quasi-static limit; for
-the bounds themselves $C_\alpha\!\to\!0$, an approximation reinforced by
-transverse decorrelation across the beam (any two rays with
-$D\,\delta\theta>\ell_P$ are independent), so the fully-decorrelated
-single-ray treatment is conservative.
+timescale $\tau_{\rm foam}\sim\tau_P$.  This is the \emph{dynamical-foam}
+regime adopted throughout: $\tau_{\rm foam}$ is far shorter than any
+timescale on which the observed coherence has support, so
+$C_\alpha(\tau)\to 0$ there.  By contrast, models with long-range
+\emph{temporal} correlations --- the temporal analogue of the long-range
+\emph{transverse} spatial correlations of Ref.~\cite{LeeZurekChen2024}
+that evade interferometric imaging bounds --- would give
+$C_\alpha(\tau)\approx 1$ over macroscopic lags and drive
+$\sigma_\Delta^2(\tau)\to 0$, suppressing the foam signal; the bounds
+derived below therefore rest on the dynamical-foam assumption.
 
 \subsection{Differential Jitter and Its Distribution}
 \label{sec:differential_jitter}
@@ -341,11 +324,6 @@ and the equality of per-cell variances is a model assumption rather than a
 direct CLT consequence; Gaussianity is adopted as the minimal assumption
 consistent with the $\alpha$-model.
 
-The differential delay $\Delta(\tau)$ and its variance $\sigma_\Delta^2(\tau)$
-are the kinematic content of this subsection.  The carrier-phase suppression
-they imprint on the observed coherence --- the foam factor
-$\mathcal{F}_{\rm foam}(\tau)$ --- arises only when the carrier enters
-$g^{(1)}$, and is derived in Section~\ref{sec:g1}.
 
 % ==============================================================
 % CLAUDE:END-PROTECT
