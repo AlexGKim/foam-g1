@@ -548,9 +548,26 @@ Gaussian coherence decay time.  The carrier factor $e^{-i\omega_0\tau}$
 encodes the line's position in the spectrum and must be retained: dropping
 it would substitute a baseband Gaussian centered at $\nu=0$ for the physical
 line and would lose the dominant foam effect (line-peak suppression).
-Substituting into the jitter-convolution integral~\eqref{eq:g1obs_carrier} and
-completing the square over the Gaussian delay $\Delta$ (Appendix~\ref{app:derivation})
-gives the exact closed form
+Substituting the Gaussian profile~\eqref{eq:g1src_gauss} into the
+jitter-convolution integral~\eqref{eq:g1obs_carrier} gives, with
+$\sigma_\Delta^2\equiv\sigma_\Delta^2(\tau)$,
+\begin{equation}
+  g^{(1)}_{\rm obs}(\tau)=e^{-i\omega_0\tau}\!
+    \int_{-\infty}^{\infty}\frac{d\Delta}{\sqrt{2\pi\sigma_\Delta^2}}\,
+    \exp\!\left[-\frac{\Delta^2}{2\sigma_\Delta^2}+i\omega_0\Delta
+               -\frac{(\tau-\Delta)^2}{2\tau_G^2}\right].
+  \label{eq:g1obs_gauss_int}
+\end{equation}
+The exponent is quadratic in $\Delta$; writing it as
+$-A\,\Delta^2+B\,\Delta-\tau^2/2\tau_G^2$ with
+$A=(\tau_G^2+\sigma_\Delta^2)/(2\sigma_\Delta^2\tau_G^2)$ and
+$B=i\omega_0+\tau/\tau_G^2$, the Gaussian integral
+$\int e^{-A\Delta^2+B\Delta}\,d\Delta=\sqrt{\pi/A}\,e^{B^2/4A}$ produces the
+amplitude prefactor $\tau_G/\sqrt{\tau_G^2+\sigma_\Delta^2}$ together with the
+exponent $B^2/4A-\tau^2/2\tau_G^2$, whose imaginary, $\tau^2$, and $\omega_0^2$
+parts separate into a carrier shift, an envelope broadening, and an amplitude
+suppression to give the exact closed form (see also
+Appendix~\ref{app:derivation})
 \begin{align}
   g^{(1)}_{\rm obs}(\tau)
   &= \frac{\tau_G}{\sqrt{\tau_G^2+\sigma_\Delta^2(\tau)}}\,
@@ -650,11 +667,41 @@ The Gaussian's carrier shift, line narrowing, and peak suppression are
 the frequency-domain images of items~(i)--(iii) of
 Section~\ref{sec:closedforms}.
 
-The pedestal in either decomposition is sourced by the short-lag
-window $|\tau|\lesssim\tau_{\rm foam}$ and so spreads over a frequency
-range $\sim 1/\tau_{\rm foam}$.  When $\tau_{\rm foam}\ll
-\tau_G,\sigma_\Delta$ the pedestal is correspondingly broad and
-shallow, and the spectrum near the line peak is dominated by the coherent core.
+For completeness, the coherent core~\eqref{eq:Sobs_gauss} carries only the
+fraction $e^{-\sigma_\phi^2}$ of the line flux; the complementary
+$1-e^{-\sigma_\phi^2}$ reappears as a pedestal.  In the relevant regime
+$\sigma_\Delta\ll\tau_G$ the closed form~\eqref{eq:g1obs_gauss} factorizes,
+$g^{(1)}_{\rm obs}(\tau)=e^{-i\omega_0\tau}e^{-\tau^2/2\tau_G^2}\,
+\mathcal{F}_{\rm foam}(\tau)$ with
+$\mathcal{F}_{\rm foam}(\tau)=e^{-\sigma_\phi^2[1-C_\alpha(\tau)]}$, and the
+plateau/residual split
+$\mathcal{F}_{\rm foam}(\tau)=e^{-\sigma_\phi^2}+
+[e^{-\sigma_\phi^2[1-C_\alpha(\tau)]}-e^{-\sigma_\phi^2}]$ used in the
+broadband case [Eq.~\eqref{eq:CMB_spectrum}] sends the plateau to the
+core~\eqref{eq:Sobs_gauss} and the short-lag residual to the pedestal
+\begin{align}
+  S_{\rm obs}^{\rm ped}(\nu)&=\int_{-\infty}^{\infty}\!d\tau\,
+    e^{\,i2\pi(\nu-\nu_0)\tau}\,e^{-\tau^2/2\tau_G^2}
+    \left[e^{-\sigma_\phi^2[1-C_\alpha(\tau)]}-e^{-\sigma_\phi^2}\right] \notag\\
+  &\xrightarrow{\;\tau_{\rm foam}\ll\tau_G\;}
+    \int_{-\infty}^{\infty}\!d\tau\,
+    e^{\,i2\pi(\nu-\nu_0)\tau}
+    \left[e^{-\sigma_\phi^2[1-C_\alpha(\tau)]}-e^{-\sigma_\phi^2}\right]
+    \equiv\hat{R}(\nu-\nu_0),
+  \label{eq:Sobs_gauss_ped}
+\end{align}
+so that the full observed line is
+$S_{\rm obs}(\nu)=S_{\rm obs}^{\rm core}(\nu)+S_{\rm obs}^{\rm ped}(\nu)$.
+The residual is sourced by the short-lag window
+$|\tau|\lesssim\tau_{\rm foam}$, over which the envelope
+$e^{-\tau^2/2\tau_G^2}\approx 1$; the resulting first-order kernel
+$\hat{R}(\nu-\nu_0)$ is the line-centered image of the broadband residual of
+Eq.~\eqref{eq:CMB_spectrum}, spread over $\sim 1/\tau_{\rm foam}$.  Its weight
+$\int S_{\rm obs}^{\rm ped}\,d\nu=1-e^{-\sigma_\phi^2}$ exactly complements
+the core's $e^{-\sigma_\phi^2}$, conserving the line photon number.  When
+$\tau_{\rm foam}\ll\tau_G,\sigma_\Delta$ the pedestal is correspondingly
+broad and shallow, and the spectrum near the line peak is dominated by the
+coherent core.
 
 
 % ==============================================================
