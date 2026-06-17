@@ -327,7 +327,7 @@ consistent with the $\alpha$-model.
 
 % ==============================================================
 % CLAUDE:END-PROTECT
-%xCLAUDE:PROTECT
+% CLAUDE:PROTECT
 \section{First-Order Coherence }
 \label{sec:g1}
 % ==============================================================
@@ -443,7 +443,7 @@ constructed by incoherent superposition.
 
 % ==============================================================
 % CLAUDE:END-PROTECT
-% CLAUDE:PROTECT
+%xCLAUDE:PROTECT
 \section{Implications for Spectroscopy}
 \label{sec:spec}
 % ==============================================================
@@ -505,60 +505,33 @@ The Gaussian's carrier shift, line narrowing, and peak suppression are
 the frequency-domain images of items~(i)--(iii) of
 Section~\ref{sec:closedforms}.
 
-For completeness, the coherent core~\eqref{eq:Sobs_gauss} carries only the
-fraction $e^{-\sigma_\phi^2}$ of the line flux; the complementary
-$1-e^{-\sigma_\phi^2}$ reappears as a pedestal.  In the relevant regime
-$\sigma_\Delta\ll\tau_G$ the closed form~\eqref{eq:g1obs_gauss} factorizes,
-$g^{(1)}_{\rm obs}(\tau)=e^{-i\omega_0\tau}e^{-\tau^2/2\tau_G^2}\,
-\mathcal{F}_{\rm foam}(\tau)$ with
-$\mathcal{F}_{\rm foam}(\tau)=e^{-\sigma_\phi^2[1-C_\alpha(\tau)]}$, and the
-plateau/residual split
-$\mathcal{F}_{\rm foam}(\tau)=e^{-\sigma_\phi^2}+
-[e^{-\sigma_\phi^2[1-C_\alpha(\tau)]}-e^{-\sigma_\phi^2}]$ used in the
-broadband case [Eq.~\eqref{eq:CMB_spectrum}] sends the plateau to the
-core~\eqref{eq:Sobs_gauss} and the short-lag residual to the pedestal
+The coherent core~\eqref{eq:Sobs_gauss} carries fraction $e^{-\sigma_\phi^2}$
+of the line flux; the complementary $1-e^{-\sigma_\phi^2}$ reappears as a
+pedestal.  In the regime $\sigma_\Delta\ll\tau_G$, the plateau/residual
+decomposition of $\mathcal{F}_{\rm foam}$ sends the short-lag residual to the
+pedestal
 \begin{align}
-  S_{\rm obs}^{\rm ped}(\nu)&=\int_{-\infty}^{\infty}\!d\tau\,
+  S_{\rm obs}^{\rm ped}(\nu)
+  &=\int_{-\infty}^{\infty}\!d\tau\,
     e^{\,i2\pi(\nu-\nu_0)\tau}\,e^{-\tau^2/2\tau_G^2}
     \left[e^{-\sigma_\phi^2[1-C_\alpha(\tau)]}-e^{-\sigma_\phi^2}\right] \notag\\
   &\xrightarrow{\;\tau_{\rm foam}\ll\tau_G\;}
-    \int_{-\infty}^{\infty}\!d\tau\,
-    e^{\,i2\pi(\nu-\nu_0)\tau}
-    \left[e^{-\sigma_\phi^2[1-C_\alpha(\tau)]}-e^{-\sigma_\phi^2}\right]
-    \equiv\hat{R}(\nu-\nu_0),
+    \hat{R}(\nu-\nu_0)=\tau_{\rm foam}\,\hat{h}\!\big[(\nu-\nu_0)\,\tau_{\rm foam}\big],
   \label{eq:Sobs_gauss_ped}
 \end{align}
-so that the full observed line is
+where the limit rescales $\tau=\tau_{\rm foam}x$, $h(x)\equiv
+e^{-\sigma_\phi^2[1-C_\alpha(\tau_{\rm foam}x)]}-e^{-\sigma_\phi^2}$, and
+$\hat{h}(y)\equiv\int_{-\infty}^{\infty}dx\,e^{\,i2\pi xy}\,h(x)$ is a fixed
+$\mathcal{O}(1)$ function of unit-order width; the full observed line is
 $S_{\rm obs}(\nu)=S_{\rm obs}^{\rm core}(\nu)+S_{\rm obs}^{\rm ped}(\nu)$.
-Because $\tau_{\rm foam}$ is the sole foam-correlation scale,
-$C_\alpha(\tau)=c(\tau/\tau_{\rm foam})$ for a fixed dimensionless profile $c$
-(e.g.\ $c(x)=e^{-|x|}$), so the residual bracket is a fixed shape
-$h(x)\equiv e^{-\sigma_\phi^2[1-c(x)]}-e^{-\sigma_\phi^2}$ of
-$x\equiv\tau/\tau_{\rm foam}$ with $\mathcal{O}(1)$ support.  Over that support
-the envelope $e^{-\tau^2/2\tau_G^2}=e^{-(\tau_{\rm foam}/\tau_G)^2x^2/2}\to 1$
-in the limit $\tau_{\rm foam}\ll\tau_G$, and rescaling $\tau=\tau_{\rm foam}x$
-in Eq.~\eqref{eq:Sobs_gauss_ped} gives
-\begin{equation}
-  S_{\rm obs}^{\rm ped}(\nu)=\hat{R}(\nu-\nu_0)
-    =\tau_{\rm foam}\,\hat{h}\!\big[(\nu-\nu_0)\,\tau_{\rm foam}\big],
-  \qquad
-  \hat{h}(y)\equiv\int_{-\infty}^{\infty}\!dx\,e^{\,i2\pi xy}\,h(x),
-  \label{eq:Sobs_ped_scaled}
-\end{equation}
-where $\hat{h}$ is a fixed $\mathcal{O}(1)$ function of unit-order width.  The
-pedestal therefore depends on frequency only through the dimensionless
-combination $(\nu-\nu_0)\tau_{\rm foam}$, so its width is
-$\Delta\nu_{\rm ped}\sim 1/\tau_{\rm foam}$ --- broader than the line width
-$\sigma_\nu=1/(2\pi\tau_G)$ by the factor
-$\Delta\nu_{\rm ped}/\sigma_\nu\sim\tau_G/\tau_{\rm foam}\gg 1$.  This is
-Fourier reciprocity made explicit: the residual is narrow in lag
-($\tau_{\rm foam}$), hence broad in frequency ($1/\tau_{\rm foam}$).  Its weight
-$\int S_{\rm obs}^{\rm ped}\,d\nu=1-e^{-\sigma_\phi^2}$ exactly complements the
-core's $e^{-\sigma_\phi^2}$, conserving the line photon number; spread over
-$\sim 1/\tau_{\rm foam}$, the pedestal is correspondingly broad and shallow by
-the same factor $\tau_G/\tau_{\rm foam}$, so the spectrum near the line peak is
-dominated by the coherent core.  For Planck-scale foam
-$\tau_{\rm foam}\sim\ell_P/c$ gives $\Delta\nu_{\rm ped}\sim 10^{43}$\,Hz.
+The pedestal width $\Delta\nu_{\rm ped}\sim1/\tau_{\rm foam}$ exceeds the line
+width $\sigma_\nu=1/(2\pi\tau_G)$ by $\tau_G/\tau_{\rm foam}\gg1$ (Fourier
+reciprocity: narrow in lag, broad in frequency), and its total weight
+$\int S_{\rm obs}^{\rm ped}\,d\nu=1-e^{-\sigma_\phi^2}$ complements the core's
+$e^{-\sigma_\phi^2}$, conserving line photon number.  Spread over
+$\sim1/\tau_{\rm foam}$ --- for Planck-scale foam $\Delta\nu_{\rm ped}\sim10^{43}$\,Hz
+--- the pedestal's in-line contribution is suppressed by $\tau_{\rm foam}/\tau_G\ll1$,
+so the spectrum near the line peak is dominated by the coherent core.
 
 
 % ==============================================================
