@@ -46,9 +46,13 @@ the COBE/FIRAS monopole spectrum reaches $\alpha \gtrsim 0.52$
 kernel, and next-generation spectrometers (PIXIE, SuperPIXIE,
 Voyage~2050) are forecast to reach $\alpha\gtrsim 0.54$--$0.55$,
 the bound saturating logarithmically as the foam deficit is nearly
-degenerate with a temperature shift. None of these bounds exclude
-the holographic value $\alpha = 2/3$, which would require a confirmed
-narrow spectral line at $E_{\rm obs} \gtrsim 720$\,MeV in a $z \sim 0.15$ GRB.
+degenerate with a temperature shift. The pedestal-independent line-width bound does not exclude
+the holographic value $\alpha = 2/3$; the TeV bound, if accepted at face
+value (conditional on the pedestal kernel shape), would exclude it.
+Resolving whether the holographic model survives requires a confirmed
+narrow spectral line at $E_{\rm obs} \gtrsim 720$\,MeV in a
+$z \sim 0.15$ GRB, which would promote the line-width bound into the
+exclusion regime independently of the pedestal assumption.
 \end{abstract}
 
 \maketitle
@@ -645,7 +649,7 @@ and $\ln(D_C/\ell_P)\approx138.4$.
 
 Two features of this event make it a unique foam laboratory.
 First, LHAASO detected more than $5000$ gamma rays above $0.5$\,TeV
-(WCDA) and $142$ events above $3$\,TeV (KM2A) extending to
+(WCDA)~\cite{LHAASOWCDA2023} and $142$ events above $3$\,TeV (KM2A) extending to
 $\sim\!13$\,TeV~\cite{LHAASOTeV2023}; these provide an absolute-flux
 test of the foam suppression.  Second, two independent analyses report a
 narrow gamma-ray emission feature in the Fermi/GBM data, interpreted as
@@ -681,8 +685,7 @@ core and an incoherent pedestal,
     + \int S_{\rm src}(\nu')\,\hat{R}(\nu-\nu';\nu')\,d\nu',
   \label{eq:robs_decomp}
 \end{equation}
-derived in full for the blackbody as Eq.~\eqref{eq:CMB_spectrum} but
-valid for any source: the first term is the surviving carrier,
+where the first term is the surviving carrier,
 suppressed per mode by $e^{-\sigma_\phi^2(\nu)}$, while the second is the
 flux removed from the core, $1-e^{-\sigma_\phi^2}$, redistributed by the
 pedestal kernel $\hat{R}$ of width $\sim1/\tau_{\rm foam}$.
@@ -693,20 +696,27 @@ observing band.
 foam decorrelates on accessible timescales, $C_\alpha(\tau)\to0$;
 in the quasi-static limit $C_\alpha\to1$ the foam factor
 $\mathcal{F}_{\rm foam}\to1$ and there is no suppression to constrain
-(Section~\ref{sec:Calpha_origin}).  This escape is closed at TeV
-energies: with
+(Section~\ref{sec:Calpha_origin}).  For the Planck-time-refresh foam
+adopted throughout, this escape is closed at TeV energies: with
 $\tau_{\rm foam}\sim\tau_P\equiv\ell_P/c\approx5\times10^{-44}$\,s, the
 foam is dynamical with margin $\tau_c/\tau_{\rm foam}\gtrsim10^{22}$
 \emph{even at $37$\,MeV} (Section~\ref{sec:Calpha_origin}), and since
 $\tau_c\propto1/\nu$ the margin only grows at TeV.
+This energy-scaling argument does not address models with long-range
+temporal correlations (the temporal analogue of
+Ref.~\cite{LeeZurekChen2024}; see Section~\ref{sec:Calpha_origin}),
+which give $C_\alpha\approx1$ regardless of photon energy and remain a
+separate escape from all bounds in this paper.
 
 \emph{Assumption (ii): the source bandwidth is far narrower than the
 pedestal.}  The pedestal width is
 $\sim1/\tau_{\rm foam}\sim c/\ell_P\approx10^{43}$\,Hz, whereas the
 entire electromagnetic output of a GRB --- radio to TeV --- spans
-$\lesssim10^{27}$\,Hz.  The ratio is $\sim10^{-16}$: relative to the
-kernel the whole source is effectively a single line, and the fraction
-of scattered flux returning to any astrophysical band is negligible.
+$\lesssim10^{27}$\,Hz.  The ratio is $\sim10^{-16}$: for a Lorentzian pedestal of half-width
+$\Gamma=c/\ell_P\approx1.9\times10^{43}$\,Hz the in-band kernel fraction
+over the LHAASO acceptance ($3$--$13$\,TeV, $\Delta\nu\approx2.4\times10^{27}$\,Hz)
+is $f_{\rm band}=\Delta\nu/(\pi\Gamma)\approx4\times10^{-17}$, and the
+fraction of scattered flux returning to band is negligible.
 
 With the in-band pedestal negligible, the observed flux reduces to the
 \emph{absolute} suppression
@@ -715,22 +725,24 @@ With the in-band pedestal negligible, the observed flux reduces to the
     \;\approx\; e^{-\sigma_\phi^2(\nu)}\,S_{\rm src}(\nu).
   \label{eq:absolute_suppression}
 \end{equation}
-This is not a relative measurement within one spectrum (which would be
-insensitive to uniform dimming); it is an absolute attenuation testable
-whenever the detected flux can be compared to an independently predicted
-intrinsic flux.
+This is an absolute attenuation, testable whenever the detected flux can
+be compared to an independently predicted intrinsic flux.
 
 The LHAASO-KM2A detector registered $142$ gamma rays above $3$\,TeV
 from GRB\,221009A at $20.6\,\sigma$ significance, with events extending
-to $\sim\!13$\,TeV~\cite{LHAASOTeV2023}.  By
+to $\sim\!13$\,TeV~\cite{LHAASOWCDA2023,LHAASOTeV2023}.  By
 Eq.~\eqref{eq:absolute_suppression} the observed in-band count is
-$N\approx e^{-\sigma_\phi^2(E_{\rm TeV})}\,N_0$, with $N_0$ the count
-expected from the EBL-corrected intrinsic fluence.  Detection requires
+$N\approx e^{-\sigma_\phi^2(E_{\rm TeV})}\,N_0$, where
+$N_0$ is the in-band count in the absence of foam (after EBL absorption).
+Detection of $N$ photons requires
 \begin{equation}
   \sigma_\phi^2(E_{\rm TeV})\;\lesssim\;\ln\!\frac{N_0}{N}
   \;\equiv\;\sigma_{\phi,\max}^2.
   \label{eq:tev_sigmaphi}
 \end{equation}
+That is, $\sigma_{\phi,\max}^2$ is the number of $e$-foldings of
+suppression the source can sustain before the foam-attenuated count
+falls below the observed~$N$.
 Writing $\sigma_\phi^2=(2\pi D_C/\lambda_{\rm obs})^2(\ell_P/D_C)^{2\alpha}$
 from Eqs.~\eqref{eq:NgPerlmanVar} and \eqref{eq:sigmaphi_cosmo}
 ($A_\alpha=1$, $\lambda_{\rm obs}=hc/E_{\rm TeV}$) and inverting gives
@@ -742,33 +754,57 @@ from Eqs.~\eqref{eq:NgPerlmanVar} and \eqref{eq:sigmaphi_cosmo}
   \;\equiv\; \alpha_{\rm TeV}.
   \label{eq:alpha_grb_tev}
 \end{equation}
-Evaluating at a conservative $E_{\rm TeV}=3$\,TeV
-($\ln(2\pi D_C/\lambda_{\rm obs})\approx102.4$,
-$\ln(D_C/\ell_P)\approx138.3$) gives $\alpha_{\rm TeV}\approx0.74$
-for $\sigma_{\phi,\max}^2=1$ and $\alpha_{\rm TeV}\approx0.73$ even for
-$\sigma_{\phi,\max}^2=5$.  At the highest detected energy
-$E_{\rm TeV}\approx13$\,TeV the bound tightens to $\alpha\gtrsim0.75$.
-The result is doubly logarithmic in the flux ratio $N_0/N$ and therefore
-insensitive to the specific intrinsic-flux model: the half-logarithm
-$\tfrac12\ln\sigma_{\phi,\max}^2$ shifts $\alpha$ by less than $0.01$
-across $\sigma_{\phi,\max}^2=1$--$10$, rendering the bound essentially
-model-independent.
+The strength of this bound is best seen by reductio.  At the holographic
+value $\alpha=2/3$,
+Eqs.~\eqref{eq:NgPerlmanVar}--\eqref{eq:sigmaphi_cosmo} at
+$E_{\rm TeV}=3$\,TeV give
+$\sigma_\phi^2\approx7\times10^{8}$.  To produce the observed $142$
+photons would therefore require an intrinsic in-band count
+$N_0 = N\,e^{\sigma_\phi^2}\approx 142\,e^{7\times10^8}
+\approx 10^{3\times10^8}$ --- exceeding any astrophysical source by
+hundreds of millions of orders of magnitude.  The exclusion is immune to
+any uncertainty in the intrinsic spectrum or EBL model.
 
-\paragraph{The loophole, and why it is double-edged.}
-The TeV bound can be evaded in exactly one way: if the pedestal kernel
-$\hat{R}$ is light-tailed rather than Lorentzian, so that a
-non-negligible fraction of the redistributed flux refills the observing
-band.  Quantifying such a tail would require resolving the foam on
-scales $\ell_P\ll\lambda$ --- a genuinely sub-wavelength treatment
-beyond the eikonal reduction used here and throughout the literature.
-But this escape is double-edged: the same eikonal derivation that fixes
-the pedestal shape also produces the suppression amplitude
-$e^{-\sigma_\phi^2}$ itself.  To disown the Lorentzian tail at TeV is
-to disown the $\sigma_\phi^2\propto\nu^2$ machinery on which the CMB
-bound (Section~\ref{sec:CMB}) and the line-width bound
-(Section~\ref{sec:grb_width}) equally rest.  A self-consistent foam
-phenomenology must therefore accept the TeV bound or abandon the
-suppression physics altogether.
+The precise boundary depends on how many $e$-foldings the source can
+tolerate: allowing $\sigma_{\phi,\max}^2=1$, $3$, or $10$ $e$-foldings
+gives $\alpha_{\rm TeV}=0.740$, $0.736$, or $0.732$ respectively
+($E_{\rm TeV}=3$\,TeV, $\ln(2\pi D_C/\lambda_{\rm obs})\approx102.4$,
+$\ln(D_C/\ell_P)\approx138.4$).  At the highest detected energy
+$E_{\rm TeV}\approx13$\,TeV the bound tightens to $\alpha\gtrsim0.75$.
+The result is doubly logarithmic in $N_0/N$: a decade in the tolerated
+suppression shifts $\alpha$ by less than $0.01$
+(at $z=0.151$ the EBL optical depth at $3$\,TeV is only
+$\tau_{\rm EBL}\sim0.3$).
+
+Could the escape instead lie in the pedestal kernel itself --- a
+light-tailed $\hat{R}$ that, contrary to Assumption~(ii), returns a
+non-negligible fraction of the redistributed flux to the observing band,
+so that the detected photons are reprocessed flux rather than survivors?
+The transient, directional nature of the detection forecloses this.  The
+kernel acts on every source at all times, so band-refilling at any
+appreciable level is a steady, sky-wide process, depositing reprocessed
+flux as a persistent isotropic background --- not as a $20.6\,\sigma$
+excess from the direction of GRB\,221009A, coincident with the burst.
+The $142$ TeV photons are therefore genuine survivors of the source's
+beamed emission, and the suppression they constrain is real.  The same
+reasoning bounds the kernel at the population level: a refilling kernel
+would reprocess the entire steady $\gamma$-ray source population into a
+diffuse glow far exceeding the observed background, an overproduction
+sharpest in the $\gamma$-ray band itself because
+$\sigma_\phi^2\propto\nu^2$ concentrates the reprocessing at high
+energies.  That detecting the suppression requires a
+once-in-$10^4$-year transient, rather than a uniformly glowing sky, is
+itself the statement that the in-band refill is negligible.
+
+With Assumption~(ii) secured as above, $\alpha_{\rm TeV}\gtrsim0.74$
+excludes the holographic value $\alpha=2/3$.  Even granting the escape
+just argued to be observationally untenable --- a band-refilling kernel
+that voids the TeV bound --- the pedestal-independent line-width bound
+($\alpha\gtrsim0.63$, Section~\ref{sec:grb_width}) still holds and does
+\emph{not} exclude $\alpha=2/3$.  Both bounds presuppose dynamical foam
+(Assumption~(i)); within that shared premise they bracket the holographic
+model, which survives the line-width floor but is excluded by the TeV
+ceiling.
 
 \subsubsection{Energy-dependent line width}
 \label{sec:grb_width}
@@ -1430,7 +1466,10 @@ $\alpha\gtrsim 0.52$ ($95\%$ CL); next-generation
 spectrometers (PIXIE, SuperPIXIE, Voyage~2050) reach
 $\alpha\gtrsim 0.54$--$0.55$, the bound saturating logarithmically
 because the foam deficit is nearly degenerate with a temperature shift.
-None of these bounds exclude the holographic value $\alpha=2/3$.
+The pedestal-independent line-width and CMB bounds do not exclude the
+holographic value $\alpha=2/3$; however, the TeV survival bound
+($\alpha_{\rm TeV}\gtrsim0.74$, conditional on the eikonal pedestal
+kernel) would exclude it.
 
 All single-source spectroscopic bounds derived in this paper assume the
 dynamical-foam limit $\tau_{\rm foam}\ll\tau_c$
@@ -1448,9 +1487,11 @@ foam suppression $\mathcal{F}_{\rm foam}(\tau)\to 1$
 (Eq.~\eqref{eq:Ffoam}) and the CMB monopole is unmodified, so the
 shape-distortion bounds do not apply in either channel.
 
-The dynamical bound $\alpha\gtrsim 0.63$
+The pedestal-independent dynamical bound $\alpha\gtrsim 0.63$
 (Eq.~\eqref{eq:alpha_grb_dyn}) does not exclude the holographic value
-$\alpha=2/3\approx 0.667$.  A principal instrumental limitation of the
+$\alpha=2/3\approx 0.667$, though the TeV bound
+(Eq.~\eqref{eq:alpha_grb_tev}, conditional on Assumption~(ii))
+would.  A principal instrumental limitation of the
 present analysis is the MeV sensitivity gap: the spectral region
 between the upper edge of the Fermi-GBM BGO detector response
 ($\lesssim40\,\mathrm{MeV}$, where the effective area falls steeply)
