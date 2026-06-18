@@ -228,15 +228,20 @@ def chi2_dyn_linear(params, E_data, r_data, dr_data, E_ref):
 
 print(f"\n--- Dynamical with linear r_int(E) ---")
 
-# Scan r_foam0 and for each, minimize over (r0, r1). Returns
-# (best chi2, best r0, best r1) so we can recover r_int at E_ref.
+# Scan r_foam0 and for each, minimize over (r0, r1) subject to
+# r_int(E) = r0 + r1*(E/E0) > 0 at all data energies.
+E_ratios = E_keV / E0_keV
+
+
 def profile_over_linear(rf_val):
     def obj(x):
         r0, r1 = x
-        if r0 < 0:
-            return 1e10
         return chi2_dyn_linear([r0, r1, rf_val], E_keV, r_obs, dr_obs, E0_keV)
-    res = minimize(obj, [0.10, 0.0], method='Nelder-Mead')
+
+    # r_int(E_i) = r0 + r1*(E_i/E0) >= 0 for every data point
+    constraints = [{'type': 'ineq', 'fun': lambda x, ratio=ratio: x[0] + x[1]*ratio}
+                   for ratio in E_ratios]
+    res = minimize(obj, [0.10, 0.0], method='SLSQP', constraints=constraints)
     return res.fun, res.x[0], res.x[1]
 
 chi2_min_lin, r0_best, r1_best = profile_over_linear(0.0)
@@ -244,7 +249,7 @@ r_int_ref_global = r0_best + r1_best  # r_int(E_ref) at global minimum
 print(f"  chi2_min (rf=0, linear r_int): {chi2_min_lin:.2f} (dof={len(E_keV)-3})")
 print(f"  best r0 = {r0_best:.4f}, best r1 = {r1_best:.4f}, r_int(E_ref) = {r_int_ref_global:.4f}")
 
-# Find 95% CL upper limit
+# Find 95% CL upper limit (delta_chi2 = 4.0 for 2 nuisance params profiled out)
 target = chi2_min_lin + 4.0
 r_lo, r_hi = 0.0, 0.5
 for _ in range(80):
@@ -259,9 +264,16 @@ r_foam_95_lin = (r_lo + r_hi) / 2
 _, r0_at_max, r1_at_max = profile_over_linear(r_foam_95_lin)
 r_int_ref_at_max = r0_at_max + r1_at_max
 
-alpha_95_lin = alpha_bound_dyn(r_foam_95_lin, D_C, lam0, ell_P, r_int=r_int_ref_at_max)
-print(f"  95% CL upper limit on r_foam,0: {r_foam_95_lin:.4f}  (r_int(E_ref) at boundary = {r_int_ref_at_max:.4f})")
-print(f"  alpha bound (95% CL, linear r_int, joint): alpha >= {alpha_95_lin:.4f}")
+if r_int_ref_at_max < 1e-4:
+    print(f"  95% CL upper limit on r_foam,0: {r_foam_95_lin:.4f}  (r_int(E_ref) at boundary = {r_int_ref_at_max:.4f})")
+    print(f"  alpha bound: DEGENERATE (r_int -> 0 at E_ref; alpha mapping undefined)")
+    print(f"  Interpretation: with linear r_int(E) nuisance, the data cannot")
+    print(f"  separately constrain foam amplitude and intrinsic width slope.")
+    alpha_95_lin = None
+else:
+    alpha_95_lin = alpha_bound_dyn(r_foam_95_lin, D_C, lam0, ell_P, r_int=r_int_ref_at_max)
+    print(f"  95% CL upper limit on r_foam,0: {r_foam_95_lin:.4f}  (r_int(E_ref) at boundary = {r_int_ref_at_max:.4f})")
+    print(f"  alpha bound (95% CL, linear r_int, joint): alpha >= {alpha_95_lin:.4f}")
 
 
 # --- Future-precision forecast: per-point δr ≲ 0.01 ---
@@ -288,5 +300,8 @@ print(f"r_foam,0^max    = {r_foam_95:.4f}   (|ln| = {abs(np.log(r_foam_95)):.2f}
 print(f"r_int at boundary = {r_int_at_max:.4f}   (|ln(2sqrt2 pi r_int^2)| = {abs(np.log(2*np.sqrt(2)*np.pi*r_int_at_max**2)):.2f})")
 print(f"alpha bound (current data, 95% CL, conservative joint): alpha >= {alpha_95:.4f}")
 print(f"alpha bound (no G1, 95% CL, conservative joint):        alpha >= {alpha_95_noG1:.4f}")
-print(f"alpha bound (linear r_int nuisance, 95% CL, joint):     alpha >= {alpha_95_lin:.4f}")
+if alpha_95_lin is not None:
+    print(f"alpha bound (linear r_int nuisance, 95% CL, joint):     alpha >= {alpha_95_lin:.4f}")
+else:
+    print(f"alpha bound (linear r_int nuisance, 95% CL, joint):     DEGENERATE (r_int->0)")
 print(f"alpha bound (future δr≲0.01, 95% CL, joint):            alpha >= {alpha_95_fut:.4f}")
