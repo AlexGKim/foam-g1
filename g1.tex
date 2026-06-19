@@ -38,7 +38,8 @@ dynamical-foam limit the spectrum splits into a coherent line core suppressed
 by $e^{-\sigma_\phi^2}$ and an incoherent pedestal, yielding a spectral
 shape-distortion bound on the Ng--Perlman foam exponent $\alpha$.
 Applied to the MeV emission lines of GRB\,221009A in the dynamical-foam
-limit ($\tau_{\rm foam}\ll\tau_c$) we obtain $\alpha \gtrsim 0.63$.
+limit ($\tau_{\rm foam}\ll\tau_c$) we obtain $\alpha \gtrsim 0.63$, a weak,
+lever-arm-dominated floor.
 For the broadband CMB the foam induces an $e^{-\sigma_\phi^2(\nu)}$ deficit
 ($\sigma_\phi^2 \propto \nu^2$) with a low-frequency pedestal; a fit to
 the COBE/FIRAS monopole spectrum reaches $\alpha \gtrsim 0.52$
@@ -738,10 +739,10 @@ extragalactic background light, EBL).
 Detection of $N$ photons implies
 \begin{equation}
   \sigma_\phi^2(E_{\rm TeV})\;\approx\;\ln\!\frac{N_0}{N}
-  \;\equiv\;\sigma_{\phi,\max}^2.
+  \;\equiv\;\sigma_{\phi,\max}^2,
   \label{eq:tev_sigmaphi}
 \end{equation}
-That is, $\sigma_{\phi,\max}^2$ is the number of $e$-foldings of
+where $\sigma_{\phi,\max}^2$ is the number of $e$-foldings of
 suppression the source can sustain before the foam-attenuated count
 falls below the observed~$N$.
 Writing $\sigma_\phi^2=(2\pi D_C/\lambda_{\rm obs})^2(\ell_P/D_C)^{2\alpha}$
@@ -798,6 +799,8 @@ energies.  That detecting the suppression requires a
 once-in-$10^4$-year transient, rather than a uniformly glowing sky, is
 itself the statement that the in-band refill is negligible.
 
+% CLAUDE:END-PROTECT
+% CLAUDE:PROTECT
 
 \subsubsection{Energy-dependent line width}
 \label{sec:grb_width}
@@ -805,9 +808,10 @@ itself the statement that the in-band refill is negligible.
 The line-width probe is complementary because it is
 \emph{relative}: the absolute suppression $e^{-\sigma_\phi^2(\nu)}$
 attenuates line peak and adjacent continuum identically, canceling in
-the fractional width $\sigma/E$.  The bound is therefore
+the fractional width $\sigma/E$.  It therefore needs no absolute-flux
+model --- foam is read off the line shape alone --- and is
 \emph{pedestal-independent}, immune to the redistribution physics
-contested above, and survives rejection of Assumption~(ii) --- the only
+contested above, surviving rejection of Assumption~(ii), the only
 escape from the TeV bound.  Its limitation is that, for a narrow line,
 the fractional width responds to foam only at second order in the jitter
 (Eq.~\eqref{eq:rfoam_dyn} below), so it constrains $\alpha$ only in the
@@ -886,7 +890,7 @@ via Eq.~\eqref{eq:rfoam_dyn} and $\sigma_\ell^2=D_C^{2(1-\alpha)}\ell_P^{2\alpha
         - |\!\ln(2\sqrt{2}\,\pi\,r_{\rm int}^2)|}
        {\ln(D_C/\ell_P)}
   \;=\; \frac{89.3 + 1.3 - 3.3}{138.4}
-  \;\approx\; 0.63\,,
+  \;\approx\; 0.63\,.
   \label{eq:alpha_grb_dyn}
 \end{equation}
 Here $r_{\rm int}=0.066$ is the width profiled jointly with
@@ -897,7 +901,7 @@ kinematic lever arm $\ln(D_C/\ell_P)=138$: a tenfold change in
 $r_{\rm foam,0}^{\rm max}$ moves $\alpha$ by only
 $\ln10/\ln(D_C/\ell_P)\approx0.017$, so $\alpha\gtrsim0.63$ is fixed by the
 geometry, not by the precision of the seven measurements.  It is weaker
-than the TeV bound ($\alpha_{\rm TeV}\gtrsim0.73$).
+than the TeV bound ($\alpha_{\rm TeV}\gtrsim0.74$).
 
 \paragraph{Validity and caveats.}
 At the $95\%$ boundary $\sigma_\Delta/\tau_G(E_0)\approx4.1$, i.e.\
