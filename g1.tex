@@ -610,7 +610,7 @@ isolate.
 
 % ==============================================================
 % CLAUDE:END-PROTECT
-% CLAUDE:PROTECT
+%xCLAUDE:PROTECT
 \section{Sources}
 \label{sec:sources}
 
@@ -802,13 +802,12 @@ excludes the holographic value $\alpha=2/3$.  Even granting the escape
 just argued to be observationally untenable --- a band-refilling kernel
 that voids the TeV bound --- the pedestal-independent line-width bound
 ($\alpha\gtrsim0.63$, Section~\ref{sec:grb_width}) still holds and does
-\emph{not} exclude $\alpha=2/3$.  Both bounds presuppose dynamical foam
-(Assumption~(i)); within that shared premise they bracket the holographic
-model, which survives the line-width floor but is excluded by the TeV
-ceiling.
+\emph{not} exclude $\alpha=2/3$, though as a second-order,
+lever-arm-dominated probe it provides only a weak floor.  Both bounds
+presuppose dynamical foam (Assumption~(i)); within that shared premise
+they loosely bracket the holographic model, which clears the approximate
+line-width floor but is excluded by the TeV ceiling.
 
-% CLAUDE:END-PROTECT
-%xCLAUDE:PROTECT
 
 \subsubsection{Energy-dependent line width}
 \label{sec:grb_width}
@@ -818,11 +817,12 @@ The line-width probe is complementary because it is
 attenuates line peak and adjacent continuum identically, canceling in
 the fractional width $\sigma/E$.  The bound is therefore
 \emph{pedestal-independent}, immune to the redistribution physics
-contested above.  Its virtue is robustness; its vice is that it bites
-only in the deep strong-foam regime and yields a significantly weaker
-constraint.  It thus survives rejection of Assumption~(ii) --- the only
-escape from the TeV bound --- and constitutes an independent floor
-on~$\alpha$.
+contested above, and survives rejection of Assumption~(ii) --- the only
+escape from the TeV bound.  Its limitation is that, for a narrow line,
+the fractional width responds to foam only at second order in the jitter
+(Eq.~\eqref{eq:rfoam_dyn} below), so it constrains $\alpha$ only in the
+strong-foam regime and yields a significantly weaker, if independent,
+floor on~$\alpha$.
 
 \paragraph{Derivation of fractional-width broadening.}
 The Gaussian-source result Eq.~\eqref{eq:Sobs_gauss} gives an observed
@@ -865,6 +865,11 @@ excess becomes
   \label{eq:rfoam_dyn}
 \end{equation}
 predicting chromatic broadening that grows linearly with photon energy.
+The $r_{\rm int}^2$ prefactor makes the fractional width a
+\emph{second-order} foam probe: since
+$\sigma_\Delta^2/\tau_G^2=2r_{\rm int}^2\sigma_\phi^2$, an order-unity
+broadening of a narrow line ($r_{\rm int}\approx0.1$) requires
+$\sigma_\phi^2\gtrsim40$.
 
 \paragraph{Fit and bound.}
 A $\chi^2$ fit of the seven measurements to the two-parameter model
@@ -874,11 +879,15 @@ A $\chi^2$ fit of the seven measurements to the two-parameter model
   \label{eq:robs_model}
 \end{equation}
 constrains the foam amplitude.  The best fit lies at the boundary
-$r_{\rm foam,0}=0$ ($r_{\rm int}=0.111$, $\chi^2_{\rm min}=5.3$),
-confirming the constant-$r_{\rm obs}$ hypothesis; profiling over
-$r_{\rm int}$ gives the one-sided $95\%$\,CL upper limit
+$r_{\rm foam,0}=0$ ($r_{\rm int}=0.111$, $\chi^2_{\rm min}=5.3$ for $6$
+degrees of freedom, one free $r_{\rm int}$ with $r_{\rm foam,0}$ pinned at
+the boundary), confirming the constant-$r_{\rm obs}$ hypothesis; profiling
+over $r_{\rm int}$ gives the one-sided $95\%$\,CL upper limit
 $r_{\rm foam,0}^{\rm max}=0.27$ at $\Delta\chi^2=2.71$ (the
-boundary-corrected Chernoff threshold~\cite{Chernoff1954}).  Converting
+boundary-corrected Chernoff threshold~\cite{Chernoff1954} --- the
+$\tfrac12\delta_0+\tfrac12\chi_1^2$ mixture for a parameter bounded at
+zero; the precise threshold is immaterial to $\alpha$ given the
+logarithmic lever arm below).  Converting
 via Eq.~\eqref{eq:rfoam_dyn} and $\sigma_\ell^2=D_C^{2(1-\alpha)}\ell_P^{2\alpha}$
 (Eq.~\eqref{eq:NgPerlmanVar}, $A_\alpha=1$) gives
 \begin{equation}
@@ -890,25 +899,42 @@ via Eq.~\eqref{eq:rfoam_dyn} and $\sigma_\ell^2=D_C^{2(1-\alpha)}\ell_P^{2\alpha
   \;\approx\; 0.63\,,
   \label{eq:alpha_grb_dyn}
 \end{equation}
-weaker than the TeV bound ($\alpha_{\rm TeV}\gtrsim0.73$).
+Here $r_{\rm int}=0.066$ is the width profiled jointly with
+$r_{\rm foam,0}^{\rm max}$ on the $95\%$ boundary (not the global best fit
+$0.111$), giving $|\!\ln(2\sqrt2\,\pi\,r_{\rm int}^2)|\approx3.3$.  Like
+the TeV bound, the result is doubly logarithmic and so dominated by the
+kinematic lever arm $\ln(D_C/\ell_P)=138$: a tenfold change in
+$r_{\rm foam,0}^{\rm max}$ moves $\alpha$ by only
+$\ln10/\ln(D_C/\ell_P)\approx0.017$, so $\alpha\gtrsim0.63$ is fixed by the
+geometry, not by the precision of the seven measurements.  It is weaker
+than the TeV bound ($\alpha_{\rm TeV}\gtrsim0.73$).
 
-\paragraph{Self-consistency in the strong-foam regime.}
-Here $\sigma_\Delta/\tau_G(E_0)\approx4.1$ places the
-bound deep in the strong-foam regime ($\sigma_\Delta\gtrsim\tau_G$).
-Eq.~\eqref{eq:g1obs_gauss} then predicts not only the constrained
-broadening but also a foam-induced centroid shift
-$\nu_0^{\rm eff}/\nu_0=\tau_G^2/(\tau_G^2+\sigma_\Delta^2)\approx0.06$
-at $37$\,MeV, rising to $\approx0.7$ at $6$\,MeV --- a strongly
-energy-dependent depression absent from the smooth
-$E_{\rm line}\propto t^{-1}$ Doppler-deceleration trend in the data.
-The lever-arm fit treats observed centroids as intrinsic, so the bound
-operates outside its strict validity regime --- making it
-\emph{conservative}: the unobserved center shift is additional evidence
-against foam, and a joint center-plus-width fit would only tighten the
-constraint.  The width-only $\alpha\gtrsim0.63$ is the
-pedestal-independent floor beneath the TeV bound.
+\paragraph{Validity and caveats.}
+At the $95\%$ boundary $\sigma_\Delta/\tau_G(E_0)\approx4.1$, i.e.\
+$\sigma_\phi^2(37\,{\rm MeV})\sim10^3$, the bound lies deep in the
+strong-foam regime, and three caveats attach to it.  First, the
+fractional-width law Eq.~\eqref{eq:robs_decomp_width} is a property of the
+coherent core, whose weight $e^{-\sigma_\phi^2}$ is exponentially small
+there; the bound thus extrapolates the core's width relation into a regime
+where the line flux has largely been redistributed into the pedestal, and
+is best read as an order-of-magnitude exclusion anchored by the logarithmic
+lever arm rather than a sharp threshold.  Second, the same
+Eq.~\eqref{eq:g1obs_gauss} predicts a centroid depression
+$\nu_0^{\rm eff}/\nu_0=\tau_G^2/(\tau_G^2+\sigma_\Delta^2)\approx0.06$ at
+$37$\,MeV at this boundary, absent from the smooth
+$E_{\rm line}\propto t^{-1}$ trend in the data; the width-only fit treats
+observed centroids as intrinsic, and a joint centroid-plus-width analysis
+is left to future work.  Third, the bound rests on the seven sub-interval
+widths of the single GRB\,221009A feature, whose most constraining energy
+($37$\,MeV) lies in the Fermi MeV sensitivity gap
+(Section~\ref{sec:conclusions}), and the constant-$r_{\rm int}$ fit cannot
+distinguish a genuine null from small epoch-to-epoch variation of the
+intrinsic width.  With these caveats, the width-only $\alpha\gtrsim0.63$
+stands as the pedestal-independent floor beneath the TeV bound.
 
 % ==============================================================
+% CLAUDE:END-PROTECT
+%xCLAUDE:PROTECT
 \subsection{CMB}
 \label{sec:CMB}
 
@@ -1444,7 +1470,7 @@ systematics --- an independent cross-check rather than a joint bracket
 
 % ==============================================================
 % CLAUDE:END-PROTECT
-% CLAUDE:PROTECT
+%xCLAUDE:PROTECT
 \section{Conclusions}
 \label{sec:conclusions}
 
@@ -1483,7 +1509,8 @@ foam suppression $\mathcal{F}_{\rm foam}(\tau)\to 1$
 shape-distortion bounds do not apply in either channel.
 
 The pedestal-independent dynamical bound $\alpha\gtrsim 0.63$
-(Eq.~\eqref{eq:alpha_grb_dyn}) does not exclude the holographic value
+(Eq.~\eqref{eq:alpha_grb_dyn}) --- a weak, lever-arm-dominated floor ---
+does not exclude the holographic value
 $\alpha=2/3\approx 0.667$, though the TeV bound
 (Eq.~\eqref{eq:alpha_grb_tev}, conditional on Assumption~(ii))
 would.  A principal instrumental limitation of the
