@@ -800,7 +800,7 @@ once-in-$10^4$-year transient, rather than a uniformly glowing sky, is
 itself the statement that the in-band refill is negligible.
 
 % CLAUDE:END-PROTECT
-%xCLAUDE:PROTECT
+% CLAUDE:PROTECT
 
 \subsubsection{Energy-dependent line width}
 \label{sec:grb_width}
@@ -921,8 +921,7 @@ the TeV bound, the result is doubly logarithmic and so dominated by the
 kinematic lever arm $\ln(D_C/\ell_P)=138$: a tenfold change in
 $r_{\rm foam,0}^{\rm max}$ moves $\alpha$ by only
 $\ln10/\ln(D_C/\ell_P)\approx0.017$, so $\alpha\gtrsim0.63$ is fixed by the
-geometry, not by the precision of the seven measurements.  It is weaker
-than the TeV bound ($\alpha_{\rm TeV}\gtrsim0.74$).
+geometry, not by the precision of the seven measurements.  
 
 \paragraph{Validity and caveats.}
 At the $95\%$ boundary $\sigma_\Delta/\tau_G(E_0)\approx4.1$, i.e.\
@@ -1238,9 +1237,12 @@ with the $y$ and $\mu$ templates (forecast correlation matrix
 Eq.~\eqref{eq:fisher_corr_matrix_fid} below).  Using the
 full $43\times43$ apodization covariance, the generalized
 least-squares fit over $(T_0,\mu,y,A_{\rm eff})$ and the foreground
-amplitude recovers $\mu$ and $y$ consistent with zero and with the
-Fixsen limits ($|\mu|<1.7\times10^{-4}$, $|y|<1.0\times10^{-5}$ at
-$95\%$; $\chi^2/\nu=1.24$) and a foam amplitude consistent with zero,
+amplitude recovers $\mu$ and $y$ consistent with zero (foam-marginalized
+$95\%$ limits $|\mu|<1.7\times10^{-4}$, $|y|<1.0\times10^{-5}$;
+$\chi^2/\nu=1.24$ --- the $\mu$ limit looser than the foam-free Fixsen
+value $|\mu|\lesssim9\times10^{-5}$ because marginalizing over the foam
+amplitude inflates $\sigma(\mu)$, as quantified below) and a foam
+amplitude consistent with zero,
 \begin{equation}
   A_{\rm eff}=(-2.4\pm5.3)\times10^{-11}\,{\rm m}^2 .
   \label{eq:Aeff_firas}
@@ -1249,7 +1251,13 @@ Inverting $A_{\rm eff}=A_\alpha D_C^{2(1-\alpha)}\ell_P^{2\alpha}$
 at $A_\alpha=1$, the one-sided $95\%$ upper limit
 $A_{\rm eff}<1.645\,\sigma(A_{\rm eff})=8.7\times10^{-11}\,{\rm m}^2$ gives the lower bound
 $\alpha\gtrsim 0.52$ (collected with the forecasts below
-in Table~\ref{tab:thresholds}).
+in Table~\ref{tab:thresholds}).  This bound is degeneracy-limited rather
+than statistics-limited: marginalizing over $(T_0,\mu,y)$ inflates
+$\sigma(A_{\rm eff})$ by a factor $\sim27$
+(Section~\ref{sec:CMB_forecast}), so $\alpha\gtrsim0.52$ rests only on
+the residual spectral-tilt information that distinguishes the
+$\nu^2$-weighted deficit from a temperature shift --- a genuine but weak
+constraint, well short of the GRB bound.
 The only direction that could break the
 foam--$T_0$ degeneracy is deep into the Wien/sub-mm regime, where the
 $\nu^2$-tilt separates from a temperature shift; but there --- beyond the
@@ -1412,9 +1420,13 @@ effectively fixing $\mu$) sharpens $\sigma(A_{\rm eff})$ by
 $\sim 3$--$5\times$, though the logarithmic relation again limits the
 threshold gain to $\Delta\alpha\lesssim 0.005$; in the physical
 no-pedestal case, where the limiting degeneracy is with $T_0$ rather
-than $\mu$, even fixing $\mu$ barely helps.  Either way, the worked
-example of Section~\ref{sec:CMB_derivation} shows that any
-exponential-class $C_\alpha$ with Planck-scale $\tau_{\rm foam}$ lies
+than $\mu$, even fixing $\mu$ barely helps.  The no-pedestal (physical) and $\mu$-aligned (adversarial) kernels are
+chosen probes rather than an exhaustive scan of kernel shapes; what makes
+the choice safe is that the in-band pedestal is negligible for \emph{any}
+$C_\alpha$ with $\tau_{\rm foam}\ll1/\nu_{\rm max}$, since its width
+$\sim1/\tau_{\rm foam}$ then vastly exceeds the band
+(Section~\ref{sec:CMB_derivation}).  The worked example there shows that
+any exponential-class $C_\alpha$ with Planck-scale $\tau_{\rm foam}$ lies
 in the no-pedestal regime, so the physical $\alpha\gtrsim 0.52$ is the
 headline and the $\mu$-aligned $\alpha\gtrsim 0.53$ merely confirms its
 robustness.
@@ -1467,8 +1479,9 @@ wider band does break the foam--$\mu$ degeneracy probed by the
 $\mu$-aligned $K_\nu^{\rm fast}$ pedestal (from
 $\rho^{\mu\text{-align}}_{A_{\rm eff}\mu}=0.98$ at FIRAS to $0.66$ over
 $10$\,GHz--$3$\,THz), so future missions are markedly more robust
-against in-band pedestal contamination, but the physical threshold does
-not move.  With the logarithmic Ng--Perlman scaling
+against in-band pedestal contamination, but --- within the linearized
+analysis --- the physical threshold does not move (the nonlinear,
+strong-foam exception noted above, $\alpha\lesssim0.52$, aside).  With the logarithmic Ng--Perlman scaling
 $\Delta\alpha=\ln N/[2\ln(D_C/\ell_P)]$ converting even a
 $10^{4}$-fold sensitivity gain over FIRAS into
 $\Delta\alpha\lesssim 0.04$, this sets a firm ceiling: as an
@@ -1504,8 +1517,8 @@ $\alpha\gtrsim 0.54$--$0.55$, the bound saturating logarithmically
 because the foam deficit is nearly degenerate with a temperature shift.
 The pedestal-independent line-width and CMB bounds do not exclude the
 holographic value $\alpha=2/3$; however, the TeV survival bound
-($\alpha_{\rm TeV}\gtrsim0.74$, conditional on the eikonal pedestal
-kernel) would exclude it.
+($\alpha_{\rm TeV}\gtrsim0.74$, conditional on the pedestal-kernel shape
+of Assumption~(ii)) would exclude it.
 
 All single-source spectroscopic bounds derived in this paper assume the
 dynamical-foam limit $\tau_{\rm foam}\ll\tau_c$
@@ -1627,7 +1640,7 @@ DE-AC02-05CH11231.
 
 The authors used Claude (Anthropic) and Valency Systems to assist with drafting and editing portions of this manuscript, with detailed reference searches, and in developing the Fisher-matrix and GRB multi-epoch analysis scripts. All content, equations, numerical results, and conclusions were reviewed and verified by the authors, who take full responsibility for the work.  AI assistance was used in accordance with \textit{Physical Review} editorial policy on computational tools.
 
-We thank Robin Kaiser for helpful discussions that helped motivate this work, and Eric Linder for an insightful comments.
+We thank Robin Kaiser for helpful discussions that helped motivate this work, and Eric Linder for insightful comments.
 \end{acknowledgments}
 
 \bibliographystyle{apsrev4-2}
