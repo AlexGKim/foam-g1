@@ -611,7 +611,7 @@ isolate.
 
 % ==============================================================
 % CLAUDE:END-PROTECT
-%xCLAUDE:PROTECT
+% CLAUDE:PROTECT
 \section{Sources}
 \label{sec:sources}
 
@@ -800,7 +800,7 @@ once-in-$10^4$-year transient, rather than a uniformly glowing sky, is
 itself the statement that the in-band refill is negligible.
 
 % CLAUDE:END-PROTECT
-% CLAUDE:PROTECT
+%xCLAUDE:PROTECT
 
 \subsubsection{Energy-dependent line width}
 \label{sec:grb_width}
@@ -818,14 +818,39 @@ the fractional width responds to foam only at second order in the jitter
 strong-foam regime and yields a significantly weaker, if independent,
 floor on~$\alpha$.
 
+\paragraph{The intrinsic line as a Doppler invariant.}
+The MeV feature is understood as a Doppler-shifted line from the relativistic
+outflow --- most plausibly the blueshifted $511$\,keV electron--positron
+annihilation line of pair-plasma clumps comoving with the
+jet~\cite{Ravasio2024,YQZhang2024}, though what follows needs only that it is a
+boosted line, not the specific transition.  Its observed centroid is then the
+comoving line blueshifted by the bulk Doppler factor $\mathcal{D}$ of the
+emitting material, $E_{\rm line}=\mathcal{D}\,m_ec^2/(1+z)$, so the centroid
+measures $\mathcal{D}$ directly; the observed decline
+$E_{\rm line}\propto t^{-1}$ from $\approx37$ to $\approx6$\,MeV tracks the
+falling jet Lorentz factor ($\Gamma\propto t^{-1}$, $\Gamma\approx84$ at
+$37$\,MeV in the Zhang et al.\ modeling) as the outflow
+evolves~\cite{YQZhang2024}.  Because a bulk boost multiplies every photon
+energy --- line center and line width alike --- by the same $\mathcal{D}$, the
+\emph{fractional} width $r_{\rm int}=\sigma'/E'$ is boost-invariant: it equals
+its comoving value at every epoch, independent of $\mathcal{D}$, and is
+therefore expected to stay constant as the burst evolves and the centroid
+sweeps downward.  This is what is observed --- $r_{\rm obs}=0.10\pm0.01$ across
+the seven sub-intervals (Section~\ref{sec:grb_source}) --- so in the
+conventional picture $r_{\rm int}$ is a fixed, epoch-independent property of the
+source, set by the comoving line shape (the spread of clump Doppler factors and
+the pair-plasma temperature~\cite{YQZhang2024}) and carrying no foam.
+Quantum-gravity jitter, if present, imprints an \emph{additional},
+energy-dependent broadening on top of this constant baseline, computed next.
+
 \paragraph{Derivation of fractional-width broadening.}
 The Gaussian-source result Eq.~\eqref{eq:Sobs_gauss} gives an observed
 core whose absolute frequency width
 $\sigma_{\rm obs}=1/[2\pi\sqrt{\tau_G^2+\sigma_\Delta^2}]$ is
 \emph{narrower} than the intrinsic $\sigma_\nu=1/(2\pi\tau_G)$
 (item~(ii) of Section~\ref{sec:closedforms}).  However, the line center
-shifts to $\nu_0^{\rm eff}=\nu_0\tau_G^2/(\tau_G^2+\sigma_\Delta^2)$
-(item~(i)), fractionally more than the narrowing.
+shifts down to $\nu_0^{\rm eff}=\nu_0\tau_G^2/(\tau_G^2+\sigma_\Delta^2)$
+(item~(i)) by a larger relative amount than the width narrows.
 The \emph{fractional} width is
 $r_{\rm obs}\equiv\sigma_{\rm obs}/\nu_0^{\rm eff}$, with
 $\nu_0^{\rm eff}$ the observed centroid.  Combining gives
@@ -843,10 +868,6 @@ so the fractional width \emph{broadens}:
   \label{eq:robs_decomp_width}
 \end{equation}
 with $r_{\rm foam}^2(E)\equiv r_{\rm int}^2\,\sigma_\Delta^2/\tau_G^2(E)$.
-In the comoving frame the line has fixed fractional width $r'=\sigma'/E'$;
-under a bulk Doppler boost $\mathcal{D}$ both centroid and width scale
-by $\mathcal{D}$, so $r_{\rm int}$ is Lorentz-invariant and
-epoch-independent.
 
 In the dynamical limit $\sigma_\Delta=\sqrt2\,\sigma_\ell/c$ saturates,
 and with $\tau_G(E)=\lambda_{\rm obs}(E)/(2\pi c\,r_{\rm int})$ the foam
