@@ -972,9 +972,9 @@ stands as the pedestal-independent floor beneath the TeV bound.
 \subsection{CMB}
 \label{sec:CMB}
 
-For a broadband thermal source like the CMB, foam redistributes power
-rather than shifting a spectral line: the coherent core is suppressed by
-$e^{-\sigma_\phi^2(\nu)}$ and the missing flux reappears as a broad
+The CMB blackbody is itself a broad, asymmetric spectral profile, so foam
+acts on it exactly as on any line: the coherent core is suppressed by
+$e^{-\sigma_\phi^2(\nu)}$ and the removed flux reappears as a broad
 pedestal whose shape depends on the short-time behavior of
 $C_\alpha(\tau)$.  Because
 $\sigma_\phi^2\propto\nu^2$ (Eq.~\eqref{eq:sigmaphi_cosmo}), the foam deficit
@@ -1075,19 +1075,6 @@ jitter convolution gives
     = e^{-i2\pi\nu'\tau}\,\mathcal{F}_{\rm foam}(\tau;\nu')
     = e^{-i2\pi\nu'\tau}\,e^{-\sigma_\phi^2(\nu')[1-C_\alpha(\tau)]}.
 \]
-In the dynamical limit, $\mathcal{F}_{\rm foam}(\tau;\nu')$
-transitions from $\mathcal{F}_{\rm foam}(0;\nu')=1$ to the plateau
-$e^{-\sigma_\phi^2(\nu')}$ within the narrow window
-$|\tau|\lesssim\tau_{\rm foam}$.  The Fourier transform of the
-plateau (constant in $\tau$ outside that window) is
-$e^{-\sigma_\phi^2(\nu')}\delta(\nu-\nu')$ --- the coherent core at
-this mode's frequency --- while the Fourier transform of the rise
-from plateau to unity is supported on $|\tau|\lesssim\tau_{\rm foam}$
-and is therefore broad in frequency, of width
-$\sim 1/\tau_{\rm foam}$ --- the pedestal at this mode.  The split
-applied below to $\mathcal{F}_{\rm foam}(\tau;\nu')$ generalizes this
-single-mode decomposition to the full Planck spectrum by linear
-superposition.
 
 To isolate the coherent-core
 and pedestal contributions, we split
@@ -1119,14 +1106,7 @@ $\int [S_{\rm obs}(\nu)-B_\nu(T_0)]\,d\nu/(h\nu)=0$.
 
 To make the pedestal kernel concrete, we evaluate $\hat{R}$ for the
 minimal model $C_\alpha(\tau)=e^{-|\tau|/\tau_{\rm foam}}$ (a Markovian
-metric fluctuation).  The framework does not require this choice: any
-$C_\alpha(\tau)$ with decorrelation time $\tau_{\rm foam}\ll 1/\nu_{\rm max}$
-(satisfied with enormous margin for Planck-scale foam,
-$\tau_{\rm foam}\sim\ell_P/c\approx 5\times10^{-44}$\,s)
-has Fourier width $\gtrsim 1/\tau_{\rm foam}\gg
-\nu_{\rm max}$, so the pedestal kernel is constant across the FIRAS
-band regardless of its form, and the negligible in-band pedestal
-follows from the bandwidth ratio alone.  Substituting into Eq.~\eqref{eq:diffVarExt} gives
+metric fluctuation).  Substituting into Eq.~\eqref{eq:diffVarExt} gives
 \begin{equation}
   \sigma_\Delta^2(\tau) = \frac{2\sigma_\ell^2(D)}{c^2}
     \bigl[1 - e^{-|\tau|/\tau_{\rm foam}}\bigr].
