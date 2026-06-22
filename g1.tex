@@ -174,21 +174,15 @@ observational directions.
 \subsection{Arrival-Time Jitter}
 \label{sec:metric_origin}
 
-This section establishes the foam model used throughout the paper.
-We adopt the Ng--Perlman picture of spacetime foam as a source of
-stochastic, achromatic path-length fluctuations whose cumulative effect
-is a single arrival-time jitter $\delta t$, which the observed carrier
-reads as a phase jitter $\sigma_\phi$ --- on which the
-temporal-correlation and differential-jitter framework developed below
-is built.
-Following the prior foam literature, the source is taken
-to be a point source along a single line of sight.
-Because this article works entirely at the level of
-first-order coherence, a spatially extended, incoherent source is recovered
-as the linear superposition of independent point sources.
-The transverse
-behavior of the foam across an extended source lies outside the scope of the
-present treatment.
+We adopt the Ng--Perlman picture of spacetime foam: stochastic,
+achromatic path-length fluctuations whose cumulative effect along a line
+of sight is an arrival-time jitter $\delta t(t)$, which a carrier reads
+as a phase jitter $\sigma_\phi$.
+Following the prior foam literature we take a point source on a single
+line of sight; at the level of first-order coherence an extended
+incoherent source is the linear superposition of such points.  The
+transverse behavior of the foam across an extended source is beyond our
+scope.
 
 We model the detected field as a stochastically time-warped version of the
 intrinsic source field:
@@ -196,12 +190,10 @@ intrinsic source field:
   E_{\rm obs}(t) = E_{\rm src}\!\left(t - \delta t(t)\right),
   \label{eq:Eobs}
 \end{equation}
-where $E_{\rm src}(t)$ is a single spatial mode of a stationary zero-mean
-complex Gaussian process (chaotic light, appropriate for the thermal and incoherent
-non-thermal sources considered here, including GRB high-energy
-emission and the CMB) and $\delta t(t)$ is the foam-induced
-arrival-time jitter, a stationary stochastic process statistically independent
-of $E_{\rm src}$.
+where $E_{\rm src}(t)$ is a single mode of a stationary, zero-mean complex
+Gaussian (chaotic) field --- appropriate for the thermal and incoherent
+sources here (GRB high-energy emission, CMB) --- and $\delta t(t)$ is the
+foam jitter, a stationary process independent of $E_{\rm src}$.
 Here $t$ is the observer's time, with the deterministic
 light-travel delay and cosmological time dilation absorbed into the argument
 of $E_{\rm src}$, so $\delta t(t)$ is the zero-mean foam fluctuation about
@@ -229,21 +221,15 @@ on which all spectroscopic bounds below rest.
 \subsection{Temporal Decorrelation of Spacetime Foam}
 \label{sec:Calpha_origin}
 
-The scalar variance $\sigma_\ell^2(D)$ (Eq.~\eqref{eq:NgPerlmanVar})
-characterizes the amplitude of foam-induced path-length fluctuations along
-a single ray; here we model how those fluctuations are correlated
-across time (temporal decorrelation).
-
-The temporal evolution of spacetime foam --- an aspect not specified by
-Eq.~\eqref{eq:NgPerlmanVar} --- determines how the arrival-time jitter
-$\delta t(t)$ along a single line of sight is correlated across the lag $\tau$.
-Quantum foam models posit that each Planck-scale cell along the line of sight
-fluctuates on a characteristic timescale $\tau_{\rm foam}$, so that the jitter
-at times $t$ and $t+\tau$ is correlated for $\tau \ll \tau_{\rm foam}$ and
-essentially independent for $\tau \gg \tau_{\rm foam}$.
-We introduce $C_\alpha(\tau;D)$ as the normalized \emph{temporal}
-autocorrelation of the integrated path-length fluctuation
-$\Delta\ell_{\rm tot}(t)$,
+The Ng--Perlman variance $\sigma_\ell^2(D)$ (Eq.~\eqref{eq:NgPerlmanVar})
+fixes the \emph{amplitude} of the path-length fluctuations along a single
+ray but not their \emph{temporal} correlation.  Quantum-foam models posit
+that each Planck-scale cell fluctuates on a characteristic timescale
+$\tau_{\rm foam}$, so the jitter at times $t$ and $t+\tau$ is correlated
+for $\tau\ll\tau_{\rm foam}$ and essentially independent for
+$\tau\gg\tau_{\rm foam}$.  We encode this in the normalized \emph{temporal}
+autocorrelation $C_\alpha(\tau;D)$ of the integrated path-length
+fluctuation $\Delta\ell_{\rm tot}(t)$,
 \begin{equation}
   \big\langle \Delta\ell_{\rm tot}(t)\,
               \Delta\ell_{\rm tot}(t+\tau) \big\rangle
@@ -287,10 +273,8 @@ derived below therefore rest on the dynamical-foam assumption.
 \subsection{Differential Jitter and Its Distribution}
 \label{sec:differential_jitter}
 
-With the temporal covariance model in place, we define the key derived quantity
-that enters the coherence integrals.
-Define the differential jitter between photons arriving at
-times $t$ and $t+\tau$:
+We now define the differential jitter, which enters the coherence
+integrals, between photons arriving at times $t$ and $t+\tau$:
 \begin{equation}
   \Delta(\tau)
   \equiv \delta t(t+\tau) - \delta t(t).
@@ -352,10 +336,10 @@ $v - u = \tau - \Delta(\tau)$, stationarity of $E_{\rm src}$ gives
   \langle E^*_{\rm src}(u)\,E_{\rm src}(v)\rangle
   = \langle|E_{\rm src}|^2\rangle\,g^{(1)}_{\rm src}(\tau - \Delta(\tau)).
 \end{equation}
-Since $\delta t$ is independent of $E_{\rm src}$, and since
-$\langle|E_{\rm obs}(t)|^2\rangle = \langle|E_{\rm src}(t-\delta t)|^2\rangle
-= \langle|E_{\rm src}|^2\rangle$ by stationarity (so the normalization
-in Eq.~\eqref{eq:g1def} cancels), averaging over the jitter yields
+Since $\delta t$ is independent of $E_{\rm src}$ and
+$\langle|E_{\rm obs}|^2\rangle=\langle|E_{\rm src}|^2\rangle$ by stationarity
+(so the Eq.~\eqref{eq:g1def} normalization cancels), averaging over the
+jitter yields
 \begin{equation}
   g^{(1)}_{\rm obs}(\tau)
     = \big\langle g^{(1)}_{\rm src}(\tau - \Delta(\tau))\big\rangle_{\delta t}
@@ -385,11 +369,8 @@ of that phase,
 \end{equation}
 with $\mathcal{F}_{\rm foam}(0)=1$, the differential phase variance
 $D_\phi(\tau)\equiv\omega_0^2\sigma_\Delta^2(\tau)=2\sigma_\phi^2[1-C_\alpha(\tau;D)]$,
-and $\sigma_\phi^2=(2\pi/\lambda_{\rm obs})^2\sigma_\ell^2(D_C)$
-(Eq.~\eqref{eq:sigmaphi_cosmo}); at $\tau\to\infty$ ($C_\alpha\to0$),
-$\mathcal{F}_{\rm foam}\to e^{-\sigma_\phi^2}$.  Thus the observed first-order
-coherence is the intrinsic coherence convolved with the Gaussian
-differential-jitter kernel.
+and $\sigma_\phi^2$ from Eq.~\eqref{eq:sigmaphi_cosmo}; at $\tau\to\infty$
+($C_\alpha\to0$), $\mathcal{F}_{\rm foam}\to e^{-\sigma_\phi^2}$.
 
 \subsection{Gaussian Source Profile}
 \label{sec:closedforms}
@@ -430,12 +411,11 @@ $\nu_0^{\rm eff} = \nu_0\bigl[1-
 scale $\sqrt{\tau_G^2+\sigma_\Delta^2(\tau)}$ vs.\ $\tau_G$);
 and (iii) a global amplitude suppression set by the differential phase
 variance $D_\phi(\tau)=\omega_0^2\sigma_\Delta^2(\tau)$ (Eq.~\eqref{eq:Ffoam}),
-at the carrier $\omega_0$.  The marginal phase variance
-$D_\phi=\omega_0^2\sigma_\Delta^2$ is exact; the carrier shift~(i) and the
-$\omega_0^2\sigma_\Delta^4$ amplitude term are the carrier--envelope coupling,
-both of order $\sigma_\Delta^2/\tau_G^2$ and vanishing in the
-slowly-varying-envelope limit $\sigma_\Delta\ll\tau_G$, where
-$\mathcal{F}_{\rm foam}=e^{-D_\phi/2}$ factors out cleanly,
+at the carrier $\omega_0$.  The marginal phase variance $D_\phi=\omega_0^2\sigma_\Delta^2$ is exact,
+while the carrier shift~(i) and the $\omega_0^2\sigma_\Delta^4$ amplitude
+term are carrier--envelope coupling of order $\sigma_\Delta^2/\tau_G^2$.
+In the slowly-varying-envelope limit $\sigma_\Delta\ll\tau_G$ these vanish
+and $\mathcal{F}_{\rm foam}=e^{-D_\phi/2}$ factors out cleanly,
 $g^{(1)}_{\rm obs}\to\mathcal{F}_{\rm foam}(\tau)\,g^{(1)}_{\rm src}(\tau)$ ---
 the pure multiplicative suppression on which the spectroscopic bounds rest.
 Normalization $g^{(1)}_{\rm obs}(0)=1$ holds because $\sigma_\Delta(0)=0$
@@ -510,9 +490,8 @@ The Gaussian's carrier shift, line narrowing, and peak suppression are
 the frequency-domain images of items~(i)--(iii) of
 Section~\ref{sec:closedforms}.
 
-The coherent core~\eqref{eq:Sobs_gauss} carries fraction $e^{-\sigma_\phi^2}$
-of the line flux; the complementary $1-e^{-\sigma_\phi^2}$ reappears as a
-pedestal.  In the regime $\sigma_\Delta\ll\tau_G$, the plateau/residual
+The complementary $1-e^{-\sigma_\phi^2}$ of the line flux reappears as a
+pedestal: in the regime $\sigma_\Delta\ll\tau_G$, the plateau/residual
 decomposition of $\mathcal{F}_{\rm foam}$ sends the short-lag residual to the
 pedestal
 \begin{align}
@@ -612,40 +591,37 @@ suppresses the coherent diffraction-limited PSF in imaging also
 suppresses the coherent line core in spectroscopy, placing the
 published imaging
 constraints~\cite{NgPerlman2022,LieuHillman2003,Christiansen2011,Perlman2015}
-on a common footing with the present framework.  A quantitative
-comparison across channels is, however, model-dependent: it requires
-relating the spatial ($C_\alpha^{\rm sp}$) and temporal ($C_\alpha$)
-foam correlation functions under a common foam-cell model, so the two
-constraints coincide only to the precision of those shared model
-details.  The duality is not
-perfect at the observational interface: in the imaging channel the
-reference truth---the telescope aperture---is known a priori, whereas in
-the spectroscopic channel the corresponding truth---the intrinsic source
-spectrum---is itself uncertain, so the foam contribution is harder to
-isolate.
+on a common footing with the present framework.
+
+Two caveats temper the duality.  A quantitative cross-channel comparison
+is model-dependent: it requires relating the spatial ($C_\alpha^{\rm sp}$)
+and temporal ($C_\alpha$) foam correlation functions under a common
+foam-cell model, so the constraints coincide only to the precision of
+those shared details.  And the channels differ in their reference truth:
+in imaging the aperture is known a priori, whereas in spectroscopy the
+intrinsic source spectrum is itself uncertain, making the foam
+contribution harder to isolate.
 
 % ==============================================================
 % CLAUDE:END-PROTECT
-%xCLAUDE:PROTECT
+%rCLAUDE:PROTECT
 \section{Sources}
 \label{sec:sources}
 
 Time-varying spacetime foam modifies the source first-order coherence,
 and hence its spectrum, in a wavelength-dependent way through
 the scaling $\sigma_\phi \propto 1/\lambda$. Two observable
-consequences follow. First, individual spectral features are distorted according to the
-Gaussian-source result Eq.~\eqref{eq:Sobs_gauss}, with a carrier shift,
-line narrowing, and peak suppression that scale chromatically as
-$\sigma_\phi\propto1/\lambda$.  Although the absolute line width narrows
-(item~(ii) of Section~\ref{sec:closedforms}), the center shifts to lower
-frequency by a still larger factor (item~(i)), so the \emph{fractional}
-width $\sigma/\nu$ broadens --- it is this fractional broadening that the
-GRB analysis below constrains. Second, the
+consequences follow. First, spectral features distort per
+Eq.~\eqref{eq:Sobs_gauss} with a carrier shift, line narrowing, and peak
+suppression scaling as $\sigma_\phi\propto1/\lambda$.  Although the
+absolute width narrows (item~(ii), Section~\ref{sec:closedforms}), the
+center shifts to lower frequency by a larger factor (item~(i)), so the
+\emph{fractional} width $\sigma/\nu$ broadens --- the quantity
+constrained below. Second, the
 broadband spectral energy distribution is distorted: the cosmic
 microwave background, expected to be a near-perfect blackbody, would
 acquire foam-induced deviations whose chromatic signature is distinct
 from standard chemical-potential and Compton-$y$ distortions.
-In this section we consider these two possibilities.
 
 \subsection{GRB\,221009A}
 \label{sec:grb221009a}
@@ -708,31 +684,28 @@ pedestal kernel $\hat{R}$ of width $\sim1/\tau_{\rm foam}$.
 Two assumptions govern whether the pedestal returns flux to the
 observing band.
 
-\emph{Assumption (i): dynamical foam.}  The pedestal exists only if the
-foam decorrelates on accessible timescales, $C_\alpha(\tau)\to0$;
-in the quasi-static limit $C_\alpha\to1$ the foam factor
-$\mathcal{F}_{\rm foam}\to1$ and there is no suppression to constrain
-(Section~\ref{sec:Calpha_origin}).  For the Planck-time-refresh foam
-adopted throughout, this escape is closed at TeV energies: with
-$\tau_{\rm foam}\sim\tau_P\equiv\ell_P/c\approx5\times10^{-44}$\,s, the
-foam is dynamical with margin $\tau_c/\tau_{\rm foam}\gtrsim10^{22}$
-\emph{even at $37$\,MeV} (Section~\ref{sec:Calpha_origin}), and since
-$\tau_c\propto1/\nu$ the margin only grows at TeV.
+\emph{Assumption (i): dynamical foam.}  The pedestal exists only if foam
+decorrelates, $C_\alpha(\tau)\to0$; the quasi-static limit $C_\alpha\to1$
+yields $\mathcal{F}_{\rm foam}\to1$ with no suppression to constrain
+(Section~\ref{sec:Calpha_origin}).  For Planck-time-refresh foam
+($\tau_{\rm foam}\sim\tau_P\equiv\ell_P/c\approx5\times10^{-44}$\,s),
+this escape closes at TeV: with $\tau_c/\tau_{\rm foam}\gtrsim10^{22}$
+\emph{even at $37$\,MeV} and $\tau_c\propto1/\nu$, the margin grows
+toward TeV.
 This energy-scaling argument does not address models with long-range
 temporal correlations (the temporal analogue of
 Ref.~\cite{LeeZurekChen2024}; see Section~\ref{sec:Calpha_origin}),
 which give $C_\alpha\approx1$ regardless of photon energy and remain a
 separate escape from all bounds in this paper.
 
-\emph{Assumption (ii): the source bandwidth is far narrower than the
-pedestal.}  The pedestal width is
-$\sim1/\tau_{\rm foam}\sim c/\ell_P\approx10^{43}$\,Hz, whereas the
-entire electromagnetic output of a GRB --- radio to TeV --- spans
-$\lesssim10^{27}$\,Hz.  The ratio is $\sim10^{-16}$: for a Lorentzian pedestal of half-width
-$\Gamma=c/\ell_P\approx1.9\times10^{43}$\,Hz the in-band kernel fraction
+\emph{Assumption (ii): bandwidth $\ll$ pedestal.}  The pedestal width is
+$\sim c/\ell_P\approx10^{43}$\,Hz, whereas the entire electromagnetic
+output of a GRB (radio to TeV) spans $\lesssim10^{27}$\,Hz, a ratio
+$\sim10^{-16}$.  For a Lorentzian pedestal of half-width
+$\Gamma=c/\ell_P\approx1.9\times10^{43}$\,Hz, the in-band kernel fraction
 over the LHAASO acceptance ($3$--$13$\,TeV, $\Delta\nu\approx2.4\times10^{27}$\,Hz)
-is $f_{\rm band}=\Delta\nu/(\pi\Gamma)\approx4\times10^{-17}$, and the
-fraction of scattered flux returning to band is negligible.
+is $f_{\rm band}=\Delta\nu/(\pi\Gamma)\approx4\times10^{-17}$, so
+scattered flux returning to band is negligible.
 
 With the in-band pedestal negligible, the observed flux reduces to the
 \emph{absolute} suppression
@@ -800,14 +773,12 @@ $\tau_{\rm EBL}\sim0.3$).
 
 The escape could instead lie in the pedestal kernel itself --- a
 light-tailed $\hat{R}$ that, contrary to Assumption~(ii), returns a
-non-negligible fraction of the redistributed flux to the observing band,
-so that the detected photons would be reprocessed flux rather than
-survivors.  The transient, directional nature of the detection forecloses
-it.  The
-kernel acts on every source at all times, so band-refilling at any
-appreciable level is a steady, sky-wide process, depositing reprocessed
-flux as a persistent isotropic background --- not as a $20.6\,\sigma$
-excess from the direction of GRB\,221009A, coincident with the burst.
+non-negligible fraction of the redistributed flux to the observing band.
+The transient, directional nature of the detection forecloses this: the
+kernel acts on every source at all times, so appreciable band-refilling
+would deposit flux as a persistent sky-wide background --- not as a
+$20.6\,\sigma$ excess from the direction of GRB\,221009A, coincident
+with the burst.
 The $142$ TeV photons are therefore genuine survivors of the source's
 beamed emission, and the suppression they constrain is real.  The same
 reasoning bounds the kernel at the population level: a refilling kernel
@@ -820,7 +791,7 @@ once-in-$10^4$-year transient, rather than a uniformly glowing sky, is
 itself the statement that the in-band refill is negligible.
 
 % CLAUDE:END-PROTECT
-%xCLAUDE:PROTECT
+% CLAUDE:PROTECT
 
 \subsubsection{Energy-dependent line width}
 \label{sec:grb_width}
@@ -1026,8 +997,7 @@ At $\nu=150$\,GHz this gives
   \end{cases}
   \label{eq:sigma_phi_CMB_values}
 \end{equation}
-The strong $\nu^2$ dependence concentrates foam effects at high
-frequency; for $\alpha=1/2$ the variance approaches unity at the top of the
+For $\alpha=1/2$ the variance approaches unity at the top of the
 FIRAS band ($\sigma_\phi^2\approx1.2$ at $639$\,GHz), and the linearised
 template holds for $\alpha\gtrsim0.50$, where $\sigma_\phi^2(\nu)\lesssim1$
 through the band (Section~\ref{sec:CMB_degeneracy}).
@@ -1102,13 +1072,12 @@ frequency,
     \frac{2\tau_{\rm foam}}{1 + [2\pi(\nu-\nu')\tau_{\rm foam}]^2},
   \label{eq:R_lorentzian}
 \end{equation}
-of full width at half maximum $1/(\pi\tau_{\rm foam})$.  For Planck-scale foam
-$\tau_{\rm foam}\sim\ell_P/c\approx 5\times 10^{-44}$\,s the
-Lorentzian width is $\sim 10^{43}$\,Hz, some thirty-one orders of
-magnitude beyond the FIRAS upper edge $\nu_{\rm max}=6\times 10^{11}$\,Hz;
-the fraction of the redistributed flux falling within the FIRAS band
-is $\sim 10^{-31}$.  The physical pedestal therefore deposits no
-detectable in-band power for any plausible $\tau_{\rm foam}$.  The
+of full width at half maximum $1/(\pi\tau_{\rm foam})$.  For Planck-scale
+foam with $\tau_{\rm foam}\sim\ell_P/c\approx 5\times 10^{-44}$\,s, the
+Lorentzian width ($\sim 10^{43}$\,Hz) lies thirty-one orders of magnitude
+beyond the FIRAS upper edge ($\nu_{\rm max}=6\times 10^{11}$\,Hz), so the
+in-band flux fraction is $\sim 10^{-31}$.  The physical pedestal thus
+deposits no detectable in-band power for any plausible $\tau_{\rm foam}$.  The
 constraint of Section~\ref{sec:CMB_degeneracy} consequently
 adopts the no-pedestal limit as the primary template.
 
@@ -1129,11 +1098,11 @@ the fit, and bounds on $\alpha$ are obtained
 \emph{a posteriori} by inverting the Ng--Perlman relation at fixed
 $A_\alpha=1$.
 
-In the physical no-pedestal limit (Section~\ref{sec:CMB_derivation})
-the redistributed pedestal lies at $\sim 10^{43}$\,Hz, thirty-one orders of
-magnitude above the FIRAS band, so the only in-band foam signature is
-the pure deficit --- the no-pedestal limit of
-Eq.~\eqref{eq:CMB_spectrum} ---
+For physical foam the redistributed pedestal lies at $\sim 10^{43}$\,Hz,
+thirty-one orders of magnitude above the FIRAS band
+(Section~\ref{sec:CMB_derivation}), so it contributes no in-band power and
+the only in-band foam signature is the pure deficit --- the no-pedestal
+limit of Eq.~\eqref{eq:CMB_spectrum} ---
 \begin{equation}
   \frac{\partial I_\nu}{\partial A_{\rm eff}}
     = -\!\left(\frac{2\pi\nu}{c}\right)^{\!2} B_\nu(T_0),
@@ -1155,11 +1124,11 @@ heating (reionization, cluster gas).
 We constrain $A_{\rm eff}$ by fitting these templates --- together with
 the FIRAS Galactic-foreground template --- to the public COBE/FIRAS
 monopole residual spectrum and its calibration
-covariance~\cite{Fixsen1996}.  Raising $T_0$ brightens the whole Planck
-curve, whereas the foam deficit suppresses it with an extra $\nu^2$
-weighting; over the CMB-bright band (peak through the onset of the
-Wien fall-off) the two differ only by a spectral tilt, making the foam
-template nearly indistinguishable from a temperature shift
+covariance~\cite{Fixsen1996}.  Raising $T_0$ brightens the Planck curve
+broadband; the foam deficit suppresses it with an extra $\nu^2$ tilt.
+Over the CMB-bright band (peak through the onset of the Wien fall-off),
+the two differ only by this tilt, making the foam template nearly
+indistinguishable from a temperature shift
 ($\rho_{A_{\rm eff}T_0}\simeq 1$ in the fit) and thus strongly collinear
 with the $y$ and $\mu$ templates (forecast correlation matrix
 Eq.~\eqref{eq:fisher_corr_matrix_fid} below).  Using the
@@ -1182,24 +1151,23 @@ $\alpha\gtrsim 0.52$ (collected with the forecasts below
 in Table~\ref{tab:thresholds}).  This bound is degeneracy-limited: $\alpha\gtrsim0.52$ rests only on the
 residual spectral-tilt information that distinguishes the
 $\nu^2$-weighted deficit from a temperature shift, so marginalizing over
-$(T_0,\mu,y)$ leaves it weak --- a genuine constraint well short of the
-GRB bound (the marginalization penalty is quantified in
-Section~\ref{sec:CMB_forecast}).
+$(T_0,\mu,y)$ leaves it weak.
 The only direction that could break the
 foam--$T_0$ degeneracy is deep into the Wien/sub-mm regime, where the
 $\nu^2$-tilt separates from a temperature shift; but there --- beyond the
 FIRAS band --- galactic dust and the cosmic infrared background dominate,
-and their foreground confusion makes the monopole impractical.  The linearised template
-$\Delta I_\nu\approx\sigma_\phi^2(\nu)\,[\text{template}]$, valid for
-$\sigma_\phi^2\ll1$, holds across the FIRAS band at the headline
-threshold ($\sigma_\phi^2$ exceeds unity only for stronger foam,
-$\alpha\lesssim0.50$; Section~\ref{sec:CMB_phasevar}): replacing the
-deficit $-\sigma_\phi^2 B_\nu$ by the saturated form
-$-(1-e^{-\sigma_\phi^2})B_\nu$ changes the integrated in-band amplitude
-by $\approx13\%$ at $\alpha=0.50$ but by $<1\%$ at $\alpha\gtrsim0.52$
-($\Delta\alpha\sim3\times10^{-5}$), so the bound is unaffected;
-nonlinearity matters only for stronger foam ($\alpha\lesssim0.50$),
-where it may also help break the foam--$\mu$ degeneracy.
+and their foreground confusion makes the monopole impractical.  The fit uses the linearised template
+$\Delta I_\nu\approx\sigma_\phi^2(\nu)\,[\text{template}]$ (valid for
+$\sigma_\phi^2\ll1$), which holds across the FIRAS band at the headline
+threshold: $\sigma_\phi^2$ exceeds unity only for stronger, excluded foam
+($\alpha\lesssim0.50$; Section~\ref{sec:CMB_phasevar}).  Replacing the
+linearised deficit $-\sigma_\phi^2 B_\nu$ by the exact form
+$-(1-e^{-\sigma_\phi^2})B_\nu$ (valid at all $\sigma_\phi^2$,
+Section~\ref{sec:spec}) shifts the integrated in-band amplitude by
+$\approx13\%$ at $\alpha=0.50$ but by $<1\%$ at $\alpha\gtrsim0.52$
+($\Delta\alpha\sim3\times10^{-5}$), so the bound is unaffected; in that
+strong-foam regime nonlinearity may even help break the foam--$\mu$
+degeneracy.
 
 That same near-degeneracy has two consequences for the CMB temperature
 itself.  First, admitting foam as a free parameter inflates the
@@ -1225,15 +1193,14 @@ with the GRB bound $\alpha\gtrsim 0.63$.
 \subsubsection{Fisher forecasts for future spectrometers}
 \label{sec:CMB_forecast}
 
-To forecast the reach of future absolute spectrometers we propagate the
-same no-pedestal templates through a Fisher matrix.  Calibrated to
-FIRAS with a flat per-channel noise $\sigma_\nu=0.01$\,MJy/sr (a
-band-averaged stand-in for the measured errors), the Fisher forecast
-gives $\sigma(A_{\rm eff})=2.2\times10^{-11}\,{\rm m}^2$ and the same
-$\alpha\gtrsim 0.52$, reproducing the data fit; the conditional value
+To forecast future absolute spectrometers we propagate the no-pedestal
+templates through a Fisher matrix calibrated to FIRAS
+($\sigma_\nu=0.01$\,MJy/sr).  The forecast gives
+$\sigma(A_{\rm eff})=2.2\times10^{-11}\,{\rm m}^2$ and
+$\alpha\gtrsim 0.52$ (reproducing the data fit); the conditional value
 $\sigma(A_{\rm eff})|_{\mu,y\,\text{fixed}}=8.2\times10^{-13}\,{\rm
-m}^2$ shows that marginalizing over the distortions costs a factor
-$\sim 27$ through the foam--$T_0$ collinearity.  The fiducial
+m}^2$ shows that marginalizing over distortions costs a factor
+$\sim 27$ via the foam--$T_0$ collinearity.  The fiducial
 degeneracy structure is captured by the correlation matrix for
 $(A_{\rm eff},\,T_0,\,\mu,\,y)$,
 \begin{equation}
@@ -1254,15 +1221,14 @@ Figure~\ref{fig:cmb_snr} plots it versus $\alpha$, and
 Table~\ref{tab:thresholds} collects the thresholds.
 
 \begin{table}[h]
-\caption{Marginal foam-detection thresholds (one-sided $95\%$ CL): \emph{lower}
-bounds on the exponent $\alpha$ ($A_\alpha=1$), since the foam signal
-$\sigma_\ell^2\propto(\ell_P/D_C)^{2\alpha}$ decreases with $\alpha$ and a
-non-detection therefore excludes small $\alpha$.  FIRAS is from the data fit
-(Section~\ref{sec:CMB_degeneracy}); PIXIE, SuperPIXIE, and Voyage~2050
-from the Fisher forecast scaled by their published
-$\mu$-sensitivities~\cite{Chluba2021}.  The three forecast
-entries ($0.545$, $0.549$, $0.554$) round to $0.54$--$0.55$;
-the thresholds increase monotonically.}
+\caption{Marginal foam-detection thresholds (one-sided $95\%$ CL).
+\emph{Lower} bounds on $\alpha$ ($A_\alpha=1$): the foam signal
+$\sigma_\ell^2\propto(\ell_P/D_C)^{2\alpha}$ decreases with $\alpha$, so
+non-detection excludes small $\alpha$.  FIRAS: data fit
+(Section~\ref{sec:CMB_degeneracy}).  PIXIE, SuperPIXIE, Voyage~2050:
+Fisher forecast scaled to published $\mu$-sensitivities~\cite{Chluba2021}.
+The three forecast entries ($0.545$, $0.549$, $0.554$) round to
+$0.54$--$0.55$.}
 \label{tab:thresholds}
 \begin{ruledtabular}
 \begin{tabular}{lc}
@@ -1280,42 +1246,38 @@ Voyage~2050  & $\alpha\gtrsim 0.55$ \\
 \centering
 \includegraphics[width=0.82\columnwidth]{cmb_snr_alpha}
 \caption{Detection SNR for the foam amplitude $A_{\rm eff}$ versus
-foam exponent $\alpha$ ($A_\alpha=1$, $D_C=13.87$\,Gpc).
-Blue curves: marginal SNR (all four parameters $A_{\rm eff},T_0,\mu,y$ free).
-Red curves: conditional SNR ($\mu,y$ held fixed), $\sim 27\times$ higher.
-Line styles denote the instrument: solid FIRAS, dashed PIXIE,
-dash-dotted SuperPIXIE, dotted Voyage~2050, with forecast
-$\mu$-sensitivities scaled relative to FIRAS \cite{Chluba2021}.
-The marginal lower bounds cluster at $\alpha\approx 0.52$--$0.55$,
-showing the logarithmic saturation of the bound with sensitivity.
-The dotted horizontal line marks SNR\,$=1.645$ (one-sided $95\%$ CL); vertical dashed lines mark the
-spectroscopic lower bound from GRB\,221009A ($\alpha\gtrsim 0.63$) and the
-holographic prediction $\alpha=2/3$.}
+exponent $\alpha$ ($A_\alpha=1$, $D_C=13.87$\,Gpc).
+Blue: marginal SNR (all four parameters free).
+Red: conditional SNR ($\mu,y$ fixed), $\sim 27\times$ higher.
+Line styles: solid FIRAS, dashed PIXIE, dash-dotted SuperPIXIE,
+dotted Voyage~2050 (forecast $\mu$-sensitivities scaled to
+FIRAS; \cite{Chluba2021}).
+The marginal lower bounds cluster at $\alpha\approx 0.52$--$0.55$.
+Horizontal dotted line: SNR\,$=1.645$ (one-sided $95\%$ CL).
+Vertical dashed lines: the spectroscopic lower bound from
+GRB\,221009A ($\alpha\gtrsim 0.63$) and the holographic prediction
+$\alpha=2/3$.}
 \label{fig:cmb_snr}
 \end{figure}
 
-As a worst case, we also test an \emph{adversarial} in-band pedestal
-deliberately given the Rayleigh--Jeans $1/\nu$ shape of the
-$\mu$-distortion template, which maximizes the foam--$\mu$ overlap --- the
-most effective way a refilled pedestal could disguise foam as a standard
-distortion.  Repeating the Fisher analysis with this kernel rotates the
-foam template off the temperature axis
-($\rho_{A_{\rm eff}T_0}:0.9997\to0.937$) and off the $y$ template
-($0.999\to0.010$), leaving a foam--$\mu$ correlation of $0.976$ as the
-dominant degeneracy.  Because $0.976<0.9997$, the amplitude is in fact
-\emph{better} constrained and the threshold \emph{tightens} to
-$\alpha\gtrsim0.53$: an in-band pedestal cannot loosen the bound, and the
-shift is negligible regardless ($\Delta\alpha=\ln N/[2\ln(D_C/\ell_P)]
-\approx0.009$ for the factor $N\approx13$ in amplitude sensitivity).  An
+As a worst case, we test an \emph{adversarial} in-band pedestal shaped
+like the $\mu$-distortion template (Rayleigh--Jeans $1/\nu$), maximizing
+the foam--$\mu$ overlap.  The Fisher analysis rotates the foam template
+off the temperature axis ($\rho_{A_{\rm eff}T_0}:0.9997\to0.937$) and off
+the $y$ template ($0.999\to0.010$), leaving a foam--$\mu$ correlation of
+$0.976$.  Because $0.976<0.9997$, the amplitude is \emph{better}
+constrained and the threshold \emph{tightens} to $\alpha\gtrsim0.53$
+($\Delta\alpha\approx0.009$ for the factor $N\approx13$ in amplitude
+sensitivity), so an in-band pedestal cannot loosen the bound.  An
 external $\mu$ prior (e.g.\ the $\Lambda$CDM dissipation value
 $\mu\approx2\times10^{-8}$~\cite{Chluba2021}) sharpens
 $\sigma(A_{\rm eff})$ by $\sim3$--$5\times$ in this $\mu$-limited
 adversarial case but barely helps the physical no-pedestal case, whose
 limiting degeneracy is with $T_0$; either way the logarithmic relation
 caps the gain at $\Delta\alpha\lesssim0.005$.  The physical no-pedestal
-limit, with its near-perfect foam--$T_0$ degeneracy, is therefore the
-conservative case and remains the headline; both kernels are chosen
-probes, but the in-band pedestal is negligible for any $C_\alpha$ with
+limit is therefore the conservative case and remains the headline; both
+kernels are chosen probes, but the in-band pedestal is negligible for any
+$C_\alpha$ with
 $\tau_{\rm foam}\ll1/\nu_{\rm max}$ (Section~\ref{sec:CMB_derivation}).
 
 The proposed PIXIE satellite~\cite{Kogut2011} --- a fully cryogenic
@@ -1330,22 +1292,19 @@ $\alpha\gtrsim0.52$ (FIRAS) to approximately $\alpha\gtrsim0.54$
 (PIXIE; Table~\ref{tab:thresholds}), narrowing the gap with the
 spectroscopic lower bound $\alpha\gtrsim0.63$ from GRB\,221009A
 (Fig.~\ref{fig:cmb_snr}).  All thresholds are quoted for the physical
-no-pedestal deficit.  The step sizes track the logarithm of the
-sensitivity ratio --- each decade of $\sigma(\mu)$ buys only
-$\Delta\alpha=\ln10/[2\ln(D_C/\ell_P)]\approx0.008$ --- so the
-$\sim\!3$-decade FIRAS$\to$PIXIE gain accounts for the $\approx0.03$
-step, whereas PIXIE$\to$Voyage~2050 (under a decade combined) adds only
-$\approx0.009$; the thresholds saturate monotonically (the three forecast
-entries round $0.545$, $0.549$, $0.554$ to $0.54$--$0.55$).
-The limiting degeneracy --- with a temperature shift for the
-no-pedestal deficit --- persists on the linearized template.  But
-PIXIE's extension to $6$\,THz accesses the nonlinear regime
-$\sigma_\phi^2\gg1$ for $\alpha\lesssim0.52$ (higher $\alpha$ than
-the FIRAS-band crossing $\alpha\lesssim0.50$,
-Section~\ref{sec:CMB_degeneracy}, because the wider $6$\,THz band pushes
-the $\sigma_\phi^2=1$ boundary upward), where the foam deficit
-diverges markedly from the blackbody and $\mu$-distortion shapes
-and the degeneracy may be substantially reduced.  The
+no-pedestal deficit.  Step sizes track the logarithm of the sensitivity ratio: each decade of
+$\sigma(\mu)$ buys $\Delta\alpha=\ln10/[2\ln(D_C/\ell_P)]\approx0.008$.
+The $\sim\!3$-decade FIRAS$\to$PIXIE gain gives the $\approx0.03$ step;
+PIXIE$\to$Voyage~2050 (under a decade) adds $\approx0.009$.  The
+thresholds saturate monotonically (the three forecast entries $0.545$,
+$0.549$, $0.554$ round to $0.54$--$0.55$).
+The foam--$T_0$ degeneracy persists on the linearized template.  But
+PIXIE's extension to $6$\,THz enters the nonlinear regime
+$\sigma_\phi^2\gg1$ for $\alpha\lesssim0.52$ (higher than the FIRAS
+crossing $\alpha\lesssim0.50$ because the wider band pushes the
+$\sigma_\phi^2=1$ boundary upward; Section~\ref{sec:CMB_degeneracy}),
+where the foam deficit diverges markedly from the blackbody and
+$\mu$-distortion shapes, possibly reducing the degeneracy.  The
 $\alpha\gtrsim0.54$ projection may therefore understate the reach: if
 the nonlinear template effectively breaks this degeneracy at PIXIE
 sensitivity, the true threshold could be significantly more stringent.
