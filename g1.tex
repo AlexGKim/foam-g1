@@ -1300,37 +1300,30 @@ the nonlinear template effectively breaks this degeneracy at PIXIE
 sensitivity, the true threshold could be significantly more stringent.
 
 Extending the same Fisher analysis to the $10$\,GHz--$3$\,THz bands of
-the SuperPIXIE and Voyage~2050 concepts~\cite{Chluba2021} --- with
-forecast distortion sensitivities
-$\sigma(\mu)\approx 7.7\times10^{-9}$ and $2.2\times10^{-9}$ ---
-shifts the marginal threshold only to $\alpha\gtrsim 0.55$
+the SuperPIXIE and Voyage~2050 concepts~\cite{Chluba2021} (forecast
+distortion sensitivities $\sigma(\mu)\approx 7.7\times10^{-9}$ and
+$2.2\times10^{-9}$) shifts the marginal threshold only to $\alpha\gtrsim 0.55$
 (Table~\ref{tab:thresholds}), barely beyond the
 PIXIE projection.  The reason is structural rather than instrumental:
-in the no-pedestal limit the foam deficit
-$-\sigma_\phi^2(\nu)B_\nu$ is degenerate with a temperature shift at
-$\rho^{\rm fid}_{A_{\rm eff}T_0}=0.9997$, and this degeneracy is
-\emph{band-robust} --- broadening coverage from the FIRAS band to
-$10$\,GHz--$6$\,THz leaves it unchanged to four decimal places.  The
+in the no-pedestal limit the foam--$T_0$ degeneracy
+($\rho^{\rm fid}_{A_{\rm eff}T_0}=0.9997$) is \emph{band-robust}:
+broadening coverage from the FIRAS band to $10$\,GHz--$6$\,THz leaves it
+unchanged to four decimal places.  The
 wider band does break the foam--$\mu$ degeneracy probed by the
 $\mu$-aligned pedestal (from
 $\rho_{A_{\rm eff}\mu}=0.98$ at FIRAS to $0.66$ over
 $10$\,GHz--$3$\,THz), so future missions are markedly more robust
-against in-band pedestal contamination, but --- within the linearized
-analysis --- the physical threshold does not move (the nonlinear,
+against in-band pedestal contamination, but, within the linearized
+analysis, the physical threshold does not move (the nonlinear,
 strong-foam exception noted above, $\alpha\lesssim0.52$, aside).  With the logarithmic Ng--Perlman scaling
 $\Delta\alpha=\ln N/[2\ln(D_C/\ell_P)]$ converting even a
 $10^{4}$-fold sensitivity gain over FIRAS into
-$\Delta\alpha\lesssim 0.04$, this sets a firm ceiling: as an
-independent broadband probe --- absolute calibrated photometry, no
-source-profile assumption, a different systematic-error budget from
-spectroscopy --- spectral-distortion photometry yields a lower bound
-($\alpha\gtrsim 0.52$ from FIRAS, at most $\alpha\gtrsim 0.55$
-next-generation) that cannot, by sensitivity or bandwidth alone, match
-the stronger GRB bound $\alpha\gtrsim 0.63$ or reach the holographic
-$\alpha=2/3$.  The two channels therefore
-probe the same exponent through different sources, observables, and
-systematics --- an independent cross-check rather than a joint bracket
---- with the GRB the more constraining of the two.
+$\Delta\alpha\lesssim 0.04$, this sets a firm ceiling: as a broadband
+probe based on absolute calibrated photometry (no source-profile
+assumption, a different systematic-error budget from spectroscopy),
+spectral-distortion photometry yields $\alpha\gtrsim 0.52$ from FIRAS and
+at most $\alpha\gtrsim 0.55$ next-generation, the bound limited by the
+foam--$T_0$ degeneracy rather than by sensitivity or bandwidth.
 
 % ==============================================================
 % CLAUDE:END-PROTECT
@@ -1354,7 +1347,24 @@ because the foam deficit is nearly degenerate with a temperature shift.
 The pedestal-independent line-width and CMB bounds do not exclude the
 holographic value $\alpha=2/3$; however, the TeV survival bound
 ($\alpha_{\rm TeV}\gtrsim0.74$, conditional on the pedestal-kernel shape
-of Assumption~(ii)) would exclude it.
+of Assumption~(ii)) would exclude it.  Probing the same exponent through
+different sources, observables, and systematics, the two channels form an
+independent cross-check rather than a joint bracket.  They are separated
+by more than ten orders of magnitude in frequency (CMB photons near
+$10^{11}$\,Hz versus the GRB's MeV--TeV emission at
+$10^{22}$--$10^{27}$\,Hz), and since the foam phase variance grows as
+$\sigma_\phi^2\propto\nu^2$, this lever arm makes the high-frequency GRB
+channel intrinsically more sensitive, hence the more constraining.  This
+sensitivity advantage is partly offset by a firmer baseline on the CMB
+side: its intrinsic spectrum is a near-perfect blackbody, whereas the GRB
+bound depends on a less certain model of the source's intrinsic emission.  Probing the same exponent through
+different sources, observables, and systematics, the two channels form an
+independent cross-check rather than a joint bracket.  They are separated
+by more than ten orders of magnitude in frequency (CMB photons near
+$10^{11}$\,Hz versus the GRB's MeV--TeV emission at
+$10^{22}$--$10^{27}$\,Hz), and since the foam phase variance grows as
+$\sigma_\phi^2\propto\nu^2$, this lever arm makes the high-frequency GRB
+channel intrinsically more sensitive, hence the more constraining.
 
 All single-source spectroscopic bounds derived in this paper assume the
 dynamical-foam limit $\tau_{\rm foam}\ll\tau_c$
