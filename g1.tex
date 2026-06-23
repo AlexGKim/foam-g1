@@ -662,7 +662,9 @@ and in what they assume.  The stronger is an \emph{absolute} bound: the
 mere survival of TeV photons bounds $\sigma_\phi^2$ directly.  The
 weaker is a \emph{relative} one: energy-dependent broadening of the MeV
 line constrains $\alpha$ only in the deep strong-foam regime.  Both
-operate in the dynamical-foam regime $\tau_{\rm foam}\ll\tau_c$ adopted
+operate in the dynamical-foam regime $\tau_{\rm foam}\ll\tau_c$ --- with
+$\tau_c\equiv\tau_G=1/(2\pi\sigma_\nu)$ the photon coherence time
+(Eq.~\eqref{eq:g1src_gauss}) --- adopted
 throughout Section~\ref{sec:model}; the opposite quasi-static limit is
 addressed explicitly as Assumption~(i) below.
 
@@ -689,9 +691,11 @@ decorrelates, $C_\alpha(\tau)\to0$; the quasi-static limit $C_\alpha\to1$
 yields $\mathcal{F}_{\rm foam}\to1$ with no suppression to constrain
 (Section~\ref{sec:Calpha_origin}).  For Planck-time-refresh foam
 ($\tau_{\rm foam}\sim\tau_P\equiv\ell_P/c\approx5\times10^{-44}$\,s),
-this escape closes at TeV: with $\tau_c/\tau_{\rm foam}\gtrsim10^{22}$
-\emph{even at $37$\,MeV} and $\tau_c\propto1/\nu$, the margin grows
-toward TeV.
+this escape is closed even at TeV: the margin
+$\tau_c/\tau_{\rm foam}\gtrsim10^{22}$ \emph{at $37$\,MeV} shrinks toward
+higher energy as $\tau_c\propto1/\nu$ (at fixed fractional width), but
+remains $\gtrsim10^{17}$ at $3$\,TeV --- still enormous, so the foam is
+dynamical throughout.
 This energy-scaling argument does not address models with long-range
 temporal correlations (the temporal analogue of
 Ref.~\cite{LeeZurekChen2024}; see Section~\ref{sec:Calpha_origin}),
@@ -1126,7 +1130,7 @@ full $43\times43$ apodization covariance, the generalized
 least-squares fit over $(T_0,\mu,y,A_{\rm eff})$ and the foreground
 amplitude recovers $\mu$ and $y$ consistent with zero (foam-marginalized
 $95\%$ limits $|\mu|<1.7\times10^{-4}$, $|y|<1.0\times10^{-5}$;
-$\chi^2/\nu=1.24$ --- the $\mu$ limit looser than the foam-free Fixsen
+$\chi^2/\nu=1.27$ --- the $\mu$ limit looser than the foam-free Fixsen
 value $|\mu|\lesssim9\times10^{-5}$ because marginalizing over the foam
 amplitude inflates $\sigma(\mu)$, as quantified below) and a foam
 amplitude consistent with zero,
@@ -1317,7 +1321,7 @@ foam--$T_0$ degeneracy rather than by sensitivity or bandwidth.
 
 % ==============================================================
 % CLAUDE:END-PROTECT
-%xCLAUDE:PROTECT
+% CLAUDE:PROTECT
 \section{Conclusions}
 \label{sec:conclusions}
 
