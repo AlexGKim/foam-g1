@@ -43,13 +43,12 @@ For the broadband CMB the foam induces an $e^{-\sigma_\phi^2(\nu)}$ deficit
 ($\sigma_\phi^2 \propto \nu^2$); a fit to
 the COBE/FIRAS monopole spectrum reaches $\alpha \gtrsim 0.52$
 ($95\%$ CL) under the physical Planck-scale pedestal
-kernel, and next-generation spectrometers (PIXIE, SuperPIXIE,
-Voyage~2050) are forecast to reach $\alpha\gtrsim 0.54$--$0.55$,
-the bound saturating logarithmically as the foam deficit is nearly
-degenerate with a temperature shift. The pedestal-independent line-width bound does not exclude
-the holographic value $\alpha = 2/3$; the stronger TeV survival bound,
-$\alpha\gtrsim0.74$ (conditional on near-Planck-refresh foam,
-$\tau_{\rm foam}\lesssim4\times10^{-28}$\,s), would exclude it.
+kernel, and next-generation spectrometers reach only
+$\alpha\gtrsim 0.54$--$0.55$ (forecast), limited by the foam--temperature
+degeneracy.  The pedestal-independent line-width and CMB bounds do not
+reach the holographic value $\alpha = 2/3$; only the conditional TeV
+survival bound ($\alpha\gtrsim0.74$, for near-Planck-refresh foam,
+$\tau_{\rm foam}\lesssim4\times10^{-28}$\,s) would exclude it.
 All bounds assume foam that decorrelates within the light's coherence
 time; they vanish in the quasi-static or long-temporal-correlation limits.
 \end{abstract}
@@ -145,8 +144,8 @@ correspondingly, foam imprints itself on the spectrum rather than on the
 spatial brightness profile.
 
 Because the foam variance enters the resulting bounds only through the
-doubly-logarithmic factor $\ln(D_C/\ell_P)\approx138$, the bounds are set
-primarily by source geometry and probe energy; the data enter as a small
+doubly-logarithmic factor $\ln(D_C/\ell_P)\approx138$--$141$ (GRB to CMB),
+the bounds are set primarily by source geometry and probe energy; the data enter as a small
 logarithmic correction (a decade of measurement precision shifts $\alpha$
 by $\lesssim0.02$), so they are robust but cannot be appreciably tightened
 by better data of the same kind.
@@ -175,6 +174,28 @@ observational directions.
 \label{sec:model}
 % ==============================================================
 
+\begin{table}[h]
+\caption{Principal symbols.}
+\label{tab:notation}
+\begin{ruledtabular}
+\begin{tabular}{ll}
+$\alpha$ & Ng--Perlman foam exponent \\
+$\sigma_\ell^2(D)$ & path-length-jitter variance [Eq.~\eqref{eq:NgPerlmanVar}] \\
+$\sigma_\phi^2$ & phase variance, $(2\pi/\lambda_{\rm obs})^2\sigma_\ell^2$ \\
+$\sigma_\Delta^2(\tau)$ & differential-jitter variance \\
+$C_\alpha(\tau;D)$ & temporal foam autocorrelation \\
+$\tau_{\rm foam}$ & foam decorrelation time \\
+$\tau_c\equiv\tau_G$ & coherence time of the light, $1/(2\pi\sigma_\nu)$ \\
+$\sigma_{\rm obs}$ & observed line width \\
+$r_{\rm obs}$ & observed fractional width, $\sigma_{\rm obs}/E$ \\
+$r_{\rm int}$ & intrinsic (boost-invariant) fractional width \\
+$r_{\rm foam}$ & foam-induced fractional-width excess \\
+$D,\,D_C$ & (comoving) source distance \\
+$\mathcal{D}$ & bulk Doppler factor \\
+$A_{\rm eff}$ & lumped CMB foam amplitude \\
+\end{tabular}
+\end{ruledtabular}
+\end{table}
 
 \subsection{Arrival-Time Jitter}
 \label{sec:metric_origin}
@@ -255,7 +276,10 @@ purely temporal $C_\alpha$ assumes the spatio-temporal correlation
 factorizes, $C(\mathbf{r},\tau)\approx C_{\rm sp}(\mathbf{r})\,C_\alpha(\tau)$,
 with the spatial factor absorbed into the normalization; we flag this as an
 assumption, since the spatial correlation structure over cosmological path
-lengths is not constrained here.
+lengths is not constrained here.  Non-factorization would modify the spatial
+averaging and hence the pedestal-kernel shape; the in-band observables (the
+core suppression $e^{-\sigma_\phi^2}$) depend on the temporal $C_\alpha$
+along a fixed line of sight and are less sensitive to it.
 
 The timescale $\tau_{\rm foam}$ is an additional free parameter of the
 foam model, not fixed by the $\alpha$-model variance relation alone.
@@ -315,7 +339,9 @@ the large-$N$ requirement and higher-cumulant corrections are negligible.  For $
 are equal ($\ell_{\rm P}^2$ each) and the CLT applies in its standard form.
 For $\alpha \neq 1/2$, the per-cell contributions scale differently with $D$
 and the equality of per-cell variances is a model assumption rather than a
-direct CLT consequence; Gaussianity is adopted as the minimal assumption
+direct CLT consequence; and at the correlated ($\alpha\to1$) end the
+per-cell increments are not independent, so the large-$N$ argument does not
+apply. Gaussianity is then adopted as a modeling choice, minimal and
 consistent with the $\alpha$-model.
 
 
@@ -458,7 +484,12 @@ time-translation invariant on observational timescales).  The observed
 field is then stationary when the integration time exceeds the foam
 coherence time $\tau_{\rm foam}$ (the lag scale beyond which
 $C_\alpha(\tau;D)\to 0$), so that the time-averaged spectrum coincides
-with its ensemble average: $T_{\rm int}\gg\tau_{\rm foam}$.
+with its ensemble average: $T_{\rm int}\gg\tau_{\rm foam}$.  Because
+$\tau_{\rm foam}\sim\tau_P\sim10^{-44}$\,s is vastly shorter than the
+timescale of any astrophysical evolution (e.g.\ the hours over which the
+GRB line centroid sweeps $37\to6$\,MeV), the slow kinematic evolution and
+the fast foam jitter are cleanly separable, and each epoch is stationary
+on the foam timescale.
 
 In the dynamical limit $C_\alpha(\tau;D)\to 0$ for
 $|\tau|\gtrsim\tau_{\rm foam}$, $\mathcal{F}_{\rm foam}(\tau)$ acquires
@@ -655,9 +686,10 @@ annihilation~\cite{Ravasio2024,YQZhang2024}, at observed energies
 spanning $6$--$37$\,MeV.  Zhang et al.~\cite{YQZhang2024} detect a
 Gaussian line whose centroid evolves as $E_{\rm line}\propto t^{-1}$
 from $\approx37$\,MeV to $\approx6$\,MeV, with a fractional width
-$r_{\rm obs}\equiv\sigma_{\rm obs}/E_{\rm line}=0.10\pm0.01$ constant
-across seven well-constrained sub-intervals spanning the $9$--$37$\,MeV
-lever arm ($\chi^2/\mathrm{dof}=5.3/6$); the foam analysis depends only
+$r_{\rm obs}\equiv\sigma_{\rm obs}/E_{\rm line}$ of weighted mean
+$0.111\pm0.014$, the seven sub-intervals spanning $\approx0.07$--$0.20$ and
+consistent with a constant across the $9$--$37$\,MeV lever arm
+($\chi^2/\mathrm{dof}=5.3/6$; Table~\ref{tab:rwidth}); the foam analysis depends only
 on the Doppler-invariance of the line's fractional width, not on the
 emission mechanism.
 
@@ -861,7 +893,8 @@ emitting material, $E_{\rm line}=\mathcal{D}\,m_ec^2/(1+z)$, so the centroid
 measures $\mathcal{D}$ directly; the observed decline
 $E_{\rm line}\propto t^{-1}$ from $\approx37$ to $\approx6$\,MeV tracks the
 falling jet Lorentz factor ($\Gamma\propto t^{-1}$, $\Gamma\approx84$ at
-$37$\,MeV in the Zhang et al.\ modeling) as the outflow
+$37$\,MeV in the Zhang et al.\ modeling, viewed near $\theta\sim1/\Gamma$ so
+that $\mathcal{D}\approx\Gamma$) as the outflow
 evolves~\cite{YQZhang2024}.  Because a bulk boost multiplies every photon
 energy --- line center and line width alike --- by the same $\mathcal{D}$, the
 fractional width $r_{\rm int}=\sigma'/E'$ is boost-invariant: it equals
@@ -876,6 +909,12 @@ Quantum-gravity jitter, if present, imprints an additional,
 energy-dependent broadening on top of this constant baseline, computed next.
 
 \paragraph{Derivation of fractional-width broadening.}
+The width law below follows from the slowly-varying-envelope limit
+$\sigma_\Delta\ll\tau_G$, in which the foam factor multiplies the line
+cleanly; the $95\%$ bound, however, lies at
+$\sigma_\Delta/\tau_G\approx4.1$, so it extrapolates the core's width
+relation into the strong-foam regime --- a tension quantified in the
+caveats below.
 Eq.~\eqref{eq:Sobs_gauss} gives an observed core whose absolute width
 $\sigma_{\rm obs}=1/[2\pi\sqrt{\tau_G^2+\sigma_\Delta^2}]$ is
 narrower than the intrinsic $\sigma_\nu=1/(2\pi\tau_G)$
@@ -935,10 +974,10 @@ constrains the foam amplitude.  The best fit lies at the boundary
 $r_{\rm foam,0}=0$ (with $r_{\rm int}=0.111$, $\chi^2_{\rm min}=5.3/6$\,dof),
 confirming the constant-$r_{\rm obs}$ hypothesis.  Profiling over
 $r_{\rm int}$ gives the $95\%$\,CL upper limit
-$r_{\rm foam,0}^{\rm max}=0.27$ at $\Delta\chi^2=2.71$ (boundary-corrected
+$r_{\rm foam,0}^{\rm max}=0.27$ at $\Delta\chi^2=2.71$ (Fig.~\ref{fig:grbchi2}; boundary-corrected
 Chernoff threshold~\cite{Chernoff1954}: $\tfrac12\delta_0+\tfrac12\chi_1^2$
-for zero-bounded parameters; immaterial to $\alpha$ given the logarithmic
-lever arm below).  Converting
+for zero-bounded parameters; the precise threshold barely affects $\alpha$,
+the logarithmic lever arm dominating).  Converting
 via Eq.~\eqref{eq:rfoam_dyn} and $\sigma_\ell^2=D_C^{2(1-\alpha)}\ell_P^{2\alpha}$
 (Eq.~\eqref{eq:NgPerlmanVar}, $A_\alpha=1$) gives
 \begin{equation}
@@ -957,7 +996,43 @@ the TeV bound, the result is doubly logarithmic and so dominated by the
 kinematic lever arm $\ln(D_C/\ell_P)=138$: a tenfold change in
 $r_{\rm foam,0}^{\rm max}$ moves $\alpha$ by only
 $\ln10/\ln(D_C/\ell_P)\approx0.017$, so $\alpha\gtrsim0.63$ is fixed by the
-geometry, not by the precision of the seven measurements.  
+geometry, not by the precision of the seven measurements.
+
+\begin{table}[h]
+\caption{The seven Zhang et al.~\cite{YQZhang2024} MeV-line sub-intervals
+used in the line-width fit: post-trigger interval, line energy $E$, observed
+fractional width $r_{\rm obs}=\sigma_{\rm obs}/E$, and its uncertainty
+$\sigma_r$. The weighted mean is $r_{\rm obs}=0.111\pm0.014$; the values are
+consistent with a constant ($\chi^2/\nu=5.3/6=0.88$).}
+\label{tab:rwidth}
+\begin{ruledtabular}
+\begin{tabular}{lccc}
+interval [s] & $E$ [MeV] & $r_{\rm obs}$ & $\sigma_r$ \\
+\hline
+$246$--$256$ & $37.2$ & $0.191$ & $0.088$ \\
+$275$--$280$ & $17.8$ & $0.093$ & $0.041$ \\
+$285$--$290$ & $15.0$ & $0.129$ & $0.046$ \\
+$290$--$295$ & $12.1$ & $0.120$ & $0.030$ \\
+$295$--$300$ & $12.5$ & $0.067$ & $0.031$ \\
+$300$--$310$ & $8.9$  & $0.196$ & $0.061$ \\
+$310$--$320$ & $9.7$  & $0.115$ & $0.030$ \\
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.9\columnwidth]{grb_chi2_profile}
+\caption{$\Delta\chi^2$ in the $(r_{\rm int},r_{\rm foam,0})$ plane for the
+line-width fit (contours at $1$, $2.71$, $4$). The best fit lies at the
+boundary $r_{\rm foam,0}=0$, $r_{\rm int}=0.111$ (star); the one-sided
+$95\%$ upper limit $r_{\rm foam,0}^{\rm max}=0.27$ is reached on the
+$\Delta\chi^2=2.71$ contour at the profiled $r_{\rm int}=0.066$ (circle).
+The shaded band marks the measured range of $r_{\rm obs}$
+(Table~\ref{tab:rwidth}); the limit trades a narrower intrinsic line against
+larger foam amplitude.}
+\label{fig:grbchi2}
+\end{figure}
 
 \paragraph{Validity and caveats.}
 At the $95\%$ boundary $\sigma_\Delta/\tau_G(E_0)\approx4.1$, i.e.\
@@ -1185,7 +1260,8 @@ amplitude consistent with zero,
   \label{eq:Aeff_firas}
 \end{equation}
 Inverting $A_{\rm eff}=A_\alpha D_C^{2(1-\alpha)}\ell_P^{2\alpha}$
-at $A_\alpha=1$, the one-sided $95\%$ upper limit
+at $A_\alpha=1$, the one-sided $95\%$ upper limit (measured from zero, as
+required by the physical boundary $A_{\rm eff}\geq0$)
 $A_{\rm eff}<1.645\,\sigma(A_{\rm eff})=8.7\times10^{-11}\,{\rm m}^2$ gives the lower bound
 $\alpha\gtrsim 0.52$ (collected with the forecasts below
 in Table~\ref{tab:thresholds}).  This bound is degeneracy-limited: $\alpha\gtrsim0.52$ rests only on the
@@ -1234,8 +1310,10 @@ with the GRB bound $\alpha\gtrsim 0.63$.
 \label{sec:CMB_forecast}
 
 To forecast future absolute spectrometers we propagate the no-pedestal
-templates through a Fisher matrix calibrated to FIRAS
-($\sigma_\nu=0.01$\,MJy/sr).  The forecast gives
+templates through a Fisher matrix with flat per-channel (white) noise
+$\sigma_\nu=0.01$\,MJy/sr calibrated to FIRAS (the full $43\times43$
+apodization covariance enters the data fit of
+Section~\ref{sec:CMB_degeneracy}).  The forecast gives
 $\sigma(A_{\rm eff})=2.2\times10^{-11}\,{\rm m}^2$ and
 $\alpha\gtrsim 0.52$ (reproducing the data fit); the conditional value
 $\sigma(A_{\rm eff})|_{\mu,y\,\text{fixed}}=8.2\times10^{-13}\,{\rm
@@ -1341,10 +1419,14 @@ distortion sensitivities $\sigma(\mu)\approx 7.7\times10^{-9}$ and
 $2.2\times10^{-9}$) shifts the marginal threshold only to $\alpha\gtrsim 0.55$
 (Table~\ref{tab:thresholds}), barely beyond the
 PIXIE projection.  The reason is structural rather than instrumental:
-in the no-pedestal limit the foam--$T_0$ degeneracy
-($\rho^{\rm fid}_{A_{\rm eff}T_0}=0.9997$) is band-robust:
-broadening coverage from the FIRAS band to $10$\,GHz--$6$\,THz leaves it
-unchanged to four decimal places.  The
+the foam deficit $-(2\pi\nu/c)^2 B_\nu$ and the temperature derivative are
+nearly proportional across the band, so the foam--$T_0$ degeneracy is set
+by the templates, not the noise weighting.  Repeating the Fisher analysis
+with the full $43\times43$ FIRAS apodization covariance rather than the
+white-noise forecast gives $\rho_{A_{\rm eff}T_0}=0.9999$ (and a
+marginal-to-conditional inflation $\approx25$) --- the degeneracy is thus
+marginally more severe under realistic correlated noise, so the white-noise
+estimate is conservative.  The
 wider band does break the foam--$\mu$ degeneracy that an in-band
 $\mu$-shaped pedestal would exploit (from
 $\rho_{A_{\rm eff}\mu}=0.98$ at FIRAS to $0.66$ over
@@ -1364,6 +1446,10 @@ systematic-error budget from spectroscopy), spectral-distortion
 photometry yields $\alpha\gtrsim0.52$ from FIRAS and at most
 $\alpha\gtrsim0.55$ next-generation, the bound limited by the
 foam--$T_0$ degeneracy rather than by sensitivity or bandwidth.
+In short, no absolute-photometry CMB spectrometer reaches the holographic
+$\alpha=2/3$: the limitation is the foam--$T_0$ degeneracy, not
+instrumental sensitivity, so the high-frequency GRB channel is essential
+to test holographic foam.
 
 % ==============================================================
 % CLAUDE:END-PROTECT
@@ -1387,9 +1473,9 @@ because the foam deficit is nearly degenerate with a temperature shift.
 All three are dominated by this kinematic lever arm rather than by the
 data: improved photon counts, line-width precision, or FIRAS-class
 sensitivity would shift $\alpha$ by only $\sim0.01$--$0.02$.
-The pedestal-independent line-width and CMB bounds do not exclude the
-holographic value $\alpha=2/3$; however, the TeV survival bound
-($\alpha_{\rm TeV}\gtrsim0.74$, conditional on near-Planck-refresh foam,
+The pedestal-independent line-width and CMB bounds do not reach the
+holographic value $\alpha=2/3$; only the conditional TeV survival bound
+($\alpha_{\rm TeV}\gtrsim0.74$, for near-Planck-refresh foam,
 $\tau_{\rm foam}\lesssim4\times10^{-28}$\,s; Assumption~(ii)) would exclude it.
 Probing the same exponent through
 different sources, observables, and systematics, the two channels form an
@@ -1439,33 +1525,16 @@ The frequency $\nu_\star \simeq 37\,\mathrm{MeV}$ at which the foam-induced
 spectral break is predicted to be most constraining falls squarely within
 this gap, so neither instrument provides fully resolved coverage across
 the critical transition.
-Closing the MeV gap is a recognized community priority, addressed by
-next-generation satellite concepts that combine Compton-scattering and
-pair-conversion detection techniques to achieve continuous sensitivity from
-$\sim100\,\mathrm{keV}$ to beyond $1\,\mathrm{GeV}$.
-The All-sky Medium Energy Gamma-ray Observatory
-(AMEGO~\cite{McEnery2019}) and its MIDEX-scale variant
-AMEGO-X~\cite{Caputo2022} are designed to cover $100\,\mathrm{keV}$ to
-$1\,\mathrm{GeV}$ with order-of-magnitude improvements over both COMPTEL
-and Fermi-LAT in the MeV decade; the ESA-proposed M-class concept
-e-ASTROGAM~\cite{DeAngelis2017} targets a comparable bandpass.
-The near-term NASA SMEX mission COSI (scheduled launch $\sim$2027)
-will extend broadband sensitivity to $0.2$--$5\,\mathrm{MeV}$, providing
-a valuable pathfinder, though its upper energy bound falls well short of
-the $37\,\mathrm{MeV}$ regime and the gap therefore remains open.
-Realization of any of the broader-bandpass concepts would, for the first
-time, permit fully resolved spectral measurements of GRB prompt emission
-across the $37\,\mathrm{MeV}$ transition without the instrumental
-discontinuity that limits the present work; reducing the per-epoch
-line-width uncertainties to $\delta r\lesssim 0.01$ would tighten the
-bound to $\alpha\gtrsim 0.64$, removing a major systematic and
-enabling substantially tighter tests of spacetime-foam models.
-Independently, a joint fit of the line centroid and width across epochs
---- the present analysis constrains the width alone --- would exploit
-the energy-dependent line-center shift
-$\nu_0^{\rm eff}=\nu_0\,\tau_G^2/(\tau_G^2+\sigma_\Delta^2)$
-(Eq.~\eqref{eq:Sobs_gauss}) that the same foam jitter induces, adding a
-second handle on $\alpha$ and further tightening the bound.
+Closing the MeV gap is a recognized community priority: next-generation
+concepts (AMEGO/AMEGO-X~\cite{McEnery2019,Caputo2022},
+e-ASTROGAM~\cite{DeAngelis2017}, and the near-term COSI pathfinder) target
+continuous sensitivity from $\sim100\,\mathrm{keV}$ to $\gtrsim1\,\mathrm{GeV}$,
+which would for the first time resolve the GRB spectrum across the
+$37\,\mathrm{MeV}$ transition. Reducing the per-epoch line-width
+uncertainties to $\delta r\lesssim 0.01$ would tighten the bound to
+$\alpha\gtrsim 0.64$, and a joint centroid-plus-width fit (the present
+analysis uses the width alone; Eq.~\eqref{eq:Sobs_gauss}) would add a second
+handle on $\alpha$.
 
 A complementary implication runs in the opposite direction.  The
 flagship goal of next-generation CMB spectrometers --- PIXIE,
@@ -1496,30 +1565,17 @@ it is calibrated phenomenologically rather than derived from a
 fluctuation-dissipation or holographic-entropy argument at the Planck-cell
 level.
 
-The multi-epoch $r_{\rm obs}$ dataset constrains any propagation
-effect that broadens an emission line in proportion to a power of
-$E$, not only the Ng--Perlman spacetime-foam template considered
-here.  The most natural extension is to stochastic Lorentz-invariance
-violation~\cite{AmelinoCamelia2013}, in which the photon group
-velocity carries a Planck-suppressed random coefficient
-$v(E)=c\bigl[1-\xi\,(E/E_{\rm QG,n})^n\bigr]$, with $\xi$ of order
-unity drawn independently for each Planck-scale traversal.  Photons
-in the same line then propagate at slightly different speeds,
-broadening the observed width as
-$\sigma_{\rm LIV}(E)/E\propto E^n$ on top of any intrinsic
-contribution.  Unlike the deterministic LIV signal probed by photon
-time-of-flight studies~\cite{Fermi2009} --- where GRB\,221009A LHAASO TeV photons
-already constrain $E_{\rm QG,1}\gtrsim$ a
-few~$\times\,E_{\rm Pl}$~\cite{LHAASOTeV2023} --- stochastic LIV
-produces a width signal that survives light-curve
-cross-correlation, and a multi-epoch $r_{\rm obs}$ measurement is
-therefore one of the few clean probes available.  Fitting
-Eq.~\eqref{eq:robs_model} recovers the foam constraint as the
-$n=1$ case; refitting the same seven-epoch dataset under
-$r_{\rm LIV}\propto(E/E_0)^n$ would yield bounds on
-$\langle\xi^2\rangle^{1/2}/E_{\rm QG,n}^n$ at each order, with the
-$n=2$ (quadratic) case particularly valuable because the
-deterministic time-of-flight tests are weakest there at $z=0.151$.
+Finally, the multi-epoch $r_{\rm obs}$ dataset constrains any propagation
+effect that broadens a line as a power of $E$, not only the Ng--Perlman
+template. The natural extension is to stochastic Lorentz-invariance
+violation~\cite{AmelinoCamelia2013}, where a Planck-suppressed random
+group-velocity coefficient broadens the width as
+$\sigma_{\rm LIV}(E)/E\propto E^n$; unlike deterministic time-of-flight
+tests~\cite{Fermi2009,LHAASOTeV2023} this width signal survives light-curve
+cross-correlation. Fitting Eq.~\eqref{eq:robs_model} recovers the foam
+($n=1$) case, and refitting under $r_{\rm LIV}\propto(E/E_0)^n$ would bound
+each order --- the $n=2$ case being especially valuable, where the
+time-of-flight tests are weakest at $z=0.151$.
 
 \begin{acknowledgments}
 This work was supported in part by the Director, Office of Science, Office of

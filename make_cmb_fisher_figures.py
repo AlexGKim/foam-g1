@@ -196,6 +196,66 @@ ax1.legend(handles=[firas_h, pixie_h, spixie_h, voy_h, blue_h, red_h],
 ax1.grid(True, which='major', alpha=0.20)
 ax1.grid(True, which='minor', alpha=0.07)
 
+# ── Inset: zoom on the marginal-SNR crossings of the 1.645 threshold ──────────
+#   The main panel spans ~16 decades, compressing the physically interesting
+#   region near SNR=1.645 and alpha~0.50-0.56.  This inset re-plots the SAME
+#   curves over alpha in [0.50, 0.56] with a modest log y-range (0.1-100) so the
+#   crossings with the detection threshold are visible.
+axin = ax1.inset_axes([0.52, 0.30, 0.44, 0.40])  # right-center, over empty region
+a_lo, a_hi = 0.50, 0.56
+mask = (alpha >= a_lo) & (alpha <= a_hi)
+ains = alpha[mask]
+for snr, col, lw, ls in [
+        (snr_FIRAS_marg,  'C0', 2.0, '-'),
+        (snr_PIXIE_marg,  'C0', 2.0, '--'),
+        (snr_SPIXIE_marg, 'C0', 1.8, '-.'),
+        (snr_VOY_marg,    'C0', 1.8, ':'),
+        (snr_FIRAS_cond,  'C3', 2.0, '-'),
+        (snr_PIXIE_cond,  'C3', 2.0, '--'),
+        (snr_SPIXIE_cond, 'C3', 1.8, '-.'),
+        (snr_VOY_cond,    'C3', 1.8, ':'),
+]:
+    axin.semilogy(ains, snr[mask], color=col, lw=lw, ls=ls)
+axin.axhline(1.645, color='k', lw=0.8, ls=':', alpha=0.7)
+axin.set_xlim(a_lo, a_hi)
+axin.set_ylim(0.1, 100)
+axin.set_xticks([0.50, 0.52, 0.54, 0.56])
+axin.tick_params(labelsize=7)
+axin.text(a_hi - 0.001, 2.1, r'SNR$=1.645$', fontsize=6.5, color='k', alpha=0.85,
+          ha='right')
+axin.set_title(r'zoom: $\alpha\in[0.50,0.56]$', fontsize=7.5, pad=2)
+axin.grid(True, which='major', alpha=0.20)
+# Mark the zoomed alpha-band on the main panel (the y-range is a thin sliver of
+# the 16-decade main axis, so suppress the box and keep only the connectors).
+ax1.indicate_inset_zoom(axin, edgecolor='0.5', alpha=0.45)
+
+# ── Report threshold crossings of the marginal SNR for each instrument ────────
+def _cross_alpha(snr, thresh=1.645):
+    """Alpha where the (monotonically falling) SNR curve drops below thresh.
+
+    SNR decreases with alpha, so detectability (SNR>=thresh) holds for
+    alpha <= alpha_cross.  Returns the interpolated crossing, or None if the
+    curve never reaches the threshold within the grid.
+    """
+    below = snr < thresh
+    if not below.any():
+        return None                      # detectable across the whole grid
+    if below.all():
+        return alpha[0]                  # never detectable in range
+    i = np.argmax(below)                 # first index that has dropped below
+    if i == 0:
+        return alpha[0]
+    a0, a1 = alpha[i-1], alpha[i]
+    s0, s1 = snr[i-1], snr[i]
+    return a0 + (thresh - s0) * (a1 - a0) / (s1 - s0)
+
+print('Marginal SNR=1.645 crossings (alpha):')
+for name, snr in [('FIRAS', snr_FIRAS_marg), ('PIXIE', snr_PIXIE_marg),
+                  ('SuperPIXIE', snr_SPIXIE_marg), ('Voyage', snr_VOY_marg)]:
+    ac = _cross_alpha(snr)
+    print(f'  {name:<11}: alpha = {ac:.4f}' if ac is not None
+          else f'  {name:<11}: no crossing in range')
+
 plt.tight_layout()
 fig1.savefig('cmb_snr_alpha.pdf', bbox_inches='tight')
 fig1.savefig('cmb_snr_alpha.png', dpi=160, bbox_inches='tight')
