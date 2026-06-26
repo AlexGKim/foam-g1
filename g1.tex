@@ -37,7 +37,8 @@ imaging-channel constraints. In the
 dynamical-foam limit, where the foam decorrelates within the light's
 coherence time,
 the spectrum splits into a coherent line core suppressed
-by $e^{-\sigma_\phi^2}$ and an incoherent pedestal, yielding a spectral
+by $e^{-\sigma_\phi^2}$, with $\sigma_\phi^2$ the variance of the foam-induced
+phase jitter, and an incoherent pedestal, yielding a spectral
 shape-distortion bound on the Ng--Perlman foam exponent $\alpha$.
 Applied to the MeV emission lines of GRB\,221009A we obtain
 $\alpha \gtrsim 0.63$, a weak, lever-arm-dominated floor.
@@ -1467,14 +1468,14 @@ The pedestal-independent line-width and CMB bounds do not reach the
 holographic value $\alpha=2/3$; only the conditional TeV survival bound
 ($\alpha_{\rm TeV}\gtrsim0.74$, for near-Planck-refresh foam,
 $\tau_{\rm foam}\lesssim4\times10^{-28}$\,s; Assumption~(ii)) would exclude it.
-Probing the same exponent through
-different sources, observables, and systematics, the two channels form an
+Because the two channels probe the same exponent through
+different sources, observables, and systematics, they form an
 independent cross-check rather than a joint bracket.  They are separated
-by more than ten orders of magnitude in frequency (CMB photons near
-$10^{11}$\,Hz versus the GRB's MeV--TeV emission at
-$10^{22}$--$10^{27}$\,Hz), and since the foam phase variance grows as
-$\sigma_\phi^2\propto\nu^2$, this lever arm makes the high-frequency GRB
-channel intrinsically more sensitive, hence the more constraining.  This
+by more than ten orders of magnitude in frequency ($\sim10^{11}$\,Hz for
+the CMB versus $10^{22}$--$10^{27}$\,Hz for the GRB), and since the foam
+phase variance grows as $\sigma_\phi^2\propto\nu^2$, this $\nu^2$ scaling
+makes the high-frequency GRB channel intrinsically more sensitive, hence
+the more constraining.  This
 sensitivity advantage is partly offset by a firmer baseline on the CMB
 side: its intrinsic spectrum is a near-perfect blackbody, whereas the GRB
 bound depends on a less certain model of the source's intrinsic emission.
@@ -1487,46 +1488,39 @@ fluctuations are instead slow ($\tau_{\rm foam}\gg\tau_c$), the
 accumulated phase is essentially frozen during each coherence time and
 the foam acts as a deterministic, frequency-independent phase screen
 --- no spectral broadening or peak reduction occurs within a single
-observation, and the shape-distortion bounds do not apply.  The CMB
-constraint (Section~\ref{sec:CMB}) is similarly derived in the
-dynamical limit (Section~\ref{sec:CMB_derivation} works in
-$C_\alpha\to 0$): in the opposite quasi-static limit the per-mode
-foam suppression $\mathcal{F}_{\rm foam}(\tau)\to 1$
-(Eq.~\eqref{eq:Ffoam}) and the CMB monopole is unmodified, so the
-shape-distortion bounds do not apply in either channel.  A separate
+observation.  The CMB constraint (Section~\ref{sec:CMB}) is derived in
+the same dynamical limit ($C_\alpha\to 0$;
+Section~\ref{sec:CMB_derivation}): in the quasi-static limit the
+per-mode foam suppression $\mathcal{F}_{\rm foam}(\tau)\to 1$
+(Eq.~\eqref{eq:Ffoam}), leaving the monopole unmodified.  In both
+channels the quasi-static foam thus produces no shape distortion.  A separate
 escape operates even for nominally dynamical foam: long-range temporal
 correlations --- the temporal analogue of the transverse spatial
 correlations of Ref.~\cite{LeeZurekChen2024} (Section~\ref{sec:Calpha_origin})
 --- would hold $C_\alpha(\tau)\approx1$ across observational lags
 regardless of photon energy, again nulling the shape-distortion signal.
 
-The pedestal-independent dynamical bound $\alpha\gtrsim 0.63$
-(Eq.~\eqref{eq:alpha_grb_dyn}) --- a weak, lever-arm-dominated floor ---
-does not exclude the holographic value
-$\alpha=2/3\approx 0.667$, though the TeV bound
-(Eq.~\eqref{eq:alpha_grb_tev}, conditional on Assumption~(ii))
-would.  A principal instrumental limitation of the
-present analysis is the MeV sensitivity gap: the spectral region
-between the upper edge of the Fermi-GBM BGO detector response
-($\lesssim40\,\mathrm{MeV}$, where the effective area falls steeply)
-and the regime in which Fermi-LAT achieves robust detection efficiency
-($\gtrsim100\,\mathrm{MeV}$).
-The frequency $\nu_\star \simeq 37\,\mathrm{MeV}$ at which the foam-induced
-spectral break is predicted to be most constraining falls squarely within
-this gap, so neither instrument provides fully resolved coverage across
-the critical transition.
-Closing the MeV gap is a recognized community priority: next-generation
+The dynamical bound $\alpha\gtrsim 0.63$ (Eq.~\eqref{eq:alpha_grb_dyn})
+is a weak, lever-arm-dominated floor; tightening it is limited primarily
+by an instrumental gap.  The spectral region between the upper edge of
+the Fermi-GBM/BGO response ($\lesssim40\,\mathrm{MeV}$) and the onset of
+efficient Fermi-LAT detection ($\gtrsim100\,\mathrm{MeV}$) is poorly
+covered, and the most constraining foam-induced break, at
+$\nu_\star\simeq37\,\mathrm{MeV}$, falls squarely within it, so neither
+instrument resolves the critical transition.
+Closing this gap is a recognized community priority: next-generation
 concepts (AMEGO/AMEGO-X~\cite{McEnery2019,Caputo2022},
 e-ASTROGAM~\cite{DeAngelis2017}, and the near-term COSI pathfinder) target
 continuous sensitivity from $\sim100\,\mathrm{keV}$ to $\gtrsim1\,\mathrm{GeV}$,
-which would for the first time resolve the GRB spectrum across the
-$37\,\mathrm{MeV}$ transition. Reducing the per-epoch line-width
+resolving the GRB spectrum across the transition for the first time.
+Reducing the per-epoch line-width
 uncertainties to $\delta r\lesssim 0.01$ would tighten the bound to
 $\alpha\gtrsim 0.64$, and a joint centroid-plus-width fit (the present
 analysis uses the width alone; Eq.~\eqref{eq:Sobs_gauss}) would add a second
 handle on $\alpha$.
 
-A complementary implication runs in the opposite direction.  The
+A complementary implication runs in the opposite direction, from a
+future CMB measurement back to foam.  The
 flagship goal of next-generation CMB spectrometers --- PIXIE,
 SuperPIXIE, Voyage~2050 --- is a first detection of the chemical
 potential $\mu$, whose guaranteed $\Lambda$CDM value
@@ -1537,23 +1531,19 @@ accessible band (Section~\ref{sec:CMB_degeneracy}); the two cannot be
 separated from the monopole spectrum alone.  A measured $\mu$ that
 departs from the $\Lambda$CDM prediction would be a landmark
 signal whatever its origin, and spacetime foam is one
-propagation-induced alternative to early-universe energy injection ---
-distinguishable only with external information.  The GRB lower bound
+propagation-induced alternative to early-universe energy injection.
+The GRB lower bound
 $\alpha\gtrsim0.63$ already limits any foam contribution to the CMB
-monopole to far below the $\Lambda$CDM $\mu$, so foam does not
-contaminate the guaranteed-$\mu$ target; but this same
-spectroscopy-plus-GRB complementarity is what would be needed to
-attribute a larger, anomalous $\mu$.  In this sense the CMB
-$\mu$-distortion measurement and the foam search are two readings of a
-single spectral degeneracy.  The decisive limitation here is
-theoretical rather than instrumental: the pedestal shape --- and hence
-how completely the foam deficit can be separated from a temperature
-shift or from $\mu$ --- is fixed by the foam temporal autocorrelation
-$C_\alpha(\tau)$, which still awaits a first-principles derivation from
-a quantum-gravity model. The amplitude $A$ itself is in the same position:
-it is calibrated phenomenologically rather than derived from a
-fluctuation-dissipation or holographic-entropy argument at the Planck-cell
-level.
+monopole to far below the $\Lambda$CDM $\mu$, so foam cannot
+contaminate the guaranteed-$\mu$ target; conversely, were an anomalous
+$\mu$ measured, the same GRB bound on $\alpha$ would be the external
+input needed to test whether foam could account for it.  The decisive
+limitation here is
+theoretical rather than instrumental: both the pedestal shape --- which
+sets how completely the foam deficit separates from $\mu$, and is fixed
+by the foam temporal autocorrelation $C_\alpha(\tau)$ --- and the
+amplitude $A$ are calibrated phenomenologically, still awaiting a
+first-principles quantum-gravity derivation.
 
 Finally, the multi-epoch $r_{\rm obs}$ dataset constrains any propagation
 effect that broadens a line as a power of $E$, not only the Ng--Perlman
@@ -1562,10 +1552,11 @@ violation~\cite{AmelinoCamelia2013}, where a Planck-suppressed random
 group-velocity coefficient broadens the width as
 $\sigma_{\rm LIV}(E)/E\propto E^n$; unlike deterministic time-of-flight
 tests~\cite{Fermi2009,LHAASOTeV2023} this width signal survives light-curve
-cross-correlation. Fitting Eq.~\eqref{eq:robs_model} recovers the foam
-($n=1$) case, and refitting under $r_{\rm LIV}\propto(E/E_0)^n$ would bound
-each order --- the $n=2$ case being especially valuable, where the
-time-of-flight tests are weakest at $z=0.151$.
+cross-correlation. Eq.~\eqref{eq:robs_model} corresponds to the foam
+case ($n=1$); refitting under $r_{\rm LIV}\propto(E/E_0)^n$ would bound
+each order.  The $n=2$ case is especially valuable: deterministic
+time-of-flight tests lose their lever arm at the low redshift $z=0.151$
+of GRB\,221009A, so the width signal is the stronger probe there.
 
 \appendix
 
