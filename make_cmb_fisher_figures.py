@@ -159,25 +159,27 @@ ax1.semilogy(alpha, snr_VOY_cond,    color='C3', lw=1.8, ls=':',
 
 # --- Detection threshold ---
 ax1.axhline(1.645, color='k', lw=0.8, ls=':', alpha=0.7)   # one-sided 95% CL
-ax1.text(0.690, 2.2, r'SNR $= 1.645$ ($95\%$ CL)', fontsize=8.5, color='k', alpha=0.8)
+# Horizontal-line label: compact, in the empty band just past the last crossing
+# and to the left of the GRB line (95% CL is given in the caption).
+ax1.text(0.589, 2.3, r'SNR $= 1.645$', fontsize=8.5, color='k', alpha=0.8, ha='left')
 
 # --- Spectroscopic lower bounds ---
-ylo, yhi = 1e-6, 3e10
-for xv, col, lbl in [
-        (alpha_GRB,       '#888888', r'GRB 221009A\newline$(\alpha\gtrsim0.63)$'),
-        (alpha_holo,      '#aaaaaa', r'$\alpha=2/3$'),
+for xv, col in [
+        (alpha_GRB,       '#888888'),
+        (alpha_holo,      '#aaaaaa'),
 ]:
     ax1.axvline(xv, color=col, lw=0.8, ls='--', alpha=0.6)
 
-# Label the two vertical lines (placed at mid-height to avoid clipping)
-ax1.text(alpha_GRB + 0.002, 3e3, r'GRB ($\alpha\!\gtrsim\!0.63$)',
-         fontsize=7.5, color='#666666', rotation=90, va='center')
-ax1.text(alpha_holo   + 0.002, 3e3,  r'$\alpha=2/3$',
-         fontsize=7.5, color='#888888', rotation=90, va='center')
+# Label the two vertical lines at mid-height, separated in x (GRB to the right of
+# its line, holographic to the left of its) and above the horizontal-line label.
+ax1.text(alpha_GRB + 0.006, 10, r'GRB ($\alpha\!\gtrsim\!0.63$)',
+         fontsize=7.5, color='#666666', rotation=90, va='center', ha='center')
+ax1.text(alpha_holo - 0.006, 10, r'holographic ($\alpha=2/3$)',
+         fontsize=7.5, color='#888888', rotation=90, va='center', ha='center')
 
 # --- Axes ---
-ax1.set_xlim(0.50, 0.70)
-ax1.set_ylim(1e-6, 3e10)
+ax1.set_xlim(0.50, 0.675)
+ax1.set_ylim(1e-2, 1e2)
 ax1.set_xlabel(r'Foam exponent $\alpha$')
 ax1.set_ylabel(r'Detection SNR  ($A_\alpha = 1$, $D_C = 13.87\,{\rm Gpc}$)')
 
@@ -190,44 +192,11 @@ blue_h   = mlines.Line2D([], [], color='C0', lw=2.0, ls='-',  label='Marginal (a
 red_h    = mlines.Line2D([], [], color='C3', lw=2.0, ls='-',  label=r'Conditional ($\mu,y$ fixed)')
 
 ax1.legend(handles=[firas_h, pixie_h, spixie_h, voy_h, blue_h, red_h],
-           loc='upper right', framealpha=0.92,
+           loc='lower right', framealpha=0.92,
            handlelength=2.6, fontsize=8.5)
 
 ax1.grid(True, which='major', alpha=0.20)
 ax1.grid(True, which='minor', alpha=0.07)
-
-# ── Inset: zoom on the marginal-SNR crossings of the 1.645 threshold ──────────
-#   The main panel spans ~16 decades, compressing the physically interesting
-#   region near SNR=1.645 and alpha~0.50-0.56.  This inset re-plots the SAME
-#   curves over alpha in [0.50, 0.56] with a modest log y-range (0.1-100) so the
-#   crossings with the detection threshold are visible.
-axin = ax1.inset_axes([0.52, 0.30, 0.44, 0.40])  # right-center, over empty region
-a_lo, a_hi = 0.50, 0.56
-mask = (alpha >= a_lo) & (alpha <= a_hi)
-ains = alpha[mask]
-for snr, col, lw, ls in [
-        (snr_FIRAS_marg,  'C0', 2.0, '-'),
-        (snr_PIXIE_marg,  'C0', 2.0, '--'),
-        (snr_SPIXIE_marg, 'C0', 1.8, '-.'),
-        (snr_VOY_marg,    'C0', 1.8, ':'),
-        (snr_FIRAS_cond,  'C3', 2.0, '-'),
-        (snr_PIXIE_cond,  'C3', 2.0, '--'),
-        (snr_SPIXIE_cond, 'C3', 1.8, '-.'),
-        (snr_VOY_cond,    'C3', 1.8, ':'),
-]:
-    axin.semilogy(ains, snr[mask], color=col, lw=lw, ls=ls)
-axin.axhline(1.645, color='k', lw=0.8, ls=':', alpha=0.7)
-axin.set_xlim(a_lo, a_hi)
-axin.set_ylim(0.1, 100)
-axin.set_xticks([0.50, 0.52, 0.54, 0.56])
-axin.tick_params(labelsize=7)
-axin.text(a_hi - 0.001, 2.1, r'SNR$=1.645$', fontsize=6.5, color='k', alpha=0.85,
-          ha='right')
-axin.set_title(r'zoom: $\alpha\in[0.50,0.56]$', fontsize=7.5, pad=2)
-axin.grid(True, which='major', alpha=0.20)
-# Mark the zoomed alpha-band on the main panel (the y-range is a thin sliver of
-# the 16-decade main axis, so suppress the box and keep only the connectors).
-ax1.indicate_inset_zoom(axin, edgecolor='0.5', alpha=0.45)
 
 # ── Report threshold crossings of the marginal SNR for each instrument ────────
 def _cross_alpha(snr, thresh=1.645):
