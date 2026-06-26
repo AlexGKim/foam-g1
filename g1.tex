@@ -174,7 +174,7 @@ GRB\,221009A (Section~\ref{sec:grb221009a}) and the CMB as observed by
 COBE/FIRAS (Section~\ref{sec:CMB}).
 Section~\ref{sec:conclusions} summarizes the main results and outlines future
 observational directions.
-Appendix~\ref{app:notation} collects the principal symbols used throughout.
+Table~\ref{tab:notation} collects the principal symbols used throughout.
 
 % ==============================================================
 % CLAUDE:END-PROTECT
@@ -1558,9 +1558,30 @@ each order.  The $n=2$ case is especially valuable: deterministic
 time-of-flight tests lose their lever arm at the low redshift $z=0.151$
 of GRB\,221009A, so the width signal is the stronger probe there.
 
-\appendix
+\section*{Data availability}
+The analysis software that generates the figures and numerical results of this
+paper will be deposited in a public repository with a persistent identifier upon
+acceptance of this article, and is available from the authors upon reasonable
+request in the interim. The COBE/FIRAS monopole spectrum and low-frequency
+covariance matrix used here are public data products of the COBE/FIRAS mission,
+distributed by NASA LAMBDA and described in Refs.~\cite{Fixsen1996,Fixsen2009}. The
+GRB~221009A emission-line measurements analyzed here are taken from
+Zhang~\textit{et al.}~\cite{YQZhang2024}.
 
-\section{Notation}
+\begin{acknowledgments}
+This work was supported in part by the Director, Office of Science, Office of
+High Energy Physics of the U.S.\ Department of Energy under Contract No.\
+DE-AC02-05CH11231.
+
+The authors used Claude (Anthropic) and Valency Systems to assist with drafting and editing portions of this manuscript, with detailed reference searches, and in developing the Fisher-matrix and GRB multi-epoch analysis scripts. All content, equations, numerical results, and conclusions were reviewed and verified by the authors, who take full responsibility for the work.  AI assistance was used in accordance with \textit{Physical Review} editorial policy on computational tools.
+
+We thank Robin Kaiser for helpful discussions that helped motivate this work, and Eric Linder for insightful comments.
+\end{acknowledgments}
+
+\bibliographystyle{apsrev4-2}
+\bibliography{../references}
+
+\section*{Mathematical Notation}
 \label{app:notation}
 
 \begin{table}[h]
@@ -1585,28 +1606,5 @@ $A_{\rm eff}$ & lumped CMB foam amplitude \\
 \end{tabular}
 \end{ruledtabular}
 \end{table}
-
-\begin{acknowledgments}
-This work was supported in part by the Director, Office of Science, Office of
-High Energy Physics of the U.S.\ Department of Energy under Contract No.\
-DE-AC02-05CH11231.
-
-The authors used Claude (Anthropic) and Valency Systems to assist with drafting and editing portions of this manuscript, with detailed reference searches, and in developing the Fisher-matrix and GRB multi-epoch analysis scripts. All content, equations, numerical results, and conclusions were reviewed and verified by the authors, who take full responsibility for the work.  AI assistance was used in accordance with \textit{Physical Review} editorial policy on computational tools.
-
-We thank Robin Kaiser for helpful discussions that helped motivate this work, and Eric Linder for insightful comments.
-\end{acknowledgments}
-
-\section*{Data availability}
-The analysis software that generates the figures and numerical results of this
-paper will be deposited in a public repository with a persistent identifier upon
-acceptance of this article, and is available from the authors upon reasonable
-request in the interim. The COBE/FIRAS monopole spectrum and low-frequency
-covariance matrix used here are public data products of the COBE/FIRAS mission,
-distributed by NASA LAMBDA and described in Refs.~\cite{Fixsen1996,Fixsen2009}. The
-GRB~221009A emission-line measurements analyzed here are taken from
-Zhang~\textit{et al.}~\cite{YQZhang2024}.
-
-\bibliographystyle{apsrev4-2}
-\bibliography{../references}
 % CLAUDE:END-PROTECT
 \end{document}
