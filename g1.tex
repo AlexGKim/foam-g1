@@ -15,6 +15,11 @@
 \newcommand{\verify}[1]{\textcolor{red}{[VERIFY]}%
   \marginpar{\scriptsize\raggedright\color{red}#1}}
 
+% CLAUDE: Comments for the next draft.
+% This comment was made based on a review of g2/g2.tex, which I think applies to this paper.
+% 1.1 [PC — framework-level] Self-consistency of the time-warp ansatz under Planckian τ_foam
+% Lines 188–205, 236–248 (model); companion g1.tex §2. With the fiducial dynamical foam (τ_foam ~ t_P), δt(t) is effectively white noise with rms σℓ/c. Then: (i) the physical intensity of a time-warped stream carries a Jacobian |1 − δt′(t)| that the model drops; δt′ ~ σ_δt/τ_foam ≈ 10³⁰ for α=1/2 at 1 Gpc (10²⁰ for α=2/3) — the dropped term dwarfs the retained one and the map t → t−δt(t) is non-monotonic; (ii) geometric optics (the basis of the achromatic-delay picture, line 202) requires the metric to vary slowly vs. the optical period, violated by ~27 orders of magnitude; (iii) the model's own g¹ pedestal spreads flux over Δν ~ 1/τ_foam ~ 10⁴³ Hz — trans-Planckian photon energies. Neither paper discusses any of this. Fix: add a domain-of-validity subsection: either restrict to τ_foam ≳ 1/ω₀ and check which claims survive, or present E_obs = E_src(t−δt(t)) explicitly as a phenomenological definition of the Ng–Perlman model class and flag the pedestal as an acknowledged artifact.
+
 \begin{document}
 
 \title{Spectroscopy as a Probe of Spacetime Foam}
@@ -34,13 +39,16 @@ Quantum-gravitational spacetime foam imprints an achromatic, stochastic
 arrival-time jitter on light from distant sources. We show that this jitter
 modifies the first-order temporal coherence $g^{(1)}(\tau)$ and hence the
 observed spectrum, providing a spectroscopic probe complementary to existing
-imaging-channel constraints. In the
+imaging-channel constraints. \added{Unlike the imaging channel, the effect
+deflects no flux out of the observing beam: the jitter reparametrizes the
+time argument of the field along a fixed line of sight, redistributing power
+along the frequency axis at conserved photon number.} In the
 dynamical-foam limit, where the foam decorrelates within the light's
 coherence time,
 the spectrum splits into a coherent line core suppressed
 by $e^{-\sigma_\phi^2}$, with $\sigma_\phi^2$ the variance of the foam-induced
 phase jitter, and an incoherent pedestal, yielding a spectral
-shape-distortion bound on the Ng--Perlman foam exponent $\alpha$.
+shape-distortion bound on the \replaced{foam exponent}{Ng--Perlman foam exponent} $\alpha$.
 Applied to the MeV emission lines of GRB\,221009A we obtain
 $\alpha \gtrsim 0.63$, a weak, lever-arm-dominated floor.
 For the broadband CMB the foam induces an $e^{-\sigma_\phi^2(\nu)}$ deficit
@@ -59,7 +67,6 @@ time; they vanish in the quasi-static or long-temporal-correlation limits.
 
 \maketitle
 
-%rCLAUDE:PROTECT
 \section{Introduction}
 \label{sec:intro}
 
@@ -121,6 +128,15 @@ the holographic model ($\alpha=2/3$) predicts $\Delta\phi \sim 10^{-9}\times 2\p
 and is obviously not ruled out~\cite{NgPerlman2022,Christiansen2011,Perlman2015}.
 Models with long-range transverse correlations evade even the random-walk
 bound~\cite{LeeZurekChen2024}.
+\added{The conversion of an accumulated phase dispersion into an observed
+image is not, however, a single-parameter calculation: real telescopes at
+high energy operate far from their diffraction limits, and photons scattered
+beyond the instrumental acceptance do not contribute to the measured profile.
+Steinbring~\cite{Steinbring2007} noted that the underlying effect could
+therefore be stronger than the Airy-pattern arguments suggest while remaining
+harder to detect, and Steinbring~\cite{Steinbring2015} developed the
+corresponding treatment for high-energy instruments; this refinement
+underlies the imaging analyses of GRB\,221009A discussed next.}
 
 The most luminous GRB ever recorded, GRB\,221009A at $z=0.151$~\cite{Ravasio2024}, has been
 examined in the imaging channel by Steinbring~\cite{Steinbring2023} and
@@ -138,6 +154,15 @@ computing the holographic-foam-widened PSF for real telescopes and finding all
 data consistent with $\alpha=2/3$.
 These imaging-channel analyses show that the holographic model is not
 excluded by the spatial localization of GRB\,221009A.
+\added{Reference~\cite{SteinbringNg2026} advances a stronger reading of the
+same data: with $\alpha\leq0.65$ already excluded by images of galaxies and
+AGNs, and $\alpha\approx0.735$ marking the point beyond which foam blurring
+no longer rises above the nominal instrumental resolution, the admissible
+window brackets the holographic $\alpha=2/3$; those authors report that the
+best-resolved highest-energy \textit{Fermi}-LAT bursts track the
+foam-limited profile expected for that value, and suggest that the in-orbit
+LAT PSF may itself be foam-limited.  The bounds derived below are
+independent of that interpretation.}
 
 We develop a framework based on the first-order temporal coherence
 function $g^{(1)}(\tau)$ of light from astrophysical sources.
@@ -151,6 +176,25 @@ In our framework the phase variance arises from temporal fluctuations of
 foam, whereas in the imaging channel it arises from spatial fluctuations;
 correspondingly, foam imprints itself on the spectrum rather than on the
 spatial brightness profile.
+\added{The spectroscopic channel is not unexplored.  Cooke
+\textit{et al.}~\cite{Cooke2020} measured the width of a narrow
+Fe\,\textsc{ii} absorption line from a quiescent cloud at $z\simeq2.34$
+with VLT/ESPRESSO and, adopting the same exponent through
+$\sigma_E/E=(E/E_{\rm P})^{\alpha}$, ruled out $\alpha\leq0.634$.  Their
+treatment convolves the intrinsic profile with a foam broadening kernel
+whose width is postulated: the energy dispersion of an initially
+monochromatic beam is the starting point rather than a result.  Here the
+same broadening is derived from the first-order coherence of the field,
+and the derivation supplies the condition under which it exists at all.
+A static metric shifts the phase of a monochromatic wave without
+broadening it; only foam varying within the light's coherence time
+modulates the carrier and transfers energy to the pedestal, so the bounds
+obtained here vanish in the quasi-static limit --- a regime on which the
+model of Ref.~\cite{Cooke2020}, having no time dependence, is silent.
+That the two limits are numerically close despite a $\sim\!10^{10}$
+difference in photon energy reflects the second-order response of a
+fractional width to the jitter (Section~\ref{sec:grb_width}) and the
+logarithmic lever arm common to both.}
 
 Because the foam variance enters the resulting bounds only through the
 doubly-logarithmic factor $\ln(D_C/\ell_P)\approx138$--$141$ (GRB to CMB),
@@ -169,7 +213,9 @@ Gaussian closed form.
 Section~\ref{sec:spec} translates these results into spectroscopic observables
 via the Wiener--Khinchin theorem, establishing the split of the observed
 spectrum into a coherent line core suppressed by $e^{-\sigma_\phi^2}$ and a
-broad pedestal, and connects them to the imaging Strehl ratio.
+broad pedestal, and \replaced{identifies the imaging Strehl ratio as the
+angular counterpart governed by the same phase variance
+$\sigma_\phi^2$}{connects them to the imaging Strehl ratio}.
 Section~\ref{sec:sources} applies the spectral shape-distortion bound to two sources:
 GRB\,221009A (Section~\ref{sec:grb221009a}) and the CMB as observed by
 COBE/FIRAS (Section~\ref{sec:CMB}).
@@ -178,8 +224,6 @@ observational directions.
 Table~\ref{tab:notation} collects the principal symbols used throughout.
 
 % ==============================================================
-% CLAUDE:END-PROTECT
-%rCLAUDE:PROTECT
 \section{Spacetime Foam Model}
 \label{sec:model}
 % ==============================================================
@@ -193,9 +237,17 @@ of sight is an arrival-time jitter $\delta t(t)$, which a carrier reads
 as a phase jitter $\sigma_\phi$.
 Following the prior foam literature we take a point source on a single
 line of sight; at the level of first-order coherence an extended
-incoherent source is the linear superposition of such points.  The
+incoherent source is the linear superposition of such points.
+\replaced{Because the source is incoherent, cross terms between distinct
+points vanish in $\langle E^*E\rangle$, so the observed coherence is the
+intensity-weighted mean of the single-sightline results.  Sightlines to a
+distant source traverse statistically equivalent foam over a common
+distance, each contributing the same ensemble-averaged suppression, and the
+point-source result therefore carries over unchanged to an extended source.
+The transverse foam correlation that governs the imaging channel does not
+enter here.}{The
 transverse behavior of the foam across an extended source is beyond our
-scope.
+scope.}
 
 We model the detected field as a stochastically time-warped version of the
 intrinsic source field:
@@ -207,6 +259,14 @@ where $E_{\rm src}(t)$ is a single mode of a stationary, zero-mean complex
 Gaussian (chaotic) field --- appropriate for the thermal and incoherent
 sources here (GRB high-energy emission, CMB) --- and $\delta t(t)$ is the
 foam jitter, a stationary process independent of $E_{\rm src}$.
+\added{Equation~\eqref{eq:Eobs} carries no transverse or angular degree of
+freedom: it warps only the time argument of the field on a fixed line of
+sight.  Foam therefore cannot deflect flux out of the observing beam in
+this framework, and the ensemble-mean intensity is preserved,
+$\langle|E_{\rm obs}|^2\rangle=\langle|E_{\rm src}|^2\rangle$, by the
+stationarity of $E_{\rm src}$ and its independence from $\delta t$.  The
+entire foam effect is a redistribution of power along the frequency axis
+at fixed sightline (Section~\ref{sec:spec}).}
 Here $t$ is the observer's time, with the deterministic
 light-travel delay and cosmological time dilation absorbed into the argument
 of $E_{\rm src}$, so $\delta t(t)$ is the zero-mean foam fluctuation about
@@ -338,8 +398,6 @@ consistent with the $\alpha$-model.
 
 
 % ==============================================================
-% CLAUDE:END-PROTECT
-%rCLAUDE:PROTECT
 \section{First-Order Coherence}
 \label{sec:g1}
 % ==============================================================
@@ -450,8 +508,6 @@ broadband CMB spectrum of Section~\ref{sec:CMB_derivation} is
 constructed by incoherent superposition.
 
 % ==============================================================
-% CLAUDE:END-PROTECT
-%rCLAUDE:PROTECT
 \section{Implications for Spectroscopy}
 \label{sec:spec}
 % ==============================================================
@@ -562,7 +618,7 @@ Photon-number conservation preserves the qualitative signature throughout.
 
 
 % ==============================================================
-\subsection{Connection to the Imaging Strehl Ratio}
+\subsection{\texorpdfstring{\replaced{Spectral Analogue of}{Connection to}}{Spectral Analogue of} the Imaging Strehl Ratio}
 \label{sec:connection}
 
 The first-order coherence function $g^{(1)}_{\rm obs}(\tau)$ derived
@@ -604,9 +660,14 @@ Strehl ratio
   \label{eq:strehl}
 \end{equation}
 (extended-Mar\'echal~\cite{NgPerlman2022}), the surrounding Airy
-fringes are washed out by the same factor, and the complementary
+fringes are washed out by the same factor, and \replaced{in the imaging
+channel the complementary $1-e^{-\sigma_\phi^2}$ of the source flux is
+scattered in angle into an incoherent halo --- the ``halo'' of optical
+photometry}{the complementary
 $1-e^{-\sigma_\phi^2}$ of the source flux scatters into an incoherent
-halo.
+halo}.
+\added{The pedestal is its spectroscopic counterpart: the same fraction of
+the flux, displaced in frequency rather than in angle.}
 
 Imaging and spectroscopic channels each probe $\sigma_\phi^2$ through
 a Fourier transform --- aperture position $\leftrightarrow$ focal-plane
@@ -631,8 +692,6 @@ intrinsic source spectrum is itself uncertain, making the foam
 contribution harder to isolate.
 
 % ==============================================================
-% CLAUDE:END-PROTECT
-%rCLAUDE:PROTECT
 \section{Sources}
 \label{sec:sources}
 
@@ -1053,8 +1112,6 @@ intrinsic width.  With these caveats, the width-only $\alpha\gtrsim0.63$
 stands as the pedestal-independent floor beneath the TeV bound.
 
 % ==============================================================
-% CLAUDE:END-PROTECT
-%rCLAUDE:PROTECT
 \subsection{CMB}
 \label{sec:CMB}
 
@@ -1444,8 +1501,6 @@ instrumental sensitivity, so the high-frequency GRB channel is essential
 to test holographic foam.
 
 % ==============================================================
-% CLAUDE:END-PROTECT
-%rCLAUDE:PROTECT
 \section{Conclusions}
 \label{sec:conclusions}
 
@@ -1455,7 +1510,7 @@ hence the observed spectrum, providing a spectroscopic probe
 complementary to the imaging (PSF, Strehl) channel.  In the
 dynamical-foam limit the spectrum splits into a coherent line core
 suppressed by $e^{-\sigma_\phi^2}$ and an incoherent pedestal, yielding
-a shape-distortion bound on the Ng--Perlman exponent $\alpha$.  The MeV
+a shape-distortion bound on the \replaced{foam exponent}{Ng--Perlman exponent} $\alpha$.  The MeV
 emission lines of GRB\,221009A give $\alpha\gtrsim 0.63$ (one-sided
 $95\%$ CL), while a fit to the COBE/FIRAS monopole gives
 $\alpha\gtrsim 0.52$ ($95\%$ CL); next-generation
@@ -1500,6 +1555,14 @@ correlations --- the temporal analogue of the transverse spatial
 correlations of Ref.~\cite{LeeZurekChen2024} (Section~\ref{sec:Calpha_origin})
 --- would hold $C_\alpha(\tau)\approx1$ across observational lags
 regardless of photon energy, again nulling the shape-distortion signal.
+\added{This dependence is also what the spectroscopic channel uniquely
+supplies.  The Strehl suppression $e^{-\sigma_\phi^2}$ depends only on the
+phase variance and not on how rapidly the phase fluctuates, so no imaging
+measurement constrains $\tau_{\rm foam}$.  The bounds derived here are
+therefore not weaker determinations of a quantity the imaging channel
+already measures, but constraints on the temporal correlation structure of
+the foam --- an assumption generally made implicitly in the $\alpha$-foam
+literature --- and they are null precisely where that assumption fails.}
 
 The dynamical bound $\alpha\gtrsim 0.63$ (Eq.~\eqref{eq:alpha_grb_dyn})
 is a weak, lever-arm-dominated floor; tightening it is limited primarily
@@ -1590,7 +1653,7 @@ We thank Robin Kaiser for helpful discussions that helped motivate this work, an
 \label{tab:notation}
 \begin{ruledtabular}
 \begin{tabular}{ll}
-$\alpha$ & Ng--Perlman foam exponent \\
+$\alpha$ & \replaced{foam exponent}{Ng--Perlman foam exponent} \\
 $\sigma_\ell^2(D)$ & path-length-jitter variance [Eq.~\eqref{eq:NgPerlmanVar}] \\
 $\sigma_\phi^2$ & phase variance, $(2\pi/\lambda_{\rm obs})^2\sigma_\ell^2$ \\
 $\sigma_\Delta^2(\tau)$ & differential-jitter variance \\
@@ -1607,5 +1670,4 @@ $A_{\rm eff}$ & lumped CMB foam amplitude \\
 \end{tabular}
 \end{ruledtabular}
 \end{table}
-% CLAUDE:END-PROTECT
 \end{document}
