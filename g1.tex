@@ -40,10 +40,9 @@ arrival-time jitter on light from distant sources. We show that this jitter
 modifies the first-order temporal coherence $g^{(1)}(\tau)$ and hence the
 observed spectrum, providing a spectroscopic probe complementary to existing
 imaging-channel constraints. \added{Foam varying in both space and time
-scatters light in angle and distorts it in frequency alike; we treat the
-temporal component, and the bounds reported here are insensitive to any
-accompanying deflection, the line bound using a fractional width and the CMB
-bound the all-sky monopole.} In the
+scatters light in angle and distorts it in frequency alike; we compute the
+temporal channel, whose observables are insensitive to any accompanying
+deflection.} In the
 dynamical-foam limit, where the foam decorrelates within the light's
 coherence time,
 the spectrum splits into a coherent line core suppressed
@@ -204,6 +203,25 @@ logarithmic correction (a decade of measurement precision shifts $\alpha$
 by $\lesssim0.02$), so they are robust but cannot be appreciably tightened
 by better data of the same kind.
 
+\paragraph{Scope.}
+\added{The effect computed here is on the electric field: foam modulates the
+first-order temporal coherence $g^{(1)}(\tau)$ along a fixed line of sight,
+and the constrained observable is a spectral shape distortion rather than an
+angular width.  Foam varying in both space and time will scatter light in
+angle as well as distort it in frequency; the angular channel is the imaging
+literature reviewed above, connected to the present one only through the
+shared phase variance $\sigma_\phi^2$ (Section~\ref{sec:connection}).  The
+bounds derived below are insensitive to any accompanying deflection: the GRB
+bound uses the \emph{fractional} line width, a ratio in which flux lost from
+the beam cancels, and the foam delay is achromatic, so no chromatic bias is
+introduced across a line of $10\%$ fractional width; the CMB bound uses the
+all-sky monopole, which angular scattering redistributes among sky directions
+but cannot deplete.  The exception is the TeV survival argument of
+Section~\ref{sec:grb_tev}, which depends on absolute photon survival and is
+therefore coupled to the imaging channel.  Source extension is likewise
+immaterial, an incoherent source being the intensity-weighted superposition
+of single-sightline results (Section~\ref{sec:metric_origin}).}
+
 The remainder of the paper is organized as follows.
 Section~\ref{sec:model} introduces the spacetime foam model: the
 arrival-time jitter parameterization, the temporal autocorrelation
@@ -214,9 +232,7 @@ Gaussian closed form.
 Section~\ref{sec:spec} translates these results into spectroscopic observables
 via the Wiener--Khinchin theorem, establishing the split of the observed
 spectrum into a coherent line core suppressed by $e^{-\sigma_\phi^2}$ and a
-broad pedestal, and \replaced{identifies the imaging Strehl ratio as the
-angular counterpart governed by the same phase variance
-$\sigma_\phi^2$}{connects them to the imaging Strehl ratio}.
+broad pedestal, and connects them to the imaging Strehl ratio.
 Section~\ref{sec:sources} applies the spectral shape-distortion bound to two sources:
 GRB\,221009A (Section~\ref{sec:grb221009a}) and the CMB as observed by
 COBE/FIRAS (Section~\ref{sec:CMB}).
@@ -246,7 +262,9 @@ distant source traverse statistically equivalent foam over a common
 distance, each contributing the same ensemble-averaged suppression, and the
 point-source result therefore carries over unchanged to an extended source.
 The transverse foam correlation that governs the imaging channel does not
-enter here.}{The
+enter the observed coherence; the spatial structure of the foam does enter
+the pedestal kernel, through the factorization assumed in
+Section~\ref{sec:Calpha_origin}.}{The
 transverse behavior of the foam across an extended source is beyond our
 scope.}
 
@@ -262,21 +280,9 @@ sources here (GRB high-energy emission, CMB) --- and $\delta t(t)$ is the
 foam jitter, a stationary process independent of $E_{\rm src}$.
 \added{Equation~\eqref{eq:Eobs} carries no transverse or angular degree of
 freedom: it warps only the time argument of the field on a fixed line of
-sight.  Foam varying in both space and time will scatter light in angle as
-well as distort it in frequency; the former is the imaging channel of
-Section~\ref{sec:connection}, and Eq.~\eqref{eq:Eobs} models the latter
-alone.  The ensemble-mean intensity is preserved,
+sight, and the ensemble-mean intensity is preserved,
 $\langle|E_{\rm obs}|^2\rangle=\langle|E_{\rm src}|^2\rangle$, by the
-stationarity of $E_{\rm src}$ and its independence from $\delta t$, and the
-modelled effect is a redistribution of power along the frequency axis at
-fixed sightline (Section~\ref{sec:spec}).  The bounds derived below are
-insensitive to any accompanying deflection: the line-width bound of
-Section~\ref{sec:grb_width} uses a fractional width, in which flux lost from
-the beam cancels, and the CMB bound of Section~\ref{sec:CMB} uses the
-all-sky monopole, which angular scattering redistributes but cannot deplete.
-The exception is the TeV survival argument of Section~\ref{sec:grb_tev},
-which depends on absolute photon survival and is therefore coupled to the
-imaging channel.}
+stationarity of $E_{\rm src}$ and its independence from $\delta t$.}
 Here $t$ is the observer's time, with the deterministic
 light-travel delay and cosmological time dilation absorbed into the argument
 of $E_{\rm src}$, so $\delta t(t)$ is the zero-mean foam fluctuation about
