@@ -51,19 +51,35 @@ The model is stated in Eq.~(2) of the manuscript,
   E_{\rm obs}(t) = E_{\rm src}\!\left(t - \delta t(t)\right),
 \]
 a stochastic reparametrization of the time argument of the field along a
-single, fixed line of sight.  The equation contains no transverse or angular
-degree of freedom whatsoever; there is no variable in it capable of
-representing a deflection.  Foam in this framework therefore cannot scatter
-flux out of the observing beam, and the ensemble-mean intensity is preserved,
-$\langle|E_{\rm obs}|^2\rangle = \langle|E_{\rm src}|^2\rangle$, by the
-stationarity of $E_{\rm src}$ and its independence from $\delta t$.  What
-foam does instead is redistribute power along the \emph{frequency} axis at
-fixed sightline: via the Wiener--Khinchin theorem the observed spectrum
-splits into a coherent core suppressed by $e^{-\sigma_\phi^2}$ and a
-complementary pedestal of weight $1-e^{-\sigma_\phi^2}$.  The per-mode
-modulation has unit modulus, so photon number is conserved; what the foam
-redistributes is energy, across the pedestal.  The quantity we constrain is
-a spectral shape distortion, not an angular width.
+single, fixed line of sight.  It carries no transverse or angular degree of
+freedom because it models the temporal component of the foam alone.
+
+We should be careful not to claim more than that.  We do \emph{not} assert
+that foam produces no angular scattering: foam varying in both space and
+time will scatter light in angle and distort it in frequency alike, and the
+former is precisely the imaging channel the Referee describes.  What this
+paper computes is the latter.  Via the Wiener--Khinchin theorem the observed
+spectrum splits into a coherent core suppressed by $e^{-\sigma_\phi^2}$ and
+a complementary pedestal of weight $1-e^{-\sigma_\phi^2}$, at conserved
+integrated flux --- the modulation has unit modulus, so
+$|E_{\rm obs}(t)|^2=|E_{\rm src}(t)|^2$ pointwise.  The quantity we
+constrain is a spectral shape distortion, not an angular width.
+
+The decisive point, and the reason the Referee's criticism does not reach
+our bounds, is that our observables are insensitive to angular scattering
+whether or not it occurs.  The GRB bound rests on the \emph{fractional} line
+width $r_{\rm obs}=\sigma_{\rm obs}/\nu_0^{\rm eff}$, a ratio of spectral
+quantities in which flux lost from the beam cancels; and because the foam
+delay is achromatic any accompanying deflection is achromatic too, so no
+chromatic bias is introduced across a line of $10\%$ fractional width.  The
+CMB bound rests on the all-sky monopole, which angular scattering
+redistributes among sky directions but cannot deplete.  Granting the
+Referee's scattering picture in full therefore leaves both bounds unchanged.
+
+One result is an exception and we state it plainly: the TeV survival
+argument of Sec.~V\,A\,2 depends on absolute photon survival, and is
+therefore coupled to the imaging channel in exactly the way the Referee
+describes.  The revised manuscript says so.
 
 A third consequence, which we have now made explicit in Sec.~II\,A, is that
 this conclusion is unaffected by the extendedness of the source.  For a
@@ -100,8 +116,10 @@ observable at all.
 
 The Referee's criticism that our treatment does not address ``how real
 telescopes actually sense photons'' is therefore, we believe, directed at a
-mechanism the paper does not employ; and where the criticism has a spectral
-counterpart, the manuscript already addresses it.
+channel this paper does not compute; where the criticism has a spectral
+counterpart, the manuscript already addresses it; and where it concerns
+angular scattering, the bounds are insensitive to it for the reasons given
+above.
 
 That said, we take the misreading itself as substantive evidence of a
 presentational failure on our part.  The statements above were present in the
@@ -115,10 +133,28 @@ Sec.~IV\,B.  A reader is given the angular picture repeatedly and the
 correction once.  We have addressed this as follows:
 
 \begin{itemize}
-\item Added an explicit statement of the point immediately following Eq.~(2),
-where the model is defined: the equation carries no angular degree of
-freedom, the ensemble-mean intensity is preserved, and the entire effect is a
-redistribution of power in frequency at fixed sightline.
+\item Added an explicit statement of scope immediately following Eq.~(2),
+where the model is defined: foam varying in space and time produces angular
+scattering and spectral distortion alike, Eq.~(2) models the latter, and the
+line-width and CMB bounds are insensitive to the former --- with the TeV
+survival argument named as the exception.
+
+\item Grounded Eq.~(2) in the light-cone-fluctuation literature.  Ford
+[Phys.\ Rev.\ D \textbf{51}, 1692 (1995)] shows that metric fluctuations
+smear the light-cone singularity of the field's two-point functions, and
+Ford and Svaiter [Phys.\ Rev.\ D \textbf{54}, 2640 (1996)] show that photon
+flight times are Gaussian-distributed and that photons emitted in rapid
+succession have correlated flight times, deriving the correlation function.
+Equation~(2) is the field-level encapsulation of those two results; we now
+say so rather than presenting the model as a bare postulate.
+
+\item Added the dissenting view of Chen \textit{et al.} [Phys.\ Rev.\ D
+\textbf{90}, 063011 (2014)], who argue that a photon samples a
+three-dimensional region rather than a ray, so that diffractive averaging
+suppresses the accumulated phase by $\sim\ell_{\rm P}/\lambda$.  That
+objection applies to the whole $\alpha$-foam programme, imaging bounds
+included, and we note that all constraints quoted --- ours and those in the
+literature --- scale with the disputed identification.
 
 \item Retitled Sec.~IV\,B from ``Connection to the Imaging Strehl Ratio'' to
 ``Spectral Analogue of the Imaging Strehl Ratio,'' and made explicit that the

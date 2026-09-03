@@ -39,10 +39,11 @@ Quantum-gravitational spacetime foam imprints an achromatic, stochastic
 arrival-time jitter on light from distant sources. We show that this jitter
 modifies the first-order temporal coherence $g^{(1)}(\tau)$ and hence the
 observed spectrum, providing a spectroscopic probe complementary to existing
-imaging-channel constraints. \added{Unlike the imaging channel, the effect
-deflects no flux out of the observing beam: the jitter reparametrizes the
-time argument of the field along a fixed line of sight, redistributing power
-along the frequency axis at conserved photon number.} In the
+imaging-channel constraints. \added{Foam varying in both space and time
+scatters light in angle and distorts it in frequency alike; we treat the
+temporal component, and the bounds reported here are insensitive to any
+accompanying deflection, the line bound using a fractional width and the CMB
+bound the all-sky monopole.} In the
 dynamical-foam limit, where the foam decorrelates within the light's
 coherence time,
 the spectrum splits into a coherent line core suppressed
@@ -261,12 +262,21 @@ sources here (GRB high-energy emission, CMB) --- and $\delta t(t)$ is the
 foam jitter, a stationary process independent of $E_{\rm src}$.
 \added{Equation~\eqref{eq:Eobs} carries no transverse or angular degree of
 freedom: it warps only the time argument of the field on a fixed line of
-sight.  Foam therefore cannot deflect flux out of the observing beam in
-this framework, and the ensemble-mean intensity is preserved,
+sight.  Foam varying in both space and time will scatter light in angle as
+well as distort it in frequency; the former is the imaging channel of
+Section~\ref{sec:connection}, and Eq.~\eqref{eq:Eobs} models the latter
+alone.  The ensemble-mean intensity is preserved,
 $\langle|E_{\rm obs}|^2\rangle=\langle|E_{\rm src}|^2\rangle$, by the
-stationarity of $E_{\rm src}$ and its independence from $\delta t$.  The
-entire foam effect is a redistribution of power along the frequency axis
-at fixed sightline (Section~\ref{sec:spec}).}
+stationarity of $E_{\rm src}$ and its independence from $\delta t$, and the
+modelled effect is a redistribution of power along the frequency axis at
+fixed sightline (Section~\ref{sec:spec}).  The bounds derived below are
+insensitive to any accompanying deflection: the line-width bound of
+Section~\ref{sec:grb_width} uses a fractional width, in which flux lost from
+the beam cancels, and the CMB bound of Section~\ref{sec:CMB} uses the
+all-sky monopole, which angular scattering redistributes but cannot deplete.
+The exception is the TeV survival argument of Section~\ref{sec:grb_tev},
+which depends on absolute photon survival and is therefore coupled to the
+imaging channel.}
 Here $t$ is the observer's time, with the deterministic
 light-travel delay and cosmological time dilation absorbed into the argument
 of $E_{\rm src}$, so $\delta t(t)$ is the zero-mean foam fluctuation about
@@ -276,6 +286,20 @@ fluctuations along the line of sight of propagation distance $D$:
   \delta t(t) = \frac{1}{c}\,\Delta\ell_{\rm tot}(t).
   \label{eq:jitter}
 \end{equation}
+\added{This form is not merely postulated.  Ford~\cite{Ford1995} showed that
+metric fluctuations from a graviton bath smear the light-cone singularity of
+the field's two-point functions, the metric-averaged retarded Green's
+function acquiring Gaussian support both inside and outside the classical
+light cone --- some photons arriving early, others late.  Ford and
+Svaiter~\cite{FordSvaiter1996} carried this to the two-time level, showing
+that flight times are Gaussian-distributed about the classical value and
+that photons emitted in rapid succession have \emph{correlated} flight
+times, for which they derive a correlation function.
+Equation~\eqref{eq:Eobs}, with a stationary Gaussian $\delta t(t)$ of
+correlation $C_\alpha(\tau)$, is the field-level encapsulation of those two
+results; the $\alpha$-foam model supplies in addition the scaling of the
+variance with propagation distance.}
+
 Equivalently, the rms jitter
 $\sigma_{\delta t}=\sigma_\ell(D)/c=\sqrt{A_\alpha}\,t^{1-\alpha}t_{\rm P}^{\alpha}$,
 with light-travel time $t=D/c$ and Planck time $t_{\rm P}=\ell_{\rm P}/c$, is
@@ -295,6 +319,18 @@ $\delta\phi=\omega_0\,\delta t$, giving a phase variance
   \label{eq:sigmaphi_cosmo}
 \end{equation}
 on which all spectroscopic bounds below rest.
+\added{This identification of distance fuzziness with an optical-path
+fluctuation has been disputed.  Chen \textit{et al.}~\cite{ChenWenMa2014}
+argue that a photon does not follow a single ray but samples a
+three-dimensional region around it, averaging over the fluctuations
+throughout that region; for uncorrelated Planck-scale cells the resulting
+diffractive suppression of the accumulated phase is of order
+$\ell_{\rm P}/\lambda$, at least $10^{-29}$ at astronomical wavelengths.
+The objection applies to the whole $\alpha$-foam programme --- the imaging
+constraints and the absorption-line bound of Ref.~\cite{Cooke2020} alike ---
+and is evaded only if the foam retains transverse correlations across the
+region the photon samples, as in Ref.~\cite{LeeZurekChen2024}.  We adopt the
+standard identification; every bound quoted here scales with it.}
 
 \subsection{Temporal Decorrelation of Spacetime Foam}
 \label{sec:Calpha_origin}
@@ -596,7 +632,7 @@ The pedestal width $\Delta\nu_{\rm ped}\sim1/\tau_{\rm foam}$ exceeds the line
 width $\sigma_\nu=1/(2\pi\tau_G)$ by $\tau_G/\tau_{\rm foam}\gg1$ (Fourier
 reciprocity: narrow in lag, broad in frequency), and its total weight
 $\int S_{\rm obs}^{\rm ped}\,d\nu=1-e^{-\sigma_\phi^2}$ complements the core's
-$e^{-\sigma_\phi^2}$, conserving line photon number.  Spread over
+$e^{-\sigma_\phi^2}$, \replaced{conserving the integrated line flux}{conserving line photon number}.  Spread over
 $\sim1/\tau_{\rm foam}$ --- for Planck-scale foam $\Delta\nu_{\rm ped}\sim10^{43}$\,Hz
 --- the pedestal's in-line contribution is suppressed by $\tau_{\rm foam}/\tau_G\ll1$,
 so the spectrum near the line peak is dominated by the coherent core.
@@ -614,7 +650,7 @@ deep into the optically thick regime, the more so as self-convolution
 broadens the pedestal.  Beyond it the deficit saturates at the floor:
 optically thick foam remains evident, but its strength requires the
 pedestal profile, the $C_\alpha$-dependent self-convolution series.
-Photon-number conservation preserves the qualitative signature throughout.
+\replaced{Flux conservation}{Photon-number conservation} preserves the qualitative signature throughout.
 
 
 % ==============================================================
@@ -896,13 +932,25 @@ energies.  That detecting the suppression requires a
 once-in-$10^4$-year transient, rather than a uniformly glowing sky, is
 itself the statement that the in-band refill is negligible.
 
-Dynamical foam exchanges energy with the photon: the time-dependent metric
+\replaced{Dynamical foam redistributes the photon's energy in frequency.  The
+modulation $e^{i\omega\delta t(t)}$ has unit modulus, so $|E_{\rm obs}(t)|^2
+= |E_{\rm src}(t)|^2$ pointwise and the integrated flux $\int S\,d\nu$ is
+conserved exactly; what is not conserved is photon number
+$\int S\,d\nu/(h\nu)$, since the displaced flux reappears in the pedestal of
+width $\sim1/\tau_{\rm foam}$.  Because $C_\alpha$ is the autocorrelation of
+a stationary process, $\mathcal{F}_{\rm foam}$ is real and even in $\tau$ and
+the mean frequency of the full spectrum is unchanged: the core redshift
+$\nu_0^{\rm eff}<\nu_0$ is compensated by blue-weighted pedestal, so it
+records a redistribution between core and pedestal rather than a net
+transfer from the metric.  Stationarity of $\delta t$ is time-translation
+invariance of the perturbation, and no net ensemble-mean energy transfer can
+follow from it.}{Dynamical foam exchanges energy with the photon: the time-dependent metric
 acts as a reservoir.  The per-mode modulation $e^{i\omega\delta t(t)}$
 conserves photon number --- $|e^{i\omega\delta t}|=1$ on every mode,
 for any jitter distribution --- but not energy, which it redistributes
 across the pedestal of width $\sim1/\tau_{\rm foam}$; the predicted net
 carrier redshift $\nu_0^{\rm eff}<\nu_0$ is the direct signature of this
-transfer.  Because number conservation and the core-plus-pedestal split
+transfer.}  \replaced{Because flux conservation and}{Because number conservation and} the core-plus-pedestal split
 follow from unit modulus alone, they survive the extreme limit
 $\tau_{\rm foam}\to\tau_P$, where the pedestal width $1/\tau_{\rm foam}$
 greatly exceeds the carrier $\omega_0$: that limit does not invalidate the
@@ -1211,8 +1259,10 @@ residual to a broad pedestal; superposing over the Planck modes
 \end{equation}
 with $\hat{R}$ the Fourier transform of the residual, carrying the full
 $C_\alpha$-dependence.  By the unitarity of the per-mode modulation
-$e^{i\omega\delta t(t)}$, the pedestal conserves photon number,
-$\int[S_{\rm obs}(\nu)-B_\nu(T_0)]\,d\nu/(h\nu)=0$.
+$e^{i\omega\delta t(t)}$, the pedestal \replaced{conserves the integrated
+flux, $\int[S_{\rm obs}(\nu)-B_\nu(T_0)]\,d\nu=0$; photon number is not
+conserved, the displaced flux emerging at $\nu\sim1/\tau_{\rm foam}$}{conserves photon number,
+$\int[S_{\rm obs}(\nu)-B_\nu(T_0)]\,d\nu/(h\nu)=0$}.
 
 To make the pedestal kernel concrete, we evaluate $\hat{R}$ for the
 minimal model $C_\alpha(\tau)=e^{-|\tau|/\tau_{\rm foam}}$ (a Markovian
