@@ -177,74 +177,214 @@ previously absent, in a single clause; the supporting argument is left to the
 Scope paragraph rather than repeated.
 \end{itemize}
 
-\heading{Response to specific points}
+\heading{Response to the report}
 
-\subheading{1.\ The status of our bound relative to existing limits}
+We reproduce the Referee's report below in full and in order, paragraph by
+paragraph, with our response to each.  Where a point is answered by the
+clarification above, we say so rather than repeating the argument.
 
-\referee{The paper \ldots does not move (although is consistent with) the
-currently-known limits of the alpha-value \ldots an alpha=0.65 was already
-ruled out by images of quasars with Hubble more than 20 years ago.}
+\subheading{1.\ General appraisal}
 
-We accept without reservation that our GRB bound, $\alpha \gtrsim 0.63$, does
-not improve on the tightest published constraints, and the manuscript
-characterizes it as ``a weak, lever-arm-dominated floor'' precisely because
-the bounds are set by kinematics rather than by data quality.  We have not
-claimed otherwise and we do not wish to.
+\referee{
+This is an interesting paper that can contribute to the phenomenology of the
+Planck-scale, in particular looking for blurring effects due to the
+fundamental uncertainty of temporal/spatial measurements; there's a long
+history of attempting to observe this in AGNs and GRBs in both time-delay
+(i.e. Lorentz invariance) and spatial blurring; the latter already modeled
+as an incremental-scattering exponent ``alpha''. The question is, of course,
+how strong this can be (i.e. a smallest-possible alpha) and agree with
+observations, and not be attributable to instrumental effects; there is
+strong physical motivation to expect a value of 2/3, as it is consistent
+with holographic quantum-gravity and well-known aspects of black-hole
+physics. The authors report on related calculations regarding line-width
+broadening expected for GRB and CMB observations, comparing these with
+already-established limits from spatial-broadening measurements - in
+particular for GRB221009A.}
 
-We would, however, respectfully suggest that the comparison of $0.63$ with
-$0.65$ is not a comparison of two measurements of the same quantity.  This is
-the same distinction as above.  The imaging channel constrains the
-\emph{spatial} decoherence of foam.  The spectroscopic channel constrains its
-\emph{temporal} decoherence, and --- as the Abstract states --- our bounds
-vanish identically in the quasi-static or long-temporal-correlation limits.
-They are conditional on foam that decorrelates within the light's coherence
-time.
+We are grateful for this summary, which we believe represents the paper
+fairly.  We note only that we have retained the framing the Referee gives
+here --- that the holographic $\alpha=2/3$ carries independent physical
+motivation --- in both the Introduction and the Conclusions.  This paragraph
+required no change.
 
-No imaging measurement, including those of Refs.~[12] and~[13], constrains
-the foam correlation time $\tau_{\rm foam}$; the angular channel is blind to
-that axis by construction, since a static foam field produces the same
-blurring as a rapidly fluctuating one.  Dynamical foam is an assumption the
-$\alpha$-foam literature has generally made without testing it.  Our result
-is therefore not a weaker determination along the existing axis, but a
-constraint in a direction the imaging channel cannot probe.  We believe this
-is the sense in which the paper contributes, and we have sharpened the
-Conclusions to say so directly rather than leaving it implicit.
+\subheading{2.\ Halo nomenclature, extended sources, and the CMB extension}
 
-\subheading{2.\ Ng--Perlman versus Ng--Steinbring; telescope optics}
+\referee{
+The authors follow an approach of considering an arrival-time jitter, and
+then use this to estimate fractions of photons lost to the mean (core) of
+the line; it can be compared to the path-length approach used elsewhere, and
+so is related to previous limits on alpha, with caveats. I don't have
+serious reservations to their calculations - given clear descriptions of
+their limitations - and trust the numbers reported, as they follow a
+reasonable and well-described logic of scattering OoM estimates, and whether
+those photons not found within the core of the instrumental PSF are retained
+in some ``pedestal''. In optical photometry, this is typically refered to as
+a ``halo.'' Mentioning this previous nomenclature adopted by others may help
+show how their work compares. The observational reason for this is that both
+AGNs and GRBs have to be viewed (depending on wavelength) as potentially
+extended sources; that should be mentioned here, although it is understood
+that this result deals with line-broadening, not spatial blurring or
+localizability; although both effects effectively scatter photons out of the
+telescope beam. Extending this analysis to CMB photons gives a weaker
+constraint, but there is still value in attempting it, as that seems
+consistent with the previous work on AGNs and GRBs.}
 
-\referee{\ldots this does not reflect the more sophisticated treatment of
-spatial blurring incorporating telescope optics, which is the later work of
-Steinbring and Ng \ldots this should properly be referred to as the
-Ng-Steinbring relation, I believe.}
+We have adopted the ``halo'' terminology at the point where we describe the
+imaging-channel counterpart (Sec.~IV\,B), with attribution to the established
+usage in optical photometry, and we have added the correspondence the
+Referee's remark implies: the halo and our spectral pedestal are the two
+images of the same complementary fraction $1-e^{-\sigma_\phi^2}$ of the flux,
+displaced in angle in the one case and in frequency in the other.
 
-We have added citations to Steinbring (2007, ApJ 655, 714) and Steinbring
-(2015, ApJ 802, 38) at the point where the telescope-optics treatment of
-spatial blurring is discussed, and we note in the text that the treatment
-incorporating instrumental response and the loss of strongly scattered
-photons is due to that work rather than to the earlier single-dispersion
-formulation.  We agree this was a genuine gap and we thank the Referee for
-identifying it.
+On extended sources, the Referee's point led us to strengthen a statement
+rather than add a caveat.  Our submitted text set the transverse behaviour of
+the foam across an extended source aside as beyond our scope; on
+reconsideration that conceded more than was necessary.  For a mutually
+incoherent source the cross terms between distinct points vanish in
+$\langle E^*E\rangle$, so the observed coherence is the intensity-weighted
+mean of the single-sightline results; sightlines to a distant source traverse
+statistically equivalent foam over a common distance, so each contributes the
+same ensemble-averaged suppression, and the point-source result carries over
+unchanged.  Section~II\,A now says so.  That AGNs and GRBs must be regarded
+as potentially extended at some wavelengths is therefore immaterial to this
+observable --- though, as the Referee rightly emphasises, it is central in
+the imaging channel.
 
-On the naming, we hope the Referee will understand our reluctance to
+We are also grateful for the Referee's view that the CMB extension is worth
+attempting despite yielding a weaker constraint.  We agree, and for the
+reason given under paragraph~8 below: it is weaker in $\alpha$, but it is not
+a weaker measurement of the same thing.
+
+\subheading{3.\ How real telescopes sense photons}
+
+\referee{
+The main problem with authors' approach is that it does not sufficiently
+address how real telescopes actually sense photons, and therefore the
+accumulated effect of any spatial or spectral dispersion due to foam; not
+merely scattering to the horizon (or out of band) any that don't fall within
+the resolution limits of their beams, as assumed here. The authors can more
+clearly state that assumption at the outset; it is dealt with correctly in
+Steinbring, 2023 [reference 12], but here is only treated as ``flat'' or
+uniform scattering outside the intrinsic instrumental PSF assuming a single,
+monochromatic strength of blurring, as far as I can tell. It does not report
+an observed averaged effect over the bandpass, as a real telescope would.
+But, that said, a healthy approach for this field is to consider different
+ways of calculating this scattering effect, and so whether those approaches
+at least give consistent results. It seems they find, in this way, that the
+GeV/TeV linewidths of GRB221009A are too broad to allow for a simple
+random-walk (alpha=0.5) but agree with alpha=0.65; so that is consistent
+with previous results, and a useful result. But that result does not
+preclude the *range* of values which [12] finds as consistent with
+observations: 0.650 $\le$ alpha $\le$ 0.735. As those results have a
+best-fit value near 2/3 (the case consistent with holographic quantum-foam)
+they are not merely a limit, and furthermore, are consistent with that model
+PSF for all observations of GRB221009A (and all other GRBs observed) from
+TeV through to X-rays, UV and through to the optical - and previous results
+with AGNs. It is an important distinction: that agreement would not be true,
+if alpha was either higher *or* lower than that range. So, those results
+are, in effect, a first *detection*, effectively dismissed here as merely
+not having sensed foam as strong as alpha of 0.65 by those authors'
+interpretation - which is incorrect.}
+
+This is the Referee's principal criticism, and it is the one addressed by the
+clarification above; we do not repeat that argument here beyond its
+conclusion.  What the paper computes is not photons scattered out of a beam
+and lost, but a spectral shape distortion along a fixed line of sight, and
+our observables are insensitive to any accompanying angular scattering.
+
+We accept the Referee's request that the assumption be stated at the outset,
+and have acted on it directly: a titled \textbf{Scope} paragraph now closes
+the Introduction, stating in one place what the paper computes and what it
+does not.
+
+Two specific characterisations we would gently correct.  First, the analysis
+does not assume ``a single, monochromatic strength of blurring''.  The phase
+variance is evaluated frequency by frequency, $\sigma_\phi^2\to
+\sigma_\phi^2(\nu)$, and the chromatic scaling $\sigma_\phi^2\propto\nu^2$ is
+the entire basis of the CMB analysis of Sec.~V\,B, which would be empty
+without it.  Second, the pedestal is not treated as ``flat'': it is the
+Fourier transform of the $C_\alpha$ residual, with a computed shape and
+normalisation, and only the fraction
+$f_{\rm band}\sim\Delta\nu\,\tau_{\rm foam}$ of the displaced flux returns to
+an observing band of width $\Delta\nu$.  That last point is structurally the
+same argument the Referee makes for photons scattered beyond the field of
+view, transposed from angle to frequency, and it is what makes the core
+deficit observable at all.
+
+On the status of Ref.~[12] as a detection, and on the range
+$0.650\le\alpha\le0.735$, we respond under paragraph~5 below, where the
+Referee develops the same point at greater length.
+
+\subheading{4.\ Two connections to the existing literature}
+
+\referee{
+That said, there seems to me two significant failings in their connection of
+this to the existing literature on the subject; possibly as it's a much
+smaller community than that studying Lorentz invariance, and less well
+cited. These problems can be easily remedied in two ways, I think:}
+
+We accept both, and are grateful for them: the omission of the
+telescope-optics treatment and of Cooke \textit{et al.} were genuine gaps in
+our connection to the literature.  We take them in turn.
+
+\subheading{5.\ Ng--Perlman versus Ng--Steinbring; telescope optics; the Fermi-LAT question}
+
+\referee{
+First is that, although they credit Ng-Perlman as the originators of the
+spatial blurring approach using exponent alpha (based on their 2022 review
+paper in Universe), this does not reflect the more sophisticated treatment
+of spatial blurring incorporating telescope optics, which is the later work
+of Steinbring and Ng (following the Steinbring, 2015, ApJ, 802, 38 approach;
+here uncited). This also corrects a flaw of not accounting for more-blurred,
+bluer photons reported in Steinbring, 2007, ApJ, 655, 714 (also uncited).
+That revised approach demands that any scattered photon, including those
+redshifted bluer ones, cannot contribute when falling outside the FoV of the
+telescope; assuming that this is full stochastic process that is the average
+of any less-scattered photons. The important effect is to allow a *larger*
+observed alpha; this resolves the issue of Ng and Perlman, which cannot be
+correct, as that gives a *single* value of angular phase dispersion (delta)
+and would result (unless alpha is larger) in all photons at TeV energies
+being scattered over the whole sky (the Fermi LAT PSF would be larger than
+its FoV): so no GRBs should be localizable. That incorrect interpretation is
+what the authors compare to in the abstract, and elsewhere. So, to be
+correct, this should properly be referred to as the Ng-Steinbring relation,
+I believe, as Ng-Perlman would have been ruled out by GRB observations.
+Acknowledgement of that, and that the Steinbring (2023) result would then be
+a first detection of foam-induced spatial blurring - implying that the
+in-orbit observed Fermi LAT PSF is, in fact, broadened by the effects of
+holographic quantum foam - seems to fairly place those results in context.
+Can the authors estimate, if incorporating the Ng-Steinbring approach to
+alpha on the Fermi LAT data, that they too find a value of alpha>0.65 is
+favoured?}
+
+\textit{Citations.}  We have added Steinbring (2007, ApJ \textbf{655}, 714)
+and Steinbring (2015, ApJ \textbf{802}, 38) at the point where the
+telescope-optics treatment of spatial blurring is discussed, immediately
+after the single-dispersion calculation, so that a reader meets the
+refinement where the naive argument is made.  We note in the text that the
+treatment incorporating instrumental response and the loss of strongly
+scattered photons is due to that work.
+
+\textit{Nomenclature.}  We hope the Referee will understand our reluctance to
 introduce a renaming of a relation in the literature within a paper that is
-not itself a contribution to the spatial-blurring channel; the question of
-attribution seems to us better settled by that community than adjudicated
-here.  We have adopted what we hope is a neutral course: we now refer simply
-to ``the foam exponent $\alpha$'' rather than attaching any author's name to
-the exponent, while retaining attribution to Ng and Perlman for the specific
-model and variance relation we adopt, and citing the Steinbring works for the
-telescope-optics refinement.  We hope this fairly reflects the history
-without our taking a position on nomenclature.
+not itself a contribution to the spatial-blurring channel; that question
+seems to us better settled by that community than adjudicated here.  We have
+taken what we hope is a neutral course: we now refer simply to ``the foam
+exponent $\alpha$'', attaching no author's name to the exponent, while
+retaining attribution to Ng and Perlman for the specific variance relation we
+adopt and citing the Steinbring works for the telescope-optics refinement.
 
-Regarding the status of that work as a detection, we have added a passage to
-the Introduction setting out the stronger reading and attributing it to its
-authors: with $\alpha\le0.65$ excluded by images of galaxies and AGNs, and
+\textit{Status as a detection.}  We have added a passage to the Introduction
+setting out the stronger reading and attributing it to its authors: with
+$\alpha\le0.65$ excluded by images of galaxies and AGNs, and
 $\alpha\approx0.735$ marking the point beyond which foam blurring no longer
 rises above the nominal instrumental resolution, the admissible window
 brackets the holographic $\alpha=2/3$; and the best-resolved highest-energy
 \textit{Fermi}-LAT bursts are reported to track the foam-limited profile
 expected for that value, suggesting that the in-orbit LAT PSF may itself be
-foam-limited.
+foam-limited.  We record this as those authors' interpretation without
+adopting it, since our bounds are obtained in a different channel and do not
+depend on it.
 
 We should note, respectfully, that we located this bracketing argument in
 Ref.~[13] rather than Ref.~[12], to which the report attributes it.
@@ -253,103 +393,122 @@ blurring \emph{is consistent with} observations of GRB\,221009A, and its
 abstract states that the effect ``can still be consistent with the
 highest-energy localization'' --- a consistency claim, which is what our
 existing text reported.  We have therefore added the stronger reading where
-we believe it belongs rather than revising our description of Ref.~[12],
-which we believe was already faithful to that paper.  We present both as
-their authors' interpretation without adopting it, since the bounds we
-derive are obtained in a different channel and do not depend on it.
+we believe it belongs, rather than revising a description of Ref.~[12] that
+we believe was already faithful to that paper.
 
-\subheading{3.\ Request for a Fermi-LAT estimate under the Ng--Steinbring approach}
+\textit{The Fermi-LAT estimate.}  We have not attempted this, and would
+prefer not to, for two reasons.  First, such an estimate is a calculation in
+the imaging channel --- it requires the foam-widened PSF convolved with the
+instrumental response --- and so lies outside the framework this paper
+develops; we would be reproducing a different method rather than applying
+ours.  Second, that calculation has already been performed by its
+originators: Steinbring \& Ng (Ref.~[13]) compute the
+holographic-foam-widened PSF for real telescopes across the full
+multiwavelength follow-up of GRB\,221009A.  We cite that result in the
+Introduction and see no value we could add by repeating it less expertly; we
+would rather direct readers to it, which we now do explicitly.
 
-\referee{Can the authors estimate, if incorporating the Ng-Steinbring
-approach to alpha on the Fermi LAT data, that they too find a value of
-alpha>0.65 is favoured?}
+\subheading{6.\ Cooke \textit{et al.} (2020)}
 
-We have not attempted this, and we would prefer not to, for two reasons.
-First, such an estimate is a calculation in the imaging channel --- it
-requires the foam-widened PSF convolved with the instrumental response --- and
-so lies outside the framework this paper develops; we would be reproducing a
-different method rather than applying ours.  Second, and more to the point,
-that calculation has already been performed by its originators: Steinbring \&
-Ng (Ref.~[13]) compute the holographic-foam-widened PSF for real telescopes
-across the full multiwavelength follow-up of GRB\,221009A.  We cite that
-result in the Introduction and see no value we could add by repeating it less
-expertly.  We would rather direct readers to it, which we now do explicitly.
-
-\subheading{4.\ Cooke et al.\ (2020)}
-
-\referee{\ldots linewidth-jitter blurring by foam has already been looked for
-in the optical by Cooke et al., 2020, MNRAS, 494, 4 \ldots there should be
-some discussion of how this current work compares.}
+\referee{
+Second is that the other part of the history of this field missing from
+their introduction is, of course, that linewidth-jitter blurring by foam has
+already been looked for in the optical by Cooke et al., 2020, MNRAS, 494, 4
+(available at: https://doi.org/10.1093/mnras/staa440) using a similar
+calcuation. My view is that there should be some discussion of how this
+current work compares to that, and it should be cited here.}
 
 We are grateful for this reference, which we had missed and which is the
 closest antecedent to the present work; its absence was the more serious of
-the two gaps the Referee identifies.  We have added a citation and a
-comparison to the Introduction.
+the two gaps.  We have added a citation and a comparison to the Introduction.
 
-The overlap is closer than the Referee's brief mention suggests, and we
-state it plainly.  Cooke \textit{et al.} adopt the same exponent, through
-$\sigma_E/E=(E/E_{\rm P})^{\alpha}$ with $\sigma_\ell/\ell =
-(\ell_{\rm P}/\ell)^{\alpha}$, and their observable is also a line width;
-their bound, $\alpha>0.634$ from an Fe\,\textsc{ii} absorption line at
-$z\simeq2.34$, is in fact marginally stronger than the $\alpha\gtrsim0.63$
-we obtain from GRB\,221009A.  We say so in the text.
+The overlap is closer than the Referee's brief mention suggests, and we state
+it plainly.  Cooke \textit{et al.} adopt the same exponent, through
+$\sigma_E/E=(E/E_{\rm P})^{\alpha}$ with
+$\sigma_\ell/\ell=(\ell_{\rm P}/\ell)^{\alpha}$, and their observable is also
+a line width; their bound, $\alpha>0.634$ from an Fe\,\textsc{ii} absorption
+line at $z\simeq2.34$, is in fact marginally stronger than the
+$\alpha\gtrsim0.63$ we obtain from GRB\,221009A.  We say so in the text.
 
 What differs is what is derived and what is assumed.  Their treatment
 convolves the intrinsic profile with a foam broadening kernel whose width is
 postulated: that an initially monochromatic beam disperses in energy is the
 starting point of the calculation, and those authors are explicit that the
 heuristic ``has not yet been demonstrated by a model of spacetime
-quantization.''  In the present framework the same broadening is derived
-from the first-order coherence of the field, and the derivation supplies the
+quantization''.  In the present framework the same broadening is derived from
+the first-order coherence of the field, and the derivation supplies the
 condition under which it exists at all.  A static metric shifts the phase of
 a monochromatic wave without broadening it; only foam varying within the
 light's coherence time modulates the carrier and transfers energy to the
 pedestal.  Our bounds accordingly vanish in the quasi-static limit --- a
 regime on which their model, having no time dependence anywhere (its
-accumulation is over spatial steps $N=L/\lambda$), is silent.
-This is the same temporal axis that separates our constraint from the
-imaging results, and it is the reason we do not regard the numerical
-proximity of the two bounds as a duplication.
+accumulation is over spatial steps $N=L/\lambda$), is silent.  This is the
+same temporal axis that separates our constraint from the imaging results,
+and it is why we do not regard the numerical proximity of the two bounds as a
+duplication.
 
 That proximity has, we think, a structural explanation worth stating: an MeV
 probe should dominate an optical one, since $\sigma_\phi\propto\nu$, and the
 reason it does not is that a fractional width responds to the jitter only at
 second order, which together with the logarithmic lever arm leaves a
-$\sim\!10^{10}$ difference in photon energy worth little more than $0.004$
-in $\alpha$.
+$\sim\!10^{10}$ difference in photon energy worth little more than $0.004$ in
+$\alpha$.
 
-\subheading{5.\ Halo nomenclature and extended sources}
+\subheading{7.\ Updated reference [13]}
 
-\referee{In optical photometry, this is typically refered to as a ``halo.''
-\ldots both AGNs and GRBs have to be viewed (depending on wavelength) as
-potentially extended sources; that should be mentioned here.}
+\referee{
+Also: the reference to [13] E. Steinbring and Y. J. Ng, arXiv e-prints
+10.48550/arXiv.2603.18277 (2026), arXiv:2603.18277, is now published. It
+should be, I think: E. Steinbring and Y. J. Ng, 2026, Proceedings of
+Science, Proceedings of the Corfu Summer Institute 2025 ``School and
+Workshops on Elementary Particle Physics and Gravity'' (CORFU2025) 205
+[2026eppg.confE.205S], depending on the bibliographic style PRD uses.}
 
-We have adopted the ``halo'' terminology where we describe the
-imaging-channel counterpart in Sec.~IV\,B, with attribution to the
-established usage in optical photometry, and have been careful to keep it
-confined to the imaging discussion for the reasons given above.  We have
-also added the correspondence the Referee's remark implies: the halo and our
-spectral pedestal are the two images of the same complementary fraction
-$1-e^{-\sigma_\phi^2}$ of the flux --- displaced in angle in the one case,
-in frequency in the other.
+We thank the Referee for the publication details, which we have verified.
+Reference~[13] is updated to the published version, E.\ Steinbring and
+Y.\ J.\ Ng, PoS \textbf{CORFU2025}, 205 (2026), rendered in the
+\textit{Physical Review D} style.
 
-On extended sources, the Referee's point led us to strengthen a statement
-rather than add a caveat.  Our submitted text set the transverse behavior of
-the foam across an extended source aside as beyond our scope; on
-reconsideration this conceded more than it needed to.  As set out in the
-principal clarification above, incoherent superposition removes precisely
-the cross terms that would carry the transverse foam correlation, and the
-point-source result carries over to an extended source unchanged.  That AGNs
-and GRBs must be regarded as potentially extended at some wavelengths is
-therefore immaterial to this observable --- though, as the Referee rightly
-emphasizes, it is central in the imaging channel.  Sec.~II\,A now says so.
+\subheading{8.\ Overall assessment}
 
-\subheading{6.\ Updated reference [13]}
+\referee{
+So overall, I think the paper can make a good contribution to this
+discussion, but does *not* move (although is consistent with) the
+currently-known limits of the alpha-value: a holographic value of 2/3 is
+still favoured; an alpha=0.65 was already ruled out by images of quasars
+with Hubble more than 20 years ago. In my view, with the recommended
+corrections, and thus indicating missing connections to extant work in the
+field, and so the already established limits to alpha (given that exponent's
+correctly-revised interpretation) the paper can be acceptable for
+publication in PRD by adding another approach to putting limits on
+foam-induced blurring.}
 
-We thank the Referee for the publication details.  Reference~[13] is updated
-to the published version, E.\ Steinbring and Y.\ J.\ Ng, \textit{Proceedings
-of Science}, Corfu Summer Institute 2025 (CORFU2025) 205 (2026), formatted per
-the \textit{Physical Review D} style.
+We accept without reservation that our GRB bound, $\alpha\gtrsim0.63$, does
+not improve on the tightest published constraints, and the manuscript
+characterises it as ``a weak, lever-arm-dominated floor'' precisely because
+the bounds are set by kinematics rather than by data quality.  We have not
+claimed otherwise and do not wish to.
+
+We would, however, respectfully suggest that the comparison of $0.63$ with
+$0.65$ is not a comparison of two measurements of the same quantity --- and
+that this is the same distinction as the one drawn at the head of this
+letter.  The imaging channel constrains the \emph{spatial} decoherence of the
+foam.  The spectroscopic channel constrains its \emph{temporal} decoherence,
+and our bounds vanish identically in the quasi-static or
+long-temporal-correlation limits: they are conditional on foam that
+decorrelates within the light's coherence time.
+
+No imaging measurement, those of Refs.~[12] and~[13] included, constrains the
+foam correlation time $\tau_{\rm foam}$.  The Strehl suppression
+$e^{-\sigma_\phi^2}$ depends only on the phase variance and not on how
+rapidly the phase fluctuates, so the angular channel is blind to that axis by
+construction.  Dynamical foam is an assumption generally made implicitly in
+the $\alpha$-foam literature.  Our result is therefore not a weaker
+determination along the existing axis, but a constraint in a direction the
+imaging channel cannot probe, and it is null precisely where that assumption
+fails.  We believe this is the sense in which the paper contributes, and we
+have sharpened the Conclusions to say so directly rather than leaving it
+implicit.
 
 \heading{Closing}
 
