@@ -287,7 +287,20 @@ foam jitter, a stationary process independent of $E_{\rm src}$.
 freedom: it warps only the time argument of the field on a fixed line of
 sight, and the ensemble-mean intensity is preserved,
 $\langle|E_{\rm obs}|^2\rangle=\langle|E_{\rm src}|^2\rangle$, by the
-stationarity of $E_{\rm src}$ and its independence from $\delta t$.}
+stationarity of $E_{\rm src}$ and its independence from $\delta t$.
+No Jacobian accompanies the time warp.  A massless field is transported
+along the ray as a scalar, its value carried unchanged, so the amplitude
+weight $|1-\dot{\delta t}|^{1/2}$ appropriate to a reparametrization of a
+flux density does not arise; that weight belongs to an invertible map, and
+$t\mapsto t-\delta t(t)$ is not one, since
+$|\dot{\delta t}|\sim\sigma_{\delta t}/\tau_{\rm foam}\gg1$ renders it
+non-monotonic.  What holds instead is exact: writing
+$\int f(t-\delta t(t))\,dt=\int f(u)\,n(u)\,du$ with
+$n(u)=\sum_i|1-\dot{\delta t}(t_i)|^{-1}$ over the roots $t_i$, one has
+$\langle n(u)\rangle=\int p_{\delta t}(t-u)\,dt=1$.  The derivative
+$\dot{\delta t}$ is not discarded but reappears on the frequency axis, as
+the instantaneous frequency $\omega_0(1-\dot{\delta t})$ whose excursions
+generate the pedestal of Section~\ref{sec:spec}.}
 Here $t$ is the observer's time, with the deterministic
 light-travel delay and cosmological time dilation absorbed into the argument
 of $E_{\rm src}$, so $\delta t(t)$ is the zero-mean foam fluctuation about
@@ -565,12 +578,21 @@ The foam-modified observed coherence function — given in general by the
 jitter-convolution integral Eq.~\eqref{eq:g1obs} with the closed form
 Eq.~\eqref{eq:g1obs_gauss} — carries direct
 spectroscopic content: for a stationary field the power spectral density
-$S(\nu)$ and $g^{(1)}(\tau)$ are Fourier-transform pairs,
+$S(\nu)$ and \replaced{the field autocorrelation
+$\langle E^*(t)E(t+\tau)\rangle$ are}{$g^{(1)}(\tau)$ are} Fourier-transform pairs,
 implying
 \begin{equation}
-  S_{\rm obs}(\nu) = \mathcal{F}\!\left\{g^{(1)}_{\rm obs}(\tau)\right\}(\nu).
+  S_{\rm obs}(\nu) = \added{\langle|E_{\rm obs}|^2\rangle\,}
+  \mathcal{F}\!\left\{g^{(1)}_{\rm obs}(\tau)\right\}(\nu).
   \label{eq:WK_obs}
 \end{equation}
+\added{The prefactor fixes the absolute normalization: $g^{(1)}$ is the
+coherence normalized to $g^{(1)}(0)=1$, so
+$\int S_{\rm obs}\,d\nu = \langle|E_{\rm obs}|^2\rangle$ is the total flux
+and the core and pedestal weights below are fractions of it.  Line profiles
+in this section are accordingly quoted per unit line flux; absolute units are
+restored in Section~\ref{sec:CMB_derivation}, where $S_{\rm src}(\nu)$ is
+identified with the specific intensity $B_\nu(T_0)$.}
 The theorem applies because astronomical emission lines have finite
 linewidth (so the Fourier transform is well defined) and because the
 foam-induced jitter is a stationary process independent of the source
@@ -1234,7 +1256,8 @@ through the band (Section~\ref{sec:CMB_degeneracy}).
 \label{sec:CMB_derivation}
 
 Given a foam model, the natural analysis is of the whole modified
-spectrum: compute $g^{(1)}_{\rm src}(\tau)$ as the Fourier transform of
+spectrum: compute $g^{(1)}_{\rm src}(\tau)$ as the \added{normalized}
+Fourier transform of
 $B_\nu(T_0)$ (Eq.~\eqref{eq:WK_obs}), apply the jitter
 convolution~\eqref{eq:g1obs}, and inverse-transform to $S_{\rm obs}(\nu)$.
 We instead separate it into a coherent core and a pedestal, because the
