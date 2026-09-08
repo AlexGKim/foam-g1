@@ -172,26 +172,38 @@ In our framework the phase variance arises from temporal fluctuations of
 foam, whereas in the imaging channel it arises from spatial fluctuations;
 correspondingly, foam imprints itself on the spectrum rather than on the
 spatial brightness profile.
-\added{The spectroscopic channel is not unexplored, and what separates the
-present work from its antecedent is the status of the broadening kernel.
-Cooke \textit{et al.}~\cite{Cooke2020} \emph{postulate} it: that an
-initially monochromatic beam disperses in energy is the starting point of
-their calculation, convolved with the intrinsic profile, and those authors
+
+\added{The spectroscopic channel has been considered previously, and what
+distinguishes our work is the provenance of the broadening kernel.
+Cooke \textit{et al.}~\cite{Cooke2020} postulate it: their calculation starts
+from an initially monochromatic beam dispersed in energy, then convolved with
+the intrinsic profile, and those authors
 note that the heuristic has not been demonstrated by a model of spacetime
-quantization.  Here the same broadening is \emph{derived}, from the
+quantization.  Here the broadening is derived, from the
 first-order coherence of a field propagating through a fluctuating metric
 --- the light-cone fluctuations of
-Refs.~\cite{Ford1995,FordSvaiter1996} --- and the derivation supplies the
-condition under which the effect exists at all.
-Their measurement, for reference, is the width of a narrow
+Refs.~\cite{Ford1995,FordSvaiter1996}.
+Not only do the kernels have different provenance, but they have
+different predictions.  What they share is that both act on the line after emission, are parametrized by
+the same exponent, and strengthen with photon energy.  They differ as follows.
+The Cooke \textit{et al.} energy dispersion is a flux-conserving convolution: the
+line broadens, and the displaced flux stays in the line.  The kernel derived
+in this article splits the line into a coherent core
+$e^{-\sigma_\phi^2}S_{\rm src}(\nu)$ carrying the source profile at reduced
+weight and a pedestal of width $\sim1/\tau_{\rm foam}$ carrying the
+complementary $1-e^{-\sigma_\phi^2}$ (Section~\ref{sec:spec}).  The in-band
+observable is therefore a flux deficit with subtle frequency dependence.  Within the core the absolute width in fact
+narrows, so broadening survives only in the fractional width and only at
+second order, $r_{\rm foam}\propto r_{\rm int}^2\,\sigma_\phi$
+(Section~\ref{sec:grb_width}).
+Our derivation hinges on the delay varying within the light's coherence
+time without which there is no effect --- the quasi-static limit, a
+regime on which the model of Ref.~\cite{Cooke2020}, having no time
+dependence, is silent.
+Their bound comes from a narrow
 Fe\,\textsc{ii} absorption line from a quiescent cloud at $z\simeq2.34$
 with VLT/ESPRESSO which, adopting the same exponent through
 $\sigma_E/E=(E/E_{\rm P})^{\alpha}$, ruled out $\alpha\leq0.634$.
-A static metric shifts the phase of a monochromatic wave without
-broadening it; only foam varying within the light's coherence time
-modulates the carrier and transfers energy to the pedestal, so the bounds
-obtained here vanish in the quasi-static limit --- a regime on which the
-model of Ref.~\cite{Cooke2020}, having no time dependence, is silent.
 That the two limits are numerically close despite a $\sim\!10^{10}$
 difference in photon energy reflects the second-order response of a
 fractional width to the jitter (Section~\ref{sec:grb_width}) and the
