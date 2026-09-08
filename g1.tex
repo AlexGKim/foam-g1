@@ -169,9 +169,27 @@ inherits a foam suppression factor
 that decreases continuously from unity toward complete fringe erasure as
 the accumulated phase variance $\sigma_\phi^2$ grows.
 In our framework the phase variance arises from temporal fluctuations of
-foam, whereas in the imaging channel it arises from spatial fluctuations;
-correspondingly, foam imprints itself on the spectrum rather than on the
-spatial brightness profile.
+foam, whereas in the imaging channel it arises from spatial
+fluctuations\replaced{.}{; correspondingly, foam imprints itself on the
+spectrum rather than on the spatial brightness profile.}
+
+\added{The effect computed here is on the electric field: foam modulates the
+first-order temporal coherence $g^{(1)}(\tau)$ along a fixed line of sight,
+and the constrained observable is a spectral shape distortion rather than an
+angular width.  Foam varying in both space and time will scatter light in
+angle as well as distort it in frequency; the angular channel is the imaging
+literature reviewed above, connected to the present one only through the
+shared phase variance $\sigma_\phi^2$ (Section~\ref{sec:connection}).  The
+bounds derived below are insensitive to any accompanying deflection: the GRB
+bound uses the \emph{fractional} line width, a ratio in which flux lost from
+the beam cancels, and the foam delay is achromatic, so no chromatic bias is
+introduced across a line of $10\%$ fractional width; the CMB bound uses the
+all-sky monopole, which angular scattering redistributes among sky directions
+but cannot deplete.  The exception is the TeV survival argument of
+Section~\ref{sec:grb_tev}, which depends on absolute photon survival and is
+therefore coupled to the imaging channel.  Source extension is likewise
+immaterial, an incoherent source being the intensity-weighted superposition
+of single-sightline results (Section~\ref{sec:metric_origin}).}
 
 \added{The spectroscopic channel has been considered previously, and what
 distinguishes our work is the provenance of the broadening kernel.
@@ -215,25 +233,6 @@ the bounds are set primarily by source geometry and probe energy; the data enter
 logarithmic correction (a decade of measurement precision shifts $\alpha$
 by $\lesssim0.02$), so they are robust but cannot be appreciably tightened
 by better data of the same kind.
-
-\paragraph{Scope.}
-\added{The effect computed here is on the electric field: foam modulates the
-first-order temporal coherence $g^{(1)}(\tau)$ along a fixed line of sight,
-and the constrained observable is a spectral shape distortion rather than an
-angular width.  Foam varying in both space and time will scatter light in
-angle as well as distort it in frequency; the angular channel is the imaging
-literature reviewed above, connected to the present one only through the
-shared phase variance $\sigma_\phi^2$ (Section~\ref{sec:connection}).  The
-bounds derived below are insensitive to any accompanying deflection: the GRB
-bound uses the \emph{fractional} line width, a ratio in which flux lost from
-the beam cancels, and the foam delay is achromatic, so no chromatic bias is
-introduced across a line of $10\%$ fractional width; the CMB bound uses the
-all-sky monopole, which angular scattering redistributes among sky directions
-but cannot deplete.  The exception is the TeV survival argument of
-Section~\ref{sec:grb_tev}, which depends on absolute photon survival and is
-therefore coupled to the imaging channel.  Source extension is likewise
-immaterial, an incoherent source being the intensity-weighted superposition
-of single-sightline results (Section~\ref{sec:metric_origin}).}
 
 The remainder of the paper is organized as follows.
 Section~\ref{sec:model} introduces the spacetime foam model: the
