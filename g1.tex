@@ -267,16 +267,18 @@ as a phase jitter $\sigma_\phi$.
 Following the prior foam literature we take a point source on a single
 line of sight; at the level of first-order coherence an extended
 incoherent source is the linear superposition of such points.
-\replaced{Because the source is incoherent, cross terms between distinct
-points vanish in $\langle E^*E\rangle$, so the observed coherence is the
-intensity-weighted mean of the single-sightline results.  Sightlines to a
-distant source traverse statistically equivalent foam over a common
-distance, each contributing the same ensemble-averaged suppression, and the
-point-source result therefore carries over unchanged to an extended source.
-The transverse foam correlation that governs the imaging channel does not
-enter the observed coherence; the spatial structure of the foam does enter
-the pedestal kernel, through the factorization assumed in
-Section~\ref{sec:Calpha_origin}.}{The
+\replaced{Cross terms between distinct points vanish in
+$\langle E^*E\rangle$, and for statistically homogeneous foam over a common
+propagation distance the foam factor is shared by the sightlines and factors
+out, so the point-source result applies with the extended source's own
+intrinsic coherence (Appendix~\ref{app:extended}).  Beyond fixing the
+amplitude $\sigma_\phi^2$, the transverse structure of the foam then reaches
+the observables only through the shape of $C_\alpha$ at finite lag
+(Section~\ref{sec:Calpha_origin}), leaving the long-lag plateau and hence the
+core weight $e^{-\sigma_\phi^2}$ untouched; its only spectral image is the
+shape of the pedestal kernel, which the width bound does not use
+(Section~\ref{sec:grb_width}) and the CMB constraint sets to its no-pedestal
+limit (Section~\ref{sec:CMB_derivation}).}{The
 transverse behavior of the foam across an extended source is beyond our
 scope.}
 
@@ -1735,6 +1737,106 @@ We thank Robin Kaiser for helpful discussions that helped motivate this work, an
 
 \bibliographystyle{apsrev4-2}
 \bibliography{references}
+
+\appendix
+
+\section{Extended Sources and the Observed Coherence}
+\label{app:extended}
+
+\added{Equation~\eqref{eq:Eobs} describes a point source on a single line of
+sight.  This appendix carries the construction to a spatially extended
+incoherent source, and identifies the assumptions under which the
+point-source result survives.  It is the derivation quoted in
+Section~\ref{sec:metric_origin}.}
+
+\added{Label the source points by $j$, each seen through its own sightline
+with its own jitter $\delta t_j(t)$,}
+\begin{equation}
+  E_{\rm obs}(t) = \sum_j E_{{\rm src},j}\!\left(t-\delta t_j(t)\right),
+  \label{eq:Eobs_ext}
+\end{equation}
+\added{with the points mutually incoherent,}
+\begin{equation}
+  \big\langle E^*_{{\rm src},j}(u)\,E_{{\rm src},k}(v)\big\rangle
+    = \delta_{jk}\,I_j\,g^{(1)}_{{\rm src},j}(v-u),
+  \label{eq:incoh}
+\end{equation}
+\added{and the jitters $\{\delta t_j\}$ independent of the fields
+$\{E_{{\rm src},j}\}$, as for a single sightline.}
+
+\paragraph{Cross terms.}
+\added{Because the jitters are independent of the fields, the average over
+foam and the average over the source factorize term by term.  For $j\neq k$
+the source factor is Eq.~\eqref{eq:incoh} with $\delta_{jk}=0$ at every pair
+of time arguments, so the cross terms vanish before the foam average is
+taken.  The conclusion therefore does not require the jitters on different
+sightlines to be statistically independent: correlated $\delta t_j$ and
+$\delta t_k$ leave the cancellation untouched.  This is the one place an
+assumption of independent sightlines might have been expected, and it is not
+needed.}
+
+\paragraph{The observed coherence.}
+\added{Only diagonal terms survive.  Repeating the steps that led to
+Eq.~\eqref{eq:g1obs} for each $j$, and using
+$\langle|E_{\rm obs}|^2\rangle=\sum_j I_j$ from the ensemble-mean intensity
+preservation established below Eq.~\eqref{eq:Eobs}, the normalized coherence
+of Eq.~\eqref{eq:g1def} is}
+\begin{equation}
+  g^{(1)}_{\rm obs}(\tau)
+    = \frac{\sum_j I_j\,\big\langle
+        g^{(1)}_{{\rm src},j}\!\left(\tau-\Delta_j(\tau)\right)
+      \big\rangle_{\delta t_j}}{\sum_j I_j},
+  \label{eq:g1obs_ext}
+\end{equation}
+\added{an intensity-weighted mean of single-sightline results.  This much is
+exact.}
+
+\paragraph{Statistically homogeneous foam.}
+\added{Suppose the foam statistics depend on the sightline only through the
+propagation distance, and that the source subtends a spread $\Delta D$ with
+$\Delta D/D\ll1$.  Then $\sigma_\Delta^2(\tau)$ and $C_\alpha(\tau;D)$ are
+common to the sightlines, the jitter average is the same operation for every
+$j$, and it commutes with the weighted sum:}
+\begin{equation}
+  g^{(1)}_{\rm obs}(\tau)
+    = \big\langle g^{(1)}_{\rm src,ext}\!\left(\tau-\Delta(\tau)\right)
+      \big\rangle_{\delta t},
+  \qquad
+  g^{(1)}_{\rm src,ext}\equiv\frac{\sum_j I_j\,g^{(1)}_{{\rm src},j}}
+                                   {\sum_j I_j}.
+  \label{eq:g1obs_ext_hom}
+\end{equation}
+\added{This is Eq.~\eqref{eq:g1obs} with the extended source's own intrinsic
+coherence in place of the point source's; for a carrier-dominated line it is
+$g^{(1)}_{\rm src,ext}(\tau)\,\mathcal{F}_{\rm foam}(\tau)$.  What carries
+over is the foam factor, not the intrinsic profile.}
+
+\added{The homogeneity hypothesis is an idealization, and a mild one here.
+Since $\sigma_\ell^2\propto D^{2(1-\alpha)}$, a spread $\Delta D$ gives a
+fractional spread $2(1-\alpha)\,\Delta D/D$ in the variance, and a fractional
+change $\epsilon$ in $\sigma_\ell$ moves the inferred exponent by
+$\epsilon/\ln(D_C/\ell_P)$ with $\ln(D_C/\ell_P)\approx138$
+(Eq.~\eqref{eq:alpha_grb_dyn}).  The largest $\Delta D/D$ arising here is the
+thickness of last scattering, $\sim10^{-3}$; the emitting region of
+GRB\,221009A at $D_C\approx0.65$\,Gpc is far smaller in ratio.  The induced
+shift in $\alpha$ is therefore $\lesssim10^{-5}$, negligible against every
+bound quoted in this paper.}
+
+\paragraph{What the closed form does not inherit.}
+\added{Equations~\eqref{eq:g1obs_ext} and~\eqref{eq:g1obs_ext_hom} are exact
+statements about the coherence.  The Gaussian closed form
+Eq.~\eqref{eq:g1obs_gauss} is not inherited in the same way: it is nonlinear
+in $\tau_G$, through the prefactor
+$\tau_G/\sqrt{\tau_G^2+\sigma_\Delta^2}$ and the carrier shift
+$\nu_0^{\rm eff}=\nu_0\tau_G^2/(\tau_G^2+\sigma_\Delta^2)$, so an
+intensity-weighted mean over points with differing $\tau_{G,j}$ or
+$\omega_{0,j}$ is not that closed form evaluated at a mean $\tau_G$.  The
+discrepancy is second order in $\sigma_\Delta^2/\tau_G^2$, the same small
+parameter that controls the closed form's other corrections, so the bounds of
+Section~\ref{sec:sources} are unaffected.  The closed form should nonetheless
+be read as applying to a source whose points share a common intrinsic profile
+and carrier, with $r_{\rm int}$ in Eq.~\eqref{eq:robs_model} fit to the
+extended source as a whole.}
 
 \section*{Mathematical Notation}
 \label{app:notation}
