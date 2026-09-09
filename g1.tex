@@ -310,29 +310,38 @@ on which all spectroscopic bounds below rest.
 
 \added{The identification of path-length fuzziness with a phase,
 Eq.~\eqref{eq:sigmaphi_cosmo}, has been disputed.  Chen
-\textit{et al.}~\cite{ChenWenMa2014} grant Eqs.~\eqref{eq:NgPerlmanVar}
-and~\eqref{eq:jitter} and attack the conversion: a photon samples a
-three-dimensional region rather than a ray, and only perturbations with
-transverse spatial frequencies below $\sim1/\lambda$ register, so that the
-line-of-sight accumulation itself is suppressed by $\ell_{\rm P}/\lambda$ for
-uncorrelated cells.  The
-factor scales as $1/\lambda$, running from $\sim10^{-32}$ at CMB frequencies
-to $\sim10^{-17}$ at $3$\,TeV; applied at every $\alpha$ it would lower
-Eq.~\eqref{eq:alpha_grb_tev} from $\alpha_{\rm TeV}\approx0.74$ to
-$\approx0.47$, excluding neither model.  Their factor is computed, however,
-for a single toy model --- a random index of Planck-scale correlation length,
-accumulating as a random walk and so realizing $\alpha=1/2$ --- so what the
-same averaging gives for holographic foam is not known, nor whether inserting
-it at every $\alpha$, as the figure above does, preserves the lower-bound form
-of Eq.~\eqref{eq:alpha_grb_tev}.  A separate
-remark of theirs bears on the dynamical premise: for a refractive index white
-up to the Planck frequency, observing a bandwidth $\Delta\omega$ suppresses
-the phase by a further $\sqrt{t_{\rm P}\Delta\omega}$, some
-$1.7\times10^{-11}$ at $37$\,MeV, so faster refresh would average the signal
-away rather than maximize it.  We adopt Eq.~\eqref{eq:sigmaphi_cosmo} as a
-premise, shared with the imaging constraints and the $\alpha$-foam literature
-generally; the conditions under which the bounds are null are collected in
-Section~\ref{sec:conclusions}.}
+\textit{et al.}~\cite{ChenWenMa2014} grant Eq.~\eqref{eq:NgPerlmanVar} and
+attack the conversion: a photon samples a three-dimensional region rather
+than a ray, and only perturbations with transverse spatial frequencies below
+$\sim1/\lambda$ register, so that for cells uncorrelated beyond
+$\ell_{\rm P}$ the accumulated phase amplitude carries an extra factor
+$\ell_{\rm P}/\lambda$ --- running from $8\times10^{-33}$ at $150$\,GHz
+through $5\times10^{-22}$ at $37$\,MeV to $4\times10^{-17}$ at $3$\,TeV, and
+lowering Eq.~\eqref{eq:alpha_grb_tev} from $\alpha_{\rm TeV}\approx0.74$ to
+$\approx0.47$ if applied at every $\alpha$.  That suppression is a property
+of the transverse correlation structure rather than of the variance: for the
+pixellon realization of the Verlinde--Zurek effect, whose accumulation
+$\langle\Delta L^2\rangle\sim\ell_{\rm P}L$ matches the random walk but whose
+fluctuation power sits at frequencies $\sim1/L$ rather than
+$1/\ell_{\rm P}$, Lee, Zurek and Chen~\cite{LeeZurekChen2024} --- with an
+author in common with the objection --- find the diffractive suppression
+absent, and the imaging signal instead evades constraint because the
+observable is the phase difference across the aperture, damped by
+$(D/L)^2$.  Their transverse phase-difference variance is
+Eq.~\eqref{eq:dphi-variance} with $1-C^{\rm sp}_\alpha(B)\propto B^2/L^2$, so
+the two papers together establish that no observable is a function of
+$\sigma_\ell(D)$ alone: what a given measurement sees is fixed by the
+correlation structure that Eq.~\eqref{eq:NgPerlmanVar} leaves unspecified.
+The framework developed here carries that structure explicitly, spatially in
+$C^{\rm sp}_\alpha(B;D)$ and temporally in $C_\alpha(\tau;D)$, and is null
+where it should be: power concentrated at $\sim1/L$ is the
+long-temporal-correlation limit $C_\alpha\to1$ of
+Section~\ref{sec:conclusions}, while at the opposite extreme Chen
+\textit{et al.} conjecture a further $\sqrt{t_{\rm P}\Delta\omega}$
+suppression for foam white up to the Planck frequency, some
+$1.7\times10^{-11}$ at $37$\,MeV.  We adopt
+Eq.~\eqref{eq:sigmaphi_cosmo} as a premise, shared with the imaging
+constraints and with the $\alpha$-foam literature generally.}
 
 \subsection{Temporal Decorrelation of Spacetime Foam}
 \label{sec:Calpha_origin}
