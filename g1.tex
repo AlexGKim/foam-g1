@@ -165,62 +165,50 @@ that decreases continuously from unity toward complete fringe erasure as
 the accumulated phase variance $\sigma_\phi^2$ grows.
 In our framework the phase variance arises from temporal fluctuations of
 foam, whereas in the imaging channel it arises from spatial
-fluctuations\replaced{.}{; correspondingly, foam imprints itself on the
-spectrum rather than on the spatial brightness profile.}
+fluctuations; correspondingly, foam imprints itself on the
+spectrum rather than on the spatial brightness profile.
 
-\added{The effect computed here is on the electric field: foam modulates the
+\added{In our analysis, the foam acts on the electric field: foam modulates the
 first-order temporal coherence $g^{(1)}(\tau)$ along a fixed line of sight,
-and the constrained observable is a spectral shape distortion rather than an
-angular width.  Foam varying in both space and time will scatter light in
+and the observable effect is a spectral shape distortion.  Foam varying in both space and time will scatter light in
 angle as well as distort it in frequency; the angular channel is the imaging
-literature reviewed above, connected to the present one only through the
-shared phase variance $\sigma_\phi^2$ (Section~\ref{sec:connection}).  The
-bounds derived below are insensitive to any accompanying deflection: the GRB
-bound uses the \emph{fractional} line width, a ratio in which flux lost from
-the beam cancels, and the foam delay is achromatic, so no chromatic bias is
-introduced across a line of $10\%$ fractional width; the CMB bound uses the
+literature reviewed above. This article focuses on spectral distortion and does not account for any accompanying deflection: the GRB
+bound uses the \emph{fractional} line width, a ratio in which any flux lost
+from the beam cancels; the CMB bound uses the
 all-sky monopole, which angular scattering redistributes among sky directions
-but cannot deplete.  The exception is the TeV survival argument of
-Section~\ref{sec:grb_tev}, which depends on absolute photon survival and is
-therefore coupled to the imaging channel.  Source extension is likewise
+but cannot deplete.  The exception is the TeV survival probe, which turns on
+whether broadband flux survives at all and so cannot distinguish flux lost to
+deflection from flux removed spectrally.  Source extension is likewise
 immaterial, an incoherent source being the intensity-weighted mean
-of single-sightline results (Section~\ref{sec:metric_origin}).}
+of single-sightline results.}
 
-\added{The spectroscopic channel has been considered previously, and what
-distinguishes our work is the provenance of the broadening kernel.
-Cooke \textit{et al.}~\cite{Cooke2020} postulate it: their calculation starts
-from an initially monochromatic beam dispersed in energy, then convolved with
-the intrinsic profile, and those authors
-note that the heuristic has not been demonstrated by a model of spacetime
-quantization.  Here the broadening is derived, from the
-first-order coherence of a field propagating through a fluctuating metric
---- the light-cone fluctuations of
-Refs.~\cite{Ford1995,FordSvaiter1996}.
-Not only do the kernels have different provenance, but they have
-different predictions.  What they share is that both act on the line after emission, are parametrized by
-the same exponent, and strengthen with photon energy.  They differ as follows.
-The Cooke \textit{et al.} energy dispersion is a flux-conserving convolution: the
-line broadens, and the displaced flux stays in the line.  The kernel derived
-in this article splits the line into a coherent core
-$e^{-\sigma_\phi^2}S_{\rm src}(\nu)$ carrying the source profile at reduced
-weight and a pedestal of width $\sim1/\tau_{\rm foam}$ carrying the
-complementary $1-e^{-\sigma_\phi^2}$ (Section~\ref{sec:spec}).  The in-band
-observable is therefore a flux deficit with subtle frequency dependence.  Within the core the absolute width in fact
-narrows, so broadening survives only in the fractional width and only at
-second order, $r_{\rm foam}\propto r_{\rm int}^2\,\sigma_\phi$
-(Section~\ref{sec:grb_width}).
-Our derivation hinges on the delay varying within the light's coherence
-time; in the quasi-static limit the effect vanishes entirely, a regime on
-which the model of Ref.~\cite{Cooke2020}, having no time dependence, is
-silent.
+\added{The spectroscopic channel has been considered previously.
+Cooke \textit{et al.}~\cite{Cooke2020} postulate a convolution kernel,
+a heuristic that the authors note  has not been demonstrated by a model of spacetime
+quantization. 
 Their bound comes from a narrow
 Fe\,\textsc{ii} absorption line from a quiescent cloud at $z\simeq2.34$
 with VLT/ESPRESSO which, adopting the same exponent through
 $\sigma_E/E=(E/E_{\rm P})^{\alpha}$, ruled out $\alpha\leq0.634$.
-That the two limits are numerically close despite a $\sim\!10^{10}$
-difference in photon energy reflects the second-order response of a
-fractional width to the jitter (Section~\ref{sec:grb_width}) and the
-logarithmic lever arm common to both.}
+What  distinguishes our work is the physical assumptions and the details of the predictions.
+We derive the distortion from the
+first-order coherence of the electric field propagating through a fluctuating metric
+--- the light-cone fluctuations of
+Refs.~\cite{Ford1995,FordSvaiter1996}.
+The two models differ in their predicted effect on spectra.
+The Cooke \textit{et al.} kernel is a Gaussian of width comparable to the
+line, so the displaced flux stays in the line.  In this article, flux is
+redistributed into a core $e^{-\sigma_\phi^2}S_{\rm src}(\nu)$ retaining the
+source profile --- Gaussian for the line considered here --- at reduced
+weight, and a pedestal component of width $\sim1/\tau_{\rm foam}$ carrying
+the complementary $1-e^{-\sigma_\phi^2}$.  The in-band
+observable is therefore a flux deficit with subtle frequency dependence.  Within the core the absolute width in fact
+narrows, so broadening survives only in the fractional width and only at
+second order, $r_{\rm foam}\propto r_{\rm int}^2\,\sigma_\phi$.
+Our derivation hinges on the delay varying within the light's coherence
+time; in the quasi-static limit the effect vanishes entirely, a regime on
+which the model of Ref.~\cite{Cooke2020}, having no time dependence, is
+silent.}
 
 Because the foam variance enters the resulting bounds only through the
 doubly-logarithmic factor $\ln(D_C/\ell_P)\approx138$--$141$ (GRB to CMB),
