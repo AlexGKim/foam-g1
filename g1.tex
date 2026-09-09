@@ -307,18 +307,61 @@ $\delta\phi=\omega_0\,\delta t$, giving a phase variance
   \label{eq:sigmaphi_cosmo}
 \end{equation}
 on which all spectroscopic bounds below rest.
-\added{This identification of distance fuzziness with an optical-path
-fluctuation has been disputed.  Chen \textit{et al.}~\cite{ChenWenMa2014}
-argue that a photon does not follow a single ray but samples a
-three-dimensional region around it, averaging over the fluctuations
-throughout that region; for uncorrelated Planck-scale cells the resulting
-diffractive suppression of the accumulated phase is of order
-$\ell_{\rm P}/\lambda$, at least $10^{-29}$ at astronomical wavelengths.
-The objection applies to the whole $\alpha$-foam programme --- the imaging
-constraints and the absorption-line bound of Ref.~\cite{Cooke2020} alike ---
-and is evaded only if the foam retains transverse correlations across the
-region the photon samples, as in Ref.~\cite{LeeZurekChen2024}.  We adopt the
-standard identification; every bound quoted here scales with it.}
+\added{The identification of the path-length fuzziness with a phase,
+Eq.~\eqref{eq:sigmaphi_cosmo}, has been disputed.  Chen
+\textit{et al.}~\cite{ChenWenMa2014} grant Eqs.~\eqref{eq:NgPerlmanVar}
+and~\eqref{eq:jitter} and attack the conversion: a photon does not follow a
+single ray but samples a three-dimensional region about it, and only
+perturbations with transverse spatial frequencies below $\sim1/\lambda$
+register on the propagating wave.  Averaging over uncorrelated Planck-scale
+cells then suppresses the accumulated phase amplitude by
+$\ell_{\rm P}/\lambda$, a factor of $\sqrt{\ell_{\rm P}/\lambda}$ per
+transverse direction, obtained twice by those authors, from a
+Huygens--Fresnel--Kirchhoff integral and from a multipole decomposition.
+Because the factor scales as $1/\lambda$ it weakens toward high photon
+energy: across the channels used here it runs from $8\times10^{-33}$ at
+$150$\,GHz through $5\times10^{-22}$ at $37$\,MeV to $4\times10^{-17}$ at
+$3$\,TeV, bracketing rather than matching the optical value
+$1.6\times10^{-29}$ at which their quoted figure is anchored.  Carried
+through Eq.~\eqref{eq:alpha_grb_tev} at every $\alpha$, the TeV bound would
+fall from $\alpha_{\rm TeV}\approx0.74$ to $\approx0.47$, excluding neither
+the holographic nor the random-walk model.  Their Eq.~(33), which converts
+the result to a timing spread, gives $\sigma_\phi\approx0.011$ at $3$\,TeV
+and $D_C=0.65$\,Gpc, which is Eq.~\eqref{eq:sigmaphi_cosmo} at $\alpha=1/2$
+reduced by the same factor.}
+
+\added{Two features limit the demonstrated scope of that calculation, neither
+refuting it.  The explicit result assumes statistically independent Planck
+cells, which is the random-walk case $\alpha=1/2$; transverse correlation is
+among the conditions those authors identify as evading the suppression, so
+the partially correlated regime in which holographic foam sits is not
+covered.  Since averaging is what produces the factor, its effect should be
+largest where the cells are least correlated, so the suppression bears most
+heavily on the exclusion of low $\alpha$ --- the random-walk end that
+Eq.~\eqref{eq:alpha_grb_tev} otherwise excludes most securely.  How rapidly
+it weakens with $\alpha$ has not been computed, and the answer decides more
+than the size of the shift: a gradual turn-off leaves $\sigma_\phi^2$
+monotonic in $\alpha$ and merely displaces the bound, whereas a sharp one
+makes it non-monotonic, the excluded region becomes a window, and the
+inversion behind Eq.~\eqref{eq:alpha_grb_tev} no longer returns a lower bound
+at all.  The value $0.47$ above, which applies their factor unchanged at
+every $\alpha$, is illustrative on either reading.  Their treatment is also
+static and leading-order, retaining only singly deflected paths, so it cannot
+certify the suppression where the unsuppressed phase is enormous and multiple
+scattering would contribute --- which is the regime the survival argument of
+Section~\ref{sec:grb_tev} occupies.  A separate remark of theirs bears on the
+dynamical premise adopted here: for a refractive index white up to the Planck
+frequency, observing a bandwidth $\Delta\omega$ averages the phase over the
+exposure and suppresses it by a further $\sqrt{t_{\rm P}\Delta\omega}$, some
+$1.7\times10^{-11}$ for the $37$\,MeV line at $r_{\rm obs}=0.1$.  That remark
+is heuristic rather than computed, and we do not compound it with the
+transverse factor, but if it holds then faster foam refresh averages the
+signal away rather than maximizing it, inverting the role $\tau_{\rm foam}$
+plays in Section~\ref{sec:Calpha_origin}.  We adopt
+Eq.~\eqref{eq:sigmaphi_cosmo} as a stated premise, shared with the imaging
+constraints and with the $\alpha$-foam literature generally; the conditions
+under which the bounds are null are collected in
+Section~\ref{sec:conclusions}.}
 
 \subsection{Temporal Decorrelation of Spacetime Foam}
 \label{sec:Calpha_origin}
@@ -1611,6 +1654,16 @@ correlations --- the temporal analogue of the transverse spatial
 correlations of Ref.~\cite{LeeZurekChen2024} (Section~\ref{sec:Calpha_origin})
 --- would hold $C_\alpha(\tau)\approx1$ across observational lags
 regardless of photon energy, again nulling the shape-distortion signal.
+\added{A third condition is external to the foam model.  The bounds inherit
+the ray identification of Eq.~\eqref{eq:sigmaphi_cosmo}, and are suppressed
+by the transverse averaging of Ref.~\cite{ChenWenMa2014} to the extent that
+argument applies (Section~\ref{sec:metric_origin}).  That reference also
+qualifies what follows.  The separation of the phase amplitude from the
+correlation time, which lets imaging fix the one and spectroscopy the other,
+is a property of the $\alpha$-foam parametrization rather than of foam: for a
+refractive index white up to the Planck frequency the accumulated phase
+itself carries a factor $\sqrt{t_{\rm P}\Delta\omega}$, and faster refresh
+then reduces the signal rather than maximizing it.}
 \added{This dependence is also what the spectroscopic channel uniquely
 supplies.  The Strehl suppression $e^{-\sigma_\phi^2}$ depends only on the
 phase variance and not on how rapidly the phase fluctuates, so no imaging
@@ -1618,7 +1671,9 @@ measurement constrains $\tau_{\rm foam}$.  The bounds derived here are
 therefore not weaker determinations of a quantity the imaging channel
 already measures, but constraints on the temporal correlation structure of
 the foam --- an assumption generally made implicitly in the $\alpha$-foam
-literature --- and they are null precisely where that assumption fails.}
+literature --- and they are null precisely where that assumption fails.
+The spectroscopic channel supplies sensitivity to $\tau_{\rm foam}$ that the
+imaging channel does not, but only where that separation holds.}
 
 The dynamical bound $\alpha\gtrsim 0.63$ (Eq.~\eqref{eq:alpha_grb_dyn})
 is a weak, lever-arm-dominated floor; tightening it is limited primarily
