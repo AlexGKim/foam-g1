@@ -10,11 +10,6 @@
 \usepackage{aas_macros}
 \usepackage{changes}
 
-% Draft-only flag for numerical values awaiting independent verification.
-% Remove (or redefine to \relax) before submission.
-\newcommand{\verify}[1]{\textcolor{red}{[VERIFY]}%
-  \marginpar{\scriptsize\raggedright\color{red}#1}}
-
 \begin{document}
 
 \title{Spectroscopy as a Probe of Spacetime Foam}
@@ -202,7 +197,8 @@ redistributed into a core $e^{-\sigma_\phi^2}S_{\rm src}(\nu)$ retaining the
 source profile --- Gaussian for the line considered here --- at reduced
 weight, and a pedestal component of width $\sim1/\tau_{\rm foam}$ carrying
 the complementary $1-e^{-\sigma_\phi^2}$.  The in-band
-observable is therefore a flux deficit with subtle frequency dependence.  Within the core the absolute width in fact
+observable is therefore a flux deficit, $1-e^{-\sigma_\phi^2(\nu)}$ with
+$\sigma_\phi^2\propto\nu^2$.  Within the core the absolute width in fact
 narrows, so broadening survives only in the fractional width and only at
 second order, $r_{\rm foam}\propto r_{\rm int}^2\,\sigma_\phi$.
 Our derivation hinges on the delay varying within the light's coherence
