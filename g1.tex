@@ -15,11 +15,6 @@
 \newcommand{\verify}[1]{\textcolor{red}{[VERIFY]}%
   \marginpar{\scriptsize\raggedright\color{red}#1}}
 
-% CLAUDE: Comments for the next draft.
-% This comment was made based on a review of g2/g2.tex, which I think applies to this paper.
-% 1.1 [PC — framework-level] Self-consistency of the time-warp ansatz under Planckian τ_foam
-% Lines 188–205, 236–248 (model); companion g1.tex §2. With the fiducial dynamical foam (τ_foam ~ t_P), δt(t) is effectively white noise with rms σℓ/c. Then: (i) the physical intensity of a time-warped stream carries a Jacobian |1 − δt′(t)| that the model drops; δt′ ~ σ_δt/τ_foam ≈ 10³⁰ for α=1/2 at 1 Gpc (10²⁰ for α=2/3) — the dropped term dwarfs the retained one and the map t → t−δt(t) is non-monotonic; (ii) geometric optics (the basis of the achromatic-delay picture, line 202) requires the metric to vary slowly vs. the optical period, violated by ~27 orders of magnitude; (iii) the model's own g¹ pedestal spreads flux over Δν ~ 1/τ_foam ~ 10⁴³ Hz — trans-Planckian photon energies. Neither paper discusses any of this. Fix: add a domain-of-validity subsection: either restrict to τ_foam ≳ 1/ω₀ and check which claims survive, or present E_obs = E_src(t−δt(t)) explicitly as a phenomenological definition of the Ng–Perlman model class and flag the pedestal as an acknowledged artifact.
-
 \begin{document}
 
 \title{Spectroscopy as a Probe of Spacetime Foam}
@@ -265,22 +260,13 @@ achromatic path-length fluctuations whose cumulative effect along a line
 of sight is an arrival-time jitter $\delta t(t)$, which a carrier reads
 as a phase jitter $\sigma_\phi$.
 Following the prior foam literature we take a point source on a single
-line of sight; at the level of first-order coherence an extended
-incoherent source is the linear superposition of such points.
-\replaced{Cross terms between distinct points vanish in
-$\langle E^*E\rangle$, and for statistically homogeneous foam over a common
-propagation distance the foam factor is shared by the sightlines and factors
-out, so the point-source result applies with the extended source's own
-intrinsic coherence (Appendix~\ref{app:extended}).  Beyond fixing the
-amplitude $\sigma_\phi^2$, the transverse structure of the foam then reaches
-the observables only through the shape of $C_\alpha$ at finite lag
-(Section~\ref{sec:Calpha_origin}), leaving the long-lag plateau and hence the
-core weight $e^{-\sigma_\phi^2}$ untouched; its only spectral image is the
-shape of the pedestal kernel, which the width bound does not use
-(Section~\ref{sec:grb_width}) and the CMB constraint sets to its no-pedestal
-limit (Section~\ref{sec:CMB_derivation}).}{The
-transverse behavior of the foam across an extended source is beyond our
-scope.}
+line of sight\replaced{.  For an incoherent extended source the observed
+coherence is the intensity-weighted mean of such points: cross terms between
+distinct points vanish in $\langle E^*E\rangle$, so no foam correlation
+between sightlines enters (Appendix~\ref{app:extended}).}{; at the level of
+first-order coherence an extended incoherent source is the linear
+superposition of such points.  The transverse behavior of the foam across an
+extended source is beyond our scope.}
 
 We model the detected field as a stochastically time-warped version of the
 intrinsic source field:
@@ -292,24 +278,10 @@ where $E_{\rm src}(t)$ is a single mode of a stationary, zero-mean complex
 Gaussian (chaotic) field --- appropriate for the thermal and incoherent
 sources here (GRB high-energy emission, CMB) --- and $\delta t(t)$ is the
 foam jitter, a stationary process independent of $E_{\rm src}$.
-\added{Equation~\eqref{eq:Eobs} carries no transverse or angular degree of
-freedom: it warps only the time argument of the field on a fixed line of
-sight, and the ensemble-mean intensity is preserved,
+\added{Equation~\eqref{eq:Eobs} warps only the time argument of the field on
+a fixed line of sight, and the ensemble-mean intensity is preserved,
 $\langle|E_{\rm obs}|^2\rangle=\langle|E_{\rm src}|^2\rangle$, by the
-stationarity of $E_{\rm src}$ and its independence from $\delta t$.
-No Jacobian accompanies the time warp.  A massless field is transported
-along the ray as a scalar, its value carried unchanged, so the amplitude
-weight $|1-\dot{\delta t}|^{1/2}$ appropriate to a reparametrization of a
-flux density does not arise; that weight belongs to an invertible map, and
-$t\mapsto t-\delta t(t)$ is not one, since
-$|\dot{\delta t}|\sim\sigma_{\delta t}/\tau_{\rm foam}\gg1$ renders it
-non-monotonic.  What holds instead is exact: writing
-$\int f(t-\delta t(t))\,dt=\int f(u)\,n(u)\,du$ with
-$n(u)=\sum_i|1-\dot{\delta t}(t_i)|^{-1}$ over the roots $t_i$, one has
-$\langle n(u)\rangle=\int p_{\delta t}(t-u)\,dt=1$.  The derivative
-$\dot{\delta t}$ is not discarded but reappears on the frequency axis, as
-the instantaneous frequency $\omega_0(1-\dot{\delta t})$ whose excursions
-generate the pedestal of Section~\ref{sec:spec}.}
+stationarity of $E_{\rm src}$ and its independence from $\delta t$.}
 Here $t$ is the observer's time, with the deterministic
 light-travel delay and cosmological time dilation absorbed into the argument
 of $E_{\rm src}$, so $\delta t(t)$ is the zero-mean foam fluctuation about
@@ -319,7 +291,8 @@ fluctuations along the line of sight of propagation distance $D$:
   \delta t(t) = \frac{1}{c}\,\Delta\ell_{\rm tot}(t).
   \label{eq:jitter}
 \end{equation}
-\added{This form is not merely postulated.  Ford~\cite{Ford1995} showed that
+\added{This form is motivated by results on light-cone fluctuations.
+Ford~\cite{Ford1995} showed that
 metric fluctuations from a graviton bath smear the light-cone singularity of
 the field's two-point functions, the metric-averaged retarded Green's
 function acquiring Gaussian support both inside and outside the classical
@@ -330,8 +303,7 @@ that photons emitted in rapid succession have \emph{correlated} flight
 times, for which they derive a correlation function.
 Equation~\eqref{eq:Eobs}, with a stationary Gaussian $\delta t(t)$ of
 correlation $C_\alpha(\tau)$, is the field-level encapsulation of those two
-results; the $\alpha$-foam model supplies in addition the scaling of the
-variance with propagation distance.}
+results.}
 
 Equivalently, the rms jitter
 $\sigma_{\delta t}=\sigma_\ell(D)/c=\sqrt{A_\alpha}\,t^{1-\alpha}t_{\rm P}^{\alpha}$,
@@ -389,18 +361,27 @@ $D$-dependence from the way the per-cell foam dynamics over the
 $\sim D/\ell_{\rm P}$ cells crossed by the line of sight combine; the
 explicit $D$-argument records this dependence.
 
-Since no physical source is pointlike, the underlying foam correlation is
-spatio-temporal, $C(\mathbf{r},\tau)$, and we read $C_\alpha(\tau;D)$ as the
-effective temporal correlation left after coarse-graining over the
-source's emitting four-volume and propagation path.  The reduction to a
+\replaced{The underlying foam correlation is spatio-temporal,
+$C(\mathbf{r},\tau)$, and we read $C_\alpha(\tau;D)$ as the effective temporal
+correlation left after combining the per-cell contributions along the
+propagation path; source extension does not enter, since for an incoherent
+source the sightlines superpose in intensity and the foam is never averaged
+across them (Appendix~\ref{app:extended}).\ }{Since no physical source is
+pointlike, the underlying foam correlation is spatio-temporal,
+$C(\mathbf{r},\tau)$, and we read $C_\alpha(\tau;D)$ as the effective temporal
+correlation left after coarse-graining over the
+source's emitting four-volume and propagation path.}  The reduction to a
 purely temporal $C_\alpha$ assumes the spatio-temporal correlation
 factorizes, $C(\mathbf{r},\tau)\approx C_{\rm sp}(\mathbf{r})\,C_\alpha(\tau)$,
 with the spatial factor absorbed into the normalization; we flag this as an
 assumption, since the spatial correlation structure over cosmological path
-lengths is not constrained here.  Non-factorization would modify the spatial
+lengths is not constrained here.  \replaced{Non-factorization would modify the
+combination along the path and hence the pedestal-kernel shape; the core
+suppression $e^{-\sigma_\phi^2}$ depends only on the long-lag limit
+$C_\alpha\to0$ and is untouched.\ }{Non-factorization would modify the spatial
 averaging and hence the pedestal-kernel shape; the in-band observables (the
 core suppression $e^{-\sigma_\phi^2}$) depend on the temporal $C_\alpha$
-along a fixed line of sight and are less sensitive to it.
+along a fixed line of sight and are less sensitive to it.}
 
 The timescale $\tau_{\rm foam}$ is an additional free parameter of the
 foam model, not fixed by the $\alpha$-model variance relation alone.
