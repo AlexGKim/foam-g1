@@ -51,8 +51,8 @@ $\alpha \gtrsim 0.63$, a weak, lever-arm-dominated floor.
 For the broadband CMB the foam induces an $e^{-\sigma_\phi^2(\nu)}$ deficit
 ($\sigma_\phi^2 \propto \nu^2$); a fit to
 the COBE/FIRAS monopole spectrum reaches $\alpha \gtrsim 0.52$
-($95\%$ CL) under the physical Planck-scale pedestal
-kernel, and next-generation spectrometers reach only
+($95\%$ CL)\deleted{ under the physical Planck-scale pedestal
+kernel}, and next-generation spectrometers reach only
 $\alpha\gtrsim 0.54$--$0.55$ (forecast), limited by the foam--temperature
 degeneracy.  The pedestal-independent line-width and CMB bounds do not
 reach the holographic value $\alpha = 2/3$; only the conditional TeV
@@ -183,7 +183,7 @@ all-sky monopole, which angular scattering redistributes among sky directions
 but cannot deplete.  The exception is the TeV survival argument of
 Section~\ref{sec:grb_tev}, which depends on absolute photon survival and is
 therefore coupled to the imaging channel.  Source extension is likewise
-immaterial, an incoherent source being the intensity-weighted superposition
+immaterial, an incoherent source being the intensity-weighted mean
 of single-sightline results (Section~\ref{sec:metric_origin}).}
 
 \added{The spectroscopic channel has been considered previously, and what
@@ -362,9 +362,8 @@ $\sim D/\ell_{\rm P}$ cells crossed by the line of sight combine; the
 explicit $D$-argument records this dependence.
 
 \replaced{The underlying foam correlation is spatio-temporal,
-$C(\mathbf{r},\tau)$, and we read $C_\alpha(\tau;D)$ as the effective temporal
-correlation left after combining the per-cell contributions along the
-propagation path; source extension does not enter, since for an incoherent
+$C(\mathbf{r},\tau)$, and $C_\alpha(\tau;D)$ is its effective temporal part
+along the ray; source extension does not enter, since for an incoherent
 source the sightlines superpose in intensity and the foam is never averaged
 across them (Appendix~\ref{app:extended}).\ }{Since no physical source is
 pointlike, the underlying foam correlation is spatio-temporal,
@@ -377,8 +376,8 @@ with the spatial factor absorbed into the normalization; we flag this as an
 assumption, since the spatial correlation structure over cosmological path
 lengths is not constrained here.  \replaced{Non-factorization would modify the
 combination along the path and hence the pedestal-kernel shape; the core
-suppression $e^{-\sigma_\phi^2}$ depends only on the long-lag limit
-$C_\alpha\to0$ and is untouched.\ }{Non-factorization would modify the spatial
+suppression $e^{-\sigma_\phi^2}$ involves $C_\alpha$ only through its
+long-lag limit $C_\alpha\to0$ and is untouched.\ }{Non-factorization would modify the spatial
 averaging and hence the pedestal-kernel shape; the in-band observables (the
 core suppression $e^{-\sigma_\phi^2}$) depend on the temporal $C_\alpha$
 along a fixed line of sight and are less sensitive to it.}
@@ -576,14 +575,12 @@ implying
   \mathcal{F}\!\left\{g^{(1)}_{\rm obs}(\tau)\right\}(\nu).
   \label{eq:WK_obs}
 \end{equation}
-\added{The prefactor fixes the absolute normalization: $g^{(1)}$ is the
-coherence normalized to $g^{(1)}(0)=1$, so
-$\int S_{\rm obs}\,d\nu = \langle|E_{\rm obs}|^2\rangle$ is the total flux
-and the core and pedestal weights below are fractions of it.  Line profiles
-in this section are accordingly quoted per unit line flux; absolute units are
-restored in Section~\ref{sec:CMB_derivation}, where $S_{\rm src}(\nu)$ is
-identified with the specific intensity $B_\nu(T_0)$.}
-The theorem applies because astronomical emission lines have finite
+\added{Here $\mathcal{F}\{f\}(\nu)\equiv\int_{-\infty}^{\infty}d\tau\,
+e^{\,i2\pi\nu\tau}f(\tau)$.  The observed field is stationary because
+$E_{\rm src}$ and $\delta t$ are and are independent, so the theorem applies,
+and the prefactor fixes the normalization: $g^{(1)}(0)=1$ gives
+$\int S_{\rm obs}\,d\nu=\langle|E_{\rm obs}|^2\rangle$.}
+\deleted{The theorem applies because astronomical emission lines have finite
 linewidth (so the Fourier transform is well defined) and because the
 foam-induced jitter is a stationary process independent of the source
 (foam acts on light after emission, while $\delta t(t)$ statistics are
@@ -596,7 +593,7 @@ $\tau_{\rm foam}\sim\tau_P\sim10^{-44}$\,s is vastly shorter than the
 timescale of any astrophysical evolution (e.g.\ the hours over which the
 GRB line centroid sweeps $37\to6$\,MeV), the slow kinematic evolution and
 the fast foam jitter are cleanly separable, and each epoch is stationary
-on the foam timescale.
+on the foam timescale.}
 
 In the dynamical limit $C_\alpha(\tau;D)\to 0$ for
 $|\tau|\gtrsim\tau_{\rm foam}$, $\mathcal{F}_{\rm foam}(\tau)$ acquires
@@ -795,7 +792,8 @@ blueshifted electron--positron pair
 annihilation~\cite{Ravasio2024,YQZhang2024}, at observed energies
 spanning $6$--$37$\,MeV.  Zhang et al.~\cite{YQZhang2024} detect a
 Gaussian line whose centroid evolves as $E_{\rm line}\propto t^{-1}$
-from $\approx37$\,MeV to $\approx6$\,MeV, with a fractional width
+from $\approx37$\,MeV to $\approx6$\,MeV\added{, with $t$ measured from the
+fitted decay onset $t_0\approx226$\,s post-trigger}, with a fractional width
 $r_{\rm obs}\equiv\sigma_{\rm obs}/E_{\rm line}$ of weighted mean
 $0.111\pm0.014$, the seven sub-intervals spanning $\approx0.07$--$0.20$ and
 consistent with a constant across the $9$--$37$\,MeV lever arm
@@ -1013,7 +1011,8 @@ boosted line, not the specific transition.  Its observed centroid is then the
 comoving line blueshifted by the bulk Doppler factor $\mathcal{D}$ of the
 emitting material, $E_{\rm line}=\mathcal{D}\,m_ec^2/(1+z)$, so the centroid
 measures $\mathcal{D}$ directly; the observed decline
-$E_{\rm line}\propto t^{-1}$ from $\approx37$ to $\approx6$\,MeV tracks the
+$E_{\rm line}\propto t^{-1}$ from $\approx37$ to $\approx6$\,MeV\added{, in the
+same time variable as Section~\ref{sec:grb221009a},} tracks the
 falling jet Lorentz factor ($\Gamma\propto t^{-1}$, $\Gamma\approx84$ at
 $37$\,MeV in the Zhang et al.\ modeling, viewed near $\theta\sim1/\Gamma$ so
 that $\mathcal{D}\approx\Gamma$) as the outflow
