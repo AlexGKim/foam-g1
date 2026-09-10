@@ -361,7 +361,7 @@ explicit $D$-argument records this dependence.
 
 \replaced{The underlying foam correlation is spatio-temporal,
 $C(\mathbf{r},\tau)$, and $C_\alpha(\tau;D)$ is its effective temporal part
-along the ray; source extension does not enter, since for an incoherent
+along the ray. The angular extent of the sources does not enter, since for an incoherent
 source the sightlines superpose in intensity and the foam is never averaged
 across them (Appendix~\ref{app:extended}).\ }{Since no physical source is
 pointlike, the underlying foam correlation is spatio-temporal,
@@ -1015,8 +1015,8 @@ boosted line, not the specific transition.  Its observed centroid is then the
 comoving line blueshifted by the bulk Doppler factor $\mathcal{D}$ of the
 emitting material, $E_{\rm line}=\mathcal{D}\,m_ec^2/(1+z)$, so the centroid
 measures $\mathcal{D}$ directly; the observed decline
-$E_{\rm line}\propto t^{-1}$ from $\approx37$ to $\approx6$\,MeV\added{, in the
-same time variable as Section~\ref{sec:grb221009a},} tracks the
+$E_{\rm line}\propto t^{-1}$ from $\approx37$ to $\approx6$\,MeV
+tracks the
 falling jet Lorentz factor ($\Gamma\propto t^{-1}$, $\Gamma\approx84$ at
 $37$\,MeV in the Zhang et al.\ modeling, viewed near $\theta\sim1/\Gamma$ so
 that $\mathcal{D}\approx\Gamma$) as the outflow
@@ -1632,42 +1632,12 @@ correlations --- the temporal analogue of the transverse spatial
 correlations of Ref.~\cite{LeeZurekChen2024} (Section~\ref{sec:Calpha_origin})
 --- would hold $C_\alpha(\tau)\approx1$ across observational lags
 regardless of photon energy, again nulling the shape-distortion signal.
-\added{A third condition is external to the foam model.  The bounds inherit
-the ray identification of Eq.~\eqref{eq:sigmaphi_cosmo}
-(Section~\ref{sec:metric_origin}), which Chen
-\textit{et al.}~\cite{ChenWenMa2014} dispute: diffractive averaging
-suppresses the accumulated phase amplitude by $\ell_{\rm P}/\lambda$ for
-cells uncorrelated beyond $\ell_{\rm P}$, from $8\times10^{-33}$ at
-$150$\,GHz to $4\times10^{-17}$ at $3$\,TeV, and applied at every $\alpha$
-would lower Eq.~\eqref{eq:alpha_grb_tev} from $\alpha_{\rm TeV}\approx0.74$
-to $\approx0.47$.  That the suppression is a property of the transverse
-correlation structure rather than of the variance is shown by the pixellon
-realization of the Verlinde--Zurek effect, whose accumulation
-$\langle\Delta L^2\rangle\sim\ell_{\rm P}L$ matches the random walk but whose
-fluctuation power sits at frequencies $\sim1/L$: Lee, Zurek and
-Chen~\cite{LeeZurekChen2024} --- with an author in common with the objection
---- find the diffractive suppression absent there, the imaging signal evading
-constraint instead through a phase difference across the aperture damped by
-$(D/L)^2$, their variance being Eq.~\eqref{eq:dphi-variance} with
-$1-C^{\rm sp}_\alpha(B)\propto B^2/L^2$.  No observable is a function of
-$\sigma_\ell(D)$ alone.  The bounds derived here are null where they should
-be: power concentrated at $\sim1/L$ is the long-temporal-correlation limit
-$C_\alpha\to1$ above, while at the opposite extreme Chen \textit{et al.}
-conjecture a further $\sqrt{t_{\rm P}\Delta\omega}$ suppression for foam
-white up to the Planck frequency, some $1.7\times10^{-11}$ at $37$\,MeV.
-That conjecture also qualifies what follows, the separation of phase
-amplitude from correlation time then belonging to the $\alpha$-foam
-parametrization rather than to foam.}
-\added{This dependence is also what the spectroscopic channel uniquely
-supplies.  The Strehl suppression $e^{-\sigma_\phi^2}$ depends only on the
-phase variance and not on how rapidly the phase fluctuates, so no imaging
-measurement constrains $\tau_{\rm foam}$.  The bounds derived here are
-therefore not weaker determinations of a quantity the imaging channel
-already measures, but constraints on the temporal correlation structure of
-the foam --- an assumption generally made implicitly in the $\alpha$-foam
-literature --- and they are null precisely where that assumption fails.
-The spectroscopic channel supplies sensitivity to $\tau_{\rm foam}$ that the
-imaging channel does not, but only where that separation holds.}
+\added{A third condition is external to the foam model: the bounds 
+are based on Eq.~\eqref{eq:sigmaphi_cosmo}, which does
+not account for transverse incoherence in the foam (Section~\ref{sec:metric_origin}).
+The proper procedure is
+to compute $C(\mathbf{r},\tau)$ for candidate foam models, as done in
+\citet{LeeZurekChen2024}.}
 
 The dynamical bound $\alpha\gtrsim 0.63$ (Eq.~\eqref{eq:alpha_grb_dyn})
 is a weak, lever-arm-dominated floor; tightening it is limited primarily
@@ -1756,12 +1726,12 @@ We thank Robin Kaiser for helpful discussions that helped motivate this work, an
 \label{app:extended}
 
 \added{Equation~\eqref{eq:Eobs} describes a point source on a single line of
-sight.  This appendix carries the construction to a spatially extended
-incoherent source, and identifies the assumptions under which the
-point-source result survives.  It is the derivation quoted in
-Section~\ref{sec:metric_origin}.}
+sight. In this section, we consider an extended
+incoherent source, and identify the assumptions under which the
+point-source result survives.}
 
-\added{Label the source points by $j$, each seen through its own sightline
+\added{Consider the source as a discrete set of points,
+labeled by $j$, each seen through its own sightline
 with its own jitter $\delta t_j(t)$,}
 \begin{equation}
   E_{\rm obs}(t) = \sum_j E_{{\rm src},j}\!\left(t-\delta t_j(t)\right),
