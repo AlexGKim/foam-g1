@@ -1725,9 +1725,9 @@ We thank Robin Kaiser for helpful discussions that helped motivate this work, an
 \section{Extended Sources and the Observed Coherence}
 \label{app:extended}
 
-\added{Equation~\eqref{eq:Eobs} describes a point source on a single line of
-sight.  In this appendix we consider an extended incoherent source, and
-identify the assumptions under which the point-source result survives.}
+\added{Equation~\eqref{eq:g1obs} was derived for a point source on a single
+line of sight.  This appendix establishes the conditions under which it holds
+for a spatially extended incoherent source.}
 
 \added{Consider the source as a discrete set of points, labeled by $j$, each
 seen through its own sightline with its own jitter $\delta t_j(t)$,}
@@ -1763,14 +1763,14 @@ $[v-\delta t_k(v)]-[u-\delta t_j(u)]$ to $\tau-\Delta_j(\tau)$, with
 $\Delta_j(\tau)\equiv\delta t_j(v)-\delta t_j(u)$ as in
 Eq.~\eqref{eq:DeltaExt} and stationary in $\tau$.  The cross terms vanish at
 fixed jitter, before the foam average is taken, so no assumption is needed
---- or available --- about the joint statistics of $\delta t_j$ and
-$\delta t_k$: correlated sightlines leave the cancellation untouched.}
+about the joint statistics of $\delta t_j$ and
+$\delta t_k$.}
 
 \paragraph{The observed coherence.}
-\added{Averaging Eq.~\eqref{eq:crossterms} over the foam and summing gives
-the numerator of Eq.~\eqref{eq:g1def}.  Each sightline preserves its
-ensemble-mean intensity, as below Eq.~\eqref{eq:Eobs}, so
-$\langle|E_{\rm obs}|^2\rangle=\sum_j I_j$ and}
+\added{Each sightline preserves its ensemble-mean intensity, as established
+below Eq.~\eqref{eq:Eobs}, so $\langle|E_{\rm obs}|^2\rangle=\sum_j I_j$.
+Averaging Eq.~\eqref{eq:crossterms} over the foam and summing over $j$,
+Eq.~\eqref{eq:g1def} becomes}
 \begin{equation}
   g^{(1)}_{\rm obs}(\tau)
     = \frac{\sum_j I_j\,\big\langle
@@ -1786,13 +1786,14 @@ per sightline, with $\sigma^2_{\Delta,j}$ given by Eq.~\eqref{eq:diffVarExt}
 in terms of that sightline's $\sigma_\ell$ and $C_\alpha$.  This is an
 intensity-weighted mean of single-sightline results, and is exact.}
 
-\paragraph{Statistically homogeneous foam.}
-\added{Suppose the foam statistics depend on the sightline only through the
-propagation distance, and that the source subtends a spread $\Delta D$ with
+\paragraph{Recovering the point-source form.}
+\added{The kernels in Eq.~\eqref{eq:g1obs_ext} differ from sightline to
+sightline, so it is not yet of the form of Eq.~\eqref{eq:g1obs}.  Suppose the
+foam statistics depend on the sightline only through the propagation
+distance, and that the source subtends a spread $\Delta D$ with
 $\Delta D/D\ll1$.  Then $\sigma^2_{\Delta,j}=\sigma^2_\Delta$ and
-$C_{\alpha,j}=C_\alpha(\tau;D)$ for every $j$, the kernel in
-Eq.~\eqref{eq:g1obs_ext} is common to all terms, and the integral commutes
-with the weighted sum:}
+$C_{\alpha,j}=C_\alpha(\tau;D)$ for every $j$, the kernel is common to all
+terms, and the integral commutes with the weighted sum:}
 \begin{equation}
   g^{(1)}_{\rm obs}(\tau)
     = \big\langle g^{(1)}_{\rm src,ext}\!\left(\tau-\Delta(\tau)\right)
@@ -1802,9 +1803,11 @@ with the weighted sum:}
                                    {\sum_j I_j}.
   \label{eq:g1obs_ext_hom}
 \end{equation}
-\added{This is Eq.~\eqref{eq:g1obs} with the extended source's own intrinsic
-coherence in place of the point source's; for a carrier-dominated line it is
-$g^{(1)}_{\rm src,ext}(\tau)\,\mathcal{F}_{\rm foam}(\tau)$.  What carries
+\added{This is Eq.~\eqref{eq:g1obs} itself, with the extended source's own
+intrinsic coherence $g^{(1)}_{\rm src,ext}$ in place of the point source's:
+an extended incoherent source obeys the point-source result.  For a
+carrier-dominated line it is
+$g^{(1)}_{\rm src,ext}(\tau)\,\mathcal{F}_{\rm foam}(\tau)$; what carries
 over is the foam factor, not the intrinsic profile.  Departures from the
 hypothesis enter only through the sightline dependence of $\sigma_\ell$, and
 hence only logarithmically in $\alpha$
