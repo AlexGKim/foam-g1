@@ -1063,6 +1063,11 @@ so the fractional width broadens:
   \label{eq:robs_decomp_width}
 \end{equation}
 with $r_{\rm foam}^2(E)\equiv r_{\rm int}^2\,\sigma_\Delta^2/\tau_G^2(E)$.
+\added{The line is a superposition over clumps with a spread of Doppler
+factors (Section~\ref{sec:grb_source}); Eq.~\eqref{eq:g1obs_gauss} is
+applied to it as a whole, with $r_{\rm int}$ the fractional width of the
+composite, which holds to second order in $\sigma_\Delta^2/\tau_G^2$, the
+order of the closed form's other corrections.}
 
 In the dynamical limit $\sigma_\Delta=\sqrt2\,\sigma_\ell/c$ saturates,
 and with $\tau_G(E)=\lambda_{\rm obs}(E)/(2\pi c\,r_{\rm int})$ the foam
@@ -1722,13 +1727,14 @@ We thank Robin Kaiser for helpful discussions that helped motivate this work, an
 
 \appendix
 
-\section{Extended Sources and the Observed Coherence}
+\section{Extended Sources and Apertures}
 \label{app:extended}
 
-\added{The relationship between the observed and source
-order coherence, Equation~\eqref{eq:g1obs}, was derived for a point source on a single
-line of sight.  This appendix establishes the conditions under which it holds
-for a spatially extended incoherent source.}
+\added{The relationship between the observed and source first-order
+coherence, Equation~\eqref{eq:g1obs}, was derived for a point source on a
+single line of sight.  This appendix establishes the conditions under which
+it holds for a spatially extended incoherent source, and for collection over
+a spatially extended aperture.}
 
 \added{Consider the source as a discrete set of points, labeled by $j$, each
 seen through its own sightline with its own jitter $\delta t_j(t)$,}
@@ -1813,22 +1819,34 @@ hypothesis enter only through the sightline dependence of $\sigma_\ell$, and
 hence only logarithmically in $\alpha$
 (Eq.~\eqref{eq:alpha_grb_dyn}).}
 
-\paragraph{Validity of the closed form for the GRB line.}
-\added{Section~\ref{sec:grb_width} applies the Gaussian closed form
-Eq.~\eqref{eq:g1obs_gauss} to a line that Section~\ref{sec:grb_source}
-describes as a superposition over clumps with a spread of Doppler factors,
-hence over points with differing $\omega_{0,j}$.  Equations
-\eqref{eq:g1obs_ext} and~\eqref{eq:g1obs_ext_hom} do not license that
-directly: they are exact statements about the coherence, whereas
-Eq.~\eqref{eq:g1obs_gauss} is nonlinear in the source parameters --- through
-the prefactor $\tau_G/\sqrt{\tau_G^2+\sigma_\Delta^2}$ and the carrier shift
-$\nu_0^{\rm eff}=\nu_0\tau_G^2/(\tau_G^2+\sigma_\Delta^2)$ --- so an
-intensity-weighted mean over points with differing $\tau_{G,j}$ or
-$\omega_{0,j}$ is not that closed form evaluated at a mean $\tau_G$.  The
-discrepancy is second order in $\sigma_\Delta^2/\tau_G^2$, the same small
-parameter that controls the closed form's other corrections, so the bounds of
-Section~\ref{sec:sources} are unaffected provided $r_{\rm int}$ in
-Eq.~\eqref{eq:robs_model} is read as fit to the extended source as a whole.}
+\paragraph{Collection over an extended aperture.}
+\added{The construction above places the detector at a point.  A real
+instrument collects the field over an aperture, and for a single source
+point the foam delay may differ from one aperture point to another,
+$\delta t(\mathbf{x},t)$; that transverse structure is what the imaging
+channel measures.  The aperture points are not mutually incoherent --- they
+carry the same source field --- so the cancellation of the cross terms above
+is not available, and a different argument is needed.  It is Parseval's
+theorem.  With $\tilde E(\mathbf{x},\nu)$ the temporal transform of the
+aperture field and $\hat E(\mathbf{k},\nu)$ its focal-plane image,
+$\int|\hat E(\mathbf{k},\nu)|^2\,d\mathbf{k}=\int|\tilde E(\mathbf{x},\nu)|^2\,d\mathbf{x}$:
+the spectrum integrated over the whole focal plane is the sum of the
+single-sightline spectra of Section~\ref{sec:spec}, one per aperture point,
+with no cross terms and no dependence on how the foam is correlated across
+the aperture.  The condition is that the collection extend over the whole
+image.  Where the foam is transversely uncorrelated on scales below the
+aperture, the coherent sum over aperture patches concentrates the
+unmodulated fraction $e^{-\sigma_\phi^2}$ of the light in the image core and
+the modulated remainder in the halo (Section~\ref{sec:connection}), so an
+instrument admitting only the core would record a spectrum with the foam
+signature removed.  This is the sense in which the spectral and angular
+effects involve the same photons.  The instruments used here --- the Fermi
+GBM and LAT, LHAASO, and the FIRAS monopole --- integrate over the image,
+and the single-sightline result applies.}
+
+\added{Both extensions leave Eq.~\eqref{eq:g1obs} intact under a stated
+condition: statistical homogeneity across the source, and collection over
+the whole image at the detector.}
 
 \section*{Mathematical Notation}
 \label{app:notation}
