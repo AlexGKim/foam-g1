@@ -303,24 +303,37 @@ frequency $\omega_0=2\pi\nu_0$ reads the same delay as a phase jitter
 $\delta\phi=\omega_0\,\delta t$, giving a phase variance
 \begin{equation}
   \sigma_\phi^2 \;=\; \left(\frac{2\pi}{\lambda_{\rm obs}}\right)^{\!2}
-  \sigma_\ell^2(D_C),
+  \sigma_\ell^2(D_C).
   \label{eq:sigmaphi_cosmo}
 \end{equation}
-on which all spectroscopic bounds below rest.
+\added{
+This is the phase accumulation along a single ray, or in a transverse patch in which the foam
+is coherent.}  \deleted{on which all spectroscopic bounds below rest.}
 
-\added{The identification of path-length fuzziness with a phase,
-Eq.~\eqref{eq:sigmaphi_cosmo}, has been disputed.  Chen
-\textit{et al.}~\cite{ChenWenMa2014} grant Eq.~\eqref{eq:NgPerlmanVar} and
-attack the conversion: a photon samples a three-dimensional region rather
-than a ray, so that for cells uncorrelated beyond $\ell_{\rm P}$ the
-accumulated phase amplitude carries an extra factor $\ell_{\rm P}/\lambda$,
-some $5\times10^{-22}$ at $37$\,MeV.  Whether it applies turns on the
-transverse correlation structure that Eq.~\eqref{eq:NgPerlmanVar} leaves
-unspecified rather than on the variance, and the framework developed here
-carries that structure explicitly, spatially in $C^{\rm sp}_\alpha(B;D)$ and
-temporally in $C_\alpha(\tau;D)$.  We adopt Eq.~\eqref{eq:sigmaphi_cosmo} as
-a premise, shared with the imaging constraints and with the $\alpha$-foam
-literature generally; Section~\ref{sec:conclusions} returns to the dispute.}
+\added{
+\citet{ChenWenMa2014} point out that the phase dispersion is damped relative
+to the path-length dispersion for light propagating through a volume of
+incoherent foam.  The field samples a three-dimensional region rather than
+following a ray, and transverse structure finer than $\lambda$ scatters only
+into evanescent modes, so that for cells uncorrelated beyond $\ell_{\rm P}$
+the accumulated phase amplitude carries an extra factor
+$\ell_{\rm P}/\lambda$ --- some $5\times10^{-22}$ at $37$\,MeV, and its
+square in the variance.  The effect thus depends on the transverse
+correlation length of the foam, which
+Eq.~\eqref{eq:NgPerlmanVar} does not fix and which we do not model here.
+\citet{LeeZurekChen2024} work through a specific case, the pixellon
+realization of the Verlinde--Zurek effect, in which holographic degrees of
+freedom on the boundary of a causal diamond drive fluctuations in its size;
+the accumulated variance matches the random walk, $\langle\Delta L^2\rangle
+\sim\ell_{\rm P}D$, but the power sits in the low angular harmonics rather
+than at $1/\ell_{\rm P}$.  They find the suppression absent for such
+fluctuations, whose power lies at wavenumbers the field can carry.  We adopt
+Eq.~\eqref{eq:sigmaphi_cosmo} as a premise, shared with the imaging
+constraints and with the $\alpha$-foam literature generally.  It is worth
+noting that the transverse correlation structure bears on a purely temporal
+observable: the filtering acts on $\sigma_\phi^2$ itself rather than
+on its transverse gradient, and so reaches the spectrum as directly as it
+reaches the image.}
 
 \subsection{Temporal Decorrelation of Spacetime Foam}
 \label{sec:Calpha_origin}
@@ -593,6 +606,12 @@ for any source, with $\sigma_\phi^2$ evaluated frequency by frequency
 broadband form for the CMB, including the pedestal
 shape, is worked out for a specific model of the temporal
 autocorrelation $C_\alpha$ in Section~\ref{sec:CMB_derivation}.
+\added{The core-plus-pedestal split is the optical analogue of the M\"ossbauer
+recoil-free fraction: Gaussian phase statistics and unit modulus reduce any
+such modulation to a sharp elastic line of weight $e^{-\sigma_\phi^2}$,
+retaining the source profile, plus an inelastic remainder carrying
+$1-e^{-\sigma_\phi^2}$ spread over the far broader bandwidth set by the
+perturbation's correlation time.}
 
 For the Gaussian source profile of Section~\ref{sec:closedforms},
 Fourier-transforming Eq.~\eqref{eq:g1obs_gauss} with $\sigma_\Delta^2$
