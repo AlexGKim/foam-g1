@@ -1725,7 +1725,8 @@ We thank Robin Kaiser for helpful discussions that helped motivate this work, an
 \section{Extended Sources and the Observed Coherence}
 \label{app:extended}
 
-\added{Equation~\eqref{eq:g1obs} was derived for a point source on a single
+\added{The relationship between the observed and source
+order coherence, Equation~\eqref{eq:g1obs}, was derived for a point source on a single
 line of sight.  This appendix establishes the conditions under which it holds
 for a spatially extended incoherent source.}
 
@@ -1787,8 +1788,7 @@ in terms of that sightline's $\sigma_\ell$ and $C_\alpha$.  This is an
 intensity-weighted mean of single-sightline results, and is exact.}
 
 \paragraph{Recovering the point-source form.}
-\added{The kernels in Eq.~\eqref{eq:g1obs_ext} differ from sightline to
-sightline, so it is not yet of the form of Eq.~\eqref{eq:g1obs}.  Suppose the
+\added{Suppose the
 foam statistics depend on the sightline only through the propagation
 distance, and that the source subtends a spread $\Delta D$ with
 $\Delta D/D\ll1$.  Then $\sigma^2_{\Delta,j}=\sigma^2_\Delta$ and
@@ -1813,21 +1813,22 @@ hypothesis enter only through the sightline dependence of $\sigma_\ell$, and
 hence only logarithmically in $\alpha$
 (Eq.~\eqref{eq:alpha_grb_dyn}).}
 
-\paragraph{What the closed form does not inherit.}
-\added{Equations~\eqref{eq:g1obs_ext} and~\eqref{eq:g1obs_ext_hom} are exact
-statements about the coherence.  The Gaussian closed form
-Eq.~\eqref{eq:g1obs_gauss} is not inherited in the same way: it is nonlinear
-in $\tau_G$, through the prefactor $\tau_G/\sqrt{\tau_G^2+\sigma_\Delta^2}$
-and the carrier shift
-$\nu_0^{\rm eff}=\nu_0\tau_G^2/(\tau_G^2+\sigma_\Delta^2)$, so an
+\paragraph{Validity of the closed form for the GRB line.}
+\added{Section~\ref{sec:grb_width} applies the Gaussian closed form
+Eq.~\eqref{eq:g1obs_gauss} to a line that Section~\ref{sec:grb_source}
+describes as a superposition over clumps with a spread of Doppler factors,
+hence over points with differing $\omega_{0,j}$.  Equations
+\eqref{eq:g1obs_ext} and~\eqref{eq:g1obs_ext_hom} do not license that
+directly: they are exact statements about the coherence, whereas
+Eq.~\eqref{eq:g1obs_gauss} is nonlinear in the source parameters --- through
+the prefactor $\tau_G/\sqrt{\tau_G^2+\sigma_\Delta^2}$ and the carrier shift
+$\nu_0^{\rm eff}=\nu_0\tau_G^2/(\tau_G^2+\sigma_\Delta^2)$ --- so an
 intensity-weighted mean over points with differing $\tau_{G,j}$ or
 $\omega_{0,j}$ is not that closed form evaluated at a mean $\tau_G$.  The
 discrepancy is second order in $\sigma_\Delta^2/\tau_G^2$, the same small
 parameter that controls the closed form's other corrections, so the bounds of
-Section~\ref{sec:sources} are unaffected.  The closed form should nonetheless
-be read as applying to a source whose points share a common intrinsic
-profile and carrier, with $r_{\rm int}$ in Eq.~\eqref{eq:robs_model} fit to
-the extended source as a whole.}
+Section~\ref{sec:sources} are unaffected provided $r_{\rm int}$ in
+Eq.~\eqref{eq:robs_model} is read as fit to the extended source as a whole.}
 
 \section*{Mathematical Notation}
 \label{app:notation}
