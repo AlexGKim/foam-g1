@@ -1297,7 +1297,7 @@ metric fluctuation).  Substituting into Eq.~\eqref{eq:diffVarExt} gives
 \begin{equation}
   \sigma_\Delta^2(\tau) = \frac{2\sigma_\ell^2(D)}{c^2}
     \bigl[1 - e^{-|\tau|/\tau_{\rm foam}}\bigr].
-  \label{eq:sigmaDelta_exponential}
+  \label{eq:diffVarExt_exponential}
 \end{equation}
 The Fisher analysis below operates in the linearised regime
 $\sigma_\phi^2(\nu')\ll 1$.  Expanding $\mathcal{F}_{\rm foam}(\tau;\nu')$
@@ -1726,59 +1726,73 @@ We thank Robin Kaiser for helpful discussions that helped motivate this work, an
 \label{app:extended}
 
 \added{Equation~\eqref{eq:Eobs} describes a point source on a single line of
-sight. In this section, we consider an extended
-incoherent source, and identify the assumptions under which the
-point-source result survives.}
+sight.  In this appendix we consider an extended incoherent source, and
+identify the assumptions under which the point-source result survives.}
 
-\added{Consider the source as a discrete set of points,
-labeled by $j$, each seen through its own sightline
-with its own jitter $\delta t_j(t)$,}
+\added{Consider the source as a discrete set of points, labeled by $j$, each
+seen through its own sightline with its own jitter $\delta t_j(t)$,}
 \begin{equation}
-  E_{\rm obs}(t) = \sum_j E_{{\rm src},j}\!\left(t-\delta t_j(t)\right),
+  E_{\rm obs}(t) = \sum_j E_{{\rm obs},j}(t),
+  \qquad
+  E_{{\rm obs},j}(t) \equiv E_{{\rm src},j}\!\left(t-\delta t_j(t)\right),
   \label{eq:Eobs_ext}
 \end{equation}
 \added{with the points mutually incoherent,}
 \begin{equation}
-  \big\langle E^*_{{\rm src},j}(u)\,E_{{\rm src},k}(v)\big\rangle
+  \big\langle E^*_{{\rm src},j}(u)\,E_{{\rm src},k}(v)\big\rangle_{\rm src}
     = \delta_{jk}\,I_j\,g^{(1)}_{{\rm src},j}(v-u),
   \label{eq:incoh}
 \end{equation}
 \added{and the jitters $\{\delta t_j\}$ independent of the fields
-$\{E_{{\rm src},j}\}$, as for a single sightline.}
+$\{E_{{\rm src},j}\}$, as for a single sightline.  Because of that
+independence the two averages may be taken in either order; we take the
+source average first, at fixed jitter.}
 
 \paragraph{Cross terms.}
-\added{Because the jitters are independent of the fields, the average over
-foam and the average over the source factorize term by term.  For $j\neq k$
-the source factor is Eq.~\eqref{eq:incoh} with $\delta_{jk}=0$ at every pair
-of time arguments, so the cross terms vanish before the foam average is
-taken.  The conclusion therefore does not require the jitters on different
-sightlines to be statistically independent: correlated $\delta t_j$ and
-$\delta t_k$ leave the cancellation untouched.  This is the one place an
-assumption of independent sightlines might have been expected, and it is not
-needed.}
+\added{Conditioning on a realization of $\{\delta t_j\}$, the arguments of
+Eq.~\eqref{eq:incoh} are fixed times, and}
+\begin{equation}
+  \big\langle E^*_{{\rm obs},j}(u)\,E_{{\rm obs},k}(v)\big\rangle_{\rm src}
+    = \delta_{jk}\,I_j\,
+      g^{(1)}_{{\rm src},j}\!\left(\tau-\Delta_j(\tau)\right),
+  \qquad \tau\equiv v-u,
+  \label{eq:crossterms}
+\end{equation}
+\added{where setting $k=j$ collapses
+$[v-\delta t_k(v)]-[u-\delta t_j(u)]$ to $\tau-\Delta_j(\tau)$, with
+$\Delta_j(\tau)\equiv\delta t_j(v)-\delta t_j(u)$ as in
+Eq.~\eqref{eq:DeltaExt} and stationary in $\tau$.  The cross terms vanish at
+fixed jitter, before the foam average is taken, so no assumption is needed
+--- or available --- about the joint statistics of $\delta t_j$ and
+$\delta t_k$: correlated sightlines leave the cancellation untouched.}
 
 \paragraph{The observed coherence.}
-\added{Only diagonal terms survive.  Repeating the steps that led to
-Eq.~\eqref{eq:g1obs} for each $j$, and using
-$\langle|E_{\rm obs}|^2\rangle=\sum_j I_j$ from the ensemble-mean intensity
-preservation established below Eq.~\eqref{eq:Eobs}, the normalized coherence
-of Eq.~\eqref{eq:g1def} is}
+\added{Averaging Eq.~\eqref{eq:crossterms} over the foam and summing gives
+the numerator of Eq.~\eqref{eq:g1def}.  Each sightline preserves its
+ensemble-mean intensity, as below Eq.~\eqref{eq:Eobs}, so
+$\langle|E_{\rm obs}|^2\rangle=\sum_j I_j$ and}
 \begin{equation}
   g^{(1)}_{\rm obs}(\tau)
     = \frac{\sum_j I_j\,\big\langle
         g^{(1)}_{{\rm src},j}\!\left(\tau-\Delta_j(\tau)\right)
-      \big\rangle_{\delta t_j}}{\sum_j I_j},
+      \big\rangle_{\delta t_j}}{\sum_j I_j}
+    = \frac{\sum_j I_j\displaystyle\int_{-\infty}^{\infty}
+        \mathcal{N}\!\left(\Delta;0,\sigma^2_{\Delta,j}(\tau)\right)
+        g^{(1)}_{{\rm src},j}(\tau-\Delta)\,d\Delta}{\sum_j I_j},
   \label{eq:g1obs_ext}
 \end{equation}
-\added{an intensity-weighted mean of single-sightline results.  This much is
-exact.}
+\added{the second form using the Gaussianity of Eq.~\eqref{eq:kernel}
+per sightline, with $\sigma^2_{\Delta,j}$ given by Eq.~\eqref{eq:diffVarExt}
+in terms of that sightline's $\sigma_\ell$ and $C_\alpha$.  This is an
+intensity-weighted mean of single-sightline results, and is exact.}
 
 \paragraph{Statistically homogeneous foam.}
 \added{Suppose the foam statistics depend on the sightline only through the
 propagation distance, and that the source subtends a spread $\Delta D$ with
-$\Delta D/D\ll1$.  Then $\sigma_\Delta^2(\tau)$ and $C_\alpha(\tau;D)$ are
-common to the sightlines, the jitter average is the same operation for every
-$j$, and it commutes with the weighted sum:}
+$\Delta D/D\ll1$.  Then $\sigma^2_{\Delta,j}=\sigma^2_\Delta$ and
+$C_{\alpha,j}=C_\alpha(\tau;D)$ for every $j$, the kernel in
+Eq.~\eqref{eq:g1obs_ext} is common to all terms, and the integral commutes
+with the weighted sum:}
 \begin{equation}
   g^{(1)}_{\rm obs}(\tau)
     = \big\langle g^{(1)}_{\rm src,ext}\!\left(\tau-\Delta(\tau)\right)
@@ -1791,27 +1805,26 @@ $j$, and it commutes with the weighted sum:}
 \added{This is Eq.~\eqref{eq:g1obs} with the extended source's own intrinsic
 coherence in place of the point source's; for a carrier-dominated line it is
 $g^{(1)}_{\rm src,ext}(\tau)\,\mathcal{F}_{\rm foam}(\tau)$.  What carries
-over is the foam factor, not the intrinsic profile.}
-
-\added{Departures from the hypothesis enter only through the sightline
-dependence of $\sigma_\ell$, and hence only logarithmically in $\alpha$
+over is the foam factor, not the intrinsic profile.  Departures from the
+hypothesis enter only through the sightline dependence of $\sigma_\ell$, and
+hence only logarithmically in $\alpha$
 (Eq.~\eqref{eq:alpha_grb_dyn}).}
 
 \paragraph{What the closed form does not inherit.}
 \added{Equations~\eqref{eq:g1obs_ext} and~\eqref{eq:g1obs_ext_hom} are exact
 statements about the coherence.  The Gaussian closed form
 Eq.~\eqref{eq:g1obs_gauss} is not inherited in the same way: it is nonlinear
-in $\tau_G$, through the prefactor
-$\tau_G/\sqrt{\tau_G^2+\sigma_\Delta^2}$ and the carrier shift
+in $\tau_G$, through the prefactor $\tau_G/\sqrt{\tau_G^2+\sigma_\Delta^2}$
+and the carrier shift
 $\nu_0^{\rm eff}=\nu_0\tau_G^2/(\tau_G^2+\sigma_\Delta^2)$, so an
 intensity-weighted mean over points with differing $\tau_{G,j}$ or
 $\omega_{0,j}$ is not that closed form evaluated at a mean $\tau_G$.  The
 discrepancy is second order in $\sigma_\Delta^2/\tau_G^2$, the same small
 parameter that controls the closed form's other corrections, so the bounds of
 Section~\ref{sec:sources} are unaffected.  The closed form should nonetheless
-be read as applying to a source whose points share a common intrinsic profile
-and carrier, with $r_{\rm int}$ in Eq.~\eqref{eq:robs_model} fit to the
-extended source as a whole.}
+be read as applying to a source whose points share a common intrinsic
+profile and carrier, with $r_{\rm int}$ in Eq.~\eqref{eq:robs_model} fit to
+the extended source as a whole.}
 
 \section*{Mathematical Notation}
 \label{app:notation}
