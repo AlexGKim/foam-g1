@@ -175,7 +175,8 @@ but cannot deplete.  The exception is the TeV survival probe, which turns on
 whether broadband flux survives at all and so cannot distinguish flux lost to
 deflection from flux removed spectrally.  Source extension is likewise
 immaterial, an incoherent source being the intensity-weighted mean
-of single-sightline results.}
+of single-sightline results.  Both are established in
+Appendix~\ref{app:extended}.}
 
 \added{The spectroscopic channel has been considered previously.
 Cooke \textit{et al.}~\cite{Cooke2020} postulate a convolution kernel,
@@ -727,7 +728,9 @@ photometry}{the complementary
 $1-e^{-\sigma_\phi^2}$ of the source flux scatters into an incoherent
 halo}.
 \added{The pedestal is its spectroscopic counterpart: the same fraction of
-the flux, displaced in frequency rather than in angle.}
+the flux, displaced in frequency rather than in angle; the two describe the
+same photons when the foam is transversely uncorrelated across the aperture
+(Appendix~\ref{app:extended}).}
 
 Imaging and spectroscopic channels each probe $\sigma_\phi^2$ through
 a Fourier transform --- aperture position $\leftrightarrow$ focal-plane
@@ -1638,8 +1641,11 @@ correlations of Ref.~\cite{LeeZurekChen2024} (Section~\ref{sec:Calpha_origin})
 --- would hold $C_\alpha(\tau)\approx1$ across observational lags
 regardless of photon energy, again nulling the shape-distortion signal.
 \added{A third condition is external to the foam model: the bounds 
-are based on Eq.~\eqref{eq:sigmaphi_cosmo}, which does
-not account for transverse incoherence in the foam (Section~\ref{sec:metric_origin}).
+are based on Eq.~\eqref{eq:sigmaphi_cosmo}, which does not account for the
+diffractive averaging of foam structure transverse to the ray
+(Section~\ref{sec:metric_origin}) --- as distinct from foam structure across
+the collecting aperture, which is accounted for and is harmless when the
+whole image is recorded (Appendix~\ref{app:extended}).
 The proper procedure is
 to compute $C(\mathbf{r},\tau)$ for candidate foam models, as done in
 \citet{LeeZurekChen2024}.}
