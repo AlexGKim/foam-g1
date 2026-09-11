@@ -175,8 +175,8 @@ but cannot deplete.  The exception is the TeV survival probe, which turns on
 whether broadband flux survives at all and so cannot distinguish flux lost to
 deflection from flux removed spectrally.  Source extension is likewise
 immaterial, an incoherent source being the intensity-weighted mean
-of single-sightline results.  Both are established in
-Appendix~\ref{app:extended}.}
+of single-sightline results.  Appendix~\ref{app:extended} establishes both
+the source-extension result and the insensitivity to deflection.}
 
 \added{The spectroscopic channel has been considered previously.
 Cooke \textit{et al.}~\cite{Cooke2020} postulate a convolution kernel,
@@ -1068,10 +1068,13 @@ so the fractional width broadens:
 \end{equation}
 with $r_{\rm foam}^2(E)\equiv r_{\rm int}^2\,\sigma_\Delta^2/\tau_G^2(E)$.
 \added{The line is a superposition over clumps with a spread of Doppler
-factors (Section~\ref{sec:grb_source}); Eq.~\eqref{eq:g1obs_gauss} is
-applied to it as a whole, with $r_{\rm int}$ the fractional width of the
-composite, which holds to second order in $\sigma_\Delta^2/\tau_G^2$, the
-order of the closed form's other corrections.}
+factors (Section~\ref{sec:grb_source}), and Eq.~\eqref{eq:g1obs_gauss} is
+nonlinear in $\tau_G$ through its prefactor and its carrier shift, so an
+intensity-weighted mean over clumps is not that closed form at a mean
+$\tau_G$; it is applied to the line as a whole, with $r_{\rm int}$ the
+fractional width of the composite, which holds to second order in
+$\sigma_\Delta^2/\tau_G^2$, the order of the closed form's other
+corrections.}
 
 In the dynamical limit $\sigma_\Delta=\sqrt2\,\sigma_\ell/c$ saturates,
 and with $\tau_G(E)=\lambda_{\rm obs}(E)/(2\pi c\,r_{\rm int})$ the foam
@@ -1803,8 +1806,8 @@ intensity-weighted mean of single-sightline results, and is exact.}
 \paragraph{Recovering the point-source form.}
 \added{Suppose the
 foam statistics depend on the sightline only through the propagation
-distance, and that the source subtends a spread $\Delta D$ with
-$\Delta D/D\ll1$.  Then $\sigma^2_{\Delta,j}=\sigma^2_\Delta$ and
+distance, and that the source subtends a spread $\delta D$ with
+$\delta D/D\ll1$.  Then $\sigma^2_{\Delta,j}=\sigma^2_\Delta$ and
 $C_{\alpha,j}=C_\alpha(\tau;D)$ for every $j$, the kernel is common to all
 terms, and the integral commutes with the weighted sum:}
 \begin{equation}
@@ -1828,32 +1831,51 @@ hence only logarithmically in $\alpha$
 
 \paragraph{Collection over an extended aperture.}
 \added{The construction above places the detector at a point.  A real
-instrument collects the field over an aperture, and for a single source
-point the foam delay may differ from one aperture point to another,
+instrument collects the field over an aperture, and for a single source point
+the foam delay may differ from one aperture point to another,
 $\delta t(\mathbf{x},t)$; that transverse structure is what the imaging
 channel measures.  The aperture points are not mutually incoherent --- they
 carry the same source field --- so the cancellation of the cross terms above
 is not available, and a different argument is needed.  It is Parseval's
 theorem.  With $\tilde E(\mathbf{x},\nu)$ the temporal transform of the
-aperture field and $\hat E(\mathbf{k},\nu)$ its focal-plane image,
-$\int|\hat E(\mathbf{k},\nu)|^2\,d\mathbf{k}=\int|\tilde E(\mathbf{x},\nu)|^2\,d\mathbf{x}$:
-the spectrum integrated over the whole focal plane is the sum of the
-single-sightline spectra of Section~\ref{sec:spec}, one per aperture point,
-with no cross terms and no dependence on how the foam is correlated across
-the aperture.  The condition is that the collection extend over the whole
-image.  Where the foam is transversely uncorrelated on scales below the
-aperture, the coherent sum over aperture patches concentrates the
-unmodulated fraction $e^{-\sigma_\phi^2}$ of the light in the image core and
-the modulated remainder in the halo (Section~\ref{sec:connection}), so an
-instrument admitting only the core would record a spectrum with the foam
-signature removed.  This is the sense in which the spectral and angular
-effects involve the same photons.  The instruments used here --- the Fermi
-GBM and LAT, LHAASO, and the FIRAS monopole --- integrate over the image,
-and the single-sightline result applies.}
+aperture field and $\hat E(\mathbf{q},\nu)$ its focal-plane image,
+$\int|\hat E(\mathbf{q},\nu)|^2\,d\mathbf{q}
+=\int|\tilde E(\mathbf{x},\nu)|^2\,d\mathbf{x}$: the spectrum integrated over
+the whole focal plane is the sum of the single-sightline spectra of
+Section~\ref{sec:spec}, one per aperture point --- in the ensemble average,
+each $|\tilde E|^2$ being a periodogram --- with no cross terms and no
+dependence on how the foam is correlated across the aperture.}
+
+\added{Partial collection costs less than that argument suggests.  Where the
+foam is transversely uncorrelated below the aperture scale, the aperture
+average of $E_{\rm src}(t-\delta t(\mathbf{x},t))$ tends to
+$\langle e^{i\omega_0\delta t}\rangle E_{\rm src}(t)
+=e^{-\sigma_\phi^2/2}E_{\rm src}(t)$, a constant multiple of the source field,
+so the image core carries the spectrum
+$e^{-\sigma_\phi^2(\nu)}S_{\rm src}(\nu)$ --- the coherent core of
+Section~\ref{sec:spec} itself.  Every bound in this paper lives in that
+object: the deficit fitted in Section~\ref{sec:CMB}, the survival factor of
+Eq.~\eqref{eq:absolute_suppression}, and the fractional-width law, which
+Section~\ref{sec:grb_width} identifies as a property of the coherent core.
+What a core-only instrument excludes is the pedestal, which lies at
+$\sim1/\tau_{\rm foam}$ and contributes nothing in band in any case.  This is
+the sense in which the spectral and angular effects act on the same flux.}
+
+\added{Two limitations attach.  The argument disposes of transverse foam
+structure on scales between $\lambda$ and the aperture; structure below
+$\lambda$ lies within a single aperture point, is the regime of
+Ref.~\cite{ChenWenMa2014} discussed in Section~\ref{sec:metric_origin}, and is
+untouched by Parseval.  And the instruments used here are taken to record the
+image --- trivially for the FIRAS monopole, by assumption for LHAASO, where
+halo containment is the issue treated in
+Refs.~\cite{Steinbring2007,Steinbring2015}.  The TeV bound is conservative
+either way, since flux lost to an uncollected halo only deepens the apparent
+suppression.}
 
 \added{Both extensions leave Eq.~\eqref{eq:g1obs} intact under a stated
-condition: statistical homogeneity across the source, and collection over
-the whole image at the detector.}
+condition: statistical homogeneity across the source, and, for the full
+spectrum rather than the coherent core alone, collection over the whole
+image.}
 
 \section*{Mathematical Notation}
 \label{app:notation}
