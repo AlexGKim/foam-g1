@@ -6,7 +6,7 @@ Status: markup and unmarked-edit checks are done. Now I'm verifying the compile 
 
 ## Summary
 
-The referee report contains 13 distinct items. Status: 10 ADDRESSED, 2 PARTIALLY ADDRESSED, 1 NOT ADDRESSED. The one NOT ADDRESSED item is the request for a Fermi-LAT estimate of α, and a reasoned refusal is available. The weakest spots are the handling of the Steinbring "detection" claim, the naming of the relation, and the unmarked appendix skeleton.
+The referee report contains 13 distinct items. Status: 11 ADDRESSED, 1 PARTIALLY ADDRESSED, 1 NOT ADDRESSED. The one NOT ADDRESSED item is the request for a Fermi-LAT estimate of α, and a reasoned refusal is available. The weakest spots are the handling of the Steinbring "detection" claim, the naming of the relation, and the unmarked appendix skeleton.
 
 Markup was well formed: all 52 change commands balance, and every `\replaced` has its second argument as the old text. One structural defect: the appendix heading, its label, its four paragraph headings, and all five displayed equations are unmarked, so they appear in the ORIGINAL reading as bare content.
 
@@ -20,7 +20,7 @@ Markup was well formed: all 52 change commands balance, and every `\replaced` ha
 | 4 | "does not sufficiently address how real telescopes actually sense photons ... treated as 'flat' ... assuming a single, monochromatic strength of blurring ... does not report an observed averaged effect over the bandpass" | ADDRESSED | [g1.tex:1833](g1.tex:1833) and [g1.tex:1849](g1.tex:1849) added (Parseval, core-only instruments); [g1.tex:1864](g1.tex:1864) added ("by assumption for LHAASO"); [g1.tex:811](g1.tex:811) added — the instrumental line-spread function is stated and disposed of for both GRB probes. See "Resolution of item 4" below. |
 | 5 | "that result does not preclude the *range* ... 0.650 ≤ alpha ≤ 0.735 ... not merely a limit ... effectively dismissed here ... which is incorrect" | ADDRESSED | Reworked on the three-point skeleton — see "Resolution of items 5, 9, 13" below. Intro block rewritten, new Sec. V A 2 paragraph, abstract `\replaced`, conclusions `\added`. |
 | 6 | "Steinbring, 2015, ApJ, 802, 38 approach; here uncited" | ADDRESSED | [g1.tex:126](g1.tex:126) added, cites Steinbring2015; entry present in references.bib and in g1.bbl |
-| 7 | "not accounting for more-blurred, bluer photons reported in Steinbring, 2007 ... (also uncited)" | PARTIALLY | Citation added at [g1.tex:126](g1.tex:126) and [g1.tex:1871](g1.tex:1871). The specific "bluer photons more blurred" point is never stated; the added text only mentions acceptance limits. |
+| 7 | "not accounting for more-blurred, bluer photons reported in Steinbring, 2007 ... (also uncited)" | ADDRESSED | [g1.tex:132](g1.tex:132) added — the point is now stated, not just cited. See "Resolution of item 7" below. |
 | 8 | "this should properly be referred to as the Ng-Steinbring relation ... Ng-Perlman would have been ruled out by GRB observations ... what the authors compare to in the abstract, and elsewhere" | PARTIALLY | "Ng--Perlman" dropped from the α label at [g1.tex:43](g1.tex:43), [g1.tex:1602](g1.tex:1602), [g1.tex:1888](g1.tex:1888). It survives unchanged at lines 243, 342, 1354, 1703. "Ng–Steinbring" appears nowhere. The localizability argument against a single-δ interpretation is not acknowledged. A reasoned refusal is plausible: the paper uses the α parametrization (Eq. 1) and the time-interval form, not a PSF model, and Sec. V A 2 line 989 already distinguishes the channels. |
 | 9 | "Acknowledgement ... that the Steinbring (2023) result would then be a first detection ... in-orbit observed Fermi LAT PSF is, in fact, broadened" | ADDRESSED | Intro now attributes the window to [12] extended by [13], states its two-sidedness, and reports that those authors read it as a first detection with the LAT PSF foam-broadened. Attributed, not asserted in our voice. |
 | 10 | "Can the authors estimate, if incorporating the Ng-Steinbring approach to alpha on the Fermi LAT data, that they too find a value of alpha>0.65 is favoured?" | NOT ADDRESSED | No marked change performs or discusses any LAT analysis. Reasoned refusal available: the paper's GRB line data are Fermi/GBM ([g1.tex:797](g1.tex:797)), the observable is spectral not angular, and Sec. IV B (line 749) already says cross-channel comparison is model-dependent. The width bound α≳0.63 does not contradict α>0.65. |
@@ -66,7 +66,7 @@ Markup was well formed: all 52 change commands balance, and every `\replaced` ha
 2. **Mark up the appendix.** Wrap `\appendix`, the heading, label, paragraph headings, and the five equations in `\added{}` (equations can go inside a single `\added` block, or add a comment noting the whole appendix is new).
 3. **Decide on the naming** (item 8). Either adopt "Ng–Steinbring" where the imaging PSF treatment is meant, or keep "Ng–Perlman" for Eq. (1) and add one sentence at [g1.tex:243](g1.tex:243) saying the paper uses only the variance relation and time-interval form, and that the PSF-interpretation critique in Refs. Steinbring 2007, 2015 does not bear on that relation. The response letter then has a defensible refusal.
 4. **Answer the LAT question** (item 10) in the paper, not only in the letter. One paragraph in Sec. IV B or the conclusions: the spectroscopic channel cannot be applied to LAT imaging data; the paper's floors are compatible with α>0.65 being favoured; a joint fit is model-dependent per the caveats at [g1.tex:749](g1.tex:749).
-5. **State the bluer-photon point** (item 7) in one sentence at [g1.tex:126](g1.tex:126): σ_φ ∝ 1/λ makes bluer photons more blurred, which is the Steinbring 2007 observation, and here it is built into Eq. (3).
+5. ~~**State the bluer-photon point** (item 7).~~ **DONE** — see "Resolution of item 7" below. (The equation is (4), `eq:sigmaphi_cosmo`, not (3).)
 6. ~~**Bandpass averaging** (item 4).~~ **DONE** — see "Resolution of item 4" below. The recommendation as originally written was misdirected: the issue is the instrumental line-spread function, not a bandpass average of e^{−σ_φ²(ν)}, and it is disposed of by the resolution numbers rather than by an estimate.
 7. **Fix the normalization** in Eq. (Sobs_gauss), line 659, and Eq. (CMB_spectrum) to carry the prefactor, or state once that S is unit-normalized thereafter.
 8. **Resolve the "marginally rules out α=1/2" vs "α≤0.65 excluded" tension** at [g1.tex:117](g1.tex:117), and give the 0.65 exclusion its own citation.
@@ -235,3 +235,50 @@ mouths that they declined to make themselves.
 All four Steinbring entries are present and correct in references.bib:
 Steinbring2007 (ApJ 655, 714), Steinbring2015 (ApJ 802, 38), Steinbring2023
 (Galaxies 11, 115), SteinbringNg2026 (PoS CORFU2025, 205). Nothing to add.
+
+
+## Resolution of item 7
+
+Applied at [g1.tex:132](g1.tex:132), extending the clause that already cited
+Steinbring 2007:
+
+> Because the delay δt is achromatic, the phase it produces is not: a shorter
+> wavelength converts the same path-length jitter into a larger phase, so the
+> bluest photons are blurred most and are preferentially the ones scattered
+> beyond the instrumental acceptance [Steinbring2007].  Accounting for that
+> loss is what allows a larger α to remain consistent with a given image.  The
+> same 1/λ conversion drives the spectroscopic channel developed here, through
+> Eq. (4); what differs is where the flux goes, leaving the observing band
+> rather than the telescope beam.
+
+The paper already had the physics; what it lacked was the connection. Eq. (4)
+is σ_φ² = (2π/λ_obs)² σ_ℓ²(D_C), and [g1.tex:311](g1.tex:311) states that δt
+itself is *achromatic*. So the chromatic dependence enters entirely through
+the phase conversion — a shorter wavelength turns the same delay into more
+phase. That is the Steinbring 2007 observation in this paper's own variables,
+which is why the addition costs one sentence.
+
+Verified against the source: [13] (arXiv:2603.18277), by the same author, puts
+it as "This gets stronger with bluer light, of course," and builds its
+four-level acceptance structure on it. It is in any case immediate from
+Δφ = 2πΔl/λ.
+
+The second sentence concedes the referee's actual consequence — accounting for
+the loss permits a *larger* α — in their own terms. That costs nothing, since
+our floors lie below the window either way, and it is the concession item 7 is
+really asking for.
+
+**Deliberately not written:** that a spectroscopic instrument *retains* the
+redistributed flux. It does not — the pedestal sits at ~1/τ_foam, far outside
+any observing band ([g1.tex:868](g1.tex:868)–878). The contrast is that flux
+leaves the *band* rather than the *beam*, not that it is recovered.
+
+### Note for the response letter
+
+Short item. Say the point is now stated explicitly rather than left implicit
+in the 1/λ scaling, cite the added sentences, and make the concession
+plainly: accounting for the chromatic loss of acceptance permits a larger α,
+and this paper's bounds are consistent with that because they are floors
+below the window. Then use the contrast as the bridge back to the
+complementarity argument — the same 1/λ conversion acts in both channels, but
+removes flux from the observing band here and from the telescope beam there.
