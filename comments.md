@@ -153,10 +153,85 @@ Applied as four edits: intro block rewritten, new Sec. V A 2 paragraph after
 the existing channel-separation paragraph, abstract `\replaced`, conclusions
 `\added`. ≈290 words.
 
-### Open
+### Note for the response letter
 
-**Attribution.** The referee credits both the range and the detection to [12]
-(Steinbring 2023); the previous text credited [13] alone. The revision reads
-"[12], extended in [13]", which is safe under either reading and is what the
-referee is checking for. Neither paper is in refs/, so this is unverified — if
-the window actually originates in [13], flip it.
+Three things to say, in the skeleton's order:
+
+1. **Acknowledge.** State plainly that the imaging window is a two-sided
+   result with the holographic value at its midpoint, not a one-sided limit,
+   and that the manuscript now says so in the introduction, Sec. V A 2, the
+   abstract and the conclusions. Quote the added sentences. This is the item
+   the referee cares most about — the complaint was that a positive result was
+   "effectively dismissed."
+2. **Complementary channel.** Use the referee's own words back: they write
+   that "a healthy approach for this field is to consider different ways of
+   calculating this scattering effect, and so whether those approaches at
+   least give consistent results." That is exactly what the paper offers — a
+   spectral rather than angular observable, temporal rather than transverse
+   correlations, an uncertain source spectrum in place of a known aperture.
+   The agreement of two independent routes is the result, not a rival bound.
+3. **Non-exclusion, stated honestly.** The two pedestal-independent floors
+   (α ≳ 0.63, α ≳ 0.52) lie below the window and exclude no part of it. Do
+   *not* claim this for the TeV bound: α ≳ 0.74 exceeds the window's 0.735 and
+   would exclude it outright, but only for τ_foam ≲ 4×10⁻²⁸ s. Volunteer that
+   rather than letting the referee find it, and give the consequence — if the
+   imaging result stands, τ_foam ≳ 4×10⁻²⁸ s. The apparent conflict is then a
+   joint constraint on foam refresh rate, which is a result neither channel
+   reaches alone.
+
+Also carry over the item-4 note: the FIRAS constraint is not monochromatic,
+the fit running over 43 channels with the frequency dependence of the deficit
+being the shape it constrains, so it is insensitive to any single channel's
+response.
+
+On the correction below, say in the letter that the attribution has been
+checked against the source and corrected, and that the description of the
+0.735 endpoint has been fixed. Better to own this than to have it noticed.
+
+### Attribution — RESOLVED, and a correction to make
+
+Checked against the full text of arXiv:2603.18277 (obtained and read; the
+published PoS version is [13]).
+
+**The window is in [13], not [12].** Both endpoints appear in [13]: "shown for
+α = 0.650, z = 0.151" and "The lower limit where blurring must necessarily
+rise above the nominal resolution (Φ_Res) then occurs at α = 0.735". The
+abstract of Steinbring 2023 [12] gives only a limiting bound of about 1 degree
+consistent with holographic QG — no two-sided range. **The referee
+mis-attributed the range to [12], and the applied edit followed them.** Revert
+the attribution to [13], with [12] cited as the earlier GRB221009A imaging
+analysis it builds on.
+
+**The gloss of 0.735 is backwards and must be fixed.** The manuscript says
+α ≈ 0.735 is "the point beyond which foam blurring no longer rises above the
+nominal instrumental resolution." In [13] it is the *weakest-blurring* end of
+the bracket — the curve scaled to the resolution limit: "the weakest possible
+Φ_Theta (black on white curve, α = 0.735, z = 0.151) is still consistent with
+localization of GRB221009A." The other endpoint, α = 0.650, is the
+FoV-scaled case. The two therefore bracket instrumental scaling from field of
+view down to resolution limit, and [13] observes that "the half-way point for
+α ... happens to coincide with α = 0.667, which is the holographic value
+favored by QG models." That midpoint coincidence is the actual structure of
+their argument and is worth stating, since it is what makes the window
+two-sided in a way that singles out 2/3.
+
+**"First detection" is the referee's phrase, not [13]'s.** The paper never
+uses it, and is careful in the other direction about the quasar work: "As
+high-z quasars can be partially resolved, this cannot be called a detection of
+foam, but did set limits on it." What [13] does claim, and what we should
+report instead, is stronger on the evidence and safer to attribute:
+
+- "Clearly, LAT images are not limited by diffraction but scale with it as
+  predicted by foam-induced blurring, which sets a resolution floor."
+- A section headed "Seeing a Halo Attributable to HQF-Blurring."
+- "It is indeed an excellent fit to all of the data."
+
+Reporting these rather than the word "detection" satisfies item 9 — which asks
+for acknowledgement and context — without putting a claim in those authors'
+mouths that they declined to make themselves.
+
+### Bibliography
+
+All four Steinbring entries are present and correct in references.bib:
+Steinbring2007 (ApJ 655, 714), Steinbring2015 (ApJ 802, 38), Steinbring2023
+(Galaxies 11, 115), SteinbringNg2026 (PoS CORFU2025, 205). Nothing to add.
