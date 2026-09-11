@@ -146,19 +146,9 @@ computing the holographic-foam-widened PSF for real telescopes and finding all
 data consistent with $\alpha=2/3$.
 These imaging-channel analyses show that the holographic model is not
 excluded by the spatial localization of GRB\,221009A.
-\added{Because the delay $\delta t$ is achromatic, the phase it produces is
-not: a shorter wavelength converts the same path-length jitter into a larger
-phase, so the bluest photons are blurred most and are preferentially the ones
-scattered beyond the instrumental acceptance~\cite{Steinbring2007}.
-Accounting for that loss is what allows a larger $\alpha$ to remain consistent
-with a given image.  The same $1/\lambda$ conversion drives the spectroscopic
-channel developed here, through Eq.~\eqref{eq:sigmaphi_cosmo}; what differs is
-where the flux goes, leaving the observing band rather than the telescope
-beam.}
-\added{Reference~\cite{SteinbringNg2026}, developing the GRB\,221009A imaging
-analysis of Ref.~\cite{Steinbring2023}, advances a stronger reading of the
-same data.  With $\alpha\leq0.65$ already excluded by images of distant
-galaxies and AGNs, those authors bracket the foam-widened PSF between two
+
+\added{Those authors advance a stronger reading of the same data.  With $\alpha\leq0.65$ already excluded by images of distant
+galaxies and AGNs, they bracket the foam-widened PSF between two
 instrumental scalings: $\alpha=0.650$, where the blurring is scaled to the
 instrument's field of view, and $\alpha=0.735$, the weakest-blurring case,
 scaled to its nominal resolution and still consistent with the localization
@@ -167,9 +157,18 @@ bracket.  Across it they find the model consistent with every band observed
 for this burst and with archival \textit{Fermi} GRB and AGN samples,
 reporting that LAT images are not diffraction-limited but scale as
 foam-induced blurring predicts, and reading the resulting halo as
-attributable to foam.  The present work approaches the same exponent through
-a different channel; Section~\ref{sec:grb_tev} sets its bounds against that
-bracket.}
+attributable to foam.  }
+
+\added{Because the delay $\delta t$ is achromatic, the phase it produces is
+not: a shorter wavelength converts the same path-length jitter into a larger
+phase, so the bluest photons are blurred most and are preferentially the ones
+scattered beyond the instrumental acceptance~\cite{Steinbring2007}.
+Accounting for that loss is what allows a larger $\alpha$ to remain consistent
+with a given image.  The same $1/\lambda$ conversion drives the spectroscopic
+channel developed here, through Eq.~\eqref{eq:sigmaphi_cosmo}; what differs is
+where the flux goes, leaving the observing band rather than the telescope
+beam.  Section~\ref{sec:grb_tev} sets the bounds
+obtained here against that bracket.}
 
 We develop a framework based on the first-order temporal coherence
 function $g^{(1)}(\tau)$ of light from astrophysical sources.
@@ -596,19 +595,19 @@ implying
   \label{eq:WK_obs}
 \end{equation}
 \added{Here $\mathcal{F}\{f\}(\nu)\equiv\int_{-\infty}^{\infty}d\tau\,
-e^{\,i2\pi\nu\tau}f(\tau)$.  The observed field is stationary because
-$E_{\rm src}$ and $\delta t$ are and are independent, so the theorem applies,
-and the prefactor fixes the normalization: $g^{(1)}(0)=1$ gives
-$\int S_{\rm obs}\,d\nu=\langle|E_{\rm obs}|^2\rangle$.  Below, $S$ denotes
-the unit-normalized spectral shape, $\int S\,d\nu=1$; the prefactor is
-reinstated only where absolute flux is at issue, as in
-Eq.~\eqref{eq:CMB_spectrum}, where $B_\nu(T_0)$ carries it.  The observed
-field is stationary when the integration time exceeds the foam coherence
-time, $T_{\rm int}\gg\tau_{\rm foam}$; since
+e^{\,i2\pi\nu\tau}f(\tau)$.  The theorem applies because the observed field is
+stationary: $E_{\rm src}$ and $\delta t$ are stationary and independent, and
+the integration time exceeds the foam coherence time,
+$T_{\rm int}\gg\tau_{\rm foam}$.  Since
 $\tau_{\rm foam}\sim\tau_P\sim10^{-44}$\,s is far shorter than any
 astrophysical evolution --- the hours over which the GRB line centroid sweeps
 $37\to6$\,MeV, say --- the slow kinematics and the fast foam jitter separate
-cleanly, and each epoch is stationary on the foam timescale.}
+cleanly, and each epoch is stationary on the foam timescale.  The prefactor
+fixes the normalization: $g^{(1)}(0)=1$ gives
+$\int S_{\rm obs}\,d\nu=\langle|E_{\rm obs}|^2\rangle$.  Below, $S$ denotes
+the unit-normalized spectral shape, $\int S\,d\nu=1$; the prefactor is
+reinstated only where absolute flux is at issue, as in
+Eq.~\eqref{eq:CMB_spectrum}, where $B_\nu(T_0)$ carries it.}
 \deleted{The theorem applies because astronomical emission lines have finite
 linewidth (so the Fourier transform is well defined) and because the
 foam-induced jitter is a stationary process independent of the source
