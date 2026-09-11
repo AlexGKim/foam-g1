@@ -356,3 +356,22 @@ Write instead:
 4. Close with the acceptance calculation: we asked his methodological question
    in our own channel and it comes out negligible (f_band ≈ 4×10⁻¹⁷). This is
    the strongest card; it shows the point was taken, not sidestepped.
+
+
+## Problems introduced — disposition
+
+Reviewed against the file rather than the audit; several were already stale.
+
+| # | Status |
+|---|---|
+| 1 Unmarked appendix skeleton | PARTLY FIXED (b4faafd, this commit). The four `\paragraph` headings are removed and the appendix is continuous prose. `\appendix` and `\label` are left unmarked — neither renders. The section title and the five equations remain unmarked by decision: the equation/`\added` mismatch is accepted. |
+| 2 Other unmarked edits | FIXED. The comma→period after Eq. (4) is now `\added{.}` with the comma restored inside the `\deleted` clause, so the original reading recovers "(D_C), on which all spectroscopic bounds below rest." The label rename, bibliography path and removed `\verify` macro need no action — intentional and invisible. |
+| 3 Normalization | FIXED. Convention declared once after Eq. (WK_obs). Note the audit over-counted: Eq. (CMB_spectrum) was already consistent, B_ν(T_0) carrying the prefactor. |
+| 4 Internal tension | FIXED. "marginally rules out" → "rules out" via `\replaced`. |
+| 5 TeV bound vs window | RESOLVED earlier, 9e96ece. |
+| 6 Attribution of the window | RESOLVED earlier, b6616db — and inverted: the window is in [13], not [12]. The referee was wrong and the audit inherited the error. |
+| 7 Overclaim at a seam | FIXED. "immaterial" now carries the condition Appendix A proves it under. |
+| 8 Hedge in place of analysis | RESOLVED earlier, b6616db + 49b8e11. |
+| 9 Deleted justification | FIXED (this commit). **The audit was right and an earlier review of it here was wrong** — the block at g1.tex:603 is `\deleted`, not `\added`; mistaking the closing brace for an `\added` block led to it being reported as stale. Restored as one sentence rather than the full paragraph, since that paragraph was cut deliberately in 5e0ec98. |
+| 10 Cooke specifics | VERIFIED correct against the published abstract: "narrow Fe II absorption line produced by a quiescent gas cloud at redshift z ≃ 2.34", "σ_E/E = (E/E_P)^α", "we rule out models with α ≤ 0.634", ESPRESSO/VLT. Two double spaces remain in the source at g1.tex:204 and 210 — invisible in output. |
+| 11 Compile status | STALE. Zero "Token not allowed in a PDF string" warnings in the current build. |

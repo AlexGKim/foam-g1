@@ -602,7 +602,13 @@ and the prefactor fixes the normalization: $g^{(1)}(0)=1$ gives
 $\int S_{\rm obs}\,d\nu=\langle|E_{\rm obs}|^2\rangle$.  Below, $S$ denotes
 the unit-normalized spectral shape, $\int S\,d\nu=1$; the prefactor is
 reinstated only where absolute flux is at issue, as in
-Eq.~\eqref{eq:CMB_spectrum}, where $B_\nu(T_0)$ carries it.}
+Eq.~\eqref{eq:CMB_spectrum}, where $B_\nu(T_0)$ carries it.  The observed
+field is stationary when the integration time exceeds the foam coherence
+time, $T_{\rm int}\gg\tau_{\rm foam}$; since
+$\tau_{\rm foam}\sim\tau_P\sim10^{-44}$\,s is far shorter than any
+astrophysical evolution --- the hours over which the GRB line centroid sweeps
+$37\to6$\,MeV, say --- the slow kinematics and the fast foam jitter separate
+cleanly, and each epoch is stationary on the foam timescale.}
 \deleted{The theorem applies because astronomical emission lines have finite
 linewidth (so the Fourier transform is well defined) and because the
 foam-induced jitter is a stationary process independent of the source
@@ -1839,8 +1845,8 @@ $\{E_{{\rm src},j}\}$, as for a single sightline.  Because of that
 independence the two averages may be taken in either order; we take the
 source average first, at fixed jitter.}
 
-\paragraph{Cross terms.}
-\added{Conditioning on a realization of $\{\delta t_j\}$, the arguments of
+\added{Consider first the cross terms.  Conditioning on a realization of
+$\{\delta t_j\}$, the arguments of
 Eq.~\eqref{eq:incoh} are fixed times, and}
 \begin{equation}
   \big\langle E^*_{{\rm obs},j}(u)\,E_{{\rm obs},k}(v)\big\rangle_{\rm src}
@@ -1857,7 +1863,6 @@ fixed jitter, before the foam average is taken, so no assumption is needed
 about the joint statistics of $\delta t_j$ and
 $\delta t_k$.}
 
-\paragraph{The observed coherence.}
 \added{Each sightline preserves its ensemble-mean intensity, as established
 below Eq.~\eqref{eq:Eobs}, so $\langle|E_{\rm obs}|^2\rangle=\sum_j I_j$.
 Averaging Eq.~\eqref{eq:crossterms} over the foam and summing over $j$,
@@ -1877,8 +1882,7 @@ per sightline, with $\sigma^2_{\Delta,j}$ given by Eq.~\eqref{eq:diffVarExt}
 in terms of that sightline's $\sigma_\ell$ and $C_\alpha$.  This is an
 intensity-weighted mean of single-sightline results, and is exact.}
 
-\paragraph{Recovering the point-source form.}
-\added{Suppose the
+\added{One further hypothesis recovers the point-source form.  Suppose the
 foam statistics depend on the sightline only through the propagation
 distance, and that the source subtends a spread $\delta D$ with
 $\delta D/D\ll1$.  Then $\sigma^2_{\Delta,j}=\sigma^2_\Delta$ and
@@ -1903,7 +1907,6 @@ hypothesis enter only through the sightline dependence of $\sigma_\ell$, and
 hence only logarithmically in $\alpha$
 (Eq.~\eqref{eq:alpha_grb_dyn}).}
 
-\paragraph{Collection over an extended aperture.}
 \added{The construction above places the detector at a point.  A real
 instrument collects the field over an aperture, and for a single source point
 the foam delay may differ from one aperture point to another,
