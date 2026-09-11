@@ -261,7 +261,7 @@ Table~\ref{tab:notation} collects the principal symbols used throughout.
 \subsection{Arrival-Time Jitter}
 \label{sec:metric_origin}
 
-We adopt the Ng--Perlman picture of spacetime foam: stochastic,
+We adopt the \replaced{$\alpha$-foam}{Ng--Perlman} picture of spacetime foam: stochastic,
 achromatic path-length fluctuations whose cumulative effect along a line
 of sight is an arrival-time jitter $\delta t(t)$, which a carrier reads
 as a phase jitter $\sigma_\phi$.
@@ -360,7 +360,7 @@ reaches the image.}
 \subsection{Temporal Decorrelation of Spacetime Foam}
 \label{sec:Calpha_origin}
 
-The Ng--Perlman variance $\sigma_\ell^2(D)$ (Eq.~\eqref{eq:NgPerlmanVar})
+The \replaced{foam}{Ng--Perlman} variance $\sigma_\ell^2(D)$ (Eq.~\eqref{eq:NgPerlmanVar})
 fixes the amplitude of the path-length fluctuations along a single
 ray but not their temporal correlation.  Quantum-foam models posit
 that each Planck-scale cell fluctuates on a characteristic timescale
@@ -775,6 +775,21 @@ those shared details.  And the channels differ in their reference truth:
 in imaging the aperture is known a priori, whereas in spectroscopy the
 intrinsic source spectrum is itself uncertain, making the foam
 contribution harder to isolate.
+
+\added{Equation~\eqref{eq:NgPerlmanVar} is common ground: a variance relation
+due to Ng and collaborators~\cite{Ng2001,Ng2003}, on which the imaging
+literature builds competing mappings to an observable --- a Strehl ratio in
+Ref.~\cite{NgPerlman2022}, an angular size subject to instrumental acceptance
+in Refs.~\cite{Steinbring2015,SteinbringNg2026}.  This work uses neither.  It
+borrows the \emph{form} $e^{-\sigma_\phi^2}$, the Strehl factor of a random
+phase screen, but no angular inference, so the bounds are unaffected by which
+mapping is correct.  The counterpart question here is spectral --- what a
+finite bandpass retains of the redistributed flux --- evaluated in
+Section~\ref{sec:grb_tev} as $f_{\rm band}\approx4\times10^{-17}$, negligible
+where the imaging fraction is large enough to move $\alpha$.  For the same
+reason the framework cannot be applied to \textit{Fermi}-LAT imaging data; the
+floors obtained below lie beneath $0.65$ and are consistent with a larger
+value being favoured.}
 
 % ==============================================================
 \section{Sources}
@@ -1400,7 +1415,7 @@ is the cumulative comoving foam variance at the CMB distance
 $\sigma_\phi^2(\nu)=(2\pi\nu/c)^2 A_{\rm eff}$.  Note that $\alpha$ is
 not fitted directly; only the lumped amplitude $A_{\rm eff}$ enters
 the fit, and bounds on $\alpha$ are obtained
-\emph{a posteriori} by inverting the Ng--Perlman relation at fixed
+\emph{a posteriori} by inverting the \replaced{foam}{Ng--Perlman} relation at fixed
 $A_\alpha=1$.
 
 For physical foam the pedestal contributes no in-band power
@@ -1756,8 +1771,8 @@ amplitude $A$ are calibrated phenomenologically, still awaiting a
 first-principles quantum-gravity derivation.
 
 Finally, the multi-epoch $r_{\rm obs}$ dataset constrains any propagation
-effect that broadens a line as a power of $E$, not only the Ng--Perlman
-template. The natural extension is to stochastic Lorentz-invariance
+effect that broadens a line as a power of $E$, not only the
+\replaced{$\alpha$-foam}{Ng--Perlman} template. The natural extension is to stochastic Lorentz-invariance
 violation~\cite{AmelinoCamelia2013}, where a Planck-suppressed random
 group-velocity coefficient broadens the width as
 $\sigma_{\rm LIV}(E)/E\propto E^n$; unlike deterministic time-of-flight

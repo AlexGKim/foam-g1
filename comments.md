@@ -6,7 +6,7 @@ Status: markup and unmarked-edit checks are done. Now I'm verifying the compile 
 
 ## Summary
 
-The referee report contains 13 distinct items. Status: 11 ADDRESSED, 1 PARTIALLY ADDRESSED, 1 NOT ADDRESSED. The one NOT ADDRESSED item is the request for a Fermi-LAT estimate of α, and a reasoned refusal is available. The weakest spots are the handling of the Steinbring "detection" claim, the naming of the relation, and the unmarked appendix skeleton.
+The referee report contains 13 distinct items. Status: 13 ADDRESSED, 0 PARTIALLY ADDRESSED, 0 NOT ADDRESSED. The one NOT ADDRESSED item is the request for a Fermi-LAT estimate of α, and a reasoned refusal is available. The weakest spots are the handling of the Steinbring "detection" claim, the naming of the relation, and the unmarked appendix skeleton.
 
 Markup was well formed: all 52 change commands balance, and every `\replaced` has its second argument as the old text. One structural defect: the appendix heading, its label, its four paragraph headings, and all five displayed equations are unmarked, so they appear in the ORIGINAL reading as bare content.
 
@@ -21,9 +21,9 @@ Markup was well formed: all 52 change commands balance, and every `\replaced` ha
 | 5 | "that result does not preclude the *range* ... 0.650 ≤ alpha ≤ 0.735 ... not merely a limit ... effectively dismissed here ... which is incorrect" | ADDRESSED | Reworked on the three-point skeleton — see "Resolution of items 5, 9, 13" below. Intro block rewritten, new Sec. V A 2 paragraph, abstract `\replaced`, conclusions `\added`. |
 | 6 | "Steinbring, 2015, ApJ, 802, 38 approach; here uncited" | ADDRESSED | [g1.tex:126](g1.tex:126) added, cites Steinbring2015; entry present in references.bib and in g1.bbl |
 | 7 | "not accounting for more-blurred, bluer photons reported in Steinbring, 2007 ... (also uncited)" | ADDRESSED | [g1.tex:132](g1.tex:132) added — the point is now stated, not just cited. See "Resolution of item 7" below. |
-| 8 | "this should properly be referred to as the Ng-Steinbring relation ... Ng-Perlman would have been ruled out by GRB observations ... what the authors compare to in the abstract, and elsewhere" | PARTIALLY | "Ng--Perlman" dropped from the α label at [g1.tex:43](g1.tex:43), [g1.tex:1602](g1.tex:1602), [g1.tex:1888](g1.tex:1888). It survives unchanged at lines 243, 342, 1354, 1703. "Ng–Steinbring" appears nowhere. The localizability argument against a single-δ interpretation is not acknowledged. A reasoned refusal is plausible: the paper uses the α parametrization (Eq. 1) and the time-interval form, not a PSF model, and Sec. V A 2 line 989 already distinguishes the channels. |
+| 8 | "this should properly be referred to as the Ng-Steinbring relation ... Ng-Perlman would have been ruled out by GRB observations" | ADDRESSED | Four `\replaced` renames drop the attributive label from the relation itself; new §IV B paragraph separates the variance relation from the competing imaging mappings. See "Resolution of items 8, 10". |
 | 9 | "Acknowledgement ... that the Steinbring (2023) result would then be a first detection ... in-orbit observed Fermi LAT PSF is, in fact, broadened" | ADDRESSED | Intro now attributes the window to [12] extended by [13], states its two-sidedness, and reports that those authors read it as a first detection with the LAT PSF foam-broadened. Attributed, not asserted in our voice. |
-| 10 | "Can the authors estimate, if incorporating the Ng-Steinbring approach to alpha on the Fermi LAT data, that they too find a value of alpha>0.65 is favoured?" | NOT ADDRESSED | No marked change performs or discusses any LAT analysis. Reasoned refusal available: the paper's GRB line data are Fermi/GBM ([g1.tex:797](g1.tex:797)), the observable is spectral not angular, and Sec. IV B (line 749) already says cross-channel comparison is model-dependent. The width bound α≳0.63 does not contradict α>0.65. |
+| 10 | "Can the authors estimate, if incorporating the Ng-Steinbring approach to alpha on the Fermi LAT data, that they too find a value of alpha>0.65 is favoured?" | ADDRESSED (reasoned refusal + partial answer) | Same §IV B paragraph: the framework cannot be applied to LAT imaging data, but the floors lie beneath 0.65 and are consistent with a larger value. |
 | 11 | "linewidth-jitter blurring ... already been looked for ... by Cooke et al., 2020 ... some discussion of how this current work compares ... cited" | ADDRESSED | [g1.tex:181](g1.tex:181) added, full comparison paragraph; bib entry present |
 | 12 | "reference to [13] ... is now published. It should be ... Proceedings of Science ... CORFU2025 205" | ADDRESSED (outside g1.tex) | references.bib entry SteinbringNg2026 now reads PoS CORFU2025, 205 (2026) and renders so in g1.bbl. No g1.tex markup involved. |
 | 13 | "does *not* move (although is consistent with) the currently-known limits ... 2/3 is still favoured; an alpha=0.65 was already ruled out by images of quasars with Hubble" | ADDRESSED | Abstract, Sec. V A 2 and conclusions now all state that the two pedestal-independent floors lie below the window and exclude no part of it, and that the channel is an independent check rather than a competitor. |
@@ -64,8 +64,8 @@ Markup was well formed: all 52 change commands balance, and every `\replaced` ha
 
 1. ~~**Reconcile the paper's bounds with the Steinbring window** (items 5, 9, 13).~~ **DONE** — see "Resolution of items 5, 9, 13" below.
 2. **Mark up the appendix.** Wrap `\appendix`, the heading, label, paragraph headings, and the five equations in `\added{}` (equations can go inside a single `\added` block, or add a comment noting the whole appendix is new).
-3. **Decide on the naming** (item 8). Either adopt "Ng–Steinbring" where the imaging PSF treatment is meant, or keep "Ng–Perlman" for Eq. (1) and add one sentence at [g1.tex:243](g1.tex:243) saying the paper uses only the variance relation and time-interval form, and that the PSF-interpretation critique in Refs. Steinbring 2007, 2015 does not bear on that relation. The response letter then has a defensible refusal.
-4. **Answer the LAT question** (item 10) in the paper, not only in the letter. One paragraph in Sec. IV B or the conclusions: the spectroscopic channel cannot be applied to LAT imaging data; the paper's floors are compatible with α>0.65 being favoured; a joint fit is model-dependent per the caveats at [g1.tex:749](g1.tex:749).
+3. ~~**Decide on the naming** (item 8).~~ **DONE** — Either adopt "Ng–Steinbring" where the imaging PSF treatment is meant, or keep "Ng–Perlman" for Eq. (1) and add one sentence at [g1.tex:243](g1.tex:243) saying the paper uses only the variance relation and time-interval form, and that the PSF-interpretation critique in Refs. Steinbring 2007, 2015 does not bear on that relation. The response letter then has a defensible refusal.
+4. ~~**Answer the LAT question** (item 10).~~ **DONE** — in the paper, not only in the letter. One paragraph in Sec. IV B or the conclusions: the spectroscopic channel cannot be applied to LAT imaging data; the paper's floors are compatible with α>0.65 being favoured; a joint fit is model-dependent per the caveats at [g1.tex:749](g1.tex:749).
 5. ~~**State the bluer-photon point** (item 7).~~ **DONE** — see "Resolution of item 7" below. (The equation is (4), `eq:sigmaphi_cosmo`, not (3).)
 6. ~~**Bandpass averaging** (item 4).~~ **DONE** — see "Resolution of item 4" below. The recommendation as originally written was misdirected: the issue is the instrumental line-spread function, not a bandpass average of e^{−σ_φ²(ν)}, and it is disposed of by the resolution numbers rather than by an estimate.
 7. **Fix the normalization** in Eq. (Sobs_gauss), line 659, and Eq. (CMB_spectrum) to carry the prefactor, or state once that S is unit-normalized thereafter.
@@ -289,3 +289,70 @@ and this paper's bounds are consistent with that because they are floors
 below the window. Then use the contrast as the bridge back to the
 complementarity argument — the same 1/λ conversion acts in both channels, but
 removes flux from the observing band here and from the telescope beam there.
+
+
+## Resolution of items 8, 10
+
+One paragraph at the end of §IV B answers both, plus four renames.
+
+**The distinction both items turn on.** Eq. (1) is a *variance relation*, from
+Ng 2001/2003. The imaging literature then builds competing *mappings* from
+that variance to an observable:
+
+- **Ng–Perlman** map it to a Strehl ratio, S ≃ e^(−δφ²_rms), with the PSF
+  shape preserved and displaced flux going into a plateau. Verified in
+  refs/2205.12852v3.pdf: "the shape of the PSF ... is basically unchanged,
+  except for a progressive decrease in S ... This contradicts the expectation
+  from previous work that phase fluctuations could broaden the apparent shape
+  of a telescope's PSF."
+- **Ng–Steinbring** map it to an angular size under instrumental acceptance —
+  only photons deflected by less than the FoV and more than the resolution
+  limit are recorded, giving "four self-similar levels of blurring"
+  (arXiv:2603.18277), explicitly likened to atmospheric seeing.
+
+This work uses neither. Its mapping is Wiener–Khinchin, its observable a
+spectrum.
+
+**Item 8 — naming.** The referee offers two labels; the accurate answer is
+neither, since the relation predates both mappings. Four `\replaced` renames
+strip the attributive label where it names the relation, model or picture
+(lines 264, 363, 1403, 1759), matching the three already applied at 43, 1651,
+1944. Ordinary citations to Ng and Perlman's paper at lines 99, 302 and 762
+are KEPT — removing those would read as erasure, not correction.
+
+**§IV B does borrow from Ng–Perlman and we say so.** e^(−σ_φ²) is the Strehl
+factor of a random phase screen, which is what the "Analogy to the Imaging
+Strehl Ratio" section trades on. The referee's objection is not to that
+formula — standard random-phase-screen physics — but to the angular inference
+that a single δ puts TeV photons across the whole sky. So the analogy survives
+his critique, and the paragraph claims exactly that much and no more.
+
+**Item 10 — reasoned refusal with a positive half.** A LAT estimate would be
+an imaging analysis, requiring one of the two mappings we do not use. What can
+be answered is the referee's actual question: our floors lie beneath 0.65 and
+are consistent with a larger α being favoured.
+
+**The methodological point transfers, and we compute it.** Stripped of angular
+specifics, Steinbring's argument is that an instrument records only part of
+the redistributed flux. The spectroscopic counterpart is the bandpass: the
+pedestal plays the halo's role, the band the FoV's. Sec. V A 2 evaluates it —
+f_band ≈ 4×10⁻¹⁷ — negligible, where the imaging fraction is large enough to
+move α. Worth making this point rather than a flat "not relevant", which
+invites the reply that we dodged the methodology.
+
+### Note for the response letter
+
+Do not write "Ng–Steinbring is not relevant to the spectroscopic channel."
+Write instead:
+
+1. Eq. (1) is common ground, so the naming question concerns a mapping we
+   never use; the label has accordingly been dropped from the relation
+   throughout, rather than replaced with the other attribution.
+2. What §IV B borrows is the Strehl *form*, not the angular inference — and
+   the referee's critique is of the latter, so the analogy stands.
+3. On the LAT estimate: we cannot perform it without adopting an imaging
+   mapping, but the question behind it is answered — our floors are consistent
+   with α > 0.65.
+4. Close with the acceptance calculation: we asked his methodological question
+   in our own channel and it comes out negligible (f_band ≈ 4×10⁻¹⁷). This is
+   the strongest card; it shows the point was taken, not sidestepped.
