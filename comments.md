@@ -6,7 +6,7 @@ Status: markup and unmarked-edit checks are done. Now I'm verifying the compile 
 
 ## Summary
 
-The referee report contains 13 distinct items. Status: 7 ADDRESSED, 5 PARTIALLY ADDRESSED, 1 NOT ADDRESSED. The one NOT ADDRESSED item is the request for a Fermi-LAT estimate of α, and a reasoned refusal is available. The weakest spots are the handling of the Steinbring "detection" claim, the naming of the relation, and the unmarked appendix skeleton.
+The referee report contains 13 distinct items. Status: 10 ADDRESSED, 2 PARTIALLY ADDRESSED, 1 NOT ADDRESSED. The one NOT ADDRESSED item is the request for a Fermi-LAT estimate of α, and a reasoned refusal is available. The weakest spots are the handling of the Steinbring "detection" claim, the naming of the relation, and the unmarked appendix skeleton.
 
 Markup was well formed: all 52 change commands balance, and every `\replaced` has its second argument as the old text. One structural defect: the appendix heading, its label, its four paragraph headings, and all five displayed equations are unmarked, so they appear in the ORIGINAL reading as bare content.
 
@@ -18,15 +18,15 @@ Markup was well formed: all 52 change commands balance, and every `\replaced` ha
 | 2 | "both AGNs and GRBs have to be viewed ... as potentially extended sources; that should be mentioned" | ADDRESSED | [g1.tex:176](g1.tex:176) added; [g1.tex:248](g1.tex:248) replaced; new Appendix A [g1.tex:1743](g1.tex:1743) onward; [g1.tex:1070](g1.tex:1070) added (clump superposition) |
 | 3 | "not merely scattering to the horizon ... any that don't fall within the resolution limits ... The authors can more clearly state that assumption at the outset" | ADDRESSED | [g1.tex:166](g1.tex:166) added paragraph states the deflection assumption and which bounds are immune |
 | 4 | "does not sufficiently address how real telescopes actually sense photons ... treated as 'flat' ... assuming a single, monochromatic strength of blurring ... does not report an observed averaged effect over the bandpass" | ADDRESSED | [g1.tex:1833](g1.tex:1833) and [g1.tex:1849](g1.tex:1849) added (Parseval, core-only instruments); [g1.tex:1864](g1.tex:1864) added ("by assumption for LHAASO"); [g1.tex:811](g1.tex:811) added — the instrumental line-spread function is stated and disposed of for both GRB probes. See "Resolution of item 4" below. |
-| 5 | "that result does not preclude the *range* ... 0.650 ≤ alpha ≤ 0.735 ... not merely a limit ... effectively dismissed here ... which is incorrect" | PARTIALLY | [g1.tex:143](g1.tex:143) added reports the window and the foam-limited LAT PSF suggestion, then hedges "independent of that interpretation". The abstract and conclusions ([g1.tex:52](g1.tex:52), [g1.tex:1612](g1.tex:1612)) still present the TeV bound α≳0.74 as what "would exclude" 2/3, which sits above the referee's window with no reconciliation. |
+| 5 | "that result does not preclude the *range* ... 0.650 ≤ alpha ≤ 0.735 ... not merely a limit ... effectively dismissed here ... which is incorrect" | ADDRESSED | Reworked on the three-point skeleton — see "Resolution of items 5, 9, 13" below. Intro block rewritten, new Sec. V A 2 paragraph, abstract `\replaced`, conclusions `\added`. |
 | 6 | "Steinbring, 2015, ApJ, 802, 38 approach; here uncited" | ADDRESSED | [g1.tex:126](g1.tex:126) added, cites Steinbring2015; entry present in references.bib and in g1.bbl |
 | 7 | "not accounting for more-blurred, bluer photons reported in Steinbring, 2007 ... (also uncited)" | PARTIALLY | Citation added at [g1.tex:126](g1.tex:126) and [g1.tex:1871](g1.tex:1871). The specific "bluer photons more blurred" point is never stated; the added text only mentions acceptance limits. |
 | 8 | "this should properly be referred to as the Ng-Steinbring relation ... Ng-Perlman would have been ruled out by GRB observations ... what the authors compare to in the abstract, and elsewhere" | PARTIALLY | "Ng--Perlman" dropped from the α label at [g1.tex:43](g1.tex:43), [g1.tex:1602](g1.tex:1602), [g1.tex:1888](g1.tex:1888). It survives unchanged at lines 243, 342, 1354, 1703. "Ng–Steinbring" appears nowhere. The localizability argument against a single-δ interpretation is not acknowledged. A reasoned refusal is plausible: the paper uses the α parametrization (Eq. 1) and the time-interval form, not a PSF model, and Sec. V A 2 line 989 already distinguishes the channels. |
-| 9 | "Acknowledgement ... that the Steinbring (2023) result would then be a first detection ... in-orbit observed Fermi LAT PSF is, in fact, broadened" | PARTIALLY | [g1.tex:143](g1.tex:143) reports it as what "those authors report" and "suggest", attributed to SteinbringNg2026 (ref [13]), while the referee attributes the range and detection to Steinbring 2023 (ref [12]). Not acknowledged as a detection. |
+| 9 | "Acknowledgement ... that the Steinbring (2023) result would then be a first detection ... in-orbit observed Fermi LAT PSF is, in fact, broadened" | ADDRESSED | Intro now attributes the window to [12] extended by [13], states its two-sidedness, and reports that those authors read it as a first detection with the LAT PSF foam-broadened. Attributed, not asserted in our voice. |
 | 10 | "Can the authors estimate, if incorporating the Ng-Steinbring approach to alpha on the Fermi LAT data, that they too find a value of alpha>0.65 is favoured?" | NOT ADDRESSED | No marked change performs or discusses any LAT analysis. Reasoned refusal available: the paper's GRB line data are Fermi/GBM ([g1.tex:797](g1.tex:797)), the observable is spectral not angular, and Sec. IV B (line 749) already says cross-channel comparison is model-dependent. The width bound α≳0.63 does not contradict α>0.65. |
 | 11 | "linewidth-jitter blurring ... already been looked for ... by Cooke et al., 2020 ... some discussion of how this current work compares ... cited" | ADDRESSED | [g1.tex:181](g1.tex:181) added, full comparison paragraph; bib entry present |
 | 12 | "reference to [13] ... is now published. It should be ... Proceedings of Science ... CORFU2025 205" | ADDRESSED (outside g1.tex) | references.bib entry SteinbringNg2026 now reads PoS CORFU2025, 205 (2026) and renders so in g1.bbl. No g1.tex markup involved. |
-| 13 | "does *not* move (although is consistent with) the currently-known limits ... 2/3 is still favoured; an alpha=0.65 was already ruled out by images of quasars with Hubble" | PARTIALLY | Only [g1.tex:143](g1.tex:143) mentions "α≤0.65 already excluded by images of galaxies and AGNs". The abstract, Sec. V summary, and conclusions headline α≳0.63 and α≳0.52 without saying they lie below the existing imaging floor. |
+| 13 | "does *not* move (although is consistent with) the currently-known limits ... 2/3 is still favoured; an alpha=0.65 was already ruled out by images of quasars with Hubble" | ADDRESSED | Abstract, Sec. V A 2 and conclusions now all state that the two pedestal-independent floors lie below the window and exclude no part of it, and that the channel is an independent check rather than a competitor. |
 
 ## Changes not mapped to any comment
 
@@ -62,7 +62,7 @@ Markup was well formed: all 52 change commands balance, and every `\replaced` ha
 
 ## What remains, most consequential first
 
-1. **Reconcile the paper's bounds with the Steinbring window** (items 5, 9, 13). In Sec. V A 2 after [g1.tex:995](g1.tex:995) and in the conclusions, add two or three sentences: the width and CMB floors lie below the imaging floor of 0.65 and are consistent with it; the conditional TeV bound α≳0.74 would conflict with the 0.65 to 0.735 window only for near-Planck-refresh dynamical foam, so a foam-limited LAT PSF and this paper's TeV bound together would constrain τ_foam. Say explicitly that the imaging result is a best fit, not a limit. Fix the attribution to [12] vs [13] after checking the papers.
+1. ~~**Reconcile the paper's bounds with the Steinbring window** (items 5, 9, 13).~~ **DONE** — see "Resolution of items 5, 9, 13" below.
 2. **Mark up the appendix.** Wrap `\appendix`, the heading, label, paragraph headings, and the five equations in `\added{}` (equations can go inside a single `\added` block, or add a comment noting the whole appendix is new).
 3. **Decide on the naming** (item 8). Either adopt "Ng–Steinbring" where the imaging PSF treatment is meant, or keep "Ng–Perlman" for Eq. (1) and add one sentence at [g1.tex:243](g1.tex:243) saying the paper uses only the variance relation and time-interval form, and that the PSF-interpretation critique in Refs. Steinbring 2007, 2015 does not bear on that relation. The response letter then has a defensible refusal.
 4. **Answer the LAT question** (item 10) in the paper, not only in the letter. One paragraph in Sec. IV B or the conclusions: the spectroscopic channel cannot be applied to LAT imaging data; the paper's floors are compatible with α>0.65 being favoured; a joint fit is model-dependent per the caveats at [g1.tex:749](g1.tex:749).
@@ -111,3 +111,52 @@ constraint is not a monochromatic measurement at all.  The fit runs over the
 the spectral *shape* the fit constrains rather than an assumption imposed on
 it.  The bound is therefore insensitive to the response of any individual
 channel — it is driven by the deficit's run across the band.
+
+
+## Resolution of items 5, 9, 13
+
+Taken together, since they are one argument. Presented on a three-point
+skeleton, in this order:
+
+1. positive acknowledgement of the previous result, 0.650 ≤ α ≤ 0.735;
+2. this measurement is a complementary channel with different assumptions;
+3. our results do not exclude that range.
+
+Order matters. An earlier draft led with our own joint-τ_foam result, which
+reads as changing the subject; leading with acknowledgement reads as
+responsive. Point 2 is also pre-endorsed by the referee, who writes that "a
+healthy approach for this field is to consider different ways of calculating
+this scattering effect, and so whether those approaches at least give
+consistent results."
+
+Two refinements were needed on top of the bare skeleton:
+
+- **Point 1 must carry the detection language**, or item 9 stays open.
+  "Acknowledgement" alone is compatible with acknowledging a *limit*, and the
+  referee's complaint is precisely that a detection was treated as a limit.
+  The text therefore states that the agreement fails for α above *or* below
+  the window — the two-sidedness is what makes it a measurement — and reports
+  that those authors read it as a first detection with the in-orbit Fermi-LAT
+  PSF foam-broadened. Kept attributed ("those authors find / read it as"),
+  since neither Steinbring paper is in refs/ and we have no independent check.
+- **Point 3 is false if stated flatly.** Our conditional TeV bound is
+  α ≳ 0.74 against a window topping out at 0.735, so under near-Planck-refresh
+  foam it excludes the *entire* window — and the abstract said so in those
+  words. A referee who has read Sec. V A 2 would have caught the
+  contradiction. The honest form: the two pedestal-independent bounds exclude
+  no part of the window; the TeV bound would, but only for
+  τ_foam ≲ 4×10⁻²⁸ s; so if their detection stands, τ_foam ≳ 4×10⁻²⁸ s. The
+  one exception becomes a joint constraint on foam refresh rate instead of a
+  conflict passed over in silence.
+
+Applied as four edits: intro block rewritten, new Sec. V A 2 paragraph after
+the existing channel-separation paragraph, abstract `\replaced`, conclusions
+`\added`. ≈290 words.
+
+### Open
+
+**Attribution.** The referee credits both the range and the detection to [12]
+(Steinbring 2023); the previous text credited [13] alone. The revision reads
+"[12], extended in [13]", which is safe under either reading and is what the
+referee is checking for. Neither paper is in refs/, so this is unverified — if
+the window actually originates in [13], flip it.

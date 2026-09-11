@@ -49,10 +49,16 @@ the COBE/FIRAS monopole spectrum reaches $\alpha \gtrsim 0.52$
 ($95\%$ CL)\deleted{ under the physical Planck-scale pedestal
 kernel}, and next-generation spectrometers reach only
 $\alpha\gtrsim 0.54$--$0.55$ (forecast), limited by the foam--temperature
-degeneracy.  The pedestal-independent line-width and CMB bounds do not
-reach the holographic value $\alpha = 2/3$; only the conditional TeV
+degeneracy.  \replaced{The pedestal-independent line-width and CMB bounds are floors below
+the holographic value $\alpha = 2/3$, consistent with and excluding no part of
+the imaging window reported for GRB\,221009A; only the conditional TeV
 survival bound ($\alpha\gtrsim0.74$, for near-Planck-refresh foam,
-$\tau_{\rm foam}\lesssim4\times10^{-28}$\,s) would exclude it.
+$\tau_{\rm foam}\lesssim4\times10^{-28}$\,s) would exclude it, and set against
+that window it instead bounds $\tau_{\rm foam}$ from below.}{The
+pedestal-independent line-width and CMB bounds do not reach the holographic
+value $\alpha = 2/3$; only the conditional TeV survival bound
+($\alpha\gtrsim0.74$, for near-Planck-refresh foam,
+$\tau_{\rm foam}\lesssim4\times10^{-28}$\,s) would exclude it.}
 All bounds assume foam that decorrelates within the light's coherence
 time; they vanish in the quasi-static or long-temporal-correlation limits.
 \end{abstract}
@@ -140,15 +146,20 @@ computing the holographic-foam-widened PSF for real telescopes and finding all
 data consistent with $\alpha=2/3$.
 These imaging-channel analyses show that the holographic model is not
 excluded by the spatial localization of GRB\,221009A.
-\added{Reference~\cite{SteinbringNg2026} advances a stronger reading of the
-same data: with $\alpha\leq0.65$ already excluded by images of galaxies and
-AGNs, and $\alpha\approx0.735$ marking the point beyond which foam blurring
-no longer rises above the nominal instrumental resolution, the admissible
-window brackets the holographic $\alpha=2/3$; those authors report that the
-best-resolved highest-energy \textit{Fermi}-LAT bursts track the
-foam-limited profile expected for that value, and suggest that the in-orbit
-LAT PSF may itself be foam-limited.  The bounds derived below are
-independent of that interpretation.}
+\added{Reference~\cite{Steinbring2023}, extended in
+Ref.~\cite{SteinbringNg2026}, advances a stronger reading of the same data.
+With $\alpha\leq0.65$ already excluded by images of galaxies and AGNs, and
+$\alpha\approx0.735$ marking the point beyond which foam blurring no longer
+rises above the nominal instrumental resolution, the admissible window
+$0.650\leq\alpha\leq0.735$ brackets the holographic $\alpha=2/3$.  Within it
+those authors find the foam-widened PSF consistent with every band observed
+for GRB\,221009A --- TeV through X-ray and ultraviolet to the optical --- and
+with earlier AGN imaging, the agreement failing for $\alpha$ either above or
+below the window.  Being two-sided, that is a measurement rather than a limit,
+and those authors read it as a first detection of foam-induced blurring,
+implying that the in-orbit \textit{Fermi}-LAT PSF is itself foam-broadened.
+The present work approaches the same exponent through a different channel;
+Section~\ref{sec:grb_tev} sets its bounds against that window.}
 
 We develop a framework based on the first-order temporal coherence
 function $g^{(1)}(\tau)$ of light from astrophysical sources.
@@ -1001,6 +1012,27 @@ the survival bound constrains the temporal (dynamical) correlations,
 which remove them from the band.  The two coincide only for static foam,
 where neither produces a spectral effect.
 
+\added{These bounds should be set against the window
+$0.650\leq\alpha\leq0.735$ that Refs.~\cite{Steinbring2023,SteinbringNg2026}
+obtain from imaging this same burst, a two-sided result those authors read as
+a detection rather than a limit.  The bounds here come from a different
+channel and rest on different assumptions: a spectral rather than an angular
+observable, temporal rather than transverse foam correlations as just noted,
+and an intrinsic source spectrum in place of a known aperture.  The question
+they answer is therefore whether a second route to $\alpha$ agrees with the
+first, and it does.  The two pedestal-independent bounds lie below the window
+--- $\alpha\gtrsim0.63$ from the line width here, $\alpha\gtrsim0.52$ from the
+CMB monopole of Section~\ref{sec:CMB} --- so they are floors consistent with
+it and with the holographic value, and they exclude no part of it.  The
+conditional TeV survival bound is the single exception, and it excludes the
+window only for near-Planck-refresh foam: if $\alpha$ lies in the imaging
+window, the survival of the LHAASO photons instead requires
+$\tau_{\rm foam}\gtrsim4\times10^{-28}$\,s, the pedestal having narrowed into
+the band so that the survival probe closes.  An imaging detection at
+$\alpha\approx2/3$ and the TeV survival of GRB\,221009A are then jointly a
+statement about how fast the foam refreshes, which neither channel yields
+alone.}
+
 \subsubsection{Energy-dependent line width}
 \label{sec:grb_width}
 
@@ -1620,6 +1652,13 @@ The pedestal-independent line-width and CMB bounds do not reach the
 holographic value $\alpha=2/3$; only the conditional TeV survival bound
 ($\alpha_{\rm TeV}\gtrsim0.74$, for near-Planck-refresh foam,
 $\tau_{\rm foam}\lesssim4\times10^{-28}$\,s; Assumption~(ii)) would exclude it.
+\added{The first two are floors below the imaging window
+$0.650\leq\alpha\leq0.735$ reported for this
+source~\cite{Steinbring2023,SteinbringNg2026} and exclude no part of it: the
+spectroscopic channel is an independent check on that result rather than a
+competitor to it.  Combined with that window, the third bounds
+$\tau_{\rm foam}$ from below rather than excluding $\alpha=2/3$
+(Section~\ref{sec:grb_tev}).}
 Because the two channels probe the same exponent through
 different sources, observables, and systematics, they form an
 independent cross-check rather than a joint bracket.  They are separated
