@@ -239,8 +239,8 @@ Steinbring2007 (ApJ 655, 714), Steinbring2015 (ApJ 802, 38), Steinbring2023
 
 ## Resolution of item 7
 
-Applied at [g1.tex:132](g1.tex:132), extending the clause that already cited
-Steinbring 2007:
+Applied in the introduction, after the [12]/[13] narrative closes and before
+the bracket discussion:
 
 > Because the delay δt is achromatic, the phase it produces is not: a shorter
 > wavelength converts the same path-length jitter into a larger phase, so the
@@ -267,6 +267,13 @@ The second sentence concedes the referee's actual consequence — accounting for
 the loss permits a *larger* α — in their own terms. That costs nothing, since
 our floors lie below the window either way, and it is the concession item 7 is
 really asking for.
+
+**Placement.** First applied immediately after the instrumental-acceptance
+clause it elaborates, which split the description of what [12] and [13] did
+across an aside. Moved to after "These imaging-channel analyses show that the
+holographic model is not excluded ..." so that narrative runs uninterrupted,
+and so the aside's "allows a larger α" leads into the bracket that permits
+exactly that. Readability over adjacency.
 
 **Deliberately not written:** that a spectroscopic instrument *retains* the
 redistributed flux. It does not — the pedestal sits at ~1/τ_foam, far outside
