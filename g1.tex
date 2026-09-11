@@ -121,7 +121,7 @@ entrance aperture, degrading PSF sharpness and erasing interference fringes once
 $\Delta\phi \gtrsim 2\pi$~\cite{LieuHillman2003}.
 For PKS\,1413$+$135 ($D = 1.216$~Gpc) observed with HST at $\lambda=1.6\,\mu$m,
 the random-walk model ($\alpha=1/2$) predicts $\Delta\phi \sim 10\times 2\pi$,
-so the detection of Airy rings in this image marginally rules out that model;
+so the detection of Airy rings in this image \replaced{rules}{marginally rules} out that model;
 the holographic model ($\alpha=2/3$) predicts $\Delta\phi \sim 10^{-9}\times 2\pi$
 and is obviously not ruled out~\cite{NgPerlman2022,Christiansen2011,Perlman2015}.
 Models with long-range transverse correlations evade even the random-walk
@@ -195,8 +195,8 @@ all-sky monopole, which angular scattering redistributes among sky directions
 but cannot deplete.  The exception is the TeV survival probe, which turns on
 whether broadband flux survives at all and so cannot distinguish flux lost to
 deflection from flux removed spectrally.  Source extension is likewise
-immaterial, an incoherent source being the intensity-weighted mean
-of single-sightline results.  Appendix~\ref{app:extended} establishes both
+immaterial under statistical homogeneity across the source, an incoherent
+source being the intensity-weighted mean of single-sightline results.  Appendix~\ref{app:extended} establishes both
 the source-extension result and the insensitivity to deflection.}
 
 \added{The spectroscopic channel has been considered previously.
@@ -325,12 +325,12 @@ frequency $\omega_0=2\pi\nu_0$ reads the same delay as a phase jitter
 $\delta\phi=\omega_0\,\delta t$, giving a phase variance
 \begin{equation}
   \sigma_\phi^2 \;=\; \left(\frac{2\pi}{\lambda_{\rm obs}}\right)^{\!2}
-  \sigma_\ell^2(D_C).
+  \sigma_\ell^2(D_C)\added{.}
   \label{eq:sigmaphi_cosmo}
 \end{equation}
 \added{
 This is the phase accumulation along a single ray, or in a transverse patch in which the foam
-is coherent.}  \deleted{on which all spectroscopic bounds below rest.}
+is coherent.}  \deleted{, on which all spectroscopic bounds below rest.}
 
 \added{
 \citet{ChenWenMa2014} point out that the phase dispersion is damped relative
@@ -599,7 +599,10 @@ implying
 e^{\,i2\pi\nu\tau}f(\tau)$.  The observed field is stationary because
 $E_{\rm src}$ and $\delta t$ are and are independent, so the theorem applies,
 and the prefactor fixes the normalization: $g^{(1)}(0)=1$ gives
-$\int S_{\rm obs}\,d\nu=\langle|E_{\rm obs}|^2\rangle$.}
+$\int S_{\rm obs}\,d\nu=\langle|E_{\rm obs}|^2\rangle$.  Below, $S$ denotes
+the unit-normalized spectral shape, $\int S\,d\nu=1$; the prefactor is
+reinstated only where absolute flux is at issue, as in
+Eq.~\eqref{eq:CMB_spectrum}, where $B_\nu(T_0)$ carries it.}
 \deleted{The theorem applies because astronomical emission lines have finite
 linewidth (so the Fourier transform is well defined) and because the
 foam-induced jitter is a stationary process independent of the source
