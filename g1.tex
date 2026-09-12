@@ -245,11 +245,8 @@ COBE/FIRAS (Section~\ref{sec:CMB}).}{Section~\ref{sec:sources} applies the
 spectral shape-distortion bound to two sources:
 GRB\,221009A (Section~\ref{sec:grb221009a}) and the CMB as observed by
 COBE/FIRAS (Section~\ref{sec:CMB}).}
-\added{Section~\ref{sec:discussion} establishes that the bounds are
-independent of the contested imaging mapping, sets them against the
-imaging-channel literature, and draws out the joint constraint on
-$\tau_{\rm foam}$ that follows.}
-Section~\ref{sec:conclusions} summarizes the main results and outlines future
+Section~\ref{sec:conclusions} summarizes the main results\added{, sets them
+against the imaging-channel literature,} and outlines future
 observational directions.
 Table~\ref{tab:notation} collects the principal symbols used throughout.
 
@@ -778,9 +775,35 @@ foam-cell model, so the constraints coincide only to the precision of
 those shared details.  And the channels differ in their reference truth:
 in imaging the aperture is known a priori, whereas in spectroscopy the
 intrinsic source spectrum is itself uncertain, making the foam
-contribution harder to isolate.\added{  What this shared structure does and
-does not license, once the bounds are in hand, is taken up in
-Section~\ref{sec:discussion}.}
+contribution harder to isolate.
+
+\added{The two channels also part company in how much of that complementary
+fraction a real instrument records.  The imaging literature builds competing
+mappings from the variance relation of Eq.~\eqref{eq:NgPerlmanVar} to an
+observable --- a Strehl ratio in Ref.~\cite{NgPerlman2022}, an angular size
+subject to instrumental acceptance in
+Refs.~\cite{Steinbring2007,Steinbring2015,SteinbringNg2026} --- and what
+separates them is how much of the halo a telescope far from its diffraction
+limit recovers, a fraction large enough that its treatment moves the inferred
+$\alpha$.  This work uses neither mapping; it borrows only the form
+$e^{-\sigma_\phi^2}$, the Strehl factor of a random phase screen, and makes no
+angular inference, so it cannot be applied to \textit{Fermi}-LAT imaging data,
+which record positions rather than profiles.  The spectral counterpart of
+instrumental acceptance is the bandpass: what a finite band retains of the
+pedestal.  Because the pedestal is $\sim1/\tau_{\rm foam}$ wide, that fraction
+is $f_{\rm band}\approx4\times10^{-17}$ for LHAASO
+(Section~\ref{sec:grb_tev}) and $\sim10^{-31}$ for FIRAS
+(Section~\ref{sec:CMB_derivation}), so the displaced flux is simply absent
+from the measurement and the core deficit is observable without modeling its
+return.  The instrumental line-spread function likewise does not enter: the
+MeV line is resolved and its quoted widths are already response-corrected
+(Section~\ref{sec:grb_width}), and the TeV probe counts photons rather than
+measuring a profile.  Angular scattering, whether or not it accompanies the
+temporal jitter, is disposed of separately: the fractional width and the
+monopole are insensitive to it, and Appendix~\ref{app:extended} shows the
+focal-plane-integrated spectrum is independent of transverse foam structure
+across the aperture.  The bounds are therefore unaffected by which imaging
+mapping is correct.}
 
 % ==============================================================
 \section{Sources}
@@ -1626,67 +1649,6 @@ instrumental sensitivity}, so the high-frequency GRB channel is essential
 to test holographic foam.
 
 % ==============================================================
-\section{\added{Relation to the Imaging Bounds}}
-\label{sec:discussion}
-
-\added{This work and the imaging literature share a premise and part company
-immediately after it.  Equation~\eqref{eq:NgPerlmanVar} is the common ground:
-a variance relation due to Ng and collaborators~\cite{Ng2001,Ng2003}, on which
-the imaging literature builds competing mappings to an observable --- a Strehl
-ratio in Ref.~\cite{NgPerlman2022}, an angular size subject to instrumental
-acceptance in Refs.~\cite{Steinbring2015,SteinbringNg2026}.  This work uses
-neither.  It borrows the \emph{form} $e^{-\sigma_\phi^2}$, the Strehl factor
-of a random phase screen, but no angular inference.}
-
-\added{The bounds obtained here are therefore unaffected by which mapping is
-correct.  What separates those mappings is how much of the scattered flux a
-real instrument recovers, and the counterpart question in this channel is
-spectral rather than angular: what a finite bandpass retains of the
-redistributed flux.  Section~\ref{sec:grb_tev} answers it as
-$f_{\rm band}\approx4\times10^{-17}$ --- negligible, where the imaging
-fraction is large enough that its treatment is what the competing mappings
-disagree about.}
-
-\added{The bounds should then be set against the window
-$0.650\leq\alpha\leq0.735$ that Refs.~\cite{Steinbring2023,SteinbringNg2026}
-obtain from imaging this same burst, a two-sided bracket rather than a
-one-sided limit.  The two channels rest on different assumptions --- a
-spectral rather than an angular observable, temporal rather than transverse
-foam correlations, and the difference in reference truth noted in
-Section~\ref{sec:connection} --- and relating them quantitatively requires a
-common foam-cell model, so what follows is a consistency check at the
-precision those shared details allow rather than a quantitative match.  The
-question it answers is whether a second route to $\alpha$ agrees with the
-first, and it does.  The two pedestal-independent bounds lie below the window
---- $\alpha\gtrsim0.63$ from the line width (Section~\ref{sec:grb_width}),
-$\alpha\gtrsim0.52$ from the CMB monopole (Section~\ref{sec:CMB}) --- so they
-are floors consistent with it and with the holographic value, and they exclude
-no part of it.}
-
-\added{The conditional TeV survival bound (Section~\ref{sec:grb_tev}) is the
-single exception, and it is the one result coupled to the imaging channel.  It
-excludes the window only for near-Planck-refresh foam: if $\alpha$ lies in the
-imaging window, the survival of the LHAASO photons instead requires
-$\tau_{\rm foam}\gtrsim4\times10^{-28}$\,s, the pedestal having narrowed into
-the band so that the survival probe closes.  An imaging detection at
-$\alpha\approx2/3$ and the TeV survival of GRB\,221009A are then jointly a
-statement about how fast the foam refreshes, which neither channel yields
-alone.}
-
-\added{For the same separation of observables, the framework developed here
-cannot be applied to \textit{Fermi}-LAT imaging data, which record angular
-positions rather than line profiles.}
-
-\added{That agreement is stable against better data of the same kind.  All
-three bounds are dominated by the kinematic lever arm, the foam variance
-entering only through the doubly logarithmic factor
-$\ln(D_C/\ell_P)\approx138$--$141$, so improved photon counts, line-width
-precision, or FIRAS-class sensitivity would shift $\alpha$ by only
-$\sim0.01$--$0.02$.  The consistency established above is therefore a
-structural feature of the two channels rather than a coincidence of present
-precision, and sharpening it will require a different kind of measurement.}
-
-% ==============================================================
 \section{Conclusions}
 \label{sec:conclusions}
 
@@ -1704,18 +1666,36 @@ spectrometers (PIXIE, SuperPIXIE, Voyage~2050) reach
 $\alpha\gtrsim 0.54$--$0.55$, the bound saturating logarithmically
 because the foam deficit is nearly degenerate with a temperature shift.
 All three are dominated by this kinematic lever arm rather than by the
-data\deleted{: improved photon counts, line-width precision, or FIRAS-class
-sensitivity would shift $\alpha$ by only $\sim0.01$--$0.02$}\added{
-(Section~\ref{sec:discussion})}.
+data: improved photon counts, line-width precision, or FIRAS-class
+sensitivity would shift $\alpha$ by only $\sim0.01$--$0.02$.
 The pedestal-independent line-width and CMB bounds do not reach the
 holographic value $\alpha=2/3$; only the conditional TeV survival bound
 ($\alpha_{\rm TeV}\gtrsim0.74$, for near-Planck-refresh foam,
 $\tau_{\rm foam}\lesssim4\times10^{-28}$\,s; Assumption~(ii)) would exclude it.
-\added{Section~\ref{sec:discussion} sets these against the imaging window
-$0.650\leq\alpha\leq0.735$ reported for this
-source~\cite{Steinbring2023,SteinbringNg2026}: the first two are floors that
-exclude no part of it, and the third bounds $\tau_{\rm foam}$ from below
-rather than excluding $\alpha=2/3$.}
+
+\added{These bounds should be set against the window
+$0.650\leq\alpha\leq0.735$ that Refs.~\cite{Steinbring2023,SteinbringNg2026}
+obtain from imaging this same burst, a two-sided bracket rather than a
+one-sided limit.  The two channels rest on different assumptions --- a
+spectral rather than an angular observable, temporal rather than transverse
+foam correlations, and the difference in reference truth noted in
+Section~\ref{sec:connection} --- and relating them quantitatively requires a
+common foam-cell model, so the comparison is a consistency check at the
+precision those shared details allow rather than a quantitative match.  The
+question it answers is whether a second route to $\alpha$ agrees with the
+first, and it does.  The two pedestal-independent bounds lie below the window,
+so they are floors consistent with it and with the holographic value, and they
+exclude no part of it.  The conditional TeV survival bound is the single
+exception, and it is the one result coupled to the imaging channel.  It
+excludes the window only for near-Planck-refresh foam: if $\alpha$ lies in the
+imaging window, the survival of the LHAASO photons instead requires
+$\tau_{\rm foam}\gtrsim4\times10^{-28}$\,s, the pedestal having narrowed into
+the band so that the survival probe closes.  An imaging detection at
+$\alpha\approx2/3$ and the TeV survival of GRB\,221009A are then jointly a
+statement about how fast the foam refreshes, which neither channel yields
+alone.  Because the lever arm is kinematic, this agreement is a structural
+feature of the two channels rather than a coincidence of present precision,
+and sharpening it will require a different kind of measurement.}
 Because the \replaced{spectroscopic and imaging channels}{two channels} probe the same exponent through
 different sources, observables, and systematics, they form an
 independent cross-check rather than a joint bracket.  \replaced{The two
