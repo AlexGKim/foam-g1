@@ -146,22 +146,8 @@ peak energies of $\sim\!10\,\mathrm{MeV}$.
 Steinbring \& Ng~\cite{SteinbringNg2026} extended this to the full
 multiwavelength follow-up of GRB\,221009A --- from optical and near-infrared
 through X-rays and the highest-energy gamma-rays ever attributed to a GRB ---
-computing the \replaced{foam-widened PSF for real
-telescopes.}{holographic-foam-widened PSF for real telescopes and finding all
-data consistent with $\alpha=2/3$.}
-\deleted{These imaging-channel analyses show that the holographic model is not
-excluded by the spatial localization of GRB\,221009A.}
-\added{With $\alpha\leq0.65$ already excluded by images of distant
-galaxies and AGNs, they bracket that PSF between two
-instrumental scalings: $\alpha=0.650$, where the blurring is scaled to the
-instrument's field of view, and $\alpha=0.735$, the weakest-blurring case,
-scaled to its nominal resolution and still consistent with the localization
-of GRB\,221009A.  The holographic $\alpha=2/3$ falls at the midpoint of that
-bracket.  Across it they find the model consistent with every band observed
-for this burst and with archival \textit{Fermi} GRB and AGN samples, and
-they advance a stronger reading: LAT images are not diffraction-limited but
-scale as foam-induced blurring predicts, and the resulting halo is
-attributable to foam.}
+computing the foam-widened PSF for real
+telescopes.
 
 We develop a framework based on the first-order temporal coherence
 function $g^{(1)}(\tau)$ of light from astrophysical sources.
@@ -178,18 +164,20 @@ spectrum rather than on the spatial brightness profile.
 
 \added{In our analysis, the foam acts on the electric field: foam modulates the
 first-order temporal coherence $g^{(1)}(\tau)$ along a fixed line of sight,
-and the observable effect is a spectral shape distortion.  Foam varying in both space and time will scatter light in
-angle as well as distort it in frequency; the angular channel is the imaging
-literature reviewed above. This article focuses on spectral distortion and does not account for any accompanying deflection: the GRB
-bound uses the \emph{fractional} line width, a ratio in which any flux lost
-from the beam cancels; the CMB bound uses the
-all-sky monopole, which angular scattering redistributes among sky directions
-but cannot deplete.  The exception is the TeV survival probe, which turns on
-whether broadband flux survives at all and so cannot distinguish flux lost to
-deflection from flux removed spectrally.  Source extension is likewise
-immaterial under statistical homogeneity across the source, an incoherent
-source being the intensity-weighted mean of single-sightline results.  Appendix~\ref{app:extended} establishes both
-the source-extension result and the insensitivity to deflection.}
+and the observable effect is a spectral shape distortion.  Foam varying in
+both space and time will scatter light in angle as well as distort it in
+frequency; the angular channel is the imaging literature reviewed above.
+This article focuses on spectral distortion and does not model deflection out
+of the instrumental field of view.  It need not, because deflection drops out
+of the spectral observables used here.  For the GRB line the observable is
+the fractional width, a ratio in which flux lost from the beam cancels, and
+what a core-only instrument records is the coherent core itself
+(Appendix~\ref{app:extended}).  For the CMB, angular scattering redistributes
+an isotropic background among sky directions but cannot change the monopole.
+For the TeV survival probe deflection does not drop out: flux deflected from
+the beam and flux redistributed out of band both lower the count, so the
+measurement bounds their sum, and the bound on the spectral part alone is
+conservative.}
 
 \added{The spectroscopic channel has been considered previously.
 Cooke \textit{et al.}~\cite{Cooke2020} postulate a convolution kernel,
