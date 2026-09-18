@@ -174,12 +174,12 @@ of the instrumental field of view.  It need not, because deflection drops out
 of the spectral observables used here.  For the GRB line the observable is
 the fractional width, a ratio in which flux lost from the beam cancels, and
 what a core-only instrument records is the coherent core itself
-(Appendix~\ref{app:extended}).  For the CMB, angular scattering redistributes
-an isotropic background among sky directions but cannot change the monopole.
-For the TeV survival probe deflection does not drop out: flux deflected from
-the beam and flux redistributed out of band both lower the count, so the
-measurement bounds their sum, and the bound on the spectral part alone is
-conservative.}
+(Appendix~\ref{app:extended}).
+For the CMB, angular scattering cannot change the monopole: an isotropic,
+flux-conserving redistribution convolves the sky with a normalized kernel
+whose harmonic window has $W_0=1$ identically, so the $\ell=0$ amplitude is
+invariant frequency by frequency; and what scatters into a sightline has been
+displaced in frequency by $\sim1/\tau_{\rm foam}$, hence out of band.}
 
 \added{The spectroscopic channel has been considered previously.
 Cooke \textit{et al.}~\cite{Cooke2020} postulate a convolution kernel,
@@ -187,8 +187,7 @@ a heuristic that the authors note  has not been demonstrated by a model of space
 quantization. 
 Their bound comes from a narrow
 Fe\,\textsc{ii} absorption line from a quiescent cloud at $z\simeq2.34$
-with VLT/ESPRESSO which, adopting the same exponent through
-$\sigma_E/E=(E/E_{\rm P})^{\alpha}$, ruled out $\alpha\leq0.634$.
+with VLT/ESPRESSO which  ruled out $\alpha\leq0.634$.
 What  distinguishes our work is the physical assumptions and the details of the predictions.
 We derive the distortion from the
 first-order coherence of the electric field propagating through a fluctuating metric
@@ -200,8 +199,8 @@ line, so the displaced flux stays in the line.  In this article, flux is
 redistributed into a core $e^{-\sigma_\phi^2}S_{\rm src}(\nu)$ retaining the
 source profile --- Gaussian for the line considered here --- at reduced
 weight, and a pedestal component of width $\sim1/\tau_{\rm foam}$ carrying
-the complementary $1-e^{-\sigma_\phi^2}$.  The in-band
-observable is therefore a flux deficit, $1-e^{-\sigma_\phi^2(\nu)}$ with
+the complementary $1-e^{-\sigma_\phi^2}$.  An important element of our
+observable is a flux deficit, $1-e^{-\sigma_\phi^2(\nu)}$ with
 $\sigma_\phi^2\propto\nu^2$.  Within the core the absolute width in fact
 narrows, so broadening survives only in the fractional width and only at
 second order, $r_{\rm foam}\propto r_{\rm int}^2\,\sigma_\phi$.
@@ -738,8 +737,7 @@ Strehl ratio
 (extended-Mar\'echal~\cite{NgPerlman2022}), the surrounding Airy
 fringes are washed out by the same factor, and \replaced{in the imaging
 channel the complementary $1-e^{-\sigma_\phi^2}$ of the source flux is
-scattered in angle into an incoherent halo --- the ``halo'' of optical
-photometry}{the complementary
+scattered in angle into an incoherent halo }{the complementary
 $1-e^{-\sigma_\phi^2}$ of the source flux scatters into an incoherent
 halo}.
 \added{The pedestal is its spectroscopic counterpart: the same fraction of
@@ -770,7 +768,7 @@ in imaging the aperture is known a priori, whereas in spectroscopy the
 intrinsic source spectrum is itself uncertain, making the foam
 contribution harder to isolate.
 
-\added{The two channels also part company in how much of that complementary
+\added{The two channels also differ in how much of that complementary
 fraction a real instrument records.  The imaging literature builds competing
 mappings from the variance relation of Eq.~\eqref{eq:NgPerlmanVar} to an
 observable --- a Strehl ratio in Ref.~\cite{NgPerlman2022}, an angular size
@@ -778,15 +776,14 @@ subject to instrumental acceptance in
 Refs.~\cite{Steinbring2007,Steinbring2015,SteinbringNg2026} --- and what
 separates them is how much of the halo a telescope far from its diffraction
 limit recovers, a fraction large enough that its treatment moves the inferred
-$\alpha$.  This work uses neither mapping; it borrows only the form
-$e^{-\sigma_\phi^2}$, the Strehl factor of a random phase screen, and makes no
-angular inference, so it cannot be applied to \textit{Fermi}-LAT imaging data,
-which record positions rather than profiles.  The spectral counterpart of
-instrumental acceptance is the bandpass: what a finite band retains of the
-pedestal.  Because the pedestal is $\sim1/\tau_{\rm foam}$ wide, that fraction
+$\alpha$.  
+The spectral counterpart of
+instrumental acceptance is the bandpass
+and how much of the pedestal is retained therein.
+The pedestal is $\sim1/\tau_{\rm foam}$ wide, that fraction
 is $f_{\rm band}\approx4\times10^{-17}$ for LHAASO
 (Section~\ref{sec:grb_tev}) and $\sim10^{-31}$ for FIRAS
-(Section~\ref{sec:CMB_derivation}), so the displaced flux is simply absent
+(Section~\ref{sec:CMB_derivation}), so the displaced flux is effectively absent
 from the measurement and the core deficit is observable without modeling its
 return.  The instrumental line-spread function likewise does not enter: the
 MeV line is resolved and its quoted widths are already response-corrected
@@ -798,8 +795,7 @@ through its covariance.  Angular scattering, whether or not it accompanies the
 temporal jitter, is disposed of separately: the fractional width and the
 monopole are insensitive to it, and Appendix~\ref{app:extended} shows the
 focal-plane-integrated spectrum is independent of transverse foam structure
-across the aperture.  The bounds are therefore unaffected by which imaging
-mapping is correct.}
+across the aperture.}
 
 % ==============================================================
 \section{Sources}
@@ -856,7 +852,7 @@ consistent with a constant across the $9$--$37$\,MeV lever arm
 ($\chi^2/\mathrm{dof}=5.3/6$; Table~\ref{tab:rwidth}); the foam analysis depends only
 on the Doppler-invariance of the line's fractional width, not on the
 emission mechanism.
-\added{The line is resolved.  The BGO energy resolution near an MeV is
+\added{The line is resolved: the BGO energy resolution near an MeV is
 $\approx\!10\%$ FWHM, or $\sigma_{\rm LSF}/E\approx0.04$, well below the
 measured $r_{\rm obs}$, and the spectral fits of Ref.~\cite{YQZhang2024}
 account for the instrument, so the widths quoted there are already
@@ -1024,11 +1020,9 @@ flux removed from the core reappearing in the pedestal of width
 $\sim1/\tau_{\rm foam}$.  Because $C_\alpha$ is the autocorrelation of
 a stationary process, $\mathcal{F}_{\rm foam}$ is real and even in $\tau$ and
 the mean frequency of the full spectrum is unchanged: the core redshift
-$\nu_0^{\rm eff}<\nu_0$ is compensated by blue-weighted pedestal, so it
-records a redistribution between core and pedestal rather than a net
-transfer from the metric.  Stationarity of $\delta t$ is time-translation
-invariance of the perturbation, and no net ensemble-mean energy transfer can
-follow from it.}{Dynamical foam exchanges energy with the photon: the time-dependent metric
+$\nu_0^{\rm eff}<\nu_0$ is compensated by a blue-weighted pedestal, a
+redistribution between core and pedestal rather than a net transfer from the
+metric.}{Dynamical foam exchanges energy with the photon: the time-dependent metric
 acts as a reservoir.  The per-mode modulation $e^{i\omega\delta t(t)}$
 conserves photon number --- $|e^{i\omega\delta t}|=1$ on every mode,
 for any jitter distribution --- but not energy, which it redistributes
