@@ -6,7 +6,7 @@ Status: markup and unmarked-edit checks are done. Now I'm verifying the compile 
 
 ## Summary
 
-The referee report contains 13 distinct items. Status: **11 ADDRESSED, 2 PARTIALLY ADDRESSED, 0 NOT ADDRESSED**, verified against the file at commit 7a6f653. Both partials are *regressions*: items 7 and 9 were addressed earlier in the branch and lost their answers when the Steinbring paragraphs were merged in a1e2995. See "Re-sync" at the foot of this file.
+The referee report contains 13 distinct items. Status: **13 ADDRESSED, 0 PARTIALLY ADDRESSED, 0 NOT ADDRESSED**, verified against the file at commit b040566. Items 7 and 9 briefly regressed — they were lost when the Steinbring paragraphs were merged in a1e2995 — and were restored in b040566. See "Re-sync" at the foot of this file.
 
 *(Historical, from the first audit pass. The markup has since been re-audited by reconstruction — see "Markup audit" below. The four appendix `\paragraph` headings were removed in 4babc78.)*
 
@@ -20,9 +20,9 @@ The referee report contains 13 distinct items. Status: **11 ADDRESSED, 2 PARTIAL
 | 4 | "does not sufficiently address how real telescopes actually sense photons ... treated as 'flat' ... assuming a single, monochromatic strength of blurring ... does not report an observed averaged effect over the bandpass" | ADDRESSED | [g1.tex:865](g1.tex:865) line-spread function disposed of for both GRB probes; [g1.tex:794](g1.tex:794) retained pedestal fraction f_band ≈ 4×10⁻¹⁷ (LHAASO) and ~10⁻³¹ (FIRAS); the CMB channel-spacing argument is now in Sec. IV B as well as the letter. |
 | 5 | "that result does not preclude the *range* ... 0.650 ≤ alpha ≤ 0.735 ... not merely a limit ... effectively dismissed here ... which is incorrect" | ADDRESSED | Conclusions [g1.tex:1676](g1.tex:1676) — "a two-sided bracket rather than a one-sided limit", the floors "exclude no part of it", and the joint τ_foam statement. |
 | 6 | "Steinbring, 2015, ApJ, 802, 38 approach; here uncited" | ADDRESSED | [g1.tex:139](g1.tex:139) cites Steinbring2015; entry present in references.bib and g1.bbl. |
-| 7 | "not accounting for more-blurred, bluer photons reported in Steinbring, 2007 ... (also uncited)" | **PARTIALLY — REGRESSED** | The citation survives at [g1.tex:139](g1.tex:139), but only for instrumental acceptance. The chromatic point itself — δt achromatic, the phase it produces not, so the bluest photons are blurred most and are preferentially scattered beyond acceptance — was added in 1324e5e and removed in a1e2995. Nothing states it now. |
+| 7 | "not accounting for more-blurred, bluer photons reported in Steinbring, 2007 ... (also uncited)" | ADDRESSED | Cited at [g1.tex:139](g1.tex:139); the chromatic point itself stated at [g1.tex:163](g1.tex:163) — the delay is achromatic but the phase it produces is not, so a shorter wavelength turns the same path-length jitter into a larger phase and the bluest photons are blurred most, and accounting for their loss beyond the acceptance is what permits a larger α at fixed image sharpness. Added 1324e5e, lost in a1e2995, restored b040566. |
 | 8 | "this should properly be referred to as the Ng-Steinbring relation ... Ng-Perlman would have been ruled out by GRB observations" | ADDRESSED | Four `\replaced` renames at [g1.tex:250](g1.tex:250), [345](g1.tex:345), [1413](g1.tex:1413), [1789](g1.tex:1789) drop the attributive label from the relation. Mapping distinction at [g1.tex:782](g1.tex:782), reworded in 7a6f653: e^(−σ_φ²) is *derived*, not borrowed from the Strehl factor. |
-| 9 | "Acknowledgement ... that the Steinbring (2023) result would then be a first detection ... in-orbit observed Fermi LAT PSF is, in fact, broadened" | **PARTIALLY — REGRESSED** | Two-sidedness survives in the conclusions [g1.tex:1678](g1.tex:1678). The rest does not: the bracket endpoints (α = 0.650 scaled to the field of view, α = 0.735 the weakest-blurring case scaled to resolution), the coincidence of 2/3 with the midpoint, and the report that LAT images are not diffraction-limited but scale as foam-induced blurring predicts were all removed in a1e2995. |
+| 9 | "Acknowledgement ... that the Steinbring (2023) result would then be a first detection ... in-orbit observed Fermi LAT PSF is, in fact, broadened" | ADDRESSED | [g1.tex:154](g1.tex:154) reports the bracket in those authors' own terms: α = 0.650 scaled to the field of view, α = 0.735 the weakest-blurring case scaled to the nominal resolution, the holographic 2/3 at the midpoint, and their finding that LAT images are not diffraction-limited but scale as foam-induced blurring predicts. Verified against the full text of arXiv:2603.18277. Lost in a1e2995, restored b040566. |
 | 10 | "Can the authors estimate, if incorporating the Ng-Steinbring approach to alpha on the Fermi LAT data, that they too find a value of alpha>0.65 is favoured?" | ADDRESSED (reasoned refusal) | [g1.tex:786](g1.tex:786) — the framework cannot be turned on LAT imaging data, which record arrival directions rather than spectra; such an estimate would be an imaging analysis using a mapping this work does not use. Dropped in 1ba46d7, restored and reworded in 7a6f653. |
 | 11 | "linewidth-jitter blurring ... already been looked for ... by Cooke et al., 2020 ... some discussion of how this current work compares ... cited" | ADDRESSED | [g1.tex:185](g1.tex:185) comparison paragraph; bib entry present. Specifics verified against the published abstract. |
 | 12 | "reference to [13] ... is now published. It should be ... Proceedings of Science ... CORFU2025 205" | ADDRESSED (bibliography) | references.bib entry SteinbringNg2026 reads PoS CORFU2025, 205 (2026). |
@@ -384,32 +384,35 @@ Reviewed against the file rather than the audit; several were already stale.
 Table and line numbers re-verified by grepping the current file, not by
 trusting the earlier entries. Two items have regressed and need a decision.
 
-### Regressions
+### Regressions — RESOLVED in b040566
 
-Both were addressed earlier in the branch and lost their answers when the
-Steinbring paragraphs were merged (a1e2995). Neither claim survives anywhere
-else — checked by grep, not assumed.
+Items 7 and 9 were addressed earlier in the branch and lost their answers
+when the Steinbring paragraphs were merged (a1e2995).  Neither claim survived
+anywhere else, checked by grep rather than assumed.  Both are now restored,
+as a single paragraph placed *after* the Steinbring narrative rather than
+inside it — which keeps the account of what [12] and [13] did uninterrupted,
+the problem that 6d53f37 had to fix once already.
 
-**Item 7 — the bluer-photon point.** The Steinbring 2007 citation survives,
-but only in support of *instrumental acceptance*. The chromatic argument
-itself is gone: that δt is achromatic while the phase it produces is not, so
-a shorter wavelength turns the same path-length jitter into a larger phase,
-the bluest photons are blurred most, and they are preferentially the ones
-scattered beyond acceptance — which is what permits a larger α at fixed image
-sharpness. That concession was the substance of the referee's request.
+**Item 7 — the bluer-photon point.**  The chromatic argument is back: the
+delay is achromatic while the phase it produces is not, so a shorter
+wavelength turns the same path-length jitter into a larger phase, the bluest
+photons are blurred most, and accounting for their loss beyond the acceptance
+is what permits a larger α at fixed image sharpness.  That last clause is the
+concession the referee actually wanted, and it costs nothing since our floors
+lie below the window regardless.
 
-**Item 9 — the detection reading.** Two-sidedness survives in the conclusions
-("a two-sided bracket rather than a one-sided limit"), which is the core of
-item 5. What is gone is what item 9 specifically asked for: the bracket
-endpoints (α = 0.650 scaled to the field of view, α = 0.735 the
-weakest-blurring case scaled to the resolution limit), the observation that
-2/3 falls at the midpoint, and the report that LAT images are not
-diffraction-limited but scale as foam-induced blurring predicts.
+**Item 9 — the detection reading.**  The bracket endpoints and their
+instrumental meaning are back (α = 0.650 scaled to the field of view,
+α = 0.735 the weakest-blurring case scaled to the nominal resolution), along
+with the 2/3 midpoint coincidence and the report that LAT images are not
+diffraction-limited but scale as foam-induced blurring predicts.  Kept in
+those authors' voice: "first detection" is the referee's phrase, never used
+in [13], which is explicitly careful about the word for the quasar work.
 
-Either restore both in short form, or answer them in the response letter and
-record that decision here. They are the referee's own two requests for
-acknowledgement, so leaving both silent is the option most likely to draw a
-second round.
+**Lesson worth keeping.**  Both regressions came from an editing pass that
+merged paragraphs, not from a deliberate reversal — the answers were
+collateral.  Re-grep the table's evidence after any structural edit rather
+than trusting earlier ADDRESSED marks; that is how these were caught.
 
 ### Markup audit
 
