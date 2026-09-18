@@ -6,29 +6,31 @@ Status: markup and unmarked-edit checks are done. Now I'm verifying the compile 
 
 ## Summary
 
-The referee report contains 13 distinct items. Status: 13 ADDRESSED, 0 PARTIALLY ADDRESSED, 0 NOT ADDRESSED. The one NOT ADDRESSED item is the request for a Fermi-LAT estimate of α, and a reasoned refusal is available. The weakest spots are the handling of the Steinbring "detection" claim, the naming of the relation, and the unmarked appendix skeleton.
+The referee report contains 13 distinct items. Status: **11 ADDRESSED, 2 PARTIALLY ADDRESSED, 0 NOT ADDRESSED**, verified against the file at commit 7a6f653. Both partials are *regressions*: items 7 and 9 were addressed earlier in the branch and lost their answers when the Steinbring paragraphs were merged in a1e2995. See "Re-sync" at the foot of this file.
 
-Markup was well formed: all 52 change commands balance, and every `\replaced` has its second argument as the old text. One structural defect: the appendix heading, its label, its four paragraph headings, and all five displayed equations are unmarked, so they appear in the ORIGINAL reading as bare content.
+*(Historical, from the first audit pass. The markup has since been re-audited by reconstruction — see "Markup audit" below. The four appendix `\paragraph` headings were removed in 4babc78.)*
 
 ## Per-comment audit
 
 | # | Referee item (quote) | Status | Evidence |
 |---|---|---|---|
-| 1 | "In optical photometry, this is typically refered to as a 'halo.' Mentioning this previous nomenclature" | ADDRESSED | [g1.tex:724](g1.tex:724) replaced, adds "the ``halo'' of optical photometry"; [g1.tex:730](g1.tex:730) added, pedestal as its counterpart |
-| 2 | "both AGNs and GRBs have to be viewed ... as potentially extended sources; that should be mentioned" | ADDRESSED | [g1.tex:176](g1.tex:176) added; [g1.tex:248](g1.tex:248) replaced; new Appendix A [g1.tex:1743](g1.tex:1743) onward; [g1.tex:1070](g1.tex:1070) added (clump superposition) |
-| 3 | "not merely scattering to the horizon ... any that don't fall within the resolution limits ... The authors can more clearly state that assumption at the outset" | ADDRESSED | [g1.tex:166](g1.tex:166) added paragraph states the deflection assumption and which bounds are immune |
-| 4 | "does not sufficiently address how real telescopes actually sense photons ... treated as 'flat' ... assuming a single, monochromatic strength of blurring ... does not report an observed averaged effect over the bandpass" | ADDRESSED | [g1.tex:1833](g1.tex:1833) and [g1.tex:1849](g1.tex:1849) added (Parseval, core-only instruments); [g1.tex:1864](g1.tex:1864) added ("by assumption for LHAASO"); [g1.tex:811](g1.tex:811) added — the instrumental line-spread function is stated and disposed of for both GRB probes. See "Resolution of item 4" below. |
-| 5 | "that result does not preclude the *range* ... 0.650 ≤ alpha ≤ 0.735 ... not merely a limit ... effectively dismissed here ... which is incorrect" | ADDRESSED | Reworked on the three-point skeleton — see "Resolution of items 5, 9, 13" below. Intro block rewritten, new Sec. V A 2 paragraph, abstract `\replaced`, conclusions `\added`. |
-| 6 | "Steinbring, 2015, ApJ, 802, 38 approach; here uncited" | ADDRESSED | [g1.tex:126](g1.tex:126) added, cites Steinbring2015; entry present in references.bib and in g1.bbl |
-| 7 | "not accounting for more-blurred, bluer photons reported in Steinbring, 2007 ... (also uncited)" | ADDRESSED | [g1.tex:132](g1.tex:132) added — the point is now stated, not just cited. See "Resolution of item 7" below. |
-| 8 | "this should properly be referred to as the Ng-Steinbring relation ... Ng-Perlman would have been ruled out by GRB observations" | ADDRESSED | Four `\replaced` renames drop the attributive label from the relation itself; new §IV B paragraph separates the variance relation from the competing imaging mappings. See "Resolution of items 8, 10". |
-| 9 | "Acknowledgement ... that the Steinbring (2023) result would then be a first detection ... in-orbit observed Fermi LAT PSF is, in fact, broadened" | ADDRESSED | Intro now attributes the window to [12] extended by [13], states its two-sidedness, and reports that those authors read it as a first detection with the LAT PSF foam-broadened. Attributed, not asserted in our voice. |
-| 10 | "Can the authors estimate, if incorporating the Ng-Steinbring approach to alpha on the Fermi LAT data, that they too find a value of alpha>0.65 is favoured?" | ADDRESSED (reasoned refusal + partial answer) | Same §IV B paragraph: the framework cannot be applied to LAT imaging data, but the floors lie beneath 0.65 and are consistent with a larger value. |
-| 11 | "linewidth-jitter blurring ... already been looked for ... by Cooke et al., 2020 ... some discussion of how this current work compares ... cited" | ADDRESSED | [g1.tex:181](g1.tex:181) added, full comparison paragraph; bib entry present |
-| 12 | "reference to [13] ... is now published. It should be ... Proceedings of Science ... CORFU2025 205" | ADDRESSED (outside g1.tex) | references.bib entry SteinbringNg2026 now reads PoS CORFU2025, 205 (2026) and renders so in g1.bbl. No g1.tex markup involved. |
-| 13 | "does *not* move (although is consistent with) the currently-known limits ... 2/3 is still favoured; an alpha=0.65 was already ruled out by images of quasars with Hubble" | ADDRESSED | Abstract, Sec. V A 2 and conclusions now all state that the two pedestal-independent floors lie below the window and exclude no part of it, and that the channel is an independent check rather than a competitor. |
+| 1 | "In optical photometry, this is typically refered to as a 'halo.' Mentioning this previous nomenclature" | ADDRESSED | [g1.tex:740](g1.tex:740) `\replaced` adds "--- the ``halo'' of optical photometry"; [g1.tex:742](g1.tex:742) the pedestal as its spectroscopic counterpart. Dropped in 1ba46d7, restored in 7a6f653. |
+| 2 | "both AGNs and GRBs have to be viewed ... as potentially extended sources; that should be mentioned" | ADDRESSED | Sec. II B [g1.tex:369](g1.tex:369) (sightlines superpose in intensity, pointer to the appendix); Appendix A [g1.tex:1826](g1.tex:1826); intro scope [g1.tex:172](g1.tex:172). The anticipatory Sec. II A duplicate was struck in f2f5e84 — the claim is now made once. |
+| 3 | "not merely scattering to the horizon ... any that don't fall within the resolution limits ... The authors can more clearly state that assumption at the outset" | ADDRESSED | [g1.tex:172](g1.tex:172) — "does not model deflection out of the instrumental field of view", followed by the probe-by-probe argument that it drops out. |
+| 4 | "does not sufficiently address how real telescopes actually sense photons ... treated as 'flat' ... assuming a single, monochromatic strength of blurring ... does not report an observed averaged effect over the bandpass" | ADDRESSED | [g1.tex:865](g1.tex:865) line-spread function disposed of for both GRB probes; [g1.tex:794](g1.tex:794) retained pedestal fraction f_band ≈ 4×10⁻¹⁷ (LHAASO) and ~10⁻³¹ (FIRAS); the CMB channel-spacing argument is now in Sec. IV B as well as the letter. |
+| 5 | "that result does not preclude the *range* ... 0.650 ≤ alpha ≤ 0.735 ... not merely a limit ... effectively dismissed here ... which is incorrect" | ADDRESSED | Conclusions [g1.tex:1676](g1.tex:1676) — "a two-sided bracket rather than a one-sided limit", the floors "exclude no part of it", and the joint τ_foam statement. |
+| 6 | "Steinbring, 2015, ApJ, 802, 38 approach; here uncited" | ADDRESSED | [g1.tex:139](g1.tex:139) cites Steinbring2015; entry present in references.bib and g1.bbl. |
+| 7 | "not accounting for more-blurred, bluer photons reported in Steinbring, 2007 ... (also uncited)" | **PARTIALLY — REGRESSED** | The citation survives at [g1.tex:139](g1.tex:139), but only for instrumental acceptance. The chromatic point itself — δt achromatic, the phase it produces not, so the bluest photons are blurred most and are preferentially scattered beyond acceptance — was added in 1324e5e and removed in a1e2995. Nothing states it now. |
+| 8 | "this should properly be referred to as the Ng-Steinbring relation ... Ng-Perlman would have been ruled out by GRB observations" | ADDRESSED | Four `\replaced` renames at [g1.tex:250](g1.tex:250), [345](g1.tex:345), [1413](g1.tex:1413), [1789](g1.tex:1789) drop the attributive label from the relation. Mapping distinction at [g1.tex:782](g1.tex:782), reworded in 7a6f653: e^(−σ_φ²) is *derived*, not borrowed from the Strehl factor. |
+| 9 | "Acknowledgement ... that the Steinbring (2023) result would then be a first detection ... in-orbit observed Fermi LAT PSF is, in fact, broadened" | **PARTIALLY — REGRESSED** | Two-sidedness survives in the conclusions [g1.tex:1678](g1.tex:1678). The rest does not: the bracket endpoints (α = 0.650 scaled to the field of view, α = 0.735 the weakest-blurring case scaled to resolution), the coincidence of 2/3 with the midpoint, and the report that LAT images are not diffraction-limited but scale as foam-induced blurring predicts were all removed in a1e2995. |
+| 10 | "Can the authors estimate, if incorporating the Ng-Steinbring approach to alpha on the Fermi LAT data, that they too find a value of alpha>0.65 is favoured?" | ADDRESSED (reasoned refusal) | [g1.tex:786](g1.tex:786) — the framework cannot be turned on LAT imaging data, which record arrival directions rather than spectra; such an estimate would be an imaging analysis using a mapping this work does not use. Dropped in 1ba46d7, restored and reworded in 7a6f653. |
+| 11 | "linewidth-jitter blurring ... already been looked for ... by Cooke et al., 2020 ... some discussion of how this current work compares ... cited" | ADDRESSED | [g1.tex:185](g1.tex:185) comparison paragraph; bib entry present. Specifics verified against the published abstract. |
+| 12 | "reference to [13] ... is now published. It should be ... Proceedings of Science ... CORFU2025 205" | ADDRESSED (bibliography) | references.bib entry SteinbringNg2026 reads PoS CORFU2025, 205 (2026). |
+| 13 | "does *not* move (although is consistent with) the currently-known limits ... 2/3 is still favoured" | ADDRESSED | Conclusions [g1.tex:1676](g1.tex:1676) states the floors lie below the window and exclude no part of it; the abstract carries the same in short form. |
 
 ## Changes not mapped to any comment
+
+*(Historical snapshot from the first audit pass. Line numbers below are stale — the paper has been restructured several times since, including a Discussion section created in ee6b093 and dissolved again in a1e2995.)*
 
 - Abstract [g1.tex:28](g1.tex:28): foam "varying in space and in time" split into transverse decoherence vs temporal jitter. Supports item 3 framing.
 - [g1.tex:49](g1.tex:49): deletion of "under the physical Planck-scale pedestal kernel", no replacement.
@@ -375,3 +377,62 @@ Reviewed against the file rather than the audit; several were already stale.
 | 9 Deleted justification | FIXED (this commit). **The audit was right and an earlier review of it here was wrong** — the block at g1.tex:603 is `\deleted`, not `\added`; mistaking the closing brace for an `\added` block led to it being reported as stale. Restored as one sentence rather than the full paragraph, since that paragraph was cut deliberately in 5e0ec98. |
 | 10 Cooke specifics | VERIFIED correct against the published abstract: "narrow Fe II absorption line produced by a quiescent gas cloud at redshift z ≃ 2.34", "σ_E/E = (E/E_P)^α", "we rule out models with α ≤ 0.634", ESPRESSO/VLT. Two double spaces remain in the source at g1.tex:204 and 210 — invisible in output. |
 | 11 Compile status | STALE. Zero "Token not allowed in a PDF string" warnings in the current build. |
+
+
+## Re-sync (at commit 7a6f653)
+
+Table and line numbers re-verified by grepping the current file, not by
+trusting the earlier entries. Two items have regressed and need a decision.
+
+### Regressions
+
+Both were addressed earlier in the branch and lost their answers when the
+Steinbring paragraphs were merged (a1e2995). Neither claim survives anywhere
+else — checked by grep, not assumed.
+
+**Item 7 — the bluer-photon point.** The Steinbring 2007 citation survives,
+but only in support of *instrumental acceptance*. The chromatic argument
+itself is gone: that δt is achromatic while the phase it produces is not, so
+a shorter wavelength turns the same path-length jitter into a larger phase,
+the bluest photons are blurred most, and they are preferentially the ones
+scattered beyond acceptance — which is what permits a larger α at fixed image
+sharpness. That concession was the substance of the referee's request.
+
+**Item 9 — the detection reading.** Two-sidedness survives in the conclusions
+("a two-sided bracket rather than a one-sided limit"), which is the core of
+item 5. What is gone is what item 9 specifically asked for: the bracket
+endpoints (α = 0.650 scaled to the field of view, α = 0.735 the
+weakest-blurring case scaled to the resolution limit), the observation that
+2/3 falls at the midpoint, and the report that LAT images are not
+diffraction-limited but scale as foam-induced blurring predicts.
+
+Either restore both in short form, or answer them in the response letter and
+record that decision here. They are the referee's own two requests for
+acknowledgement, so leaving both silent is the option most likely to draw a
+second round.
+
+### Markup audit
+
+Separately verified that the `changes` markup reconstructs the branch point.
+Method: render the "original" reading (added → drop, deleted → keep,
+replaced → old argument) from the current file and from the baseline — the
+baseline carries markup of its own, the ℓ → D fix having been marked on main
+— then word-diff the two.
+
+- No `\deleted` or `\replaced` wraps post-branch-point text. All 35 strike
+  genuine baseline prose, so there is nothing to collapse.
+- Four places where baseline text had been altered with *no* markup were
+  found and fixed in 99a177c, and two more in 7a6f653.
+- What remains untracked is non-text and deliberate: the `\verify` macro, the
+  `\texorpdfstring` wrapper, four float specifiers, one unreferenced label
+  rename, the bibliography path, and the unmarked appendix skeleton.
+
+Re-run the check after any further editing round; two of the defects it found
+were introduced by edits made during this branch, not by the original
+revision.
+
+**Gotcha worth remembering:** `\added` is not `\long`, so a blank line inside
+one ends its argument and the build fails with "Paragraph ended before
+\addcontentsline was complete." Worse, `latexmk` then reports "nothing to do"
+on the next pass and the page-count and `??` checks read a *stale* PDF and
+pass. Only the exit code catches it.
