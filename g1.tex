@@ -737,7 +737,8 @@ Strehl ratio
 (extended-Mar\'echal~\cite{NgPerlman2022}), the surrounding Airy
 fringes are washed out by the same factor, and \replaced{in the imaging
 channel the complementary $1-e^{-\sigma_\phi^2}$ of the source flux is
-scattered in angle into an incoherent halo }{the complementary
+scattered in angle into an incoherent halo --- the ``halo'' of optical
+photometry}{the complementary
 $1-e^{-\sigma_\phi^2}$ of the source flux scatters into an incoherent
 halo}.
 \added{The pedestal is its spectroscopic counterpart: the same fraction of
@@ -776,11 +777,20 @@ subject to instrumental acceptance in
 Refs.~\cite{Steinbring2007,Steinbring2015,SteinbringNg2026} --- and what
 separates them is how much of the halo a telescope far from its diffraction
 limit recovers, a fraction large enough that its treatment moves the inferred
-$\alpha$.  
-The spectral counterpart of
-instrumental acceptance is the bandpass
-and how much of the pedestal is retained therein.
-The pedestal is $\sim1/\tau_{\rm foam}$ wide, that fraction
+$\alpha$.  That choice does not propagate here.  The factor
+$e^{-\sigma_\phi^2}$ is derived in Section~\ref{sec:spec} from the
+first-order coherence itself, and coincides with the Strehl factor only
+because both are the Gaussian average $\langle e^{i\phi}\rangle$ --- taken
+across the aperture there, across the lag here.  No angular inference enters,
+so the bounds are unaffected by which mapping is correct; by the same token
+the framework cannot be turned on \textit{Fermi}-LAT imaging data, which
+record arrival directions rather than spectra.  An estimate of $\alpha$ from
+those data would be an imaging analysis, made with a mapping this work does
+not use.}
+
+\added{The spectral counterpart of instrumental acceptance is the bandpass, and how
+much of the pedestal is retained therein.  Because the pedestal is
+$\sim1/\tau_{\rm foam}$ wide, that fraction
 is $f_{\rm band}\approx4\times10^{-17}$ for LHAASO
 (Section~\ref{sec:grb_tev}) and $\sim10^{-31}$ for FIRAS
 (Section~\ref{sec:CMB_derivation}), so the displaced flux is effectively absent
