@@ -8,7 +8,7 @@
 \usepackage{xcolor}
 \usepackage{booktabs}
 \usepackage{aas_macros}
-\usepackage{changes}
+\usepackage[final]{changes}
 
 \begin{document}
 
@@ -55,9 +55,9 @@ $\alpha\gtrsim 0.54$--$0.55$ (forecast), limited by the foam--temperature
 degeneracy.  \replaced{The pedestal-independent line-width and CMB bounds are floors below
 the holographic value $\alpha = 2/3$, consistent with and excluding no part of
 the imaging window reported for GRB\,221009A; only the conditional TeV
-survival bound ($\alpha\gtrsim0.74$) which hangs on stricter and
-distinct model assumptions,
- would exclude it.}{The
+survival bound ($\alpha\gtrsim0.74$), which holds only for
+near-Planck-refresh foam ($\tau_{\rm foam}\lesssim4\times10^{-28}$\,s), would
+exclude it --- and, with it, the window.}{The
 pedestal-independent line-width and CMB bounds do not reach the holographic
 value $\alpha = 2/3$; only the conditional TeV survival bound
 ($\alpha\gtrsim0.74$, for near-Planck-refresh foam,
@@ -151,12 +151,13 @@ telescopes\deleted{ and finding all data consistent with $\alpha=2/3$.
 These imaging-channel analyses show that the holographic model is not
 excluded by the spatial localization of GRB\,221009A}.
 
-\added{Reference~\cite{SteinbringNg2026} reads those data more strongly.
+\added{References~\cite{Steinbring2023,SteinbringNg2026} read those data more
+strongly.
 With $\alpha\leq0.65$ already excluded by images of distant galaxies and
 AGNs, the foam-widened PSF is bracketed between two instrumental scalings ---
 $\alpha=0.650$, scaled to the field of view, and $\alpha=0.735$, the
 weakest-blurring case, scaled to the nominal resolution --- with the
-holographic $\alpha=2/3$ at the midpoint.  Across that bracket those authors
+holographic $\alpha=2/3$ inside the bracket.  Across that bracket those authors
 report the LAT images to be not diffraction-limited but to scale as
 foam-induced blurring predicts, and read the resulting halo as attributable
 to foam.  The mechanism is chromatic: the delay is achromatic but the phase
@@ -198,12 +199,19 @@ displaced in frequency by $\sim1/\tau_{\rm foam}$, hence out of band.}
 
 \added{The spectroscopic channel has been considered previously.
 Cooke \textit{et al.}~\cite{Cooke2020} postulate a convolution kernel,
-a heuristic that the authors note  has not been demonstrated by a model of spacetime
-quantization. 
+a heuristic that the authors note has not been demonstrated by a model of
+spacetime quantization.
 Their bound comes from a narrow
 Fe\,\textsc{ii} absorption line from a quiescent cloud at $z\simeq2.34$
-with VLT/ESPRESSO which  ruled out $\alpha\leq0.634$.
-What  distinguishes our work is the physical assumptions and the details of the predictions.
+with VLT/ESPRESSO which ruled out $\alpha\leq0.634$.
+That bound nearly coincides with the line-width floor obtained below,
+$\alpha\gtrsim0.63$, despite seven decades in photon energy --- a reflection
+of the lever-arm domination of such bounds: here the energy gain enters only
+as $+15$ in $\ln(2\pi D_C/\lambda_{\rm obs})$ against
+$\ln(D_C/\ell_{\rm P})\approx140$, and is largely offset by the fractional
+width's second-order response to the jitter
+(Section~\ref{sec:grb_width}).
+What distinguishes our work is the physical assumptions and the details of the predictions.
 We derive the distortion from the
 first-order coherence of the electric field propagating through a fluctuating metric
 --- the light-cone fluctuations of
@@ -878,7 +886,8 @@ consistent with a constant across the $9$--$37$\,MeV lever arm
 on the Doppler-invariance of the line's fractional width, not on the
 emission mechanism.
 \added{The line is resolved: the BGO energy resolution near an MeV is
-$\approx\!10\%$ FWHM, or $\sigma_{\rm LSF}/E\approx0.04$, well below the
+$\approx\!10\%$ FWHM, improving toward higher energies across the line's
+$6$--$37$\,MeV span, so $\sigma_{\rm LSF}/E\lesssim0.04$, well below the
 measured $r_{\rm obs}$, and the spectral fits of Ref.~\cite{YQZhang2024}
 account for the instrument, so the widths quoted there are already
 corrected for it.  The instrumental line-spread function therefore does not
@@ -1145,9 +1154,7 @@ factors (Section~\ref{sec:grb_source}), and Eq.~\eqref{eq:g1obs_gauss} is
 nonlinear in $\tau_G$ through its prefactor and its carrier shift, so an
 intensity-weighted mean over clumps is not that closed form at a mean
 $\tau_G$; it is applied to the line as a whole, with $r_{\rm int}$ the
-fractional width of the composite, which holds to second order in
-$\sigma_\Delta^2/\tau_G^2$, the order of the closed form's other
-corrections.}
+fractional width of the composite.}
 
 In the dynamical limit $\sigma_\Delta=\sqrt2\,\sigma_\ell/c$ saturates,
 and with $\tau_G(E)=\lambda_{\rm obs}(E)/(2\pi c\,r_{\rm int})$ the foam
@@ -1711,7 +1718,8 @@ alone.  Because the lever arm is kinematic, this agreement is a structural
 feature of the two channels rather than a coincidence of present precision,
 and sharpening it will require a different kind of measurement.}
 Because the \replaced{spectroscopic and imaging channels}{two channels} probe the same exponent through
-different sources, observables, and systematics, they form an
+\replaced{different observables and systematics}{different sources,
+observables, and systematics}, they form an
 independent cross-check rather than a joint bracket.  \replaced{The two
 spectroscopic probes are themselves separated}{They are separated}
 by more than ten orders of magnitude in frequency ($\sim10^{11}$\,Hz for
@@ -1829,7 +1837,8 @@ DE-AC02-05CH11231.
 The authors used Claude (Anthropic) and Valency Systems to assist with drafting and editing portions of this manuscript, with detailed reference searches, and in developing the Fisher-matrix and GRB multi-epoch analysis scripts. All content, equations, numerical results, and conclusions were reviewed and verified by the authors, who take full responsibility for the work.  AI assistance was used in accordance with \textit{Physical Review} editorial policy on computational tools.
 
 We thank Robin Kaiser for helpful discussions that helped motivate this work, and Eric Linder for insightful comments.
-We also thank the anonymous referee, whose comments led to significant improvements to the article.
+\added{We also thank the anonymous referee, whose comments led to
+significant improvements to the article.}
 \end{acknowledgments}
 
 \bibliographystyle{apsrev4-2}
