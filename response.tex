@@ -59,6 +59,9 @@ electric field.  Secondly, in the same section and in the Conclusions, we
 discuss the difference in predicted phase jitter for light propagating along
 rays versus through volumes (the analyses of Chen, Wen \& Ma and of Lee,
 Zurek \& Chen), with a matching condition recorded in the Conclusions.
+Thirdly, Section~III\,B now identifies the carrier--envelope term of the
+closed form as the finite-linewidth correction to the per-mode core weight,
+which bears on comment~4 below.
 Smaller changes --- a M\"ossbauer recoil-free-fraction analogy, tightened
 wording on the PKS\,1413$+$135 exclusion, and the flux-conservation
 rewording described below --- are visible in the changes-marked copy.
@@ -108,8 +111,10 @@ field of view, and shows that deflection drops out of each of the three
 observables used. \\[2ex]
 
 4 & ``does not sufficiently address how real telescopes actually sense
-photons \ldots\ treated as `flat' \ldots\ It does not report an observed
-averaged effect over the bandpass, as a real telescope would.''
+photons \ldots\ treated as `flat' or uniform scattering outside the intrinsic
+instrumental PSF assuming a single, monochromatic strength of blurring
+\ldots\ It does not report an observed averaged effect over the bandpass, as
+a real telescope would.''
 & Addressed in Sections~IV\,B and~V\,A.  The instrumental line-spread
 function is now given and shown not to enter: the BGO resolution near an MeV
 is $\approx\!10\%$ FWHM, improving toward higher energies across the line's
@@ -119,7 +124,13 @@ response-corrected; the TeV probe counts events rather than measuring a
 profile; and the FIRAS fit runs over $43$ channels, carrying the apodized
 instrument line shape through its covariance.  The fraction of redistributed
 flux a finite band retains is $f_{\rm band}\approx4\times10^{-17}$ for LHAASO
-and $\sim\!10^{-31}$ for FIRAS. \\[2ex]
+and $\sim\!10^{-31}$ for FIRAS.  On the monochromatic point in particular:
+$e^{-\sigma_\phi^2}$ is indeed a per-mode weight, but the closed form of
+Section~III\,B is not evaluated at a single frequency --- it follows from the
+full line profile, and averaging the per-mode weight across that profile
+reproduces exactly the $\omega_0^2\sigma_\Delta^4$ term the closed form
+already carries.  The line average is built in rather than assumed
+away. \\[2ex]
 
 5 & ``that result does not preclude the \emph{range} of values which [12]
 finds as consistent with observations: $0.650\leq\alpha\leq0.735$ \ldots\
