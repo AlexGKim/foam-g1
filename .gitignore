@@ -1,0 +1,25 @@
+# LaTeX output files
+*.aux
+*.log
+*.out
+*.blg
+*.bbl
+*.toc
+*.lof
+*.lot
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.dvi
+*.ps
+
+# macOS
+.DS_Store
+*.swp
+*~
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo

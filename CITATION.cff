@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the associated paper."
+title: "Code and data for 'Spectroscopy as a probe of spacetime foam'"
+version: "1.0.0"
+date-released: "2026-11-02"
+license: MIT
+repository-code: "https://github.com/AlexGKim/foam-g1"
+authors:
+  - family-names: Kim
+    given-names: A. G.
+    affiliation: "Lawrence Berkeley National Laboratory"
+  - family-names: Nugent
+    given-names: P. E.
+    affiliation: "Lawrence Berkeley National Laboratory"
+  - family-names: Wang
+    given-names: L.
+    affiliation: "Texas A&M University"
+preferred-citation:
+  type: article
+  title: "Spectroscopy as a probe of spacetime foam"
+  journal: "Physical Review D"
+  authors:
+    - family-names: Kim
+      given-names: A. G.
+    - family-names: Nugent
+      given-names: P. E.
+    - family-names: Wang
+      given-names: L.
+  doi: "10.1103/j7z8-kbvr"
+  year: 2026
