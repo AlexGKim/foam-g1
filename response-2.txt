@@ -1,62 +1,8 @@
 Response to the Second Referee Report -- DT18474/Kim
 
-We thank the Referee for the careful second reading and for the endorsement
-of publication.  We are glad the treatment of telescope optics now meets the
-concern raised in the first report.
+We thank the Referee for the careful second reading and for the endorsement of publication.  We are glad the treatment of telescope optics now meets the concern raised in the first report.
 
-The Referee identifies four places where "reads" is used actively in a way
-that could confuse.  The count is exact: these are the only four active uses
-of that construction in the manuscript.  (The remaining occurrences of "read"
--- "Eq. (11) reads", "the weights read as fractions", "foam is read off the
-line shape", "best read as an order-of-magnitude exclusion" -- are different
-constructions that the objection does not touch, and we have left them
-alone.)  All four have been changed.  They are marked in the accompanying
-changes-marked copy of the manuscript; no other text has been altered.
-
-1. Introduction, fifth paragraph, first sentence.
-
-   "References [12,13] read those data more strongly"
-   -> "References [12,13] advance a stronger interpretation of those data"
-
-   We have adopted "interpretation" rather than the Referee's "interpret more
-   comprehensively", because the point we intend is that those authors draw a
-   stronger conclusion from the same data, not that they analyse a larger
-   body of it.  We hope this meets the Referee's intent.
-
-2. Introduction, same paragraph.
-
-   "and read the resulting halo as attributable to foam"
-   -> "and interpret the resulting halo as attributable to foam"
-
-   Adopted exactly as suggested.
-
-3. Section II A, first paragraph.
-
-   "which a carrier reads as a phase jitter"
-   -> "which a carrier converts into a phase jitter"
-
-4. Section II A, third paragraph.
-
-   "a monochromatic carrier ... reads the same delay as a phase jitter"
-   -> "a monochromatic carrier ... converts the same delay into a phase
-      jitter"
-
-   Items 3 and 4 are the same physical statement, made informally in the
-   first paragraph and precisely at Eq. (4), so we have given them a single
-   verb rather than treating them separately.
-
-   We have used "converts into" in place of the Referee's suggested
-   "expresses" and "feels".  Our reason concerns item 4 in particular.  The
-   delay dt is achromatic -- identical at every frequency, which is what "the
-   same delay" in that sentence is carrying -- and what differs between
-   frequencies is only the phase it produces, dphi = omega_0 dt.  "Feels"
-   would suggest that the delay itself differs from photon to photon, which
-   would sit awkwardly with the chromatic mechanism described three
-   paragraphs earlier, where the achromaticity of the delay is precisely what
-   makes the bluest photons the most blurred.  "Converts into" names the
-   operation the equation performs and keeps delay and phase distinct.  We
-   note the Referee allowed that "reads" may be standard usage here; we have
-   changed it nonetheless, since the clearer phrasing costs nothing.
+The Referee identifies four places where "reads" is used actively in a way that could confuse.  All four have been replaced with more descriptive wording/phrasing, though not exactly as proposed by the Referee.  They are marked in the accompanying changes-marked copy of the manuscript; no other text has been altered.
 
 We are grateful to the Referee for both reports, which have improved the
 paper considerably.
